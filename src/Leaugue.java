@@ -1,3 +1,3 @@
 public class Leaugue {
-    private int rank;
+    private int rank_zahi;
 }
