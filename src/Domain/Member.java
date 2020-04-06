@@ -1,4 +1,8 @@
 package Domain;
 
-public abstract class Member {
+public abstract class Member extends GeneralUser {
+
+
+
+
 }

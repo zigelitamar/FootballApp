@@ -1,4 +1,7 @@
 package Domain;
 
-public class Guest {
+public class Guest extends GeneralUser {
+
+
+
 }
