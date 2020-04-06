@@ -1,5 +1,7 @@
 package Domain;
 
 public class Leaugue {
-    private int rank_zahi;
+    protected int rank_zahi;
 }
+
+//fixme change the class name to league

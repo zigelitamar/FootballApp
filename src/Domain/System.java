@@ -20,7 +20,6 @@ public class System {
 
 
 
-
     /*
     private System(SystemManager sm) {
 
@@ -34,7 +33,30 @@ public class System {
 
 
 
+    /**
+     * This method checks if the user is a commissioner and the leaugue is legal/already exists,
+     * and adds it to the HashMap league
+     * @param league
+     */
+    public void defineLeaugue(Leaugue league){
+        //todo check if user is a legal commissioner
+        if (legalLeague(league)){
+            leagues.put(league.rank_zahi, league);
+        }
 
+    }
+
+
+    /**
+     * This method checks if the league is legal
+     * @param league
+     * @return true if legal, false if it doesn't
+     */
+    private boolean legalLeague(Leaugue league) {
+    //fixme create the method
+
+        return true;
+    }
 
 
 }
