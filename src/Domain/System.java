@@ -10,27 +10,42 @@ public class System {
     HashMap<Integer, Leaugue> leagues = new HashMap<Integer, Leaugue>();
     HashMap<Integer, Member> members = new HashMap<Integer, Member>();
     SystemManager currSystemManager;
+    private static System single_instance = null;
 
-    private static Domain.System ourInstance = new Domain.System();
 
-    public static Domain.System getInstance() {
-        return ourInstance;
+    private System(){
+        /**maybe read some text file from pc to see who are the systemManager that registered ?? */
+        setSystemManager(null);        /**uc 1*/
+        connectExternalServers();
+    }
+
+
+    public static System getInstance()
+    {
+        if (single_instance == null)
+            single_instance = new System();
+
+
+        return single_instance;
     }
 
 
 
+    private boolean connectExternalServers() {
+        //TODO connect servers *put it in try&catch
+        return true;
+    }
 
-    /*
-    private System(SystemManager sm) {
 
-        if (sm != null){
-            this.currSystemManager = sm;
-        }
-
+    public void register(/**arguments uc register */){
 
     }
-*/
 
+
+
+    public void setSystemManager(SystemManager sm){
+        currSystemManager = sm;
+    }
 
 
     /**
