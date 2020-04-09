@@ -23,6 +23,10 @@ public class System {
     public static System getInstance()
     {
         if (single_instance == null)
+
+
+  
+
             single_instance = new System();
 
 
