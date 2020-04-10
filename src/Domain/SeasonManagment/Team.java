@@ -1,6 +1,8 @@
 package Domain;
 
-import java.io.File;
+import Domain.Users.Coach;
+import Domain.Users.TeamOwner;
+
 import java.util.List;
 
 public class Team {

@@ -1,5 +1,8 @@
 package Domain;
 
+import Domain.Events.Event_Logger;
+import Domain.Users.Referee;
+
 import java.util.Date;
 
 public class Game {
