@@ -17,6 +17,7 @@ public class Game {
     private Event_Logger event_logger;
 
 
+
     public Game(Team away, Team home, Date dateGame, Referee mainReferee, Referee seconderyReferee, Season season) {
         this.away = away;
         this.home = home;
@@ -98,4 +99,6 @@ public class Game {
     public void setEvent_logger(Event_Logger event_logger) {
         this.event_logger = event_logger;
     }
+
+
 }

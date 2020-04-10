@@ -1,7 +1,17 @@
 package Domain.SeasonManagment;
 
 public class Leaugue {
-    protected int rank_zahi;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    protected int id;
 }
 
 //fixme change the class name to league

@@ -9,6 +9,47 @@ import java.util.TreeMap;
 public class Season {
     private IScorePolicy scorePolicy;
     private IPlaceTeamsPolicy placeTeamsPolicy;
+
+    public IScorePolicy getScorePolicy() {
+        return scorePolicy;
+    }
+
+    public void setScorePolicy(IScorePolicy scorePolicy) {
+        this.scorePolicy = scorePolicy;
+    }
+
+    public IPlaceTeamsPolicy getPlaceTeamsPolicy() {
+        return placeTeamsPolicy;
+    }
+
+    public void setPlaceTeamsPolicy(IPlaceTeamsPolicy placeTeamsPolicy) {
+        this.placeTeamsPolicy = placeTeamsPolicy;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public TreeMap<Integer, Team> getScore_teams() {
+        return score_teams;
+    }
+
+    public void setScore_teams(TreeMap<Integer, Team> score_teams) {
+        this.score_teams = score_teams;
+    }
+
+    public HashSet<Referee> getReferees() {
+        return referees;
+    }
+
+    public void setReferees(HashSet<Referee> referees) {
+        this.referees = referees;
+    }
+
     private int year;
     private TreeMap<Integer,Team> score_teams;
     private HashSet<Referee> referees;
