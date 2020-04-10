@@ -1,17 +1,46 @@
 package Domain.SeasonManagment;
 
+import Domain.System;
+
+import java.util.HashMap;
+
 public class Leaugue {
+    private System system;
+    private int id;
+    private HashMap<Integer,Season> year_seasons;
+    private int currentYear;
 
-
-    public int getId() {
-        return id;
+    public Leaugue() {
+        System system1 = System.getInstance();
+        this.system = system1;
     }
+
 
     public void setId(int id) {
         this.id = id;
     }
 
-    protected int id;
+
+    /** UC 9.1 (Only commisioner can)*/
+    public void setLeagueIntoSystem(){
+        if(id == 0){
+            java.lang.System.out.println("There is no ID !");
+        }else{
+            system.addLeague(this);
+        }
+    }
+
+
+    /** UC 9.2 (Only commisioner can)*/
+    public void addSeasonToLeagueByYear(int year){
+        Season season = new Season(year);
+        year_seasons.put(year,season);
+    }
+
+
+    public Integer getID() {
+        return id;
+    }
 }
 
 //fixme change the class name to league
