@@ -38,6 +38,5 @@ public abstract class Member extends GeneralUser {
         this.password = password;
     }
 
-
-
+    public abstract String getName();
 }
