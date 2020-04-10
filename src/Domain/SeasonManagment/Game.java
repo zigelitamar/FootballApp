@@ -8,7 +8,7 @@ import Domain.Users.Referee;
 import java.util.Date;
 import java.util.Observable;
 
-public class Game extends Observable{
+public class Game {
     private Team away;
     private Team home;
     private Date dateGame;
@@ -26,17 +26,15 @@ public class Game extends Observable{
         this.dateGame = dateGame;
         this.mainReferee = mainReferee;
         this.seconderyReferee = seconderyReferee;
-        this.addObserver(mainReferee);
-        this.addObserver(seconderyReferee);
         this.season = season;
         event_logger=new Event_Logger();
     }
-    public void changeDate(Date newDate){
-        this.dateGame = newDate;
-        IAlert newAlart = new ChangedGameAlert();
-        setChanged();
-        notifyObservers(newAlart);
-    }
+//    public void changeDate(Date newDate){
+//        this.dateGame = newDate;
+//        IAlert newAlart = new ChangedGameAlert();
+//        setChanged();
+//        notifyObservers(newAlart);
+//    }
 
     public Team getAway() {
         return away;
