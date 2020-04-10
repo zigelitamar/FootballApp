@@ -77,4 +77,7 @@ public class System {
     }
 
 
+    public void addLeague(Leaugue leaugue) {
+        leagues.put(leaugue.getID(),leaugue);
+    }
 }
