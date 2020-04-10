@@ -1,4 +1,9 @@
 package Domain.Events;
 
-public class Goal implements IEvent {
+import Domain.Users.Player;
+
+public class Goal extends AGameEvent implements IEvent {
+    public Goal(double gameMinute, Player playerWhocommit) {
+        super(gameMinute, playerWhocommit);
+    }
 }
