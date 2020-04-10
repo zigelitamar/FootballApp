@@ -9,6 +9,7 @@ public abstract class Member extends GeneralUser {
         this.name=name;
         this.id = id;
         this.password = password;
+
     }
 
     /*getSet*/
