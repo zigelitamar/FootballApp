@@ -1,4 +1,7 @@
-package Domain;
+package Domain.Users;
+
+import Domain.SeasonManagment.IAsset;
+import Domain.SeasonManagment.Team;
 
 import java.util.List;
 

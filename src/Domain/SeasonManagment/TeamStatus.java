@@ -1,4 +1,4 @@
-package Domain;
+package Domain.SeasonManagment;
 
 public enum TeamStatus {
 

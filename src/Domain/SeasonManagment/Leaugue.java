@@ -1,4 +1,4 @@
-package Domain;
+package Domain.SeasonManagment;
 
 public class Leaugue {
     protected int rank_zahi;

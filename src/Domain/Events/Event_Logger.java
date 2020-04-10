@@ -1,4 +1,4 @@
-package Domain;
+package Domain.Events;
 
 import java.util.List;
 

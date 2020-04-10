@@ -1,4 +1,4 @@
-package Domain;
+package Domain.Events;
 
 public class Foul implements IEvent {
 }

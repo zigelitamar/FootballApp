@@ -1,4 +1,4 @@
-package Domain;
+package Domain.SeasonManagment;
 
 import Domain.Events.Event_Logger;
 import Domain.Users.Referee;

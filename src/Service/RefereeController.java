@@ -1,4 +1,4 @@
 package Service;
 
-public class Referee {
+public class RefereeController {
 }

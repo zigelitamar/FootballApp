@@ -1,5 +1,9 @@
 package Domain;
 
+import Domain.SeasonManagment.Leaugue;
+import Domain.Users.Member;
+import Domain.Users.SystemManager;
+
 import java.util.HashMap;
 
 
@@ -23,19 +27,14 @@ public class System {
     public static System getInstance()
     {
         if (single_instance == null)
-
-
-  
-
             single_instance = new System();
-
-
         return single_instance;
     }
 
 
 
     private boolean connectExternalServers() {
+
         //TODO connect servers *put it in try&catch
         return true;
     }
@@ -57,13 +56,13 @@ public class System {
      * and adds it to the HashMap league
      * @param league
      */
-    public void defineLeaugue(Leaugue league){
-        //todo check if user is a legal commissioner
-        if (legalLeague(league)){
-            leagues.put(league.rank_zahi, league);
-        }
-
-    }
+//    public void defineLeaugue(Leaugue league){
+//        //todo check if user is a legal commissioner
+//        if (legalLeague(league)){
+//            leagues.put(league. league);
+//        }
+//
+//    }
 
 
     /**

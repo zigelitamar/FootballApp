@@ -1,4 +1,4 @@
-package Domain;
+package Domain.Users;
 
 public class Player extends Member {
 }

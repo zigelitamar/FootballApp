@@ -1,5 +1,6 @@
-package Domain;
+package Domain.SeasonManagment;
 
+import Domain.Users.PersonalInfo;
 import Domain.Users.Coach;
 import Domain.Users.TeamOwner;
 
