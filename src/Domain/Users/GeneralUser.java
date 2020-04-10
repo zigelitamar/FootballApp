@@ -2,6 +2,8 @@ package Domain.Users;
 
 public abstract class GeneralUser {
 
+<<<<<<< HEAD
+=======
 
     //todo change name?
    String name;
@@ -11,4 +13,5 @@ public abstract class GeneralUser {
        return name;
    }
 
+>>>>>>> develop
 }
