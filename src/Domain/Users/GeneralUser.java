@@ -6,4 +6,9 @@ public abstract class GeneralUser {
     //todo change name?
    String name;
 
+
+   public String getName(){
+       return name;
+   }
+
 }
