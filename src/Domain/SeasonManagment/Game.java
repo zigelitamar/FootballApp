@@ -4,6 +4,7 @@ import Domain.Alerts.ChangedGameAlert;
 import Domain.Alerts.GameEventAlert;
 import Domain.Alerts.IAlert;
 import Domain.Alerts.IGameSubjective;
+import Domain.Events.AGameEvent;
 import Domain.Events.Event_Logger;
 import Domain.Events.IEvent;
 import Domain.Users.Fan;
@@ -73,9 +74,9 @@ public class Game extends Observable implements IGameSubjective{
 
 
     //part of UC - 10.3 + alerting to followers
-    public void addEventToEventLog(IEvent event){
+    public void addEventToEventLog(AGameEvent event){
         event_logger.addEvent(event);
-        IAlert alert = new GameEventAlert(event.getDate(),event);
+        IAlert alert = new GameEventAlert(event.getGameMinute(),event);
         notifyTeamfans(alert);
     }
 
