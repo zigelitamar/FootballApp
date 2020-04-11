@@ -7,11 +7,11 @@ import java.util.Date;
 
 public class GameEventAlert implements IAlert{
 
-    Date eventDate;
+    double eventMin;
     IEvent event;
 
-    public GameEventAlert(Date eventDate, IEvent event) {
-        this.eventDate = eventDate;
+    public GameEventAlert(double eventMin, IEvent event) {
+        this.eventMin = eventMin;
         this.event = event;
     }
 

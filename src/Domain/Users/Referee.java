@@ -5,6 +5,7 @@ import Domain.Alerts.IAlert;
 import java.util.Observable;
 import java.util.Observer;
 
+import Domain.Events.AGameEvent;
 import Domain.Events.IEvent;
 import Domain.SeasonManagment.Game;
 
@@ -28,7 +29,7 @@ public class Referee extends Member implements Observer {
 
 
     //UC - 10.3
-    public void addEventToGame(IEvent event , Game game){
+    public void addEventToGame(AGameEvent event , Game game){
         game.addEventToEventLog(event);
     }
 
