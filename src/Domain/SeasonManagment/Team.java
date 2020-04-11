@@ -1,9 +1,11 @@
 package Domain.SeasonManagment;
 
+import Domain.Alerts.IAlert;
 import Domain.Users.PersonalInfo;
 import Domain.Users.Coach;
 import Domain.Users.TeamOwner;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Team {
@@ -78,5 +80,11 @@ public class Team {
 
     public Integer getScore() {
         return score;
+    }
+
+
+
+    public void notifyTeam(IAlert newAlert, Game game) {
+        info.notifyInfo(newAlert, game);
     }
 }
