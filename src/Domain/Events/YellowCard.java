@@ -1,4 +1,9 @@
 package Domain.Events;
 
-public class YellowCard implements IEvent {
+import Domain.Users.Player;
+
+public class YellowCard extends AGameEvent implements IEvent {
+    public YellowCard(double gameMinute, Player playerWhocommit) {
+        super(gameMinute, playerWhocommit);
+    }
 }

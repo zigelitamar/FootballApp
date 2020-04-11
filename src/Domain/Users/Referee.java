@@ -1,11 +1,20 @@
 package Domain.Users;
 
+import Domain.Alerts.IAlert;
+
+import java.util.Observable;
+import java.util.Observer;
 import Domain.SeasonManagment.Game;
 
 import java.util.ArrayList;
 import java.util.List;
+public class Referee extends Member implements Observer {
 
-public class Referee extends Member {
+
+    @Override
+    public void update(Observable o, Object arg) {
+        handleAlert((IAlert)arg);
+    }
     private String training;
     private List<Game> games;
 

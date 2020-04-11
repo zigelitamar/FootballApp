@@ -1,9 +1,12 @@
 package Domain.SeasonManagment;
 
+import Domain.Alerts.ChangedGameAlert;
+import Domain.Alerts.IAlert;
 import Domain.Events.Event_Logger;
 import Domain.Users.Referee;
 
 import java.util.Date;
+import java.util.Observable;
 
 public class Game {
     private Team away;
@@ -27,6 +30,12 @@ public class Game {
         this.season = season;
         event_logger=new Event_Logger();
     }
+//    public void changeDate(Date newDate){
+//        this.dateGame = newDate;
+//        IAlert newAlart = new ChangedGameAlert();
+//        setChanged();
+//        notifyObservers(newAlart);
+//    }
 
     public Team getAway() {
         return away;
