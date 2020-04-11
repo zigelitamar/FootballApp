@@ -7,4 +7,8 @@ public class Event_Logger {
 
     public Event_Logger() {
     }
+
+    public void addEvent(IEvent event) {
+        events.add(event);
+    }
 }
