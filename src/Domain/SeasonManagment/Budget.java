@@ -5,7 +5,10 @@ public class Budget {
     private int income;
     private int outcome;
     private int teamID;
-    private int period;
+
+
+
+    private int finalBudget;
 
 
     public int getIncome() {
@@ -13,7 +16,7 @@ public class Budget {
     }
 
     public void setIncome(int income) {
-        this.income = income;
+        this.income = this.income + income;
     }
 
     public int getOutcome() {
@@ -33,16 +36,14 @@ public class Budget {
     }
 
     /**
-     * checks if the team is in bankruptcy.
-     * @return true if it does, not good.
-     * false if everything is good
+     * calculates the final budget
      */
-    public boolean isBankruptcy (){
-        if (income < outcome){
-            return true;
-        }
+    public void calculateFinalBudget (){
+        finalBudget = income - outcome;
+    }
 
-        return false;
+    public int getFinalBudget() {
+        return finalBudget;
     }
 
 
