@@ -2,10 +2,11 @@ package Domain;
 
 import Domain.SeasonManagment.Leaugue;
 import Domain.Users.Member;
+import Domain.Users.PersonalInfo;
 import Domain.Users.SystemManager;
 
 import java.util.HashMap;
-
+import java.util.Random;
 
 
 public class System {
@@ -16,6 +17,7 @@ public class System {
     SystemManager currSystemManager;
     private static System single_instance = null;
 
+    HashMap<Integer,PersonalInfo> personalPages = new HashMap<>();
 
     private System(){
         /**maybe read some text file from pc to see who are the systemManager that registered ?? */
@@ -23,6 +25,31 @@ public class System {
         connectExternalServers();
     }
 
+    /**
+     * this func is a generator for unique PersonalInfo pages IDs
+     * @return page ID
+     */
+    public int generatePageID(){
+        int pageID = tryToGeneratePageID();
+        while (personalPages.containsKey(pageID)){
+            pageID = tryToGeneratePageID();
+        }
+        return pageID;
+    }
+
+    public int tryToGeneratePageID(){
+        Random rand = new Random();
+        int pageID=0;
+        for (int i = 0; i <8 ; i++) {
+            int digit = rand.nextInt(10);
+            if(digit==0){
+                pageID = pageID + ((int) (Math.pow(10, i)));
+            }else {
+                pageID = pageID + (digit) * ((int) (Math.pow(10, i)));
+            }
+        }
+        return pageID;
+    }
 
     public static System getInstance()
     {
