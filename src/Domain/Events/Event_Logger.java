@@ -15,4 +15,8 @@ public class Event_Logger {
     public void addEvent(IEvent event){
         events.add(event);
     }
+
+    public void addEvent(IEvent event) {
+        events.add(event);
+    }
 }

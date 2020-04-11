@@ -1,14 +1,20 @@
 package Domain.SeasonManagment;
 
 import Domain.Alerts.ChangedGameAlert;
+import Domain.Alerts.GameEventAlert;
 import Domain.Alerts.IAlert;
+import Domain.Alerts.IGameSubjective;
 import Domain.Events.Event_Logger;
+import Domain.Events.IEvent;
+import Domain.Users.Fan;
 import Domain.Users.Referee;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.Observable;
+import java.util.Observer;
 
-public class Game {
+public class Game extends Observable implements IGameSubjective{
     private Team away;
     private Team home;
     private Date dateGame;
@@ -18,6 +24,7 @@ public class Game {
     private int scoreAway;
     private Season season;
     private Event_Logger event_logger;
+    private LinkedList <Observer> referees;
 
 
     public Game(Team away, Team home, Date dateGame, Referee mainReferee, Referee seconderyReferee, Season season) {
@@ -28,13 +35,48 @@ public class Game {
         this.seconderyReferee = seconderyReferee;
         this.season = season;
         event_logger=new Event_Logger();
+        referees = new LinkedList<>();
+        addReferees();
     }
-//    public void changeDate(Date newDate){
-//        this.dateGame = newDate;
-//        IAlert newAlart = new ChangedGameAlert();
-//        setChanged();
-//        notifyObservers(newAlart);
-//    }
+
+    //todo - add option to  notify ref when upcoming match date
+    public void changeDate(Date newDate) {
+        this.dateGame = newDate;
+        IAlert newAlart = new ChangedGameAlert(dateGame,this);
+        notifyReferees(newAlart);
+    }
+
+    @Override
+    public void addTeamsFans() {
+
+    }
+
+    @Override
+    public void addReferees() {
+        referees.add(mainReferee);
+        referees.add(seconderyReferee);
+    }
+
+    @Override
+    public void notifyReferees(IAlert newAlert) {
+        for (Observer O: referees) {
+            O.update(this,newAlert);
+        }
+    }
+
+    @Override
+    public void notifyTeamfans(IAlert newAlert) {
+        home.notifyTeam(newAlert,this);
+        away.notifyTeam(newAlert,this);
+    }
+
+
+    //part of UC - 10.3 + alerting to followers
+    public void addEventToEventLog(IEvent event){
+        event_logger.addEvent(event);
+        IAlert alert = new GameEventAlert(event.getDate(),event);
+        notifyTeamfans(alert);
+    }
 
     public Team getAway() {
         return away;

@@ -1,5 +1,7 @@
 package Domain.Users;
 
+import Domain.Alerts.IAlert;
+
 import java.util.*;
 
 public class Fan extends Member implements Observer {
@@ -12,10 +14,11 @@ public class Fan extends Member implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-
+        handleAlert((IAlert)arg);
     }
 
     /*getSet*/
+
 
     public List<PersonalInfo> getInfos() {
         return infos;
@@ -23,5 +26,9 @@ public class Fan extends Member implements Observer {
 
     public void setInfos(List<PersonalInfo> infos) {
         this.infos = infos;
+    }
+
+    public void notifyFan(IAlert newAlert) {
+
     }
 }
