@@ -1,4 +1,9 @@
 package Domain.Events;
 
-public class OffSide implements IEvent {
+import Domain.Users.Player;
+
+public class OffSide extends AGameEvent implements IEvent {
+    public OffSide(double gameMinute, Player playerWhocommit) {
+        super(gameMinute, playerWhocommit);
+    }
 }
