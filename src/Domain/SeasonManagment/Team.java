@@ -1,4 +1,5 @@
 package Domain.SeasonManagment;
+
 import Domain.Alerts.IAlert;
 import Domain.Users.PersonalInfo;
 import Domain.Users.Coach;
@@ -19,9 +20,11 @@ public class Team {
     private Field field;
     private TeamOwner owner;
     private TeamStatus status;
-    private int score;
+    private int score; //todo maybe nono
     private String id;
     private HashMap<Integer,Budget> year_budget;
+    private boolean isClosed;
+
 
 
     /**
@@ -80,6 +83,15 @@ public class Team {
         year_budget.put(quarter,budget);
     }
 
+
+
+    public boolean isClosed() {
+        return isClosed;
+    }
+
+    public void setClosed(boolean closed) {
+        isClosed = closed;
+    }
 
     public Coach getCoach() {
         return coach;
@@ -143,7 +155,8 @@ public class Team {
 
     public Integer getScore() {
         return score;
-    }
+    } //why?!
+
 
 
     public void notifyTeam(IAlert newAlert, Game game) {
