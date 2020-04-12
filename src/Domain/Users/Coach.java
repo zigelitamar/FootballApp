@@ -1,5 +1,6 @@
 package Domain.Users;
 
+import Domain.PersonalPages.APersonalPageContent;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
 
@@ -20,6 +21,20 @@ public class Coach extends Member implements IAsset {
 
     }
 
+    public boolean createPersonalPage(){
+        info = new PersonalInfo(this);
+        return true;
+    }
+
+    // UC - 5.2
+    public boolean addContentToPersonalPage(APersonalPageContent content){
+        return info.addContentToPage(this,content);
+    }
+
+    // UC - 5.1 (including getters and setters
+    public boolean editProfile(String title, String val){
+        return info.editProfile(this,title,val);
+    }
     /*getSet*/
 
     public Team getMyTeam() {
