@@ -1,7 +1,5 @@
 package Domain.SeasonManagment;
 
-import Domain.System;
-
 import java.util.HashMap;
 
 public class Leaugue {

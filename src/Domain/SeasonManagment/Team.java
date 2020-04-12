@@ -1,5 +1,4 @@
 package Domain.SeasonManagment;
-
 import Domain.Alerts.IAlert;
 import Domain.Users.PersonalInfo;
 import Domain.Users.Coach;
@@ -11,6 +10,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Team {
+
+
     private Coach coach;
     private List<Season> seasons;
     private Season currentSeason;
@@ -67,6 +68,16 @@ public class Team {
             System.out.println("Illegal number entered");
             return null;
         }
+    }
+
+
+    /**
+     * adds budget
+     * @param budget
+     * @param quarter
+     */
+    public void setBudget(Budget budget, int quarter){
+        year_budget.put(quarter,budget);
     }
 
 
@@ -133,7 +144,6 @@ public class Team {
     public Integer getScore() {
         return score;
     }
-
 
 
     public void notifyTeam(IAlert newAlert, Game game) {
