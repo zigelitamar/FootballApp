@@ -33,7 +33,7 @@ public class Fan extends Member implements Observer {
                 }
             }
         }
-        
+
         if(o instanceof PersonalInfo){
             if(personalPagesFollowed.containsKey(o)){ // handle alert only if this fan follows this page
                 handleAlert((IAlert)arg);
@@ -69,6 +69,7 @@ public class Fan extends Member implements Observer {
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
         //system.handleComplaintForm(this,complaintForm);
     }
+
 
 
     /*getSet*/
