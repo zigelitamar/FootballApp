@@ -5,7 +5,7 @@ public class DefaultIScorePolicy implements IScorePolicy {
 
     @Override
     public int winVal() {
-        return 0;
+        return 3;
     }
 
     @Override
@@ -15,6 +15,6 @@ public class DefaultIScorePolicy implements IScorePolicy {
 
     @Override
     public int drowVal() {
-        return 0;
+        return 1;
     }
 }
