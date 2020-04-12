@@ -11,6 +11,7 @@ public class Season {
     private IScorePolicy scorePolicy;
     private IPlaceTeamsPolicy placeTeamsPolicy;
     private HashSet<Game> games;
+    private boolean isItTheBeginningOfSeason;
 
     public Season(int year) {
         this.year = year;
@@ -21,6 +22,7 @@ public class Season {
         teams = new TreeMap<>();
         referees = new HashSet<>();
         games = new HashSet<>();
+        isItTheBeginningOfSeason = true;         /** Change after a while?? */
     }
 
 
@@ -41,8 +43,16 @@ public class Season {
         teams = new TreeMap<>();
         referees = new HashSet<>();
         games = new HashSet<>();
+        isItTheBeginningOfSeason = true;
     }
 
+    public boolean isItTheBeginningOfSeason() {
+        return isItTheBeginningOfSeason;
+    }
+
+    public void setItTheBeginningOfSeason(boolean itTheBeginningOfSeason) {
+        isItTheBeginningOfSeason = itTheBeginningOfSeason;
+    }
 
     public IScorePolicy getScorePolicy() {
         return scorePolicy;
@@ -129,7 +139,7 @@ public class Season {
     }
 
 
-    /**UC 9.7   (only comissioner can add)     */
+    /**UC 9.7   (only comissioner can)     */
     public void runPlacingTeamsAlgorithm(){
         placingAlgorithm();
     }
