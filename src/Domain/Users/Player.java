@@ -1,5 +1,6 @@
 package Domain.Users;
 
+import Domain.PersonalPages.APersonalPageContent;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
 
@@ -12,15 +13,28 @@ public class Player extends Member implements IAsset {
     private PersonalInfo info;
     private Date DateOfBirth;
 
-    public Player(String name, int id, String password, int valAsset, Team myTeam, String role, PersonalInfo info, Date dateOfBirth) {
+    public Player(String name, int id, String password, int valAsset, Team myTeam, String role, Date dateOfBirth) {
         super(name, id, password);
         this.valAsset = valAsset;
         this.myTeam = myTeam;
         this.role = role;
-        this.info = info;
         DateOfBirth = dateOfBirth;
     }
 
+    public boolean createPersonalPage(){
+        info = new PersonalInfo(this);
+        return true;
+    }
+
+    // UC - 4.2
+    public boolean addContentToPersonalPage(APersonalPageContent content){
+        return info.addContentToPage(this,content);
+    }
+
+    // UC - 4.1 (including getters and setters
+    public boolean editProfile(String title, String val){
+        return info.editProfile(this, title,val);
+    }
     /*getSet*/
 
     public Team getMyTeam() {

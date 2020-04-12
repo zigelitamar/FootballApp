@@ -16,7 +16,7 @@ public class SystemLog {
 
     private SystemLog() {
         if (ourInstance != null){
-            System.out.println("existing log");;
+            System.out.println("existing log");
         }
         this.makeFile();
 
