@@ -1,17 +1,17 @@
 package Domain.SeasonManagment;
 
-import Domain.System;
+import Domain.FootballManagmentSystem;
 
 import java.util.HashMap;
 
 public class Leaugue {
-    private System system;
+    private FootballManagmentSystem system;
     private int id;
     private HashMap<Integer,Season> year_seasons;
     private int currentYear;
 
     public Leaugue() {
-        System system1 = System.getInstance();
+        FootballManagmentSystem system1 = FootballManagmentSystem.getInstance();
         this.system = system1;
     }
 

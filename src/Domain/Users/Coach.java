@@ -2,6 +2,7 @@ package Domain.Users;
 
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
+import Domain.SystemLog;
 
 public class Coach extends Member implements IAsset {
     private int valAsset;
@@ -49,6 +50,7 @@ public class Coach extends Member implements IAsset {
     @Override
     public void edit(int value) {
         this.valAsset=value;
+
 
     }
 
