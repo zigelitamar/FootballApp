@@ -5,10 +5,14 @@ import Domain.Users.PersonalInfo;
 import Domain.Users.Coach;
 import Domain.Users.TeamOwner;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Team {
+
+
     private Coach coach;
     private List<Season> seasons;
     private Season currentSeason;
@@ -16,8 +20,69 @@ public class Team {
     private Field field;
     private TeamOwner owner;
     private TeamStatus status;
+    private int score; //todo maybe nono
+    private String id;
+    private HashMap<Integer,Budget> year_budget;
     private boolean isClosed;
-    private int score; /// why?
+
+
+
+    /**
+     * constructor
+     * @param coach
+     * @param seasons
+     * @param currentSeason
+     * @param info
+     * @param field
+     * @param owner
+     * @param status
+     * @param score
+     * @param id
+     * @param year_budget
+     */
+    public Team(Coach coach, List<Season> seasons, Season currentSeason, PersonalInfo info, Field field, TeamOwner owner, TeamStatus status, int score, String id, HashMap year_budget) {
+        this.coach = coach;
+        this.seasons = seasons;
+        this.currentSeason = currentSeason;
+        this.info = info;
+        this.field = field;
+        this.owner = owner;
+        this.status = status;
+        this.score = score;
+        this.id = id;
+        this.year_budget = year_budget;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * returns the budget to the relevant quarter
+     * @param quarter
+     * @return
+     */
+    public Budget getBudget(int quarter) {
+
+        if ((quarter >=1) && (quarter <=4)) {
+            return year_budget.get(quarter);
+        }
+        else{
+            System.out.println("Illegal number entered");
+            return null;
+        }
+    }
+
+
+    /**
+     * adds budget
+     * @param budget
+     * @param quarter
+     */
+    public void setBudget(Budget budget, int quarter){
+        year_budget.put(quarter,budget);
+    }
+
 
 
     public boolean isClosed() {
