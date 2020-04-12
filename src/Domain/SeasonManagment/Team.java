@@ -16,7 +16,17 @@ public class Team {
     private Field field;
     private TeamOwner owner;
     private TeamStatus status;
-    private int score;
+    private boolean isClosed;
+    private int score; /// why?
+
+
+    public boolean isClosed() {
+        return isClosed;
+    }
+
+    public void setClosed(boolean closed) {
+        isClosed = closed;
+    }
 
     public Coach getCoach() {
         return coach;
@@ -80,7 +90,7 @@ public class Team {
 
     public Integer getScore() {
         return score;
-    }
+    } //why?!
 
 
 

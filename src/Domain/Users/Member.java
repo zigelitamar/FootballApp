@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Queue;
 
 public abstract class Member extends GeneralUser {
-    private String name;
-    private int id;
+    private String name; /// USER NAME
+    private int id; // ?!?!?!
     private String password;
 
     private Queue<IAlert> alertsList;
@@ -17,11 +17,19 @@ public abstract class Member extends GeneralUser {
         this.name = name;
         this.id = id;
         this.password = password;
+        isActive = false;
     }
     public Member(){
         alertsList = new LinkedList<>();
     }
 
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
     /**
      * this func address the requirement to get alerts when offline. when offline alerts will be added to the queue that will be shown to user once online.

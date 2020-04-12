@@ -5,12 +5,15 @@ import Domain.FootballManagmentSystem;
 import java.util.HashMap;
 
 public class Leaugue {
+    private FootballManagmentSystem system;
     private FootballManagmentSystem footballManagmentSystem;
     private int id;
     private HashMap<Integer,Season> seasons;    /**year_season*/
     private int currentYear;
 
     public Leaugue() {
+        FootballManagmentSystem system1 = FootballManagmentSystem.getInstance();
+        this.system = system1;
         FootballManagmentSystem footballManagmentSystem1 = FootballManagmentSystem.getInstance();
         this.footballManagmentSystem = footballManagmentSystem1;
     }
