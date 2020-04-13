@@ -14,10 +14,12 @@ import java.util.*;
 public class Fan extends Member implements Observer {
     private HashMap<PersonalInfo,Boolean> personalPagesFollowed; //Tracking personal pages, boolean represent alerts on/off
     private LinkedList <String> searchHistory;
+    private FootballManagmentSystem system;
 
     public Fan(String name, int id, String password) {
         super(name, id, password);
        personalPagesFollowed=new HashMap<>();
+       system = FootballManagmentSystem.getInstance();
     }
 
     /**
@@ -117,15 +119,11 @@ public class Fan extends Member implements Observer {
      * @return - true if password was changed
      */
     public boolean changePassword(String newPassword){
-        this.setPassword(newPassword);
-        return true;
-        //todo - change the password in system!! and return true if password was changed
+        return system.changeUserPassword(this,newPassword);
     }
 
     public boolean changeUserName(String newUserName){
-        this.setName(newUserName);
-        return true;
-        //todo - check with system
+        return system.changeUserName(this, newUserName);
     }
 
     /**
