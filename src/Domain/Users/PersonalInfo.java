@@ -36,6 +36,13 @@ public class PersonalInfo extends Observable{
     }
 
 
+    /**
+     * editing profile section in personal page
+     * @param memberEditing - must be owner member
+     * @param title - info title
+     * @param val - value
+     * @return - true if succeeded
+     */
     public boolean editProfile(Member memberEditing, String title, String val){
         if(!memberEditing.equals(pageMemberOwner)){ //for constraint 4.a.
             return false;
@@ -48,6 +55,12 @@ public class PersonalInfo extends Observable{
         }
     }
 
+    /**
+     *  adding content to personal page
+     * @param memberContentMaker - must be owner member
+     * @param content - abstract - can be any type of content
+     * @return - true if succeeded
+     */
     public boolean addContentToPage(Member memberContentMaker, APersonalPageContent content){
         if(!memberContentMaker.equals(pageMemberOwner)){ //for constraint 4.a.
             return false;
@@ -62,20 +75,37 @@ public class PersonalInfo extends Observable{
         return true;
     }
 
+    /**
+     * part of UC 3.2 - adding the fan to the observers list
+     * @param fan - fan
+     */
     public void addFollower(Fan fan){
         followers.add(fan);
     }
 
+    /**
+     * part of UC 3.2 - removing the fan from the observers list
+     * @param fan - fan
+     */
     public void removeFollower(Fan fan){
         followers.remove(fan);
     }
 
+    /**
+     * notifying anyone on the observers list about a game event related to the personal page
+     * @param newAlert - game event alert
+     * @param game - the game where the event happened
+     */
     public void notifyInfo(IAlert newAlert, Game game) { /// notify for game alert
         for (Fan f : followers) {
             f.update(game, newAlert);
         }
     }
 
+    /**
+     * notifying anyone on the observers list about a change in the page
+     * @param newContentAlert- new content on page alert
+     */
     private void notifyFansOnNewContent(IAlert newContentAlert) { /// notify for new content on page
         for (Fan f : followers) {
             f.update(this, newContentAlert);
@@ -83,6 +113,12 @@ public class PersonalInfo extends Observable{
 
     }
 
+    /**
+     * view the personal page
+     */
+    public void viewPersonalPage(){
+        /// activate function from GUI
+    }
     public int getPageID() {
         return pageID;
     }

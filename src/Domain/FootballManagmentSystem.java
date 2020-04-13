@@ -32,15 +32,15 @@ public class FootballManagmentSystem {
 
     }
     public Member login (String username , String password){
-        Member logging = members.get(username);
-        if (logging == null){
-            return null; // noUserNAME
-        }
-        if(logging.getPassword().equals(password)){
-            logging.setActive(true);
-            return logging;
-        }else{
-            return null; // WrongPassWORD
+            Member logging = members.get(username);
+            if (logging == null){
+                return null; // noUserNAME
+            }
+            if(logging.getPassword().equals(password)){
+                logging.setActive(true);
+                return logging;
+            }else{
+                return null; // WrongPassWORD
         }
     }
     public void logOut(Member mem){
