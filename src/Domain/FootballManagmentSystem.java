@@ -156,6 +156,10 @@ public class FootballManagmentSystem {
             return pageID;
         }
 
+        /**
+        * ]D generator
+        * @return
+        */
         public int tryToGeneratePageID(){
             Random rand = new Random();
             int pageID=0;
@@ -170,6 +174,37 @@ public class FootballManagmentSystem {
             return pageID;
         }
 
+    /**
+     * Assosiation - UC 3.6. the system needs to approve the new name of the member
+     * @param mem - member wishes to change usser name
+     * @param name - new name
+     * @return - true if new name is available and change succeeded
+     */
+        public boolean changeUserName(Member mem, String name){
+            if(members.containsKey(name)){
+                return false;
+            }
+            Member member = members.get(mem.getName());
+            if(member==null){
+                return false;
+            }
+            String oldName = mem.getName();
+            members.remove(oldName);
+            member.setName(name);
+            members.put(name,member);
+            return true;
+        }
+
+        public boolean changeUserPassword(Member mem, String newPassowrd){
+            Member member = members.get(mem.getName());
+            if(member==null){
+                return false;
+            }
+            String name = mem.getName();
+            members.remove(name);
+            member.setPassword(newPassowrd);
+            return true;
+        }
 
 
 
