@@ -5,10 +5,8 @@ import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.APersonalPageContent;
 import Domain.SystemLog;
 import Domain.Users.*;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+
+import java.util.*;
 
 public class Team {
 
@@ -61,29 +59,13 @@ public class Team {
 
     /**
      * returns the budget to the relevant quarter
-     * @param quarter
      * @return
      */
-//    public Budget getBudget(int quarter) {
-//
-//        if ((quarter >=1) && (quarter <=4)) {
-//            return budget.get(quarter);
-//        }
-//        else{
-//            System.out.println("Illegal number entered");
-//            return null;
-//        }
-//    }
+    public int getCurrentBudget() {
+        Date date = new Date();
+        return controlBudget.getCurrentBudget(date);
+    }
 
-
-    /**
-     * adds budget
-     * @param budget
-     * @param quarter
-     */
-//    public void setBudget(ControlBudget budget, int quarter){
-//        year_budget.put(quarter,budget);
-//    }
 
 
     /**
