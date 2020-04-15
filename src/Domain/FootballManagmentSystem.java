@@ -9,7 +9,7 @@ import Domain.Users.*;
 import java.util.*;
 
 
-public class FootballManagmentSystem {
+public class FootballManagmentSystem extends TimerTask{
 
     // HashMap<Integer, Leaugue> leagues = new HashMap<Integer, Leaugue>();
     private List<Leaugue> allLeagus = new ArrayList<>();
@@ -31,6 +31,9 @@ public class FootballManagmentSystem {
          */
 
     }
+
+
+
     public Member login (String username , String password){
             Member logging = members.get(username);
             if (logging == null){
@@ -101,6 +104,24 @@ public class FootballManagmentSystem {
         SystemLog.getInstance().UpdateLog("New referee has been added to the league" );
         allRefs.add(ref);
     }
+
+
+    /** constraint 7 */
+    //TODO write in the main for every quarter :
+    //                                  Date date = new Date("02/29/2020");
+    //                                  Timer timer = new Timer();
+    //                                  TimerTask task = new Helper();
+    //                                  timer.schedule(task, date);
+    @Override
+    public void run() {
+
+        for (int i = 0; i < allTeams.size(); i++) {
+            allTeams.get(i).getControlBudget().checkIncomeBiggerThanOutcome();
+        }
+
+    }
+
+
 
 
     /**
@@ -349,4 +370,7 @@ public class FootballManagmentSystem {
             allLeagus.add(leaugue);
         }
 
+    public void addTeam(Team team) {
+            allTeams.add(team);
     }
+}

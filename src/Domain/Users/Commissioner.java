@@ -1,16 +1,18 @@
 package Domain.Users;
-import Domain.SeasonManagment.Budget;
-import Domain.SeasonManagment.Team;
+import Domain.SeasonManagment.*;
 
 import Domain.FootballManagmentSystem;
-import Domain.SeasonManagment.IPlaceTeamsPolicy;
-import Domain.SeasonManagment.IScorePolicy;
-import Domain.SeasonManagment.Leaugue;
-import Domain.SeasonManagment.Season;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Commissioner extends Member {
+
+
+    HashMap<String,Integer> financeAssociationActivity;     /** UC 9.9
+
+
+
 
 
     /**
@@ -22,59 +24,60 @@ public class Commissioner extends Member {
 
     public Commissioner(String name, int id, String password) {
         super(name, id, password);
+        financeAssociationActivity = new HashMap<>();
     }
 
 
-    /**
-     * checks if the quarterly budget is legal
-     * @param team
-     * @param quarter
-     * @return
-     */
-    public boolean confirnBudget(Team team, int quarter){
-        Budget budget = team.getBudget(quarter);
-        if (budget.getFinalBudget() > 0){
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * update the income of the relevant budget
-     * @param budget
-     * @param income
-     */
-    public void updateIncome(Budget budget, int income){
-        budget.setIncome(income);
-    }
-
-
-    /**
-     * update the outcome of the relevant budget
-     * @param budget
-     * @param outcome
-     */
-    public void updateOutcome(Budget budget, int outcome){
-        budget.setOutcome(outcome);
-    }
-
-
-
-
-
-    /**UC 9.1 - Define league*/
-    public void defineLeague(int id){
-        Leaugue leaugue = new Leaugue();
-        leaugue.setId(id);
-        leaugue.setLeagueIntoSystem();
-    }
-
-
-    /** UC 9.2 - Adding season to league by year*/
-    public void addSeasonToLeague(int year, Leaugue leaugue){
-        leaugue.addSeasonToLeagueByYear(year);
-    }
-
+//    /**
+//     * checks if the quarterly budget is legal
+//     * @param team
+//     * @param quarter
+//     * @return
+//     */
+//    public boolean confirnBudget(Team team, int quarter){
+//        Budget budget = team.getBudget(quarter);
+//        if (budget.getFinalBudget() > 0){
+//            return true;
+//        }
+//        return false;
+//    }
+//
+//    /**
+//     * update the income of the relevant budget
+//     * @param budget
+//     * @param income
+//     */
+//    public void updateIncome(Budget budget, int income){
+//        budget.setIncome(income);
+//    }
+//
+//
+//    /**
+//     * update the outcome of the relevant budget
+//     * @param budget
+//     * @param outcome
+//     */
+//    public void updateOutcome(Budget budget, int outcome){
+//        budget.setOutcome(outcome);
+//    }
+//
+//
+//
+//
+//
+//    /**UC 9.1 - Define league*/
+//    public void defineLeague(int id){
+//        Leaugue leaugue = new Leaugue();
+//        leaugue.setId(id);
+//        leaugue.setLeagueIntoSystem();
+//    }
+//
+//
+//    /** UC 9.2 - Adding season to league by year*/
+//    public void addSeasonToLeague(int year, Leaugue leaugue){
+//        leaugue.addSeasonToLeagueByYear(year);
+//    }
+//
 
 
     /**UC 9.3 - Define Referee to system*/
@@ -171,12 +174,24 @@ public class Commissioner extends Member {
 
 
     /**UC 9.8 - Define rules about BUDGET CONTROL*/
-    public void defineBudgetControl(/** whattttt*/){
+    public void defineBudgetControl(ICommissionerRule newRule){
 
+        FootballManagmentSystem system = FootballManagmentSystem.getInstance();
+        List<Team> teams = system.getAllTeams();
+        for (int i = 0; i < teams.size(); i++) {
+            teams.get(i).getControlBudget().setCommissionerRule(newRule);
+        }
     }
 
 
-    //todo UC 9.9  & 9.8
+    /** UC 9.9  manage finance Association activity    */
+    public void addToFinanceAssociationActivity(String info, int amount){
+        financeAssociationActivity.put(info,amount);
+    }
+
+    public void delFromFinanceAssociationActivity(String info){
+        financeAssociationActivity.remove(info);
+    }
 
 
 }

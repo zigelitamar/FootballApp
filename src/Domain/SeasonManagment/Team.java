@@ -1,10 +1,10 @@
 package Domain.SeasonManagment;
+
 import Domain.Alerts.IAlert;
 import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.APersonalPageContent;
 import Domain.SystemLog;
 import Domain.Users.*;
-import com.sun.org.apache.bcel.internal.generic.IADD;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -12,15 +12,19 @@ import java.util.List;
 
 public class Team {
 
+
+
     private List<Season> seasons;
     private String Name;
     private Season currentSeason;
     private PersonalInfo info;
+    private Field field;
     private TeamOwner owner;
     private TeamStatus status;
     private int score; //todo maybe nono
-    private String id;
-    private HashMap<Integer,Budget> year_budget;
+    private int id;
+    //private HashMap<Integer,Budget> year_budget;
+    private ControlBudget controlBudget;
     private boolean isClosed;
     private LinkedList <TeamOwner> secondaryOwners;
     private HashMap <Integer,IAsset> teamPlayers; /** the key is asset ID*/
@@ -31,31 +35,27 @@ public class Team {
 
     /**
      * constructor
-     * @param seasons
-     * @param currentSeason
      * @param owner
      * @param status
      * @param score
      * @param id
-     * @param year_budget
+     * @param budget
      */
-    public Team(String Name,List<Season> seasons, Season currentSeason,TeamOwner owner, TeamStatus status, int score, String id, HashMap year_budget) {
+    public Team(String Name, TeamOwner owner, TeamStatus status, int score,int id, ControlBudget budget) {
         secondaryOwners = new LinkedList<>();
         teamCoaches = new HashMap<>();
         teamPlayers = new HashMap<>();
         teamMangers = new HashMap<>();
         teamfields = new HashMap<>();
-        this.seasons = seasons;
-        this.currentSeason = currentSeason;
         this.Name = Name;
         this.owner = owner;
         this.status = status;
         this.score = score;
         this.id = id;
-        this.year_budget = year_budget;
+        this.controlBudget = budget;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -64,25 +64,26 @@ public class Team {
      * @param quarter
      * @return
      */
-    public Budget getBudget(int quarter) {
+//    public Budget getBudget(int quarter) {
+//
+//        if ((quarter >=1) && (quarter <=4)) {
+//            return budget.get(quarter);
+//        }
+//        else{
+//            System.out.println("Illegal number entered");
+//            return null;
+//        }
+//    }
 
-        if ((quarter >=1) && (quarter <=4)) {
-            return year_budget.get(quarter);
-        }
-        else{
-            System.out.println("Illegal number entered");
-            return null;
-        }
-    }
 
     /**
      * adds budget
      * @param budget
      * @param quarter
      */
-    public void setBudget(Budget budget, int quarter){
-        year_budget.put(quarter,budget);
-    }
+//    public void setBudget(ControlBudget budget, int quarter){
+//        year_budget.put(quarter,budget);
+//    }
 
 
     /**
@@ -402,19 +403,12 @@ public class Team {
     public boolean isClosed() {
         return isClosed;
     }
+
     public void setClosed(boolean closed) {
         isClosed = closed;
     }
-    //    public void setCoach(Coach coach) {
-    //
-    //    }
-    //        return coach;
 
-    //        this.coach = coach;
 
-//    public Coach getCoach() {
-
-//    }
 
     public List<Season> getSeasons() {
         return seasons;
@@ -431,22 +425,15 @@ public class Team {
     public void setCurrentSeason(Season currentSeason) {
         this.currentSeason = currentSeason;
     }
+
     public PersonalInfo getInfo() {
         return info;
     }
+
     public void setInfo(PersonalInfo info) {
         this.info = info;
     }
-    //    public void setField(Field field) {
-    //
-    //    }
-    //        return field;
 
-    //        this.field = field;
-
-//    public Field getField() {
-
-//    }
 
     public TeamOwner getOwner() {
         return owner;
@@ -480,4 +467,7 @@ public class Team {
         info.notifyInfo(newAlert, game);
     }
 
+    public ControlBudget getControlBudget() {
+        return controlBudget;
+    }
 }

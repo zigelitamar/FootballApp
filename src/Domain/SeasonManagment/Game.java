@@ -24,7 +24,7 @@ public class Game extends Observable implements IGameSubjective{
     private int scoreHome;
     private int scoreAway;
     private Season season;
-    private Event_Logger event_logger;
+    public Event_Logger event_logger;
     private LinkedList <Observer> referees;
 
 
