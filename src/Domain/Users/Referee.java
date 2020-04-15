@@ -2,43 +2,131 @@ package Domain.Users;
 
 import Domain.Alerts.IAlert;
 
-import java.util.Observable;
-import java.util.Observer;
+import java.util.*;
 
-import Domain.Events.AGameEvent;
-import Domain.Events.IEvent;
+import Domain.Events.*;
+import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.Game;
+import Domain.SystemLog;
 
-import java.util.ArrayList;
-import java.util.List;
 public class Referee extends Member implements Observer {
 
-    private String training;
+    private RefereeType type;
     private List<Game> games;
+    private FootballManagmentSystem system;
 
     @Override
     public void update(Observable o, Object arg) {
         handleAlert((IAlert)arg);
     }
 
-    public Referee(String name, int id, String password, String training) {
+    public Referee(String name, int id, String password, RefereeType type) {
         super(name, id, password);
-        this.training = training;
+        this.type = type;
         games=new ArrayList<>();
+        system = FootballManagmentSystem.getInstance();
     }
 
+    /** edit details UC 10.1 */
+    public void changeName(String newName){
+        system.delReferee(super.name);
+        super.name = newName;
+        system.addReferee(this);
+    }
+
+    /** edit details UC 10.1 */
+    public void changeTraining(RefereeType newTraining){
+        system.delReferee(super.name);
+        type = newTraining;
+        system.addReferee(this);
+    }
 
     //UC - 10.3
-    public void addEventToGame(AGameEvent event , Game game){
+    public void addEventToGame(String eventType ,double minute, Game game, Player playerWhoCommit){
+        AGameEvent event = stringToEvent(eventType,minute, playerWhoCommit);
         game.addEventToEventLog(event);
     }
 
-    public String getTraining() {
-        return training;
+
+    public AGameEvent stringToEvent(String eventType, double minute, Player player){
+        switch (eventType){
+            case "foul":
+                return new Foul(minute,player);
+            case "goal":
+                return new Goal(minute,player);
+            case "injury":
+                return new Injury(minute,player);
+            case "offside":
+                return new OffSide(minute,player);
+            case "red card":
+                return new RedCard(minute,player);
+            case "yellow card":
+                return new YellowCard(minute,player);
+            case "substitution":
+                return new Substitution(minute);
+            default:
+                System.out.println("No MATCH ! ");
+        }
+        return null;
+
     }
 
-    public void setTraining(String training) {
-        this.training = training;
+
+
+    /** 10.4 edit events 5 hours after the game*/
+    public void editEventsAfterGame(Game game, AGameEvent oldEvent , AGameEvent newEvent){
+        Date gameDate = game.getDateGame();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(gameDate);
+        cal.add(Calendar.HOUR_OF_DAY, 6); // adds 6 hours
+        cal.add(Calendar.MINUTE, 30); // adds 30 min
+        long time = new Date(System.currentTimeMillis()).getTime();
+        time = cal.getTimeInMillis() - time;
+        if( time < 0 || this.type != RefereeType.Main){
+            System.out.println(" Have no permission to edit :(");
+        }else{
+            game.event_logger.events.remove(oldEvent);
+            game.event_logger.events.add(newEvent);
+        }
+
+
+    }
+
+
+    /** 10.4 add report for game*/
+    public void addReportForGame(Game game){
+        Date gameDate = game.getDateGame();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(gameDate);
+        cal.add(Calendar.HOUR_OF_DAY, 1); // adds 6 hours
+        cal.add(Calendar.MINUTE, 30); // adds 30 min
+        long time = new Date(System.currentTimeMillis()).getTime();
+        String report = "";
+        if(time > cal.getTimeInMillis() && this.type == RefereeType.Main){
+            report += "Report of Game Dated : " + gameDate.toString()+ "\n";
+            report += "Home Team: " + game.getHome().getId() +"\n";
+            report += "Away Team: " + game.getAway().getId() +"\n";
+            report += "Main Referee: " + game.getMainReferee().getName() +"\n";
+            report += "Secondary Referee: " + game.getSeconderyReferee().getName() +"\n";
+            report += "Events: " +"\n";
+            for (int i = 0; i < game.event_logger.events.size(); i++) {
+                report+= "event Type: " + game.event_logger.events.get(i).toString() + ", minute of the event: " + game.event_logger.events.get(i).getGameMinute()  + "\n";
+            }
+            report += "END OF REPORT";
+            SystemLog log = SystemLog.getInstance();
+            log.UpdateLog(report);
+        }else{
+            System.out.println("Can't write report ! ");
+        }
+    }
+
+
+    public RefereeType getType() {
+        return type;
+    }
+
+    public void setTraining(RefereeType training) {
+        this.type = training;
     }
 
     public List<Game> getGames() {

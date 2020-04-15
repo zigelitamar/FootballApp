@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Queue;
 
 public abstract class Member extends GeneralUser {
-    private String name; /// USER NAME
+    protected String name; /// USER NAME
     private int id; // ?!?!?!
     private String password;
 

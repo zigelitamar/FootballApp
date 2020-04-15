@@ -21,8 +21,9 @@ public class Team {
     private TeamOwner owner;
     private TeamStatus status;
     private int score; //todo maybe nono
-    private String id;
-    private HashMap<Integer,Budget> year_budget;
+    private int id;
+    //private HashMap<Integer,Budget> year_budget;
+    private ControlBudget controlBudget;
     private boolean isClosed;
 
 
@@ -38,9 +39,9 @@ public class Team {
      * @param status
      * @param score
      * @param id
-     * @param year_budget
+     * @param budget
      */
-    public Team(Coach coach, List<Season> seasons, Season currentSeason, PersonalInfo info, Field field, TeamOwner owner, TeamStatus status, int score, String id, HashMap year_budget) {
+    public Team(Coach coach, List<Season> seasons, Season currentSeason, PersonalInfo info, Field field, TeamOwner owner, TeamStatus status, int score, int id, ControlBudget budget) {
         this.coach = coach;
         this.seasons = seasons;
         this.currentSeason = currentSeason;
@@ -50,38 +51,13 @@ public class Team {
         this.status = status;
         this.score = score;
         this.id = id;
-        this.year_budget = year_budget;
+        this.controlBudget = budget;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    /**
-     * returns the budget to the relevant quarter
-     * @param quarter
-     * @return
-     */
-    public Budget getBudget(int quarter) {
-
-        if ((quarter >=1) && (quarter <=4)) {
-            return year_budget.get(quarter);
-        }
-        else{
-            System.out.println("Illegal number entered");
-            return null;
-        }
-    }
-
-
-    /**
-     * adds budget
-     * @param budget
-     * @param quarter
-     */
-    public void setBudget(Budget budget, int quarter){
-        year_budget.put(quarter,budget);
-    }
 
 
 
@@ -161,5 +137,9 @@ public class Team {
 
     public void notifyTeam(IAlert newAlert, Game game) {
         info.notifyInfo(newAlert, game);
+    }
+
+    public ControlBudget getControlBudget() {
+        return controlBudget;
     }
 }

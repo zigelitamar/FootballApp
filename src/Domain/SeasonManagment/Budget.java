@@ -1,69 +1,42 @@
 package Domain.SeasonManagment;
 
 import java.util.Date;
+import java.util.HashMap;
 
 public class Budget {
 
-    private int income;
-    private int outcome;
+
+    private HashMap<String,Integer> financeActivity;     /**  description_cost    cost = Income/Outcome  description = Income/Outcome explained  */
     private int teamID;
-    private int finalBudget;
 
 
 
     /**
      * constructor
      * @param teamID
-     * @param finalBudget
      */
-    public Budget(int teamID, int finalBudget, int sponsors) {
+    public Budget(int teamID) {
         this.teamID = teamID;
-        this.finalBudget = finalBudget;
-        income=sponsors;
-        outcome=0;
-        finalBudget=0;
+        financeActivity = new HashMap<>();
     }
+
+
+    public void addFinanceActivity(String desc, int amount){
+        financeActivity.put(desc,amount);
+    }
+
 
     /**
      * calculates the final budget
      */
-    public void calculateFinalBudget (){
-        finalBudget = income - outcome;
+    public int calculateFinalBudget (){
+        int sum = 0;
+        for (String desc: financeActivity.keySet()) {
+            sum += financeActivity.get(desc);
+        }
+        return sum;
     }
 
-
-    /**
-     * getter
-     * @return
-     */
-    public int getIncome() {
-        return income;
-    }
-
-    /**
-     * setter
-     * @param income
-     */
-    public void setIncome(int income) {
-        this.income = this.income + income;
-    }
-
-    /**
-     * getter
-     * @return
-     */
-    public int getOutcome() {
-        return outcome;
-    }
-
-
-    /**
-     * setter
-     * @param outcome
-     */
-    public void setOutcome(int outcome) {
-        this.outcome = this.outcome + outcome;
-    }
 
     /**
      * getter
@@ -81,14 +54,6 @@ public class Budget {
         this.teamID = teamID;
     }
 
-
-    /**
-     * getter
-     * @return
-     */
-    public int getFinalBudget() {
-        return finalBudget;
-    }
 
 
     /**
