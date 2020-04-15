@@ -56,7 +56,7 @@ public class Fan extends Member implements Observer {
      * UC - 3.2
      */
 
-    /** 2 fucns for UC - 3.2: one to follow and the other to unfollow*/
+    /** 2 fucntions for UC - 3.2: one to follow and the other to unfollow*/
     public void addPersonalPagesToFollow(List <PersonalInfo> pagesToFollow){
         for (PersonalInfo page: pagesToFollow) {
             page.addFollower(this);
