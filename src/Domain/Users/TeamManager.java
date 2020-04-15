@@ -23,7 +23,7 @@ public class TeamManager extends Member implements IAsset {
         this.myTeam = myTeam;
         assetID = system.generateAssetID();
         permissions = new HashMap<>();
-        permissions.put("Hire Coach",false); /** just for example*/
+        permissions.put("Hire Coach",false);
         permissions.put("Create Personal Page",false);
         permissions.put("Add Content To Personal Page",false);
         permissions.put("Edit Personal Page Profile",false);
@@ -62,13 +62,14 @@ public class TeamManager extends Member implements IAsset {
     }
 
     /**
-     * for EXAMPLE only for now
+     * adding coach to coach staff (if team already has coach at that role this will override it)
      * @param newCoach
      * @return
      */
     public boolean hireCoach(IAsset newCoach){
+        //todo WARN MEMBER ABOUT OVERRIDING
         if(permissions.get("Hire Coach")){
-            myTeam.addCoach
+            myTeam.addCoach(this,newCoach);
             return true;
         }
         return false;
@@ -80,6 +81,7 @@ public class TeamManager extends Member implements IAsset {
      * @return - true if succeeded
      */
     public boolean createPersonalPageForTeam(){
+        //todo WARN MEMBER ABOUT OVERRIDING
         if(permissions.get("Create Personal Page")){
             return myTeam.createPersonalPage(this);
         }

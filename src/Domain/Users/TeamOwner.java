@@ -60,7 +60,7 @@ public class TeamOwner extends Member {
     }
 
     /**
-     * UC - 6.4 - add a new Team Manger
+     * UC - 6.4 - add a new Team Manger by default all the new team manager permissions will be off
      * @param newTeamManager - member to become team manager
      * @param value - his asset value
      * @return - true if succeeded

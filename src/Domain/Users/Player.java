@@ -32,6 +32,7 @@ public class Player extends Member implements IAsset {
      * @return - true if succeeded
      */
     public boolean createPersonalPage(){
+        //todo WARN MEMBER ABOUT OVERRIDING
         if(info!=null){
             system.removePersonalPage(info);
         }

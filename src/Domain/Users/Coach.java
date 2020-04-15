@@ -10,7 +10,7 @@ public class Coach extends Member implements IAsset {
     private int valAsset;
     private Team myTeam;
     private String training;
-    private String role;
+    private String role; /**MUST be from a unified role options list*/
     private PersonalInfo info;
     private int assetID;
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
@@ -32,6 +32,7 @@ public class Coach extends Member implements IAsset {
      * @return - true if succeeded
      */
     public boolean createPersonalPage(){
+        //todo WARN MEMBER ABOUT OVERRIDING
         if(info!=null){
             system.removePersonalPage(info);
         }

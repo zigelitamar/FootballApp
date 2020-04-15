@@ -1,12 +1,10 @@
 package Domain.SeasonManagment;
-
 import Domain.Alerts.IAlert;
 import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.APersonalPageContent;
 import Domain.SystemLog;
 import Domain.Users.*;
 import com.sun.org.apache.bcel.internal.generic.IADD;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -33,23 +31,23 @@ public class Team {
 
     /**
      * constructor
-     * @param coach
      * @param seasons
      * @param currentSeason
-     * @param info
-     * @param field
      * @param owner
      * @param status
      * @param score
      * @param id
      * @param year_budget
      */
-    public Team(Coach coach, List<Season> seasons, Season currentSeason, PersonalInfo info, Field field, TeamOwner owner, TeamStatus status, int score, String id, HashMap year_budget) {
-        //this.coach = coach;
+    public Team(String Name,List<Season> seasons, Season currentSeason,TeamOwner owner, TeamStatus status, int score, String id, HashMap year_budget) {
+        secondaryOwners = new LinkedList<>();
+        teamCoaches = new HashMap<>();
+        teamPlayers = new HashMap<>();
+        teamMangers = new HashMap<>();
+        teamfields = new HashMap<>();
         this.seasons = seasons;
         this.currentSeason = currentSeason;
-        this.info = info;
-        //this.field = field;
+        this.Name = Name;
         this.owner = owner;
         this.status = status;
         this.score = score;
@@ -100,7 +98,7 @@ public class Team {
                 SystemLog.getInstance().UpdateLog("New Player: "+asset.getClass().toString().toLowerCase()+" has been added to team: " +asset.getMyTeam() + "by" + member.getName());
             }
             if(asset instanceof Coach){
-                teamCoaches.put(asset.getAssetID(),asset);
+                teamCoaches.put(((Coach) asset).getRole(),asset);
                 SystemLog.getInstance().UpdateLog("New "+((Coach) asset).getRole()+" " +asset.getClass().toString().toLowerCase()+" has been added to team: " +asset.getMyTeam() + "by" + member.getName());
             }
             if(asset instanceof Field){
@@ -125,7 +123,7 @@ public class Team {
                 SystemLog.getInstance().UpdateLog("Player: "+asset.getClass().toString().toLowerCase()+" was removed from team: " +asset.getMyTeam() + "by" + member.getName());
             }
             if(asset instanceof Coach){
-                teamCoaches.put(asset.getAssetID(),asset);
+                teamCoaches.put(((Coach) asset).getRole(),asset);
                 SystemLog.getInstance().UpdateLog(((Coach) asset).getRole()+ " "+asset.getClass().toString().toLowerCase()+" has been added to team: " +asset.getMyTeam() + "by" + member.getName());
             }
             if(asset instanceof Field){
@@ -155,7 +153,7 @@ public class Team {
             if(asset instanceof Coach){
                 IAsset editedAsset = teamCoaches.get(asset.getAssetID());
                 editedAsset.edit(value);
-                teamCoaches.replace(asset.getAssetID(),editedAsset);
+                teamCoaches.replace(((Coach) asset).getRole(),editedAsset);
                 system.addTeamAssets(asset);
                 SystemLog.getInstance().UpdateLog("Coach: "+asset.getClass().toString().toLowerCase()+" asset was edited from team: " +asset.getMyTeam() + "by" + member.getName());
                 return true;
@@ -313,6 +311,26 @@ public class Team {
         return allTeamMangers;
     }
 
+    /**
+     * adding new coach to coach staff - if team already has coach in the new coach role it will override it
+     * @param teamManager
+     * @param newCoach
+     * @return
+     */
+    public boolean addCoach(TeamManager teamManager, IAsset newCoach) {
+        if(isTeamManager(teamManager)){
+            if(newCoach instanceof Coach){
+                if(teamCoaches.containsKey(((Coach) newCoach).getRole())){
+                    teamCoaches.replace(((Coach) newCoach).getRole(),newCoach);
+                }else{
+                    teamCoaches.put(((Coach) newCoach).getRole(),newCoach);
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**OPERATING PERSONAL PAGE - operated by team manager (with the right permissions)*/
     /**
      *  creating a new personal page, if the team already has personal page this will override it
@@ -461,7 +479,5 @@ public class Team {
     public void notifyTeam(IAlert newAlert, Game game) {
         info.notifyInfo(newAlert, game);
     }
-
-
 
 }
