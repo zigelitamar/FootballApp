@@ -41,6 +41,23 @@ public class Referee extends Member implements Observer {
         system.addReferee(this);
     }
 
+
+    /**10.2*/
+    public void watchGame(Game game){
+        boolean found = false;
+        for (int i = 0; i < games.size(); i++) {
+            if (games.get(i) == game){
+                found = true;
+                System.out.println("You're watching the game : team : " + game.getHome().getId() +" vs team : " + game.getAway().getId() );
+            }
+        }
+        if (!found){
+            System.out.println("You're not placed to this game ! ");
+        }
+    }
+
+
+
     //UC - 10.3
     public void addEventToGame(String eventType ,double minute, Game game, Player playerWhoCommit){
         AGameEvent event = stringToEvent(eventType,minute, playerWhoCommit);
