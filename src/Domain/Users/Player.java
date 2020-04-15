@@ -1,5 +1,6 @@
 package Domain.Users;
 
+import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.APersonalPageContent;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
@@ -8,31 +9,54 @@ import java.util.Date;
 
 public class Player extends Member implements IAsset {
     private int valAsset;
+    private int assetID;
     private Team myTeam;
     private String role;
     private PersonalInfo info;
     private Date DateOfBirth;
+    FootballManagmentSystem system = FootballManagmentSystem.getInstance();
 
     public Player(String name, int id, String password, int valAsset, Team myTeam, String role, Date dateOfBirth) {
         super(name, id, password);
         this.valAsset = valAsset;
         this.myTeam = myTeam;
         this.role = role;
+        assetID = system.generateAssetID();
+        system.addTeamAssets(this);
         DateOfBirth = dateOfBirth;
     }
 
+    /**
+     * creates personal page - if personal page already exists this will override it
+     * (constraint 4 - one personal page per member) NEED TO WARN MEMBER IN GUI
+     * @return - true if succeeded
+     */
     public boolean createPersonalPage(){
+        //todo WARN MEMBER ABOUT OVERRIDING
+        if(info!=null){
+            system.removePersonalPage(info);
+        }
         info = new PersonalInfo(this);
         return true;
     }
 
-    // UC - 4.2
+    /**
+     * adding content to personal page
+     * @param content - content of some kind to be added to personal page
+     * @return - true if succeeded
+     */
     public boolean addContentToPersonalPage(APersonalPageContent content){
+        if(info==null){
+            return false;
+        }
         return info.addContentToPage(this,content);
     }
 
     // UC - 4.1 (including getters and setters
     public boolean editProfile(String title, String val){
+        if(info==null){
+            return false;
+        }
         return info.editProfile(this, title,val);
     }
     /*getSet*/
@@ -67,6 +91,11 @@ public class Player extends Member implements IAsset {
 
     public void setDateOfBirth(Date dateOfBirth) {
         DateOfBirth = dateOfBirth;
+    }
+
+    @Override
+    public int getAssetID() {
+        return assetID;
     }
 
     @Override

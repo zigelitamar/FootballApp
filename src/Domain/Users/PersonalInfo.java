@@ -12,7 +12,8 @@ import java.util.Observable;
 public class PersonalInfo extends Observable{
 
     private int pageID;
-    private Member pageMemberOwner; /// Page owner: Player, Coach or TeamManager for team page
+    private Member pageMemberOwner; /**In case this is a coach/player personal page*/
+    private LinkedList<Member> teamPageMembersOwners; /**In case this is a team personal page*/
     private String pageTitle;
     private ProfileContent profile;
     private LinkedList <APersonalPageContent> pageContent;
@@ -28,23 +29,29 @@ public class PersonalInfo extends Observable{
     }
 
     public PersonalInfo(Member pageMemberOwner) {
-        this.pageMemberOwner=pageMemberOwner;
+        if(pageMemberOwner instanceof TeamManager){
+            teamPageMembersOwners = new LinkedList<>();
+            teamPageMembersOwners.add(pageMemberOwner);
+        }else {
+            this.pageMemberOwner = pageMemberOwner;
+        }
         this.pageTitle=pageTitle;
         FootballManagmentSystem footballManagmentSystem = FootballManagmentSystem.getInstance();
         this.pageID = footballManagmentSystem.generatePageID();
+        footballManagmentSystem.addPersonalPage(this);
         this.followers = new LinkedList<>();
     }
 
 
     /**
      * editing profile section in personal page
-     * @param memberEditing - must be owner member
+     * @param memberEditing - must be owner member (constraint 4.a.
      * @param title - info title
      * @param val - value
      * @return - true if succeeded
      */
     public boolean editProfile(Member memberEditing, String title, String val){
-        if(!memberEditing.equals(pageMemberOwner)){ //for constraint 4.a.
+        if(!isPageOwner(memberEditing)){ //for constraint 4.a.
             return false;
         }
         if(profile==null){
@@ -62,7 +69,7 @@ public class PersonalInfo extends Observable{
      * @return - true if succeeded
      */
     public boolean addContentToPage(Member memberContentMaker, APersonalPageContent content){
-        if(!memberContentMaker.equals(pageMemberOwner)){ //for constraint 4.a.
+        if(!isPageOwner(memberContentMaker)){ //for constraint 4.a.
             return false;
         }
         if(content instanceof ProfileContent){
@@ -113,12 +120,37 @@ public class PersonalInfo extends Observable{
 
     }
 
+    public boolean isPageOwner(Member member){
+        if(pageMemberOwner!=null){
+            return pageMemberOwner.equals(member);
+        }
+        if(teamPageMembersOwners!=null){
+            return teamPageMembersOwners.contains(member);
+        }
+        return false;
+    }
     /**
      * view the personal page
      */
     public void viewPersonalPage(){
         /// activate function from GUI
     }
+
+    /** TO BE USED ONLY BY TEAM*/
+    public void addTeamPageMemberOwner(Member pageMemberOwner) {
+        if(teamPageMembersOwners!=null){
+            if(!teamPageMembersOwners.contains(pageMemberOwner)) {
+                teamPageMembersOwners.add(pageMemberOwner);
+            }
+        }
+    }
+    /** TO BE USED ONLY BY TEAM*/
+    public void removeOwnerFromPageMemberOwner(Member member){
+        if(teamPageMembersOwners!=null){
+            teamPageMembersOwners.remove(member);
+        }
+    }
+
     public int getPageID() {
         return pageID;
     }
