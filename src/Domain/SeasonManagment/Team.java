@@ -6,8 +6,6 @@ import Domain.Users.Coach;
 import Domain.Users.TeamOwner;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Team {
@@ -22,10 +20,14 @@ public class Team {
     private TeamStatus status;
     private int score; //todo maybe nono
     private String id;
+    private String Name;
     private HashMap<Integer,Budget> year_budget;
-    private boolean isClosed;
+    private boolean isClosed; /// if team is closed it's idle for the season ,technical loss.
 
 
+    public String getName() {
+        return Name;
+    }
 
     /**
      * constructor
@@ -40,7 +42,7 @@ public class Team {
      * @param id
      * @param year_budget
      */
-    public Team(Coach coach, List<Season> seasons, Season currentSeason, PersonalInfo info, Field field, TeamOwner owner, TeamStatus status, int score, String id, HashMap year_budget) {
+    public Team(Coach coach, List<Season> seasons, Season currentSeason, PersonalInfo info, Field field, TeamOwner owner, TeamStatus status, int score, String id, HashMap year_budget,String name) {
         this.coach = coach;
         this.seasons = seasons;
         this.currentSeason = currentSeason;
@@ -50,6 +52,7 @@ public class Team {
         this.status = status;
         this.score = score;
         this.id = id;
+        this.Name = name;
         this.year_budget = year_budget;
     }
 

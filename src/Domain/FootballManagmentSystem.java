@@ -1,9 +1,6 @@
 package Domain;
 
-import Domain.SeasonManagment.IAsset;
-import Domain.SeasonManagment.Leaugue;
-import Domain.SeasonManagment.Season;
-import Domain.SeasonManagment.Team;
+import Domain.SeasonManagment.*;
 import Domain.Users.*;
 
 import java.util.*;
@@ -21,6 +18,7 @@ public class FootballManagmentSystem {
     private SystemManager firstSystemManager;
     private HashMap<Integer,PersonalInfo> personalPages = new HashMap<>();
     private static FootballManagmentSystem single_instance = new FootballManagmentSystem();
+    private List<ComplaintForm> allcomplaints = new ArrayList<>(); // username - complaints
 
 
     private FootballManagmentSystem(){
@@ -122,7 +120,7 @@ public class FootballManagmentSystem {
          * System Manager can Delete everyBody!
          * @param m
          */
-        public void RemoveMember(Member m){
+        public void removeMember(Member m){
             if(members.containsKey(m.getName())){
                 members.remove(m.getName());
                 SystemLog.getInstance().UpdateLog(m.getName()+"has been deleted from the system" );
@@ -134,7 +132,7 @@ public class FootballManagmentSystem {
         public void removeTeam(Team t){
             t.setClosed(true);
             SystemLog.getInstance().UpdateLog("has been deleted from the system" ); // again team name????
-            allTeams.remove(t);
+
         }
         public void removeAsset(IAsset asset){
             if(asset instanceof Player||asset instanceof Coach||asset instanceof TeamManager) {
@@ -169,6 +167,10 @@ public class FootballManagmentSystem {
             }
             return pageID;
         }
+
+        public Member getMemberByUserName(String name){
+            return members.get(name);
+        }
     /**
      * Assosiation - UC 3.6. the system needs to approve the new name of the member
      * @param mem - member wishes to change usser name
@@ -200,9 +202,13 @@ public class FootballManagmentSystem {
         member.setPassword(newPassowrd);
         return true;
     }
+    public void addComplaint( ComplaintForm comp){
+        allcomplaints.add(comp);
+    }
 
-
-
+    public List<ComplaintForm> getAllcomplaints() {
+        return allcomplaints;
+    }
 
     public static FootballManagmentSystem getInstance()
         {

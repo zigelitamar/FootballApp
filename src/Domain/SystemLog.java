@@ -1,9 +1,6 @@
 package Domain;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Date;
 
 public class SystemLog {
@@ -38,6 +35,14 @@ public class SystemLog {
             e1.printStackTrace();
         }
 
+    }
+    public String showLog() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(logfile));
+        String st="";
+        while((st += br.readLine()) !=null){
+
+        }
+        return st;
     }
 
 }
