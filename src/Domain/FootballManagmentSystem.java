@@ -28,7 +28,7 @@ public class FootballManagmentSystem {
         firstSystemManager = new SystemManager("aviluzon",1,"12345678") ;
         /*uc 1/
 
-        */
+         */
 
     }
     public Member login (String username , String password){
@@ -73,7 +73,7 @@ public class FootballManagmentSystem {
             allTeams.add(team);
             SystemLog.getInstance().UpdateLog("New team has been added to system by owner: "+ team.getOwner().getName());/////add TEam name to team and to log!
             return true;
-    }
+        }
 
     /**
      * teamOwner responsebillity
@@ -281,7 +281,7 @@ public class FootballManagmentSystem {
         }
 
 
-        public static FootballManagmentSystem getInstance()
+    public static FootballManagmentSystem getInstance()
         {
             if (single_instance == null)
                 single_instance = new FootballManagmentSystem();
