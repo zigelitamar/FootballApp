@@ -1,5 +1,6 @@
 package Domain.Users;
 
+import Domain.SeasonManagment.BudgetActivity;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
 
@@ -65,7 +66,7 @@ public class TeamOwner extends Member {
      * @param value - his asset value
      * @return - true if succeeded
      */
-    public boolean assignNewTeam(Member newTeamManager,int value){
+    public boolean assignNewTeamManger(Member newTeamManager,int value){
         return team.addNewTeamManger(this, newTeamManager,value);
     }
 
@@ -85,10 +86,11 @@ public class TeamOwner extends Member {
      * @param teamManager - team manager to be removed
      * @return - true if succeeded
      */
-    public boolean removeTeamManage(TeamManager teamManager){
+    public boolean removeTeamManager(TeamManager teamManager){
         return team.removeTeamManager(this,teamManager);
     }
 
+    public boolean addBudgetActivity(BudgetActivity description,int amount)
     public Team getTeam() {
         return team;
     }

@@ -26,7 +26,7 @@ public class Team {
     private HashMap <Integer,IAsset> teamPlayers; /** the key is asset ID*/
     private HashMap <Integer,IAsset> teamfields; /** the key is asset ID*/
     private HashMap <Integer,TeamManager> teamMangers; /** the key is asset ID*/
-    private HashMap <String,IAsset> teamCoaches; /** the key is Manager role i.e: "Head Coach" or "First Assistant Coach" or "Second Assistant Coach" "First Goal-Keepers Coach*/
+    private HashMap <CoachRole,IAsset> teamCoaches; /** the key is Manager role i.e: "Head Coach" or "First Assistant Coach" or "Second Assistant Coach" "First Goal-Keepers Coach*/
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
 
     /**
