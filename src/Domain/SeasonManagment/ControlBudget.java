@@ -43,7 +43,7 @@ public class ControlBudget {
 
 
 
-    private Budget findQuarter(Date date){
+    public Budget findQuarter(Date date){
         int month = date.getMonth();
 
         //January, February, March
