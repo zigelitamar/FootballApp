@@ -5,10 +5,7 @@ import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.APersonalPageContent;
 import Domain.SystemLog;
 import Domain.Users.*;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Team {
 
@@ -400,6 +397,24 @@ public class Team {
         info.removeOwnerFromPageMemberOwner(teamManager);
         return true;
     }
+
+    /**
+     * this func add a budget activity to team budget
+     * @param teamOwner
+     * @param date
+     * @param s
+     * @param i
+     * @return true if succeeded
+     */
+    public boolean addBudgetActivity(TeamOwner teamOwner, Date date, String s, int i) {
+        if(isTeamOwner(teamOwner)){
+            if(controlBudget!=null){
+                controlBudget.addFinanceActivity(date,s,i);
+                return true;
+            }
+        }
+        return false;
+    }
     public boolean isClosed() {
         return isClosed;
     }
@@ -470,4 +485,6 @@ public class Team {
     public ControlBudget getControlBudget() {
         return controlBudget;
     }
+
+
 }

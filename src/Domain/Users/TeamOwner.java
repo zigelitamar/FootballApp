@@ -3,9 +3,7 @@ package Domain.Users;
 import Domain.SeasonManagment.BudgetActivity;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 public class TeamOwner extends Member {
 
@@ -90,7 +88,21 @@ public class TeamOwner extends Member {
         return team.removeTeamManager(this,teamManager);
     }
 
-    public boolean addBudgetActivity(BudgetActivity description,int amount)
+    /**
+     * UC 6.7 - add budget activity
+     * the func checks if activity is income of outcome and handle accordingly
+     * @param date
+     * @param description
+     * @param amount
+     * @return true if succeeded
+     */
+    public boolean addBudgetActivity(Date date, BudgetActivity description,int amount){
+        if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries){
+            return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
+        }else{
+            return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
+        }
+    }
     public Team getTeam() {
         return team;
     }
