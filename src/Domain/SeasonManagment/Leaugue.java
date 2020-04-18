@@ -16,6 +16,7 @@ public class Leaugue {
         this.system = system1;
         FootballManagmentSystem footballManagmentSystem1 = FootballManagmentSystem.getInstance();
         this.footballManagmentSystem = footballManagmentSystem1;
+        seasons = new HashMap<>();
     }
 
 
