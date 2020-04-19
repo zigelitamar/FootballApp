@@ -121,6 +121,12 @@ public class TeamManager extends Member implements IAsset {
         return member.equals(teamOwnerAssignedThis);
     }
 
+    public void resetPermissions() {
+        for (String permission: permissions.keySet()) {
+            permissions.replace(permission,false);
+        }
+    }
+
     public Team getMyTeam() {
         return myTeam;
     }
@@ -143,4 +149,6 @@ public class TeamManager extends Member implements IAsset {
     public int getValue() {
         return valAsset;
     }
+
+
 }

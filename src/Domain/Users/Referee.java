@@ -62,6 +62,7 @@ public class Referee extends Member implements Observer {
     public void addEventToGame(String eventType ,double minute, Game game, Player playerWhoCommit){
         AGameEvent event = stringToEvent(eventType,minute, playerWhoCommit);
         game.addEventToEventLog(event);
+        SystemLog.getInstance().UpdateLog("new event: "+ eventType +"was added by "+ this.getName() );
     }
 
 
@@ -104,6 +105,7 @@ public class Referee extends Member implements Observer {
         }else{
             game.event_logger.events.remove(oldEvent);
             game.event_logger.events.add(newEvent);
+            SystemLog.getInstance().UpdateLog("event edited: "+ newEvent.getClass() +"was edited by "+ this.getName() );
         }
 
 
@@ -131,7 +133,7 @@ public class Referee extends Member implements Observer {
             }
             report += "END OF REPORT";
             SystemLog log = SystemLog.getInstance();
-            log.UpdateLog(report);
+            log.UpdateLog("report to a game was added by " +this.getName());
         }else{
             System.out.println("Can't write report ! ");
         }
