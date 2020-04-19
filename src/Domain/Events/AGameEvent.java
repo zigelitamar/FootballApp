@@ -15,6 +15,10 @@ public abstract class AGameEvent implements IEvent {
         this.playerWhocommit = playerWhocommit;
     }
 
+    public AGameEvent(double gameMinute) {
+        this.gameMinute = gameMinute;
+    }
+
     public double getGameMinute() {
         return gameMinute;
     }

@@ -3,7 +3,17 @@ package Domain.Events;
 import Domain.Users.Player;
 
 public class Substitution extends AGameEvent  implements IEvent {
-    public Substitution(double gameMinute, Player playerWhocommit) {
-        super(gameMinute, playerWhocommit);
+    Player goesOut;
+    Player goesIn;
+
+
+    public Substitution(double gameMinute, Player in,Player out) {
+        super(gameMinute);
+        this.goesIn = in;
+        this.goesOut = out;
+    }
+
+    public Substitution(double gameMinute) {
+        super(gameMinute);
     }
 }

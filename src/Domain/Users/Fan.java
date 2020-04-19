@@ -15,11 +15,10 @@ public class Fan extends Member implements Observer {
     private HashMap<PersonalInfo,Boolean> personalPagesFollowed; //Tracking personal pages, boolean represent alerts on/off
     private LinkedList <String> searchHistory;
     private FootballManagmentSystem system;
-
     public Fan(String name, int id, String password) {
         super(name, id, password);
+        system = FootballManagmentSystem.getInstance();
        personalPagesFollowed=new HashMap<>();
-       system = FootballManagmentSystem.getInstance();
     }
 
     /**

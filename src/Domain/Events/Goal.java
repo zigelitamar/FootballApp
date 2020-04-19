@@ -6,4 +6,8 @@ public class Goal extends AGameEvent implements IEvent {
     public Goal(double gameMinute, Player playerWhocommit) {
         super(gameMinute, playerWhocommit);
     }
+
+    public Goal(double gameMinute) {
+        super(gameMinute);
+    }
 }
