@@ -40,6 +40,7 @@ public class RefereeTest {
     //// FIXME: 17/04/2020 - doesnt work like the fan,need fileOutputStream
     public void changeName() {
         refereeTest.changeName("Odelia");
+        String a = refereeTest.getName();
         assertEquals("Odelia",refereeTest.getName());
     }
 
