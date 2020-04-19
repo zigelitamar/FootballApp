@@ -6,6 +6,8 @@ import Domain.PersonalPages.APersonalPageContent;
 import Domain.PersonalPages.ProfileContent;
 import Domain.SeasonManagment.Game;
 import Domain.FootballManagmentSystem;
+import Domain.SystemLog;
+
 import java.util.LinkedList;
 import java.util.Observable;
 
@@ -39,6 +41,7 @@ public class PersonalInfo extends Observable{
         FootballManagmentSystem footballManagmentSystem = FootballManagmentSystem.getInstance();
         this.pageID = footballManagmentSystem.generatePageID();
         footballManagmentSystem.addPersonalPage(this);
+        SystemLog.getInstance().UpdateLog(this.pageMemberOwner.getName() + " created his personal page");
         this.followers = new LinkedList<>();
     }
 
@@ -58,6 +61,7 @@ public class PersonalInfo extends Observable{
             return false;
         }else{
             profile.addFeatureToProfile(title,val);
+            SystemLog.getInstance().UpdateLog(this.pageMemberOwner.getName() + " edited content on personal page");
             return true;
         }
     }
@@ -77,6 +81,7 @@ public class PersonalInfo extends Observable{
         }else {
             pageContent.add(content);
         }
+        SystemLog.getInstance().UpdateLog(this.pageMemberOwner.getName() + " added content to personal page");
         IAlert newContentAlert = new PersonalPageAlert(this,content);
         notifyFansOnNewContent(newContentAlert);
         return true;

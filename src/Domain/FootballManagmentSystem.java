@@ -1,9 +1,6 @@
 package Domain;
 
-import Domain.SeasonManagment.IAsset;
-import Domain.SeasonManagment.Leaugue;
-import Domain.SeasonManagment.Season;
-import Domain.SeasonManagment.Team;
+import Domain.SeasonManagment.*;
 import Domain.Users.*;
 
 import java.util.*;
@@ -21,6 +18,7 @@ public class FootballManagmentSystem extends TimerTask{
     private SystemManager firstSystemManager;
     private HashMap<Integer,PersonalInfo> personalPages = new HashMap<>();
     private static FootballManagmentSystem single_instance = new FootballManagmentSystem();
+    private List<ComplaintForm> allcomplaints = new ArrayList<>(); // username - complaints
 
 
     private FootballManagmentSystem(){
@@ -202,6 +200,7 @@ public class FootballManagmentSystem extends TimerTask{
      */
     public boolean addPersonalPage(PersonalInfo personalInfo){
             personalPages.put(personalInfo.getPageID(),personalInfo);
+
             return true;
         }
 
@@ -259,6 +258,9 @@ public class FootballManagmentSystem extends TimerTask{
             return pageID;
         }
 
+        public Member getMemberByUserName(String name){
+            return members.get(name);
+        }
     /**
      * Assosiation - UC 3.6. the system needs to approve the new name of the member
      * @param mem - member wishes to change usser name
@@ -338,6 +340,9 @@ public class FootballManagmentSystem extends TimerTask{
             return null;
         }
 
+    public List<ComplaintForm> getAllcomplaints() {
+        return allcomplaints;
+    }
 
     public static FootballManagmentSystem getInstance()
         {
@@ -409,5 +414,9 @@ public class FootballManagmentSystem extends TimerTask{
 
     public void addTeam(Team team) {
             allTeams.add(team);
+    }
+
+    public void addComplaint(ComplaintForm complaintForm) {
+            allcomplaints.add(complaintForm);
     }
 }
