@@ -8,6 +8,7 @@ import Domain.SeasonManagment.Season;
 import Domain.SeasonManagment.Team;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 
 public class Guest extends GeneralUser {
 
@@ -35,7 +36,7 @@ public class Guest extends GeneralUser {
      * @param password
      * @return true if login succeeded
      */
-    public Member login(String username , String password){
+    public LinkedList<Member> login(String username , String password){
         return system.login(username,password);
     }
 

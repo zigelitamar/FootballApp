@@ -10,18 +10,17 @@ public class Coach extends Member implements IAsset {
     private int valAsset;
     private Team myTeam;
     private String training;
-    private String role; /**MUST be from a unified role options list*/
+    private CoachRole role;
     private PersonalInfo info;
     private int assetID;
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
 
-    public Coach(String name,int id,String password,int val, Team myTeam, String training,String role, PersonalInfo info) {
+    public Coach(String name,int id,String password,int val, Team myTeam, String training,CoachRole role) {
         super(name,id,password);
         this.valAsset = val;
         this.myTeam = myTeam;
         this.training = training;
         this.role=role;
-        this.info = info;
         this.assetID=system.generateAssetID();
         system.addTeamAssets(this);
     }
@@ -77,11 +76,11 @@ public class Coach extends Member implements IAsset {
         this.training = training;
     }
 
-    public String getRole() {
+    public CoachRole getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(CoachRole role) {
         this.role = role;
     }
 
