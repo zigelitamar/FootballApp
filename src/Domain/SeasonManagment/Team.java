@@ -66,31 +66,12 @@ public class Team {
         return false;
     }
 
-    /**
-     * returns the budget to the relevant quarter
-     * @param quarter
-     * @return
-     */
-//    public Budget getBudget(int quarter) {
-//
-//        if ((quarter >=1) && (quarter <=4)) {
-//            return budget.get(quarter);
-//        }
-//        else{
-//            System.out.println("Illegal number entered");
-//            return null;
-//        }
-//    }
 
+    public int getCurrentBudget() {
+        Date date = new Date();
+        return controlBudget.getCurrentBudget(date);
+    }
 
-    /**
-     * adds budget
-     * @param budget
-     * @param quarter
-     */
-//    public void setBudget(ControlBudget budget, int quarter){
-//        year_budget.put(quarter,budget);
-//    }
 
 
     /**
@@ -225,7 +206,9 @@ public class Team {
             ///todo- throw exception TeamNotActive;
         }
         if(isTeamOwner(teamOwner)){
-            system.RemoveMember(teamOwnerToRemove);
+            LinkedList<Member> list = new LinkedList<>();
+            list.add(teamOwnerToRemove);
+            system.RemoveMember(list);
             IAlert teamAlert = new TeamManagmentAlert();
             teamOwnerToRemove.handleAlert(teamAlert); /**notify the team owner he is not team owner anymore*/
             secondaryOwners.remove(teamOwnerToRemove);
@@ -296,8 +279,11 @@ public class Team {
             ///todo- throw exception TeamNotActive;
         }
         if(isTeamOwner(teamOwner)){
+
             if(teamManager.isAutorizedTeamOwner(teamOwner)){
-                system.RemoveMember(teamManager);
+                LinkedList<Member> list = new LinkedList<>();
+                list.add(teamManager);
+                system.RemoveMember(list);
                 teamMangers.remove(teamManager.getAssetID());
                 return true;
             }
@@ -596,10 +582,8 @@ public class Team {
         return Name;
     }
 
+
     public ControlBudget getControlBudget() {
         return controlBudget;
     }
-
-
-
 }

@@ -41,9 +41,14 @@ public class ControlBudget {
     }
 
 
+    public int getCurrentBudget(Date date){
+        Budget budget = findQuarter(date);
+        return budget.calculateFinalBudget();
+    }
 
 
-    private Budget findQuarter(Date date){
+
+    public Budget findQuarter(Date date){
         int month = date.getMonth();
 
         //January, February, March
