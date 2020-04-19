@@ -16,7 +16,7 @@ public class FootballManagmentSystem extends TimerTask{
     private List<Team> allTeams= new ArrayList<>();
     private List<Referee> allRefs= new ArrayList<>();
     private HashMap<Integer,IAsset> allAssests= new HashMap<>(); // Stadiums , players and coaches? : all assets just for records
-    private HashMap<String, Member> members = new HashMap<String, Member>();
+    private HashMap<String, LinkedList<Member>> members = new HashMap<>();
     private List<SystemManager> allInCharge = new ArrayList<>();
     private SystemManager firstSystemManager;
     private HashMap<Integer,PersonalInfo> personalPages = new HashMap<>();
@@ -34,21 +34,38 @@ public class FootballManagmentSystem extends TimerTask{
 
 
 
-    public Member login (String username , String password){
-            Member logging = members.get(username);
+    public LinkedList<Member> login (String username , String password){
+            LinkedList <Member> logging = members.get(username);
             if (logging == null){
                 return null; // noUserNAME
             }
-            if(logging.getPassword().equals(password)){
-                logging.setActive(true);
-                return logging;
-            }else{
-                return null; // WrongPassWORD
+            boolean correctPW=false;
+        for (Member member : logging) {
+            if(member.getPassword().equals(password)){
+                correctPW=true;
+                for (Member member1 : logging) {
+                    member1.setActive(true);
+                }
+            }
+        }
+        if(correctPW){
+            return logging;
+        }else{
+            return null;
         }
     }
-    public void logOut(Member mem){
-        mem.setActive(false);
-
+    public boolean logOut(Member mem){
+        if(mem==null){
+            return false;
+        }
+        LinkedList <Member> memberAccounts = members.get(mem.getName());
+        if(memberAccounts==null){
+            return false;
+        }
+        for (Member member: memberAccounts) {
+            member.setActive(false);
+        }
+        return true;
     }
 
     /**
@@ -63,7 +80,9 @@ public class FootballManagmentSystem extends TimerTask{
             return false; //username is taken;
         } else {
             Member addTo = new Fan(userName, id, pass);
-            members.put(userName, addTo);
+            LinkedList <Member> memberAccounts = new LinkedList<>();
+            memberAccounts.add(addTo);
+            members.put(userName,memberAccounts);
             SystemLog.getInstance().UpdateLog("New fan member has been added to system - username is: " + userName);
             return true; // added succesfully
         }
@@ -100,8 +119,18 @@ public class FootballManagmentSystem extends TimerTask{
      * @param ref
      */
     public void addReferee(Referee ref){
-        members.put(ref.getName(),ref);
-        SystemLog.getInstance().UpdateLog("New referee has been added to the league" );
+        if(members.containsKey(ref.getName())){
+            if(!members.get(ref.getName()).contains(ref)){
+                LinkedList <Member> membersAccounts = members.get(ref.getName());
+                membersAccounts.add(ref);
+                members.replace(ref.getName(),membersAccounts);
+                SystemLog.getInstance().UpdateLog("New referee has been added to the league" );
+            }
+        }else{
+            LinkedList <Member> membersAccounts = new LinkedList<>();
+            membersAccounts.add(ref);
+            members.put(ref.getName(),membersAccounts);
+        }
         allRefs.add(ref);
     }
 
@@ -240,25 +269,28 @@ public class FootballManagmentSystem extends TimerTask{
             if(members.containsKey(name)){
                 return false;
             }
-            Member member = members.get(mem.getName());
-            if(member==null){
+            LinkedList<Member> memberAccounts = members.get(mem.getName());
+            if(memberAccounts==null){
                 return false;
             }
             String oldName = mem.getName();
             members.remove(oldName);
-            member.setName(name);
-            members.put(name,member);
+            for (Member member: memberAccounts) {
+                member.setName(name);
+            }
+            members.put(name,memberAccounts);
             return true;
         }
 
         public boolean changeUserPassword(Member mem, String newPassowrd){
-            Member member = members.get(mem.getName());
-            if(member==null){
+            LinkedList <Member> memberAccounts = members.get(mem.getName());
+            if(memberAccounts==null){
                 return false;
             }
-            String name = mem.getName();
-            members.remove(name);
-            member.setPassword(newPassowrd);
+            for (Member member: memberAccounts) {
+                member.setPassword(newPassowrd);
+            }
+            members.replace(mem.getName(),memberAccounts);
             return true;
         }
 
@@ -268,12 +300,16 @@ public class FootballManagmentSystem extends TimerTask{
      * @param team - the team he will own
      * @return true if succeeded
      */
-        public Member makeMemberTeamOwner(Member newOwner,Team team){
+        public LinkedList<Member> makeMemberTeamOwner(Member newOwner,Team team){
             if(members.containsKey(newOwner.getName())) {
-                newOwner = new TeamOwner(newOwner.getName(),newOwner.getId(),newOwner.getPassword(),team);
-                members.replace(newOwner.getName(),newOwner);
-                SystemLog.getInstance().UpdateLog(newOwner.getName()+"has become team owner of : " + team.getName() );
-                return newOwner;
+                TeamOwner newOwnerAccount = new TeamOwner(newOwner.getName(),newOwner.getId(),newOwner.getPassword(),team);
+                LinkedList <Member> memberAccounts = members.get(newOwner.getName());
+                if(memberAccounts!=null&&(!memberAccounts.contains(newOwnerAccount))) {
+                    memberAccounts.add(newOwnerAccount);
+                    members.replace(newOwner.getName(), memberAccounts);
+                    SystemLog.getInstance().UpdateLog(newOwner.getName() + "has become team owner of : " + team.getName());
+                    return memberAccounts;
+                }
             }
             return null;
         }
@@ -288,15 +324,16 @@ public class FootballManagmentSystem extends TimerTask{
      * @param value - his asset value
      * @return - the new team manager object
      */
-        public Member makeMemberTeamManger(Member newManager, Team team,int value){
+        public LinkedList<Member> makeMemberTeamManger(Member newManager, Team team,int value){
             if(members.containsKey(newManager.getName())){
-                String newUserName = newManager.getName() + "MangerUser";
-                if(members.containsKey(newUserName)){
-                    return null;
+                LinkedList <Member> memberAccounts = members.get(newManager.getName());
+                TeamManager newManagerAccount = new TeamManager(newManager.getName(),newManager.getId(),newManager.getPassword(),value,team);
+                if(memberAccounts!=null&&(!memberAccounts.contains(newManagerAccount))){
+                    memberAccounts.add(newManagerAccount);
+                    members.replace(newManager.getName(),memberAccounts);
+                    SystemLog.getInstance().UpdateLog(newManager.getName() + "has become team manager of : " + team.getName());
+                    return memberAccounts;
                 }
-                Member newManagerUser= new TeamManager(newUserName,newManager.getId(),newManager.getPassword(),value,team);
-                members.put(newUserName,newManagerUser);
-                return newManagerUser;
             }
             return null;
         }
@@ -322,7 +359,7 @@ public class FootballManagmentSystem extends TimerTask{
             return allAssests;
         }
 
-        public HashMap<String, Member> getMembers() {
+        public HashMap<String,LinkedList <Member>> getMembers() {
             return members;
         }
 

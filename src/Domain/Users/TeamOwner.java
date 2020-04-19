@@ -1,10 +1,11 @@
 package Domain.Users;
 
+import Domain.SeasonManagment.BudgetActivity;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
+import Domain.SeasonManagment.TeamStatus;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 public class TeamOwner extends Member {
 
@@ -65,7 +66,7 @@ public class TeamOwner extends Member {
      * @param value - his asset value
      * @return - true if succeeded
      */
-    public boolean assignNewTeam(Member newTeamManager,int value){
+    public boolean assignNewTeamManger(Member newTeamManager,int value){
         return team.addNewTeamManger(this, newTeamManager,value);
     }
 
@@ -85,10 +86,34 @@ public class TeamOwner extends Member {
      * @param teamManager - team manager to be removed
      * @return - true if succeeded
      */
-    public boolean removeTeamManage(TeamManager teamManager){
+    public boolean removeTeamManager(TeamManager teamManager){
         return team.removeTeamManager(this,teamManager);
     }
 
+    /**
+     * UC 6.6 - change team status - for both close and reopen
+     * @param newStatus - new status
+     * @return - true if succeeded
+     */
+    public boolean closeTeam(TeamStatus newStatus){
+        return team.changeTeamStatus(this,newStatus);
+    }
+
+    /**
+     * UC 6.7 - add budget activity
+     * the func checks if activity is income of outcome and handle accordingly
+     * @param date
+     * @param description
+     * @param amount
+     * @return true if succeeded
+     */
+    public boolean addBudgetActivity(Date date, BudgetActivity description,int amount){
+        if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries){
+            return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
+        }else{
+            return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
+        }
+    }
     public Team getTeam() {
         return team;
     }

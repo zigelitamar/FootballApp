@@ -13,11 +13,14 @@ public abstract class Member extends GeneralUser {
     private String password;
     private Queue<IAlert> alertsList;
     private boolean isActive;
+    private boolean alertViaMail;
+
     public Member(String name,int id, String password) {
         this.name = name;
         this.id = id;
         this.password = password;
         isActive = false;
+        alertViaMail =false;
     }
     public Member(){
         alertsList = new LinkedList<>();
@@ -31,11 +34,19 @@ public abstract class Member extends GeneralUser {
         isActive = active;
     }
 
+    public void setAlertViaMail(boolean alertViaMail) {
+        this.alertViaMail = alertViaMail;
+    }
+
     /**
      * this func address the requirement to get alerts when offline. when offline alerts will be added to the queue that will be shown to user once online.
      * @param newAlert
      */
     public void handleAlert(IAlert newAlert){
+        if(alertViaMail){
+            //send via mail
+            return;
+        }
         if(isActive){
             //showAlert
         }else{
