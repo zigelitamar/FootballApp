@@ -3,6 +3,8 @@ package Domain.Users;
 import Domain.SeasonManagment.BudgetActivity;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
+import Domain.SeasonManagment.TeamStatus;
+
 import java.util.Date;
 
 public class TeamOwner extends Member {
@@ -86,6 +88,15 @@ public class TeamOwner extends Member {
      */
     public boolean removeTeamManager(TeamManager teamManager){
         return team.removeTeamManager(this,teamManager);
+    }
+
+    /**
+     * UC 6.6 - change team status - for both close and reopen
+     * @param newStatus - new status
+     * @return - true if succeeded
+     */
+    public boolean closeTeam(TeamStatus newStatus){
+        return team.changeTeamStatus(this,newStatus);
     }
 
     /**

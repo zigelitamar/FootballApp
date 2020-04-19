@@ -15,13 +15,12 @@ public class Coach extends Member implements IAsset {
     private int assetID;
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
 
-    public Coach(String name,int id,String password,int val, Team myTeam, String training,CoachRole role, PersonalInfo info) {
+    public Coach(String name,int id,String password,int val, Team myTeam, String training,CoachRole role) {
         super(name,id,password);
         this.valAsset = val;
         this.myTeam = myTeam;
         this.training = training;
         this.role=role;
-        this.info = info;
         this.assetID=system.generateAssetID();
         system.addTeamAssets(this);
     }
