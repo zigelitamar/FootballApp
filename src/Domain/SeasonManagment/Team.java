@@ -1,14 +1,14 @@
 package Domain.SeasonManagment;
 
 import Domain.Alerts.IAlert;
+import Domain.Alerts.TeamManagmentAlert;
 import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.APersonalPageContent;
 import Domain.SystemLog;
 import Domain.Users.*;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+
+import javax.print.attribute.standard.MediaSize;
+import java.util.*;
 
 public class Team {
 
@@ -30,7 +30,7 @@ public class Team {
     private HashMap <Integer,IAsset> teamPlayers; /** the key is asset ID*/
     private HashMap <Integer,IAsset> teamfields; /** the key is asset ID*/
     private HashMap <Integer,TeamManager> teamMangers; /** the key is asset ID*/
-    private HashMap <String,IAsset> teamCoaches; /** the key is Manager role i.e: "Head Coach" or "First Assistant Coach" or "Second Assistant Coach" "First Goal-Keepers Coach*/
+    private HashMap <CoachRole,IAsset> teamCoaches; /** the key is Manager role i.e: "Head Coach" or "First Assistant Coach" or "Second Assistant Coach" "First Goal-Keepers Coach*/
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
 
     /**
@@ -57,6 +57,13 @@ public class Team {
 
     public int getId() {
         return id;
+    }
+
+    public boolean isActive(){
+        if(status==TeamStatus.Active){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -93,21 +100,24 @@ public class Team {
      * @return - true if succeeded
      */
     public boolean addAsset(Member member,IAsset asset) {
-        if(isTeamOwner(member)) {
-            if(asset instanceof Player) {
-                teamPlayers.put(asset.getAssetID(),asset);
-                SystemLog.getInstance().UpdateLog("New Player: "+asset.getClass().toString().toLowerCase()+" has been added to team: " +asset.getMyTeam() + "by" + member.getName());
-            }
-            if(asset instanceof Coach){
-                teamCoaches.put(((Coach) asset).getRole(),asset);
-                SystemLog.getInstance().UpdateLog("New "+((Coach) asset).getRole()+" " +asset.getClass().toString().toLowerCase()+" has been added to team: " +asset.getMyTeam() + "by" + member.getName());
-            }
-            if(asset instanceof Field){
-                teamfields.put(asset.getAssetID(),asset);
-                SystemLog.getInstance().UpdateLog("New Field: "+asset.getClass().toString().toLowerCase()+" has been added to team: " +asset.getMyTeam() + "by" + member.getName());
-            }
-            return true;
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
         }
+            if (isTeamOwner(member)) {
+                if (asset instanceof Player) {
+                    teamPlayers.put(asset.getAssetID(), asset);
+                    SystemLog.getInstance().UpdateLog("New Player: " + asset.getClass().toString().toLowerCase() + " has been added to team: " + asset.getMyTeam() + "by" + member.getName());
+                }
+                if (asset instanceof Coach) {
+                    teamCoaches.put(((Coach) asset).getRole(), asset);
+                    SystemLog.getInstance().UpdateLog("New " + ((Coach) asset).getRole() + " " + asset.getClass().toString().toLowerCase() + " has been added to team: " + asset.getMyTeam() + "by" + member.getName());
+                }
+                if (asset instanceof Field) {
+                    teamfields.put(asset.getAssetID(), asset);
+                    SystemLog.getInstance().UpdateLog("New Field: " + asset.getClass().toString().toLowerCase() + " has been added to team: " + asset.getMyTeam() + "by" + member.getName());
+                }
+                return true;
+            }
         return false;
     }
 
@@ -118,6 +128,9 @@ public class Team {
      * @return true if succeeded
      */
     public boolean removeAssetFromTeam(Member member, IAsset asset) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(isTeamOwner(member)){
             if(asset instanceof Player) {
                 teamPlayers.put(asset.getAssetID(),asset);
@@ -142,6 +155,9 @@ public class Team {
      * @return true if succeeded
      */
     public boolean editAsset(Member member,IAsset asset, int value) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(isTeamOwner(member)){
             if(asset instanceof Player){
                 IAsset editedAsset = teamPlayers.get(asset.getAssetID());
@@ -178,14 +194,21 @@ public class Team {
      * @return true if succeeded
      */
     public boolean addNewTeamOwner(Member ownerAssigning,Member newOwner) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(isTeamOwner(newOwner)){
             return false;
         }
         if(isTeamOwner(ownerAssigning)){
-            TeamOwner newTeamOwner = (TeamOwner)system.makeMemberTeamOwner(newOwner,this);
-            if(!(newTeamOwner==null)){
-                secondaryOwners.add(newTeamOwner);
-                return true;
+            LinkedList<Member>  memberAccounts = system.makeMemberTeamOwner(newOwner,this);
+            if(memberAccounts!=null) {
+                for (Member member : memberAccounts) {
+                    if (member instanceof TeamOwner) {
+                        secondaryOwners.add((TeamOwner) member);
+                        return true;
+                    }
+                }
             }
         }
         return false;
@@ -198,8 +221,13 @@ public class Team {
      * @return true if succeeded
      */
     public boolean removeTeamOwner(TeamOwner teamOwnerToRemove, TeamOwner teamOwner) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(isTeamOwner(teamOwner)){
             system.RemoveMember(teamOwnerToRemove);
+            IAlert teamAlert = new TeamManagmentAlert();
+            teamOwnerToRemove.handleAlert(teamAlert); /**notify the team owner he is not team owner anymore*/
             secondaryOwners.remove(teamOwnerToRemove);
             return true;
         }
@@ -214,16 +242,22 @@ public class Team {
      * @return - true if succeeded
      */
     public boolean addNewTeamManger(TeamOwner teamOwner, Member newTeamManager,int value) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(isTeamOwner(teamOwner)){
             if(isTeamManager(newTeamManager)){
                 return false;
             }
-            TeamManager newTeamManagerUser= (TeamManager) system.makeMemberTeamManger(newTeamManager,this,value);
-            if(newTeamManagerUser==null){
-                return false;
+            LinkedList<Member>  memberAccounts = system.makeMemberTeamManger(newTeamManager,this,value);
+            if(memberAccounts!=null) {
+                for (Member member : memberAccounts) {
+                    if (member instanceof TeamManager) {
+                        teamMangers.put(((TeamManager) member).getAssetID(),(TeamManager)member);
+                        return true;
+                    }
+                }
             }
-            teamMangers.put(newTeamManagerUser.getAssetID(),newTeamManagerUser);
-            return true;
         }
         return false;
 
@@ -238,6 +272,9 @@ public class Team {
      * @return
      */
     public boolean editManagerPermissions(TeamOwner teamOwner, TeamManager teamManager, String permissionsType, boolean permissionBol) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(teamMangers.containsKey(teamManager.getAssetID())){
             TeamManager editedTeamManger = teamMangers.get(teamManager.getAssetID());
             if(editedTeamManger.editPermissions(teamOwner,permissionsType,permissionBol)){
@@ -255,6 +292,9 @@ public class Team {
      * @return - true if succeeded
      */
     public boolean removeTeamManager(TeamOwner teamOwner, TeamManager teamManager) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(isTeamOwner(teamOwner)){
             if(teamManager.isAutorizedTeamOwner(teamOwner)){
                 system.RemoveMember(teamManager);
@@ -319,6 +359,9 @@ public class Team {
      * @return
      */
     public boolean addCoach(TeamManager teamManager, IAsset newCoach) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(isTeamManager(teamManager)){
             if(newCoach instanceof Coach){
                 if(teamCoaches.containsKey(((Coach) newCoach).getRole())){
@@ -340,6 +383,9 @@ public class Team {
      * @return - true if succeeded
      */
     public boolean createPersonalPage(TeamManager teamManager) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(isTeamManager(teamManager)){
             if(info!=null){
                 system.removePersonalPage(info);
@@ -357,6 +403,9 @@ public class Team {
      * @return
      */
     public boolean addContentToPersonalPage(TeamManager teamManager, APersonalPageContent content) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(isTeamManager(teamManager)){
             if(info==null){
                 return false;
@@ -374,6 +423,9 @@ public class Team {
      * @return
      */
     public boolean editPersonalPageProfile(TeamManager teamManager, String title, String val) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         if(isTeamManager(teamManager)){
             if(info==null){
                 return false;
@@ -388,6 +440,9 @@ public class Team {
      * @return -
      */
     public boolean addPersonalPageEditor(TeamManager teamManager){
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         info.addTeamPageMemberOwner(teamManager);
         return true;
     }
@@ -397,8 +452,86 @@ public class Team {
      * @return
      */
     public boolean removePersonalPageEditor(TeamManager teamManager){
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
         info.removeOwnerFromPageMemberOwner(teamManager);
         return true;
+    }
+
+    /**
+     * this func add a budget activity to team budget
+     * @param teamOwner
+     * @param date
+     * @param s
+     * @param i
+     * @return true if succeeded
+     */
+    public boolean addBudgetActivity(TeamOwner teamOwner, Date date, String s, int i) {
+        if(!isActive()){
+            ///todo- throw exception TeamNotActive;
+        }
+        if(isTeamOwner(teamOwner)){
+            if(controlBudget!=null){
+                controlBudget.addFinanceActivity(date,s,i);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * this func runs only by team owner, get status and changes the team status accordingly, in addition
+     * it notify to everyone who needs about the status change
+     * @param teamOwner - member operating
+     * @param newStaus - Active/Closed
+     * @return - true if succeeded
+     */
+    public boolean changeTeamStatus(TeamOwner teamOwner,TeamStatus newStaus) {
+        if(isTeamOwner(teamOwner)){
+            if(status==newStaus){
+                return false;
+            }
+            status = newStaus;
+            if(newStaus==TeamStatus.Active){
+                resetAllTeamManagerPermissions(); /** MAYBE - according to UC 6.6 last sentence */
+            }
+            noitfyTeamClose(newStaus);
+            SystemLog.getInstance().UpdateLog(teamOwner.getName() +" has changer team " + Name + " status to " + newStaus.toString());
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * reset all team managers permissions to false
+     * MAYBE - according to UC 6.6 last sentence
+     */
+    private void resetAllTeamManagerPermissions() {
+        for (Integer id: teamMangers.keySet()) {
+            teamMangers.get(id).resetPermissions();
+        }
+    }
+
+    private void noitfyTeamClose(TeamStatus newStatus) {
+        IAlert teamManagmentAlert = new TeamManagmentAlert(newStatus);
+        owner.handleAlert(teamManagmentAlert);
+        for (TeamOwner teamOwner: secondaryOwners) {
+            teamOwner.handleAlert(teamManagmentAlert);
+        }
+        for (Integer id: teamMangers.keySet()) {
+            teamMangers.get(id).handleAlert(teamManagmentAlert);
+        }
+        //todo add alerts to system managers
+    }
+
+    /**
+     * handling alerts - runs when game the team involves start an alert and the func transfer the alert to the personal page to  inform followers
+     * @param newAlert
+     * @param game
+     */
+    public void notifyTeam(IAlert newAlert, Game game) {
+        info.notifyInfo(newAlert, game);
     }
     public boolean isClosed() {
         return isClosed;
@@ -463,11 +596,10 @@ public class Team {
         return Name;
     }
 
-    public void notifyTeam(IAlert newAlert, Game game) {
-        info.notifyInfo(newAlert, game);
-    }
-
     public ControlBudget getControlBudget() {
         return controlBudget;
     }
+
+
+
 }

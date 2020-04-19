@@ -6,9 +6,18 @@ public class ComplaintForm {
 
     private Fan fanSubmitingForm;
     private String complaint;
+    private String response;
 
     public ComplaintForm(String complaint) {
         this.complaint = complaint;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
+
+    public Fan getFanSubmitingForm() {
+        return fanSubmitingForm;
     }
 
     public void setFanSubmitingForm(Fan fanSubmitingForm) {
