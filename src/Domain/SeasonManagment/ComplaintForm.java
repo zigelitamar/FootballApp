@@ -16,6 +16,10 @@ public class ComplaintForm {
         this.response = response;
     }
 
+    public Fan getFanSubmitingForm() {
+        return fanSubmitingForm;
+    }
+
     public void setFanSubmitingForm(Fan fanSubmitingForm) {
         this.fanSubmitingForm = fanSubmitingForm;
     }

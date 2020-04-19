@@ -41,6 +41,7 @@ public class SystemLog {
         String st="";
         while((st += br.readLine()) !=null){
 
+
         }
         return st;
     }

@@ -171,6 +171,7 @@ public class FootballManagmentSystem extends TimerTask{
      */
     public boolean addPersonalPage(PersonalInfo personalInfo){
             personalPages.put(personalInfo.getPageID(),personalInfo);
+
             return true;
         }
 
@@ -376,5 +377,9 @@ public class FootballManagmentSystem extends TimerTask{
 
     public void addTeam(Team team) {
             allTeams.add(team);
+    }
+
+    public void addComplaint(ComplaintForm complaintForm) {
+            allcomplaints.add(complaintForm);
     }
 }
