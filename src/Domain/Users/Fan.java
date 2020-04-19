@@ -92,7 +92,6 @@ public class Fan extends Member implements Observer {
         //system.handleComplaintForm(this,complaintForm);
     }
 
-
     /**
      * UC - 3.5 - view search history
      * @return list of search history
