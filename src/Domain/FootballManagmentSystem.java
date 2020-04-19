@@ -170,7 +170,7 @@ public class FootballManagmentSystem extends TimerTask{
          * System Manager can Delete everyBody!
          * @param m
          */
-        public void RemoveMember(LinkedList<Member> m){
+        public void RemoveMember(List<Member> m){
             if(members.containsKey(m.get(0).getName())){
                 members.remove(m.get(0).getName());
                 SystemLog.getInstance().UpdateLog(m.get(0).getName()+"has been deleted from the system" );
@@ -258,7 +258,7 @@ public class FootballManagmentSystem extends TimerTask{
             return pageID;
         }
 
-        public LinkedList<Member> getMemberByUserName(String name){
+        public List<Member> getMemberByUserName(String name){
             return members.get(name);
         }
     /**
