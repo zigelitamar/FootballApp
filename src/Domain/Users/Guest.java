@@ -26,7 +26,7 @@ public class Guest extends GeneralUser {
      * @param type
      * @return true if register succeeded
      */
-    public boolean register(String userName , String pass , int id, String type){
+    public boolean register(String userName , String pass , int id, String type) {
         return system.register(userName,pass,id);
     }
 
