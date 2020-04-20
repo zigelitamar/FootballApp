@@ -1,5 +1,6 @@
 package Domain;
 
+import Domain.Alerts.IAlert;
 import Domain.SeasonManagment.*;
 import Domain.Users.*;
 
@@ -10,7 +11,7 @@ public class FootballManagmentSystem extends TimerTask{
 
     // HashMap<Integer, Leaugue> leagues = new HashMap<Integer, Leaugue>();
     private List<Leaugue> allLeagus = new ArrayList<>();
-    private List<Team> allTeams= new ArrayList<>();
+    private HashMap<Integer,Team> allTeams= new HashMap<>();
     private List<Referee> allRefs= new ArrayList<>();
     private HashMap<Integer,IAsset> allAssests= new HashMap<>(); // Stadiums , players and coaches? : all assets just for records
     private HashMap<String, LinkedList<Member>> members = new HashMap<>();
@@ -47,6 +48,13 @@ public class FootballManagmentSystem extends TimerTask{
             }
         }
         if(correctPW){
+            Queue <IAlert> missedAlertsWhileLogOut = new LinkedList<>();
+            for (Member member : logging) {
+                missedAlertsWhileLogOut.addAll(member.getAlertsList());
+            }
+            for (IAlert alert :missedAlertsWhileLogOut) {
+                logging.get(0).handleAlert(alert);
+            }
             return logging;
         }else{
             return null;
@@ -90,7 +98,7 @@ public class FootballManagmentSystem extends TimerTask{
      */
     public boolean registerTeam(Team team){
             //////need confirmation from Comissioner
-            allTeams.add(team);
+            allTeams.put(team.getId(),team);
             SystemLog.getInstance().UpdateLog("New team has been added to system by owner: "+ team.getOwner().getName());/////add TEam name to team and to log!
             return true;
         }
@@ -172,7 +180,7 @@ public class FootballManagmentSystem extends TimerTask{
          */
         public void RemoveMember(List<Member> m){
             if(members.containsKey(m.get(0).getName())){
-                members.remove(m);
+                members.remove(m.get(0).getName());
                 SystemLog.getInstance().UpdateLog(m.get(0).getName()+"has been deleted from the system" );
             }
             else{
@@ -227,17 +235,29 @@ public class FootballManagmentSystem extends TimerTask{
             }
             return pageID;
         }
+    /**
+     * this func is a generator for unique team IDs
+     * @return page ID
+     */
+    public int generateTeamID(){
+        int teamID = tryToGeneratePageID();
+        while (allTeams.containsKey(teamID)){
+            teamID = tryToGeneratePageID();
+        }
+        return teamID;
+    }
+
 
     /**
      * this func is a generator for unique Asset IDs
      * @return page ID
      */
     public int generateAssetID(){
-            int pageID = tryToGeneratePageID();
-            while (allAssests.containsKey(pageID)){
-                pageID = tryToGeneratePageID();
+            int assetID = tryToGeneratePageID();
+            while (allAssests.containsKey(assetID)){
+                assetID = tryToGeneratePageID();
             }
-            return pageID;
+            return assetID;
         }
 
         /**
@@ -340,6 +360,9 @@ public class FootballManagmentSystem extends TimerTask{
             return null;
         }
 
+        public Team getTeamByID(int id){
+            return allTeams.get(id);
+        }
     public List<ComplaintForm> getAllcomplaints() {
         return allcomplaints;
     }
@@ -356,7 +379,7 @@ public class FootballManagmentSystem extends TimerTask{
         }
 
 
-        public List<Team> getAllTeams() {
+        public HashMap<Integer,Team> getAllTeams() {
             return allTeams;
         }
 
@@ -413,10 +436,11 @@ public class FootballManagmentSystem extends TimerTask{
         }
 
     public void addTeam(Team team) {
-            allTeams.add(team);
+            allTeams.put(team.getId(),team);
     }
 
     public void addComplaint(ComplaintForm complaintForm) {
             allcomplaints.add(complaintForm);
     }
+
 }

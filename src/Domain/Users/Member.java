@@ -21,6 +21,7 @@ public abstract class Member extends GeneralUser {
         this.password = password;
         isActive = false;
         alertViaMail =false;
+        alertsList = new LinkedList<>();
     }
     public Member(){
         alertsList = new LinkedList<>();
@@ -54,6 +55,10 @@ public abstract class Member extends GeneralUser {
         }
     }
     /*getSet*/
+
+    public Queue<IAlert> getAlertsList() {
+        return alertsList;
+    }
 
     public void setName(String name) {
         this.name = name;

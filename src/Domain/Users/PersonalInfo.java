@@ -34,9 +34,8 @@ public class PersonalInfo extends Observable{
         if(pageMemberOwner instanceof TeamManager){
             teamPageMembersOwners = new LinkedList<>();
             teamPageMembersOwners.add(pageMemberOwner);
-        }else {
-            this.pageMemberOwner = pageMemberOwner;
         }
+        this.pageMemberOwner = pageMemberOwner;
         this.pageTitle=pageTitle;
         FootballManagmentSystem footballManagmentSystem = FootballManagmentSystem.getInstance();
         this.pageID = footballManagmentSystem.generatePageID();

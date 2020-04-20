@@ -8,6 +8,8 @@ import Domain.SystemLog;
 import Domain.Users.Member;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -25,7 +27,11 @@ public class SystemManager extends Member {
      * @param causeOfCloser why did the team got closed?
      */
     public void closeTeam(Team team, String causeOfCloser) {
-        List<Team> teams = FootballManagmentSystem.getInstance().getAllTeams();
+        HashMap<Integer,Team> map = FootballManagmentSystem.getInstance().getAllTeams();
+        List<Team> teams = new LinkedList<>();
+        for (Integer id: map.keySet()) {
+            teams.add(map.get(id));
+        }
         for (Team t :
                 teams) {
             if (t.getId() == team.getId()) {
