@@ -1,11 +1,11 @@
 package FootballExceptions;
 
-public class InactiveTeamException extends Exception {
+public class InvalidTeamAssetException extends Exception {
 
     private String message;
 
-    public InactiveTeamException() {
-        message="Cant Operate Inactive Team!";
+    public InvalidTeamAssetException() {
+        message="Invalid Team Asset";
     }
 
     @Override

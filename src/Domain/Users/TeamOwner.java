@@ -4,7 +4,7 @@ import Domain.SeasonManagment.BudgetActivity;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
 import Domain.SeasonManagment.TeamStatus;
-import FootballExceptions.InactiveTeamException;
+import FootballExceptions.*;
 
 import java.util.Date;
 
@@ -37,8 +37,10 @@ public class TeamOwner extends Member {
      * @param asset - asset to be added
      * @return true if asset was added to asset
      */
-    public boolean addAssetToTeam(IAsset asset) throws InactiveTeamException{
-        //todo - check if not NULL
+    public boolean addAssetToTeam(IAsset asset) throws InactiveTeamException, TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException{
+        if(team==null){
+            throw new TeamOwnerWithNoTeamException();
+        }
         return team.addAsset(this,asset);
     }
 
@@ -47,7 +49,10 @@ public class TeamOwner extends Member {
      * @param asset - asset to be removed
      * @return - true if asset was removed
      */
-    public boolean removeAssetFromTeam(IAsset asset){
+    public boolean removeAssetFromTeam(IAsset asset) throws InactiveTeamException,TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException, InvalidTeamAssetException{
+        if(team==null){
+            throw new TeamOwnerWithNoTeamException();
+        }
         return team.removeAssetFromTeam(this,asset);
     }
     /**
@@ -55,7 +60,10 @@ public class TeamOwner extends Member {
      * @param asset - asset to be removed
      * @return - true if asset was removed
      */
-    public boolean editAsset(IAsset asset,int value){
+    public boolean editAsset(IAsset asset,int value) throws InactiveTeamException,TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException, InvalidTeamAssetException{
+        if(team==null){
+            throw new TeamOwnerWithNoTeamException();
+        }
         return team.editAsset(this,asset,value);
     }
 
@@ -64,7 +72,10 @@ public class TeamOwner extends Member {
      * @param newOwner - member (!!) that will become team owner
      * @return true if succeeded
      */
-    public boolean assignNewTeamOwner(Member newOwner) {
+    public boolean assignNewTeamOwner(Member newOwner) throws TeamOwnerWithNoTeamException,InactiveTeamException,UnauthorizedTeamOwnerException, UserInformationException {
+        if(team==null){
+            throw new TeamOwnerWithNoTeamException();
+        }
         return team.addNewTeamOwner(this, newOwner);
     }
 
@@ -73,7 +84,11 @@ public class TeamOwner extends Member {
      * @param teamOwnerToRemove - team owner to be removed
      * @return - true if succeeded
      */
-    public boolean removeTeamOwner(TeamOwner teamOwnerToRemove){
+    public boolean removeTeamOwner(TeamOwner teamOwnerToRemove)throws TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException, InactiveTeamException{
+
+        if(team==null){
+            throw new TeamOwnerWithNoTeamException();
+        }
         return team.removeTeamOwner(teamOwnerToRemove,this);
     }
 
@@ -83,7 +98,10 @@ public class TeamOwner extends Member {
      * @param value - his asset value
      * @return - true if succeeded
      */
-    public boolean assignNewTeamManger(Member newTeamManager,int value){
+    public boolean assignNewTeamManager(Member newTeamManager,int value) throws TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException,UserInformationException,InactiveTeamException{
+        if(team==null){
+            throw new TeamOwnerWithNoTeamException();
+        }
         return team.addNewTeamManger(this, newTeamManager,value);
     }
 
@@ -94,7 +112,10 @@ public class TeamOwner extends Member {
      * @param permissionBol - the value
      * @return - true if succeeded
      */
-    public boolean editManagerPermissions(TeamManager teamManager,String permissionsType,boolean permissionBol){
+    public boolean editManagerPermissions(TeamManager teamManager,String permissionsType,boolean permissionBol) throws PersonalPageYetToBeCreatedException, UnauthorizedPageOwnerException,UnauthorizedTeamOwnerException,InactiveTeamException,UserInformationException,TeamOwnerWithNoTeamException{
+        if(team==null){
+            throw new TeamOwnerWithNoTeamException();
+        }
         return team.editManagerPermissions(this,teamManager,permissionsType,permissionBol);
     }
 
@@ -103,7 +124,10 @@ public class TeamOwner extends Member {
      * @param teamManager - team manager to be removed
      * @return - true if succeeded
      */
-    public boolean removeTeamManager(TeamManager teamManager){
+    public boolean removeTeamManager(TeamManager teamManager) throws TeamOwnerWithNoTeamException,UnauthorizedTeamOwnerException,InactiveTeamException{
+        if(team==null){
+            throw new TeamOwnerWithNoTeamException();
+        }
         return team.removeTeamManager(this,teamManager);
     }
 
@@ -112,7 +136,10 @@ public class TeamOwner extends Member {
      * @param newStatus - new status
      * @return - true if succeeded
      */
-    public boolean closeTeam(TeamStatus newStatus){
+    public boolean changeTeamStatus(TeamStatus newStatus) throws TeamOwnerWithNoTeamException,UnauthorizedTeamOwnerException{
+        if(team==null){
+            throw new TeamOwnerWithNoTeamException();
+        }
         return team.changeTeamStatus(this,newStatus);
     }
 
@@ -124,7 +151,10 @@ public class TeamOwner extends Member {
      * @param amount
      * @return true if succeeded
      */
-    public boolean addBudgetActivity(Date date, BudgetActivity description,int amount){
+    public boolean addBudgetActivity(Date date, BudgetActivity description,int amount)throws TeamOwnerWithNoTeamException,UnauthorizedTeamOwnerException,InactiveTeamException{
+        if(team==null){
+            throw new TeamOwnerWithNoTeamException();
+        }
         if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries){
             return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
         }else{

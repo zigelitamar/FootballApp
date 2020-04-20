@@ -346,10 +346,10 @@ public class FootballManagmentSystem extends TimerTask{
      * @param value - his asset value
      * @return - the new team manager object
      */
-        public LinkedList<Member> makeMemberTeamManger(Member newManager, Team team,int value){
+        public LinkedList<Member> makeMemberTeamManger(Member newManager, Team team,int value, TeamOwner teamOwnerAssigned){
             if(members.containsKey(newManager.getName())){
                 LinkedList <Member> memberAccounts = members.get(newManager.getName());
-                TeamManager newManagerAccount = new TeamManager(newManager.getName(),newManager.getId(),newManager.getPassword(),value,team);
+                TeamManager newManagerAccount = new TeamManager(newManager.getName(),newManager.getId(),newManager.getPassword(),value,team,teamOwnerAssigned);
                 if(memberAccounts!=null&&(!memberAccounts.contains(newManagerAccount))){
                     memberAccounts.add(newManagerAccount);
                     members.replace(newManager.getName(),memberAccounts);

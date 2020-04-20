@@ -5,6 +5,7 @@ import Domain.PersonalPages.APersonalPageContent;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
 import Domain.SystemLog;
+import FootballExceptions.*;
 
 import java.util.HashMap;
 
@@ -17,7 +18,7 @@ public class TeamManager extends Member implements IAsset {
     private TeamOwner teamOwnerAssignedThis; /** according to UC 7.1 the team owner assigned the team manager is the only one that can change permissions*/
     private HashMap <String,Boolean> permissions;  /** The hashmap in the value represent the specific team manager permission type (key for permission and val for T/F  */
 
-    public TeamManager(String name, int id, String password, int valAsset, Team myTeam) {
+    public TeamManager(String name, int id, String password, int valAsset, Team myTeam, TeamOwner teamOwnerAssignedThis) {
         super(name, id, password);
         this.valAsset = valAsset;
         this.myTeam = myTeam;
@@ -28,7 +29,7 @@ public class TeamManager extends Member implements IAsset {
         permissions.put("Add Content To Personal Page",false);
         permissions.put("Edit Personal Page Profile",false);
         system.addTeamAssets(this);
-
+        this.teamOwnerAssignedThis=teamOwnerAssignedThis;
     }
 
     /**
@@ -39,7 +40,7 @@ public class TeamManager extends Member implements IAsset {
      * @param permissionBol - boolean represent the value
      * @return true if succeeded
      */
-    public boolean editPermissions(Member member, String permission, boolean permissionBol){
+    public boolean editPermissions(Member member, String permission, boolean permissionBol)throws UnauthorizedTeamOwnerException, InactiveTeamException, UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException{
         if(isAutorizedTeamOwner(member)){
             permissions.replace(permission,permissionBol);
             if(permission.equals("Add Content To Personal Page")||permission.equals("Edit Personal Page Profile")){
@@ -66,7 +67,7 @@ public class TeamManager extends Member implements IAsset {
      * @param newCoach
      * @return
      */
-    public boolean hireCoach(IAsset newCoach){
+    public boolean hireCoach(IAsset newCoach)throws UserInformationException,InactiveTeamException,UnauthorizedTeamManagerException{
         //todo WARN MEMBER ABOUT OVERRIDING
         if(permissions.get("Hire Coach")){
             myTeam.addCoach(this,newCoach);
@@ -80,7 +81,7 @@ public class TeamManager extends Member implements IAsset {
      * (constraint 4 - one personal page per member) NEED TO WARN MEMBER IN GUI
      * @return - true if succeeded
      */
-    public boolean createPersonalPageForTeam(){
+    public boolean createPersonalPageForTeam()throws UnauthorizedPageOwnerException,UnauthorizedTeamManagerException,InactiveTeamException{
         //todo WARN MEMBER ABOUT OVERRIDING
         if(permissions.get("Create Personal Page")){
             return myTeam.createPersonalPage(this);
@@ -93,7 +94,7 @@ public class TeamManager extends Member implements IAsset {
      * @param content - content of some kind to be added to personal page
      * @return - true if succeeded
      */
-    public boolean addContentToTeamsPersonalPage(APersonalPageContent content){
+    public boolean addContentToTeamsPersonalPage(APersonalPageContent content)throws UnauthorizedPageOwnerException,UnauthorizedTeamManagerException,InactiveTeamException{
         if(permissions.get("Add Content To Personal Page")){
             return myTeam.addContentToPersonalPage(this,content);
         }
@@ -106,7 +107,7 @@ public class TeamManager extends Member implements IAsset {
      * @param val- val
      * @return - true if succeeded
      */
-    public boolean editProfileOnPersonalPage(String title, String val){
+    public boolean editProfileOnPersonalPage(String title, String val)throws UnauthorizedPageOwnerException,UnauthorizedTeamManagerException,InactiveTeamException,PersonalPageYetToBeCreatedException{
         if(permissions.get("Edit Personal Page Profile")){
             return myTeam.editPersonalPageProfile(this,title,val);
         }
@@ -117,8 +118,11 @@ public class TeamManager extends Member implements IAsset {
       * @param member -
      * @return -
      */
-    public boolean isAutorizedTeamOwner(Member member){
-        return member.equals(teamOwnerAssignedThis);
+    public boolean isAutorizedTeamOwner(Member member) throws UnauthorizedTeamOwnerException{
+        if(member.equals(teamOwnerAssignedThis)){
+            return true;
+        }
+        throw new UnauthorizedTeamOwnerException();
     }
 
     public void resetPermissions() {
