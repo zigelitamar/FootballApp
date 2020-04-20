@@ -6,6 +6,8 @@ import java.util.HashMap;
 public class Budget {
 
 
+
+
     private HashMap<String,Integer> financeActivity;     /**  description_cost    cost = Income/Outcome  description = Income/Outcome explained  */
     private int teamID;
 
@@ -81,6 +83,9 @@ public class Budget {
             return 4;
     }
 
+    public HashMap<String, Integer> getFinanceActivity() {
+        return financeActivity;
+    }
 
 
 }
