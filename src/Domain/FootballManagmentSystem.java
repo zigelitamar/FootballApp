@@ -134,11 +134,6 @@ public class FootballManagmentSystem extends TimerTask{
 
 
     /** constraint 7 */
-    //TODO write in the main for every quarter :
-    //                                  Date date = new Date("02/29/2020");
-    //                                  Timer timer = new Timer();
-    //                                  TimerTask task = new Helper();
-    //                                  timer.schedule(task, date);
     @Override
     public void run() {
 

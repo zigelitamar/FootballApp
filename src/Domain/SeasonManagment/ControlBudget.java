@@ -21,22 +21,24 @@ public class ControlBudget {
     }
 
 
-    public void addFinanceActivity(Date date, String description, int amount){
+    public void addFinanceActivity(Date date, BudgetActivity description, int amount){
         Budget budget = findQuarter(date);
         budget.addFinanceActivity(description,amount);
     }
 
 
 
-
+    //todo pop up alters
     /** constraint 7  (run by the end of the quarter)  */
-    public void checkIncomeBiggerThanOutcome(){
+    public boolean checkIncomeBiggerThanOutcome(){
         Date date = new Date();
         Budget budget = findQuarter(date);
         if(budget.calculateFinalBudget() < 0 ){
             System.out.println(" WARNING THE OUTCOMES ARE BIGGER THAN INCOMES !!!");
+            return false;
         }else{
             System.out.println(" YOUR BUDGET IS BALANCED :) ");
+            return true;
         }
     }
 
@@ -78,7 +80,7 @@ public class ControlBudget {
     public void enforceCommissionerRule(){
         Date date =new Date();
         Budget budget = findQuarter(date);
-        budget.addFinanceActivity(commissionerRule.toString(), commissionerRule.payRule());
+        budget.addFinanceActivity(BudgetActivity.Tax, commissionerRule.payRule());
     }
 
 

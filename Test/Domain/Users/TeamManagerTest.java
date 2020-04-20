@@ -23,7 +23,7 @@ public class TeamManagerTest {
     public void setUp() throws Exception {
         team = new Team("Gadi", null, null, 0, 0011, null);
         teamManagerTest = new TeamManager("Adam", 1111, "5555", 3, team);
-        coach = new Coach("Lior", 1313, "%420", 4, null, null, null, null);
+    //    coach = new Coach("Lior", 1313, "%420", 4, null, null, null, null);
         profileCon = new HashMap<>();
         content = new ProfileContent(profileCon);
         owner = new TeamOwner("Kfir",2222,"0909",null);
