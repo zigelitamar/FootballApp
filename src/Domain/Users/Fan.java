@@ -88,8 +88,8 @@ public class Fan extends Member implements Observer {
      */
     public void submitComplaintForm(ComplaintForm complaintForm){
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
-        //todo - send form to system mangers
-        //system.handleComplaintForm(this,complaintForm);
+        complaintForm.setFanSubmitingForm(this);
+        system.addComplaint(complaintForm);
     }
 
     /**
