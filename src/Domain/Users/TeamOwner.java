@@ -4,6 +4,7 @@ import Domain.SeasonManagment.BudgetActivity;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
 import Domain.SeasonManagment.TeamStatus;
+import FootballExceptions.InactiveTeamException;
 
 import java.util.Date;
 
@@ -11,17 +12,33 @@ public class TeamOwner extends Member {
 
     Team team;
 
-    public TeamOwner(String name, int id, String password, Team team) {
-        super(name, id, password);
+    /**
+     * Constructor for first team owner when team is not yet open
+     * @param name
+     * @param id
+     * @param password
+     */
+    public TeamOwner(String name,String realname, int id, String password) {
+        super(name, id, password,realname );
+    }
+    /**
+     * constructor for team owner when teram is already open
+     * @param name
+     * @param id
+     * @param password
+     * @param team
+     */
+    public TeamOwner(String name,String realname, int id, String password,Team team) {
+        super(name, id, password, realname);
         this.team = team;
     }
-
     /**
      * UC 6.1 - adding asset to team (this team owner must be an owner at the team)
      * @param asset - asset to be added
      * @return true if asset was added to asset
      */
-    public boolean addAssetToTeam(IAsset asset){
+    public boolean addAssetToTeam(IAsset asset) throws InactiveTeamException{
+        //todo - check if not NULL
         return team.addAsset(this,asset);
     }
 

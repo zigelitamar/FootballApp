@@ -20,10 +20,10 @@ public class CoachTest {
     HashMap<String,String> content;
     @Before
     public void init(){
-       // coach = new Coach("noa",312427404,"noanoa123",1,null,"personalCoach","owner",null);
+        coach = new Coach("noa",312427404,"noanoa123",1,null,"personalCoach",CoachRole.HeadCoach);
         info = new PersonalInfo(coach);
         coach.setInfo(info);
-       // coach2 = new Coach("shira",313546448,"noanoa123",2,null,"personalCoach","owner",null);
+        coach2 = new Coach("shira",313546448,"noanoa123",2,null,"personalCoach",CoachRole.FirstAssistantCoach);
         content = new HashMap<>();
         profileContent = new ProfileContent(content);
     }
@@ -92,8 +92,8 @@ public class CoachTest {
     @Test
     //+getRole
     public void setRole() {
-    //    coach.setRole("Discipline the athletes");
-        assertEquals("Discipline the athletes",coach.getRole());
+        coach.setRole(CoachRole.FitnessCoach);
+        assertEquals(CoachRole.FitnessCoach,coach.getRole());
     }
 
     @Test

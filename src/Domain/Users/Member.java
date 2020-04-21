@@ -1,29 +1,34 @@
 package Domain.Users;
 
 import Domain.Alerts.IAlert;
-import Domain.FootballManagmentSystem;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public abstract class Member extends GeneralUser {
     protected String name; /// USER NAME
     private int id; // ?!?!?!
     private String password;
+    private String real_Name;
     private Queue<IAlert> alertsList;
     private boolean isActive;
     private boolean alertViaMail;
 
-    public Member(String name,int id, String password) {
+    public Member(String name, int id, String password, String real_name) {
         this.name = name;
         this.id = id;
         this.password = password;
+        this.real_Name=real_name;
         isActive = false;
         alertViaMail =false;
+        alertsList = new LinkedList<>();
     }
     public Member(){
         alertsList = new LinkedList<>();
+    }
+
+    public String getReal_Name() {
+        return real_Name;
     }
 
     public boolean isActive() {
@@ -54,6 +59,11 @@ public abstract class Member extends GeneralUser {
         }
     }
     /*getSet*/
+
+    public Queue<IAlert> getAlertsList() {
+        //alertsList.clear(); maybe
+        return alertsList;
+    }
 
     public void setName(String name) {
         this.name = name;
