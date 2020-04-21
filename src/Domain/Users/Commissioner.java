@@ -4,6 +4,7 @@ import Domain.SeasonManagment.*;
 import Domain.FootballManagmentSystem;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Commissioner extends Member {
@@ -22,8 +23,8 @@ public class Commissioner extends Member {
      * @param password
      */
 
-    public Commissioner(String name, int id, String password) {
-        super(name, id, password);
+    public Commissioner(String name,String realname, int id, String password) {
+        super(name, id, password,realname);
         financeAssociationActivity = new HashMap<>();
     }
 
@@ -141,7 +142,9 @@ public class Commissioner extends Member {
     public void defineBudgetControl(ICommissionerRule newRule){
 
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
-        List<Team> teams = system.getAllTeams();
+        List<Team> teams = new LinkedList<Team>();
+
+        teams.addAll(system.getAllTeams().values());
         for (int i = 0; i < teams.size(); i++) {
             teams.get(i).getControlBudget().setCommissionerRule(newRule);
         }

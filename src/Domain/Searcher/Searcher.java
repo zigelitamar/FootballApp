@@ -23,9 +23,9 @@ public abstract class Searcher {
         return answer;
     }
 
-    public HashSet<Player> PlayerFilter(HashSet<Object> searchResults){
+    public HashSet<Player> PlayerFilter(){
         HashSet<Player> PlayerSearchResults = new HashSet<>();
-        for (Object o : searchResults){
+        for (Object o : answer){
             if (o instanceof Player){
                 PlayerSearchResults.add((Player)o);
             }
@@ -33,9 +33,9 @@ public abstract class Searcher {
         return PlayerSearchResults;
     }
 
-    public HashSet<TeamOwner> TeamOwnerFilter(HashSet<Object> searchResults){
+    public HashSet<TeamOwner> TeamOwnerFilter(){
         HashSet<TeamOwner> TeamOwnerSearchResults = new HashSet<>();
-        for (Object o : searchResults){
+        for (Object o : answer){
             if (o instanceof TeamOwner){
                 TeamOwnerSearchResults.add((TeamOwner)o);
             }
@@ -43,9 +43,9 @@ public abstract class Searcher {
         return TeamOwnerSearchResults;
     }
 
-    public HashSet<TeamManager> TeamManagerFilter(HashSet<Object> searchResults){
+    public HashSet<TeamManager> TeamManagerFilter(){
         HashSet<TeamManager> TeamManagerSearchResults = new HashSet<>();
-        for (Object o : searchResults){
+        for (Object o : answer){
             if (o instanceof TeamManager){
                 TeamManagerSearchResults.add((TeamManager)o);
             }
@@ -53,9 +53,9 @@ public abstract class Searcher {
         return TeamManagerSearchResults;
     }
 
-    public HashSet<Leaugue> leaugueFilter(HashSet<Object> searchResults){
+    public HashSet<Leaugue> leaugueFilter(){
         HashSet<Leaugue> leauguesSearchResults = new HashSet<>();
-        for (Object o : searchResults){
+        for (Object o : answer){
             if (o instanceof Leaugue){
                 leauguesSearchResults.add((Leaugue)o);
             }
@@ -63,9 +63,9 @@ public abstract class Searcher {
         return leauguesSearchResults;
     }
 
-    public HashSet<Team> teamFilter(HashSet<Object> searchResults){
+    public HashSet<Team> teamFilter(){
         HashSet<Team> teamsSearchResults = new HashSet<>();
-        for (Object o : searchResults){
+        for (Object o : answer){
             if (o instanceof Team){
                 teamsSearchResults.add((Team)o);
             }
@@ -73,9 +73,9 @@ public abstract class Searcher {
         return teamsSearchResults;
     }
 
-    public HashSet<Season> seasonFilter(HashSet<Object> searchResults){
+    public HashSet<Season> seasonFilter(){
         HashSet<Season> seasonsSearchResults = new HashSet<>();
-        for (Object o : searchResults){
+        for (Object o : answer){
             if (o instanceof Season){
                 seasonsSearchResults.add((Season) o);
             }
