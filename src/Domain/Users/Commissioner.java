@@ -1,15 +1,18 @@
 package Domain.Users;
-import Domain.SeasonManagment.*;
 
 import Domain.FootballManagmentSystem;
+import Domain.SeasonManagment.*;
+import FootballExceptions.*;
+import javafx.util.Pair;
 
-import java.util.HashMap;
+import java.net.UnknownHostException;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Commissioner extends Member {
 
 
-    HashMap<String,Integer> financeAssociationActivity;     /** UC 9.9
+    LinkedList<Pair<String,Integer>> financeAssociationActivity;     /** UC 9.9
 
 
 
@@ -24,13 +27,13 @@ public class Commissioner extends Member {
 
     public Commissioner(String name, int id, String password) {
         super(name, id, password);
-        financeAssociationActivity = new HashMap<>();
+        financeAssociationActivity = new LinkedList<>();
     }
 
 
 
     /**UC 9.1 - Define league*/
-    public void defineLeague(int id){
+    public void defineLeague(int id) throws LeagueIDAlreadyExist {
         Leaugue leaugue = new Leaugue();
         leaugue.setId(id);
         leaugue.setLeagueIntoSystem();
@@ -38,27 +41,35 @@ public class Commissioner extends Member {
 
 
     /** UC 9.2 - Adding season to league by year*/
-    public void addSeasonToLeague(int year, Leaugue leaugue){
+    public void addSeasonToLeague(int year, Leaugue leaugue) throws SeasonYearAlreadyExist {
         leaugue.addSeasonToLeagueByYear(year);
     }
 
 
 
     /**UC 9.3 - Define Referee to system*/
-    public void defineReferee(Referee ref){
+    public void defineReferee(Referee ref) throws RefereeEmailWasNotEntered, UnknownHostException {
         // todo UC 9.3.1 - need to send invitation to the referee
+        if (ref.getEmail() == null){
+            throw new RefereeEmailWasNotEntered("set the email for the referee first & try again");
+        }
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
+        system.sendInvitationByMail(ref.getEmail(),"Invitation For FootballApp","Hello " + ref.getName() + "\nWe're excited to invite you to use our FootballApp.\nCome and join us :)");
         system.addReferee(ref);
     }
 
     /**UC 9.3 - Del Referee from system by name*/
     public void defineReferee(String ref){
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
-        system.delReferee(ref);
+        try{
+            system.delReferee(ref);
+        }catch (UserInformationException ue){
+            System.out.println(ue.getMessage());
+        }
     }
 
     /**UC 9.4 - Define Referee to specific season*/
-    public void addRefereeToSeason(int idLeg, int year, Referee ref){
+    public void addRefereeToSeason(int idLeg, int year, Referee ref) throws LeagueNotFoundException {
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
         List<Leaugue> legs = system.getAllLeagus();
         Leaugue leaugue = new Leaugue();
@@ -73,6 +84,8 @@ public class Commissioner extends Member {
         if(found){
             Season season = leaugue.getSeasonByYear(year);
             season.addRefereeToSeason(ref);
+        }else {
+            throw new LeagueNotFoundException("there is not league with this id "+ idLeg);
         }
     }
 
@@ -118,7 +131,7 @@ public class Commissioner extends Member {
 
 
     /**UC 9.7 - Define new PLACING policy to specific season*/
-    public void runPlacingAlgo(int idLeg, int year){
+    public void runPlacingAlgo(int idLeg, int year) throws NotEnoughTeamsInLeague {
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
         List<Leaugue> legs = system.getAllLeagus();
         Leaugue leaugue = new Leaugue();
@@ -150,11 +163,17 @@ public class Commissioner extends Member {
 
     /** UC 9.9  manage finance Association activity    */
     public void addToFinanceAssociationActivity(String info, int amount){
-        financeAssociationActivity.put(info,amount);
+        Pair pair = new Pair(info,amount);
+        financeAssociationActivity.add(pair);
     }
 
-    public void delFromFinanceAssociationActivity(String info){
-        financeAssociationActivity.remove(info);
+    public void delFromFinanceAssociationActivity(Pair<String,Integer> pair) throws FinanceAssActivityNotFound {
+        if (financeAssociationActivity.remove(pair)){
+
+        }else {
+            throw new FinanceAssActivityNotFound("there is not activity such that !");
+        }
+
     }
 
 

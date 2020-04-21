@@ -1,14 +1,17 @@
 package Domain.SeasonManagment;
 
+import javafx.util.Pair;
+
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Budget {
 
 
 
 
-    private HashMap<String,Integer> financeActivity;     /**  description_cost    cost = Income/Outcome  description = Income/Outcome explained  */
+    private LinkedList<Pair<BudgetActivity,Integer>> financeActivity;     /**  description_cost    cost = Income/Outcome  description = Income/Outcome explained  */
     private int teamID;
 
 
@@ -19,12 +22,13 @@ public class Budget {
      */
     public Budget(int teamID) {
         this.teamID = teamID;
-        financeActivity = new HashMap<>();
+        financeActivity = new LinkedList<>();
     }
 
 
-    public void addFinanceActivity(String desc, int amount){
-        financeActivity.put(desc,amount);
+    public void addFinanceActivity(BudgetActivity desc, int amount){
+        Pair<BudgetActivity,Integer> pair = new Pair<>(desc,amount);
+        financeActivity.add(pair);
     }
 
 
@@ -33,8 +37,8 @@ public class Budget {
      */
     public int calculateFinalBudget (){
         int sum = 0;
-        for (String desc: financeActivity.keySet()) {
-            sum += financeActivity.get(desc);
+        for (int i = 0; i < financeActivity.size(); i++) {
+            sum += financeActivity.get(i).getValue();
         }
         return sum;
     }
@@ -83,7 +87,7 @@ public class Budget {
             return 4;
     }
 
-    public HashMap<String, Integer> getFinanceActivity() {
+    public LinkedList<Pair<BudgetActivity,Integer>> getFinanceActivity() {
         return financeActivity;
     }
 

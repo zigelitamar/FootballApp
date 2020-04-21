@@ -20,19 +20,19 @@ public class TeamOwner extends Member {
      * @param id
      * @param password
      */
-    public TeamOwner(String name, int id, String password) {
-        super(name, id, password);
+    public TeamOwner(String name,String realname, int id, String password) {
+        super(name, id, password,realname );
     }
     /**
      * constructor for team owner when teram is already open
      * @param name
      * @param id
      * @param password
-     * @param teamId
+     * @param teamID
      */
-    public TeamOwner(String name, int id, String password,int teamId) {
-        super(name, id, password);
-        this.team = system.getTeamByID(teamId);
+    public TeamOwner(String name,String realname, int id, String password,int teamID) {
+        super(name, id, password, realname);
+        this.team = system.getTeamByID(teamID);
     }
     /**
      * UC 6.1 - adding asset to team (this team owner must be an owner at the team)
@@ -160,7 +160,7 @@ public class TeamOwner extends Member {
         if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries){
             return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
         }else{
-            return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
+            return team.addBudgetActivity(this,date,description.toString(),(amount));
         }
     }
     public Team getTeam() {

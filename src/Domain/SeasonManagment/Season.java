@@ -1,6 +1,7 @@
 package Domain.SeasonManagment;
 
 import Domain.Users.Referee;
+import FootballExceptions.NotEnoughTeamsInLeague;
 
 import java.util.*;
 
@@ -140,7 +141,7 @@ public class Season {
 
 
     /**UC 9.7   (only comissioner can)     */
-    public void runPlacingTeamsAlgorithm(){
+    public void runPlacingTeamsAlgorithm() throws NotEnoughTeamsInLeague {
         placingAlgorithm();
     }
 
@@ -153,7 +154,7 @@ public class Season {
 
 
     /**UC 9.7   (only comissioner can run)     */
-    private void placingAlgorithm() {
+    private void placingAlgorithm() throws NotEnoughTeamsInLeague {
 
         Set set = teams.entrySet();
         Iterator it = set.iterator();
@@ -185,7 +186,7 @@ public class Season {
                 }
             }
         }else{
-            System.out.println("there is not enough teams in the season!");
+            throw new NotEnoughTeamsInLeague("there is not enough teams in the season!");
         }
     }
 

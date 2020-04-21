@@ -1,6 +1,8 @@
 package Domain.SeasonManagment;
 
 import Domain.FootballManagmentSystem;
+import FootballExceptions.LeagueIDAlreadyExist;
+import FootballExceptions.SeasonYearAlreadyExist;
 
 import java.util.HashMap;
 
@@ -26,7 +28,7 @@ public class Leaugue {
 
 
     /** UC 9.1 (Only commisioner can)*/
-    public void setLeagueIntoSystem(){
+    public void setLeagueIntoSystem() throws LeagueIDAlreadyExist {
         if(id == 0){
             java.lang.System.out.println("There is no ID !");
         }else{
@@ -36,9 +38,13 @@ public class Leaugue {
 
 
     /** UC 9.2 (Only commisioner can)*/
-    public void addSeasonToLeagueByYear(int year){
+    public void addSeasonToLeagueByYear(int year) throws SeasonYearAlreadyExist {
         Season season = new Season(year);
-        seasons.put(year,season);
+        if(seasons.get(year) != null){
+            throw new SeasonYearAlreadyExist("season with the given year is already exist in this league !");
+        }else{
+            seasons.put(year,season);
+        }
     }
 
 

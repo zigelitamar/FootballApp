@@ -171,6 +171,9 @@ public class Team {
                 if(editedAsset == null){
                     throw new InvalidTeamAssetException();
                 }
+                if(editedAsset == null){
+                    throw new InvalidTeamAssetException();
+                }
                 editedAsset.edit(value);
                 teamCoaches.replace(((Coach) asset).getRole(),editedAsset);
                 system.addTeamAssets(asset);
@@ -388,12 +391,11 @@ public class Team {
                     teamCoaches.put(((Coach) newCoach).getRole(),newCoach);
                 }
                 return true;
-            }else{
-                throw new UserInformationException();
             }
         }else{
             throw new UnauthorizedTeamManagerException();
         }
+        return false;
     }
 
     /**OPERATING PERSONAL PAGE - operated by team manager (with the right permissions)*/
@@ -490,17 +492,17 @@ public class Team {
      * this func add a budget activity to team budget
      * @param teamOwner
      * @param date
-     * @param s
+     * @param ba
      * @param i
      * @return true if succeeded
      */
-    public boolean addBudgetActivity(TeamOwner teamOwner, Date date, String s, int i) throws UnauthorizedTeamOwnerException, InactiveTeamException {
+    public boolean addBudgetActivity(TeamOwner teamOwner, Date date, BudgetActivity ba, int i) throws UnauthorizedTeamOwnerException, InactiveTeamException {
         if(!isActive()){
             throw new InactiveTeamException();
         }
         if(isTeamOwner(teamOwner)){
             if(controlBudget!=null){
-                controlBudget.addFinanceActivity(date,s,i);
+                controlBudget.addFinanceActivity(date,ba,i);
                 return true;
             }
         }
@@ -511,20 +513,20 @@ public class Team {
      * this func runs only by team owner, get status and changes the team status accordingly, in addition
      * it notify to everyone who needs about the status change
      * @param teamOwner - member operating
-     * @param newStaus - Active/Closed
+     * @param newStatus - Active/Closed
      * @return - true if succeeded
      */
-    public boolean changeTeamStatus(TeamOwner teamOwner,TeamStatus newStaus) throws UnauthorizedTeamOwnerException{
+    public boolean changeTeamStatus(TeamOwner teamOwner,TeamStatus newStatus) throws UnauthorizedTeamOwnerException{
         if(isTeamOwner(teamOwner)){
-            if(status==newStaus){
+            if(status==newStatus){
                 return false;
             }
-            status = newStaus;
-            if(newStaus==TeamStatus.Active){
+            status = newStatus;
+            if(newStatus==TeamStatus.Active){
                 resetAllTeamManagerPermissions(); /** MAYBE - according to UC 6.6 last sentence */
             }
-            noitfyTeamStatusChanged(newStaus);
-            SystemLog.getInstance().UpdateLog(teamOwner.getName() +" has changer team " + Name + " status to " + newStaus.toString());
+            noitfyTeamStatusChanged(newStatus);
+            SystemLog.getInstance().UpdateLog(teamOwner.getName() +" has changer team " + Name + " status to " + newStatus.toString());
             return true;
         }
         return false;
@@ -608,6 +610,8 @@ public class Team {
     public void setClosed(boolean closed) {
         isClosed = closed;
     }
+
+
 
     public List<Season> getSeasons() {
         return seasons;
