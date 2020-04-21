@@ -12,8 +12,6 @@ import FootballExceptions.UserInformationException;
 
 import java.util.*;
 
-import java.util.*;
-
 public class Referee extends Member implements Observer {
 
     private String email;
@@ -148,6 +146,9 @@ public class Referee extends Member implements Observer {
         }
     }
 
+    public void addToGameList(Game game){
+        games.add(game);
+    }
 
     public String getEmail(){
         return email;

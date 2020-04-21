@@ -17,7 +17,7 @@ public class Coach extends Member implements IAsset {
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
 
     public Coach(String name,int id,String password,int val, Team myTeam, String training,CoachRole role) {
-        super(name,id,password);
+        super(name,id,password,null);
         this.valAsset = val;
         this.myTeam = myTeam;
         this.training = training;

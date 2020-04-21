@@ -6,6 +6,7 @@ import FootballExceptions.*;
 import javafx.util.Pair;
 
 import java.net.UnknownHostException;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,10 +15,6 @@ public class Commissioner extends Member {
 
     LinkedList<Pair<String,Integer>> financeAssociationActivity;     /** UC 9.9
 
-
-
-
-
     /**
      * constructor
      * @param name
@@ -25,8 +22,8 @@ public class Commissioner extends Member {
      * @param password
      */
 
-    public Commissioner(String name, int id, String password) {
-        super(name, id, password);
+    public Commissioner(String name, int id, String password,String realName) {
+        super(name, id, password,realName);
         financeAssociationActivity = new LinkedList<>();
     }
 
@@ -154,10 +151,11 @@ public class Commissioner extends Member {
     public void defineBudgetControl(ICommissionerRule newRule){
 
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
-        List<Team> teams = system.getAllTeams();
-        for (int i = 0; i < teams.size(); i++) {
+        HashMap<Integer,Team> teams = system.getAllTeams();
+        for (int i : teams.keySet()) {
             teams.get(i).getControlBudget().setCommissionerRule(newRule);
         }
+
     }
 
 
@@ -175,6 +173,9 @@ public class Commissioner extends Member {
         }
 
     }
+
+
+
 
 
 }

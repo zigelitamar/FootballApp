@@ -1,7 +1,13 @@
 package Domain.SeasonManagment;
 
+import Domain.Alerts.FinancialAlert;
+import Domain.FootballManagmentSystem;
+import Domain.Users.Commissioner;
+import Domain.Users.Member;
+
 import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
+import java.util.LinkedList;
 
 public class ControlBudget {
 
@@ -31,9 +37,20 @@ public class ControlBudget {
     //todo pop up alters
     /** constraint 7  (run by the end of the quarter)  */
     public boolean checkIncomeBiggerThanOutcome(){
+        FootballManagmentSystem system = FootballManagmentSystem.getInstance();
         Date date = new Date();
         Budget budget = findQuarter(date);
         if(budget.calculateFinalBudget() < 0 ){
+
+            HashMap<String, LinkedList<Member>> members = system.getMembers();
+            for (String name: members.keySet()) {
+                for (int i = 0; i < members.get(name).size(); i++) {
+                    if (members.get(name).get(i) instanceof Commissioner){
+                        members.get(name).get(i).handleAlert(new FinancialAlert(budget.calculateFinalBudget()));
+                    }
+                }
+            }
+
             System.out.println(" WARNING THE OUTCOMES ARE BIGGER THAN INCOMES !!!");
             return false;
         }else{

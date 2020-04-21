@@ -158,9 +158,9 @@ public class TeamOwner extends Member {
             throw new TeamOwnerWithNoTeamException();
         }
         if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries){
-            return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
+            return team.addBudgetActivity(this,date,description,(amount*(-1)));
         }else{
-            return team.addBudgetActivity(this,date,description.toString(),(amount));
+            return team.addBudgetActivity(this,date,description,(amount));
         }
     }
     public Team getTeam() {
