@@ -1,8 +1,21 @@
 package Domain;
 
-import Domain.SeasonManagment.*;
+import Domain.SeasonManagment.ComplaintForm;
+import Domain.SeasonManagment.IAsset;
+import Domain.SeasonManagment.Leaugue;
+import Domain.SeasonManagment.Team;
 import Domain.Users.*;
+import FootballExceptions.LeagueIDAlreadyExist;
+import FootballExceptions.UserInformationException;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.*;
 
 
@@ -150,13 +163,18 @@ public class FootballManagmentSystem extends TimerTask{
      * Association responsibillty UC 9.3
      * @param ref
      */
-    public void delReferee(String ref){
+    public void delReferee(String ref) throws UserInformationException {
         Iterator it = allRefs.iterator();
+        boolean found = false;
         while (it.hasNext()){
             if(((Referee)it).getName().equals(ref)){
                 allRefs.remove(((Referee)it));
+                found = true;
             }
             it.next();
+        }
+        if (!found){
+            throw new UserInformationException("Referee with the name " + ref + " not found.");
         }
     }
 
@@ -403,7 +421,13 @@ public class FootballManagmentSystem extends TimerTask{
         }
 
 
-        public void addLeague(Leaugue leaugue) {
+        public void addLeague(Leaugue leaugue) throws LeagueIDAlreadyExist {
+            for (Leaugue leag : allLeagus) {
+                if (leag.getID() == leaugue.getID()){
+                    throw new LeagueIDAlreadyExist("There is already league with the same ID !");
+
+                }
+            }
             allLeagus.add(leaugue);
         }
 
@@ -414,4 +438,36 @@ public class FootballManagmentSystem extends TimerTask{
     public void addComplaint(ComplaintForm complaintForm) {
             allcomplaints.add(complaintForm);
     }
+
+    public void sendInvitationByMail(String emailRecipient,String subject, String content) throws UnknownHostException {
+        InetAddress ip = InetAddress.getLocalHost();
+        System.out.println(ip);
+        String recipient = emailRecipient;
+        String sender = "FootballApp@gmail.com";
+        String host = "127.0.0.1";
+        Properties properties = System.getProperties();
+        properties.setProperty("mail.smtp.host", host);
+        Session session = Session.getDefaultInstance(properties);
+
+        try
+        {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(sender));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+            message.setSubject(subject);
+            message.setText(content);
+            Transport.send(message);
+            System.out.println("Mail successfully sent");
+        }
+        catch (MessagingException mex)
+        {
+            mex.printStackTrace();
+        }
+    }
+
+
+
+
+
+
 }

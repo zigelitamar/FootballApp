@@ -1,10 +1,7 @@
 package Domain.SeasonManagment;
 
-import Domain.FootballManagmentSystem;
 import Domain.Users.Commissioner;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
+import FootballExceptions.SeasonYearAlreadyExist;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -55,7 +52,7 @@ public class LeaugueTest {
 
 
     @Test
-    public void addSeasonToLeagueByYear() {
+    public void addSeasonToLeagueByYear() throws SeasonYearAlreadyExist {
         leaugue.addSeasonToLeagueByYear(1995);
         Season before = leaugue.getSeasonByYear(1995);
         assertNotNull(before);
