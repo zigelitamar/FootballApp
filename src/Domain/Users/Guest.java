@@ -1,11 +1,11 @@
 package Domain.Users;
 
 import Domain.FootballManagmentSystem;
-import Domain.Searcher;
+import Domain.Searcher.Searcher;
 import Domain.SeasonManagment.Game;
 import Domain.SeasonManagment.Leaugue;
 import Domain.SeasonManagment.Season;
-import Domain.SeasonManagment.Team;
+import FootballExceptions.UserInformationException;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -26,8 +26,8 @@ public class Guest extends GeneralUser {
      * @param type
      * @return true if register succeeded
      */
-    public boolean register(String userName , String pass , int id, String type){
-        return system.register(userName,pass,id);
+    public boolean register(String userName ,String realnamr, String pass , int id, String type) throws UserInformationException {
+        return system.register(userName,realnamr,pass,id);
     }
 
     /**
@@ -36,7 +36,7 @@ public class Guest extends GeneralUser {
      * @param password
      * @return true if login succeeded
      */
-    public LinkedList<Member> login(String username , String password){
+    public LinkedList<Member> login(String username , String password) throws UserInformationException {
         return system.login(username,password);
     }
 
@@ -70,7 +70,8 @@ public class Guest extends GeneralUser {
      * @return - Hashset returned by searcher
      */
     public HashSet<Object> search(String str, Searcher searcher){
-        return searcher.search(str);
+        searcher.search(str);
+        return searcher.getAnswer();
     }
 
 }

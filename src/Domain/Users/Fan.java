@@ -2,11 +2,12 @@ package Domain.Users;
 
 import Domain.Alerts.IAlert;
 import Domain.FootballManagmentSystem;
-import Domain.Searcher;
+import Domain.Searcher.Searcher;
 import Domain.SeasonManagment.ComplaintForm;
 import Domain.SeasonManagment.Game;
 import Domain.SeasonManagment.Leaugue;
 import Domain.SeasonManagment.Season;
+import FootballExceptions.UserInformationException;
 import javafx.util.Pair;
 
 import java.util.*;
@@ -15,8 +16,8 @@ public class Fan extends Member implements Observer {
     private HashMap<PersonalInfo,Boolean> personalPagesFollowed; //Tracking personal pages, boolean represent alerts on/off
     private LinkedList <String> searchHistory;
     private FootballManagmentSystem system;
-    public Fan(String name, int id, String password) {
-        super(name, id, password);
+    public Fan(String name,String realname, int id, String password) {
+        super(name, id, password,realname);
         system = FootballManagmentSystem.getInstance();
        personalPagesFollowed=new HashMap<>();
     }
@@ -88,10 +89,9 @@ public class Fan extends Member implements Observer {
      */
     public void submitComplaintForm(ComplaintForm complaintForm){
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
-        //todo - send form to system mangers
-        //system.handleComplaintForm(this,complaintForm);
+        complaintForm.setFanSubmitingForm(this);
+        system.addComplaint(complaintForm);
     }
-
 
     /**
      * UC - 3.5 - view search history
@@ -118,11 +118,11 @@ public class Fan extends Member implements Observer {
      * @param newPassword - new password
      * @return - true if password was changed
      */
-    public boolean changePassword(String newPassword){
+    public boolean changePassword(String newPassword) throws UserInformationException {
         return system.changeUserPassword(this,newPassword);
     }
 
-    public boolean changeUserName(String newUserName){
+    public boolean changeUserName(String newUserName) throws UserInformationException {
         return system.changeUserName(this, newUserName);
     }
 
@@ -158,7 +158,8 @@ public class Fan extends Member implements Observer {
      */
     public HashSet<Object> search(String str, Searcher searcher){
         searchHistory.add(str);
-        return searcher.search(str);
+        searcher.search(str);
+        return searcher.getAnswer();
     }
 
     /*getSet*/

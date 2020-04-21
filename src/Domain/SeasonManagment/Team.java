@@ -6,19 +6,16 @@ import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.APersonalPageContent;
 import Domain.SystemLog;
 import Domain.Users.*;
+import FootballExceptions.InactiveTeamException;
 
 import javax.print.attribute.standard.MediaSize;
 import java.util.*;
 
 public class Team {
-
-
-
     private List<Season> seasons;
     private String Name;
     private Season currentSeason;
     private PersonalInfo info;
-    private Field field;
     private TeamOwner owner;
     private TeamStatus status;
     private int score; //todo maybe nono
@@ -36,23 +33,21 @@ public class Team {
     /**
      * constructor
      * @param owner
-     * @param status
-     * @param score
-     * @param id
-     * @param budget
+     * @param Name
      */
-    public Team(String Name, TeamOwner owner, TeamStatus status, int score,int id, ControlBudget budget) {
+    public Team(String Name, TeamOwner owner) {
         secondaryOwners = new LinkedList<>();
         teamCoaches = new HashMap<>();
         teamPlayers = new HashMap<>();
         teamMangers = new HashMap<>();
         teamfields = new HashMap<>();
+        seasons=new LinkedList<>();
         this.Name = Name;
         this.owner = owner;
-        this.status = status;
-        this.score = score;
-        this.id = id;
-        this.controlBudget = budget;
+        this.status = TeamStatus.Active; /**by default team status is active*/
+        this.id = system.generateTeamID();
+        owner.setTeam(system.getTeamByID(id));
+        this.controlBudget = new ControlBudget(this.id);
     }
 
     public int getId() {
@@ -80,9 +75,9 @@ public class Team {
      * @param member - member wishing to add asset
      * @return - true if succeeded
      */
-    public boolean addAsset(Member member,IAsset asset) {
+    public boolean addAsset(Member member,IAsset asset) throws InactiveTeamException{
         if(!isActive()){
-            ///todo- throw exception TeamNotActive;
+            throw new InactiveTeamException();
         }
             if (isTeamOwner(member)) {
                 if (asset instanceof Player) {

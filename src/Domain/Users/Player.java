@@ -16,8 +16,8 @@ public class Player extends Member implements IAsset {
     private Date DateOfBirth;
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
 
-    public Player(String name, int id, String password, int valAsset, Team myTeam, String role, Date dateOfBirth) {
-        super(name, id, password);
+    public Player(String name,String realname ,int id, String password, int valAsset, Team myTeam, String role, Date dateOfBirth) {
+        super(name, id, password,realname );
         this.valAsset = valAsset;
         this.myTeam = myTeam;
         this.role = role;
