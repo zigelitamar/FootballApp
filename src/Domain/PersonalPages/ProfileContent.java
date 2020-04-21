@@ -9,7 +9,7 @@ public class ProfileContent extends APersonalPageContent{
     private HashMap<String, String> profile; // Key is for title and Value is for the val. i.e. : key - "height" value - "1.80 cm"
     private Team team;
 
-    public ProfileContent(HashMap<String, String> profile) {
+    public ProfileContent() {
         this.profile = new HashMap<>();
     }
 
@@ -19,5 +19,9 @@ public class ProfileContent extends APersonalPageContent{
         }else {
             profile.put(title, val);
         }
+    }
+
+    public HashMap<String, String> getProfile() {
+        return profile;
     }
 }

@@ -1,4 +1,4 @@
-package Domain;
+package Domain.Searcher;
 
 import Domain.SeasonManagment.Leaugue;
 import Domain.SeasonManagment.Season;
@@ -12,8 +12,15 @@ import java.util.HashSet;
 
 public abstract class Searcher {
 
-    public HashSet<Object> search(String str){
-        return null;
+    private HashSet<Object> answer;
+    public abstract boolean  search(String str);
+
+    public void setAnswer(HashSet<Object> answer) {
+        this.answer = answer;
+    }
+
+    public HashSet<Object> getAnswer() {
+        return answer;
     }
 
     public HashSet<Player> PlayerFilter(HashSet<Object> searchResults){
