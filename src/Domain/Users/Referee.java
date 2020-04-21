@@ -1,13 +1,12 @@
 package Domain.Users;
 
 import Domain.Alerts.IAlert;
-
-import java.util.*;
-
 import Domain.Events.*;
 import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.Game;
 import Domain.SystemLog;
+
+import java.util.*;
 
 public class Referee extends Member implements Observer {
 
@@ -20,8 +19,8 @@ public class Referee extends Member implements Observer {
         handleAlert((IAlert)arg);
     }
 
-    public Referee(String name, int id, String password, RefereeType type) {
-        super(name, id, password);
+    public Referee(String name,String realName, int id, String password, RefereeType type) {
+        super(name, id, password,realName);
         this.type = type;
         games=new ArrayList<>();
         system = FootballManagmentSystem.getInstance();
