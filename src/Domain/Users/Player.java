@@ -1,9 +1,12 @@
 package Domain.Users;
 
+import Domain.Events.*;
 import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.APersonalPageContent;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
+import FootballExceptions.PersonalPageYetToBeCreatedException;
+import FootballExceptions.UnauthorizedPageOwnerException;
 
 import java.util.Date;
 
@@ -15,6 +18,7 @@ public class Player extends Member implements IAsset {
     private PersonalInfo info;
     private Date DateOfBirth;
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
+    private double FootballRate;
 
     public Player(String name,String realname ,int id, String password, int valAsset, Team myTeam, String role, Date dateOfBirth) {
         super(name, id, password,realname );
@@ -24,6 +28,7 @@ public class Player extends Member implements IAsset {
         assetID = system.generateAssetID();
         system.addTeamAssets(this);
         DateOfBirth = dateOfBirth;
+        FootballRate = 5;
     }
 
     /**
@@ -45,19 +50,62 @@ public class Player extends Member implements IAsset {
      * @param content - content of some kind to be added to personal page
      * @return - true if succeeded
      */
-    public boolean addContentToPersonalPage(APersonalPageContent content){
+    public boolean addContentToPersonalPage(APersonalPageContent content) throws PersonalPageYetToBeCreatedException, UnauthorizedPageOwnerException {
         if(info==null){
-            return false;
+            throw new PersonalPageYetToBeCreatedException();
         }
         return info.addContentToPage(this,content);
     }
 
     // UC - 4.1 (including getters and setters
-    public boolean editProfile(String title, String val){
+    public boolean editProfile(String title, String val) throws PersonalPageYetToBeCreatedException, UnauthorizedPageOwnerException {
         if(info==null){
             return false;
         }
         return info.editProfile(this, title,val);
+    }
+
+    /**
+     * inCase of event the player FootballRate will change accordingly
+     * @param event - event the player caused
+     */
+    public void changePlayerRate(AGameEvent event){
+        if(event instanceof Foul){
+            if(FootballRate >=0.05){
+                FootballRate = FootballRate -0.05;
+            }else{
+                FootballRate =0;
+            }
+        }
+        if(event instanceof Goal){
+            if(FootballRate <=9.75){
+                FootballRate = FootballRate +0.25;
+            }else {
+                FootballRate = 10;
+            }
+        }
+        if(event instanceof OffSide){
+            if(FootballRate >=0.01){
+                FootballRate = FootballRate -0.01;
+            }else{
+                FootballRate =0;
+            }
+        }
+        if(event instanceof RedCard){
+            if(FootballRate >=0.3){
+                FootballRate = FootballRate -0.3;
+            }else{
+                FootballRate =0;
+            }
+        }
+        if(event instanceof YellowCard){
+            if(FootballRate >=0.15){
+                FootballRate = FootballRate -0.15;
+            }else{
+                FootballRate =0;
+            }
+        }
+        myTeam.calculatePlayerFootballRate();
     }
     /*getSet*/
 
@@ -91,6 +139,10 @@ public class Player extends Member implements IAsset {
 
     public void setDateOfBirth(Date dateOfBirth) {
         DateOfBirth = dateOfBirth;
+    }
+
+    public double getFootballRate() {
+        return FootballRate;
     }
 
     @Override

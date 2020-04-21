@@ -1,5 +1,6 @@
 package Domain.Alerts;
 
+import Domain.SeasonManagment.Team;
 import Domain.SeasonManagment.TeamStatus;
 
 public class TeamManagmentAlert implements IAlert {
@@ -12,8 +13,9 @@ public class TeamManagmentAlert implements IAlert {
         this.message = message;
     }
 
-    public TeamManagmentAlert(TeamStatus teamStatus) {
+    public TeamManagmentAlert(TeamStatus teamStatus,Team team) {
         this.teamStatus = teamStatus;
+        message = "Team: " + team.getName() + " status changed to:" + teamStatus.toString();
     }
 
     public TeamManagmentAlert() {
