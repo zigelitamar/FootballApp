@@ -324,7 +324,7 @@ public class FootballManagmentSystem extends TimerTask{
      */
         public LinkedList<Member> makeMemberTeamOwner(Member newOwner,Team team){
             if(members.containsKey(newOwner.getName())) {
-                TeamOwner newOwnerAccount = new TeamOwner(newOwner.getName(),newOwner.getId(),newOwner.getPassword(),team);
+                TeamOwner newOwnerAccount = new TeamOwner(newOwner.getName(),newOwner.getId(),newOwner.getPassword(),team.getId());
                 LinkedList <Member> memberAccounts = members.get(newOwner.getName());
                 if(memberAccounts!=null&&(!memberAccounts.contains(newOwnerAccount))) {
                     memberAccounts.add(newOwnerAccount);

@@ -1,5 +1,6 @@
 package Domain.Users;
 
+import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.BudgetActivity;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
@@ -11,6 +12,7 @@ import java.util.Date;
 public class TeamOwner extends Member {
 
     Team team;
+    FootballManagmentSystem system = FootballManagmentSystem.getInstance();
 
     /**
      * Constructor for first team owner when team is not yet open
@@ -26,11 +28,11 @@ public class TeamOwner extends Member {
      * @param name
      * @param id
      * @param password
-     * @param team
+     * @param teamId
      */
-    public TeamOwner(String name, int id, String password,Team team) {
+    public TeamOwner(String name, int id, String password,int teamId) {
         super(name, id, password);
-        this.team = team;
+        this.team = system.getTeamByID(teamId);
     }
     /**
      * UC 6.1 - adding asset to team (this team owner must be an owner at the team)
