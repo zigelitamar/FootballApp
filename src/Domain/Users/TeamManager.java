@@ -17,8 +17,8 @@ public class TeamManager extends Member implements IAsset {
     private TeamOwner teamOwnerAssignedThis; /** according to UC 7.1 the team owner assigned the team manager is the only one that can change permissions*/
     private HashMap <String,Boolean> permissions;  /** The hashmap in the value represent the specific team manager permission type (key for permission and val for T/F  */
 
-    public TeamManager(String name, int id, String password, int valAsset, Team myTeam) {
-        super(name, id, password);
+    public TeamManager(String name,String realname, int id, String password, int valAsset, Team myTeam) {
+        super(name, id, password,realname );
         this.valAsset = valAsset;
         this.myTeam = myTeam;
         assetID = system.generateAssetID();

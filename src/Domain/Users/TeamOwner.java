@@ -18,8 +18,8 @@ public class TeamOwner extends Member {
      * @param id
      * @param password
      */
-    public TeamOwner(String name, int id, String password) {
-        super(name, id, password);
+    public TeamOwner(String name,String realname, int id, String password) {
+        super(name, id, password,realname );
     }
     /**
      * constructor for team owner when teram is already open
@@ -28,8 +28,8 @@ public class TeamOwner extends Member {
      * @param password
      * @param team
      */
-    public TeamOwner(String name, int id, String password,Team team) {
-        super(name, id, password);
+    public TeamOwner(String name,String realname, int id, String password,Team team) {
+        super(name, id, password, realname);
         this.team = team;
     }
     /**

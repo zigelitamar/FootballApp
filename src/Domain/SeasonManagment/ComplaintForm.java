@@ -10,6 +10,7 @@ public class ComplaintForm {
 
     public ComplaintForm(String complaint) {
         this.complaint = complaint;
+        this.response = null;
     }
 
     public void setResponse(String response) {
@@ -18,6 +19,14 @@ public class ComplaintForm {
 
     public Fan getFanSubmitingForm() {
         return fanSubmitingForm;
+    }
+
+    public String getComplaint() {
+        return complaint;
+    }
+
+    public String getResponse() {
+        return response;
     }
 
     public void setFanSubmitingForm(Fan fanSubmitingForm) {
