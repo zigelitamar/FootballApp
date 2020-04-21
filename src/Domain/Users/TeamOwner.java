@@ -126,9 +126,9 @@ public class TeamOwner extends Member {
      */
     public boolean addBudgetActivity(Date date, BudgetActivity description,int amount){
         if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries){
-            return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
+            return team.addBudgetActivity(this,date,description,(amount*(-1)));
         }else{
-            return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
+            return team.addBudgetActivity(this,date,description,(amount*(-1)));
         }
     }
     public Team getTeam() {

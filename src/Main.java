@@ -3,8 +3,8 @@ import Domain.SeasonManagment.ControlBudget;
 import Domain.SeasonManagment.Team;
 import Domain.SeasonManagment.TeamStatus;
 
+import java.net.UnknownHostException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -13,7 +13,7 @@ public class Main {
 
 
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, UnknownHostException {
 
 
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
@@ -22,12 +22,13 @@ public class Main {
         system.addTeam(team);
 
 
+        system.sendInvitationByMail("kaprizahi@gmail.com","Hi","hiiiii");
 
         /** constraint 7 - balanced budget  */
-        Date date1 = new Date("03/31/2020");
-        Date date2 = new Date("06/30/2020");
-        Date date3 = new Date("09/30/2020");
-        Date date4 = new Date("12/31/2020");
+        Date date1 = new Date("31/03/2020");
+        Date date2 = new Date("30/06/2020");
+        Date date3 = new Date("30/09/2020");
+        Date date4 = new Date("31/12/2020");
 
         Timer timer = new Timer();
         TimerTask task = FootballManagmentSystem.getInstance();

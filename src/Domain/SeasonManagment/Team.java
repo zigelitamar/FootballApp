@@ -8,8 +8,10 @@ import Domain.SystemLog;
 import Domain.Users.*;
 import FootballExceptions.InactiveTeamException;
 
-import javax.print.attribute.standard.MediaSize;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Team {
     private List<Season> seasons;
@@ -444,17 +446,17 @@ public class Team {
      * this func add a budget activity to team budget
      * @param teamOwner
      * @param date
-     * @param s
+     * @param ba
      * @param i
      * @return true if succeeded
      */
-    public boolean addBudgetActivity(TeamOwner teamOwner, Date date, String s, int i) {
+    public boolean addBudgetActivity(TeamOwner teamOwner, Date date, BudgetActivity ba, int i) {
         if(!isActive()){
             ///todo- throw exception TeamNotActive;
         }
         if(isTeamOwner(teamOwner)){
             if(controlBudget!=null){
-                controlBudget.addFinanceActivity(date,s,i);
+                controlBudget.addFinanceActivity(date,ba,i);
                 return true;
             }
         }

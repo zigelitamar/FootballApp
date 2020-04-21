@@ -6,25 +6,41 @@ import Domain.SeasonManagment.IScorePolicy;
 import Domain.SeasonManagment.Leaugue;
 import Domain.Users.Commissioner;
 import Domain.Users.Referee;
+import FootballExceptions.*;
+import javafx.util.Pair;
+
+import java.net.UnknownHostException;
 
 public class CommissionerController extends MemberController {
 
 
     /** uc 9.1 */
-    public void defineLeague(Commissioner commissioner, int id){
-        commissioner.defineLeague(id);
+    public void defineLeague(Commissioner commissioner, int id) {
+        try{
+            commissioner.defineLeague(id);
+        }catch (LeagueIDAlreadyExist le){
+            System.out.println(le.getMessage());
+        }
     }
 
     /** uc 9.2 */
     public void addSeasonToLeague(Commissioner commissioner,int year, Leaugue leaugue){
-        commissioner.addSeasonToLeague(year,leaugue);
+        try {
+            commissioner.addSeasonToLeague(year,leaugue);
+        }catch (SeasonYearAlreadyExist se){
+            System.out.println(se.getMessage());
+        }
     }
 
 
 
     /** uc 9.3 */
     public void defineReferee(Commissioner commissioner,Referee ref){
-        commissioner.defineReferee(ref);
+        try {
+            commissioner.defineReferee(ref);
+        }catch (RefereeEmailWasNotEntered | UnknownHostException re){
+            System.out.println(re.getMessage());
+        }
     }
 
 
@@ -35,7 +51,11 @@ public class CommissionerController extends MemberController {
 
     /** uc 9.4 */
     public void addRefereeToSeason(Commissioner commissioner,int idLeg, int year, Referee ref){
-        commissioner.addRefereeToSeason(idLeg, year, ref);
+        try {
+            commissioner.addRefereeToSeason(idLeg, year, ref);
+        }catch (LeagueNotFoundException le){
+            System.out.println(le.getMessage());
+        }
     }
 
     /** uc 9.5 */
@@ -52,7 +72,12 @@ public class CommissionerController extends MemberController {
 
     /** uc 9.7 */
     public void runPlacingAlgo(Commissioner commissioner,int idLeg, int year){
-        commissioner.runPlacingAlgo(idLeg, year);
+        try {
+            commissioner.runPlacingAlgo(idLeg, year);
+        }catch (NotEnoughTeamsInLeague ne){
+            System.out.println(ne.getMessage());
+        }
+
     }
 
 
@@ -69,8 +94,12 @@ public class CommissionerController extends MemberController {
 
 
     /**9.9*/
-    public void delFromFinanceAssociationActivity(Commissioner commissioner,String info){
-        commissioner.delFromFinanceAssociationActivity(info);
+    public void delFromFinanceAssociationActivity(Commissioner commissioner, Pair<String,Integer> pair){
+        try{
+            commissioner.delFromFinanceAssociationActivity(pair);
+        }catch (FinanceAssActivityNotFound fe){
+            System.out.println(fe.getMessage());
+        }
     }
 
 }

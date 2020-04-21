@@ -22,9 +22,9 @@ public class ControlBudgetTest {
         int a=100;
         int b=100;
         int c=100;
-        controlBudget.addFinanceActivity(date, "add 2 players", a);
-        controlBudget.addFinanceActivity(date1, "add 23 players", b);
-        controlBudget.addFinanceActivity(date2, "add 1 player", c);
+//        controlBudget.addFinanceActivity(date, "add 2 players", a);
+//        controlBudget.addFinanceActivity(date1, "add 23 players", b);
+//        controlBudget.addFinanceActivity(date2, "add 1 player", c);
         int quarter1 = controlBudget.budget_quarter_1.calculateFinalBudget();
         int quarter2 = controlBudget.budget_quarter_2.calculateFinalBudget();
         amount = a+b;
@@ -37,9 +37,9 @@ public class ControlBudgetTest {
         int a=100;
         int b=100;
         int c=100;
-        controlBudget.addFinanceActivity(date, "add 2 players", a);
-        controlBudget.addFinanceActivity(date1, "add 23 players", b);
-        controlBudget.addFinanceActivity(date2, "add 1 player", c);
+//        controlBudget.addFinanceActivity(date, "add 2 players", a);
+//        controlBudget.addFinanceActivity(date1, "add 23 players", b);
+//        controlBudget.addFinanceActivity(date2, "add 1 player", c);
         int quarter1 = controlBudget.budget_quarter_1.calculateFinalBudget();
         int quarter2 = controlBudget.budget_quarter_2.calculateFinalBudget();
         amount = c;
@@ -55,9 +55,9 @@ public class ControlBudgetTest {
         int a=100;
         int b=200;
         int c=-400;
-        controlBudget.addFinanceActivity(date, "add 2 players", a);
-        controlBudget.addFinanceActivity(date1, "add 23 players", b);
-        controlBudget.addFinanceActivity(date3, "add 1 player", c);
+//        controlBudget.addFinanceActivity(date, "add 2 players", a);
+//        controlBudget.addFinanceActivity(date1, "add 23 players", b);
+//        controlBudget.addFinanceActivity(date3, "add 1 player", c);
         int quarter1 = controlBudget.budget_quarter_1.calculateFinalBudget();
 
 

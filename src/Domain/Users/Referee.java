@@ -5,11 +5,18 @@ import Domain.Events.*;
 import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.Game;
 import Domain.SystemLog;
+import FootballExceptions.EventNotMatchedException;
+import FootballExceptions.NoPermissionException;
+import FootballExceptions.RefereeNotPlacedException;
+import FootballExceptions.UserInformationException;
+
+import java.util.*;
 
 import java.util.*;
 
 public class Referee extends Member implements Observer {
 
+    private String email;
     private RefereeType type;
     private List<Game> games;
     private FootballManagmentSystem system;
@@ -27,14 +34,14 @@ public class Referee extends Member implements Observer {
     }
 
     /** edit details UC 10.1 */
-    public void changeName(String newName){
+    public void changeName(String newName) throws UserInformationException {
         system.delReferee(super.name);
         super.name = newName;
         system.addReferee(this);
     }
 
     /** edit details UC 10.1 */
-    public void changeTraining(RefereeType newTraining){
+    public void changeTraining(RefereeType newTraining) throws UserInformationException {
         system.delReferee(super.name);
         type = newTraining;
         system.addReferee(this);
@@ -42,30 +49,30 @@ public class Referee extends Member implements Observer {
 
 
     /**10.2*/
-    public void watchGame(Game game){
+    public void watchGame(Game game) throws RefereeNotPlacedException {
         boolean found = false;
         for (int i = 0; i < games.size(); i++) {
             if (games.get(i) == game){
                 found = true;
-                System.out.println("You're watching the game : team : " + game.getHome().getId() +" vs team : " + game.getAway().getId() );
+                System.out.println("You're watching the game : team : " + game.getHome().getName() +" vs team : " + game.getAway().getName() );
             }
         }
         if (!found){
-            System.out.println("You're not placed to this game ! ");
+            throw new RefereeNotPlacedException("You're not placed to this game ! ");
         }
     }
 
 
 
     //UC - 10.3
-    public void addEventToGame(String eventType ,double minute, Game game, Player playerWhoCommit){
+    public void addEventToGame(String eventType ,double minute, Game game, Player playerWhoCommit) throws EventNotMatchedException {
         AGameEvent event = stringToEvent(eventType,minute, playerWhoCommit);
         game.addEventToEventLog(event);
         SystemLog.getInstance().UpdateLog("new event: "+ eventType +"was added by "+ this.getName() );
     }
 
 
-    public AGameEvent stringToEvent(String eventType, double minute, Player player){
+    public AGameEvent stringToEvent(String eventType, double minute, Player player) throws EventNotMatchedException {
         switch (eventType){
             case "foul":
                 return new Foul(minute,player);
@@ -82,16 +89,17 @@ public class Referee extends Member implements Observer {
             case "substitution":
                 return new Substitution(minute);
             default:
-                System.out.println("No MATCH ! ");
+                throw new EventNotMatchedException("there is not event like " + eventType);
+
         }
-        return null;
+
 
     }
 
 
 
     /** 10.4 edit events 5 hours after the game*/
-    public void editEventsAfterGame(Game game, AGameEvent oldEvent , AGameEvent newEvent){
+    public void editEventsAfterGame(Game game, AGameEvent oldEvent , AGameEvent newEvent) throws NoPermissionException {
         Date gameDate = game.getDateGame();
         Calendar cal = Calendar.getInstance();
         cal.setTime(gameDate);
@@ -100,7 +108,7 @@ public class Referee extends Member implements Observer {
         long time = new Date(System.currentTimeMillis()).getTime();
         time = cal.getTimeInMillis() - time;
         if( time < 0 || this.type != RefereeType.Main){
-            System.out.println(" Have no permission to edit :(");
+            throw new NoPermissionException(" Have no permission to edit :(");
         }else{
             game.event_logger.events.remove(oldEvent);
             game.event_logger.events.add(newEvent);
@@ -138,6 +146,14 @@ public class Referee extends Member implements Observer {
         }
     }
 
+
+    public String getEmail(){
+        return email;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
 
     public RefereeType getType() {
         return type;
