@@ -8,10 +8,7 @@ import Domain.Events.AGameEvent;
 import Domain.Events.Event_Logger;
 import Domain.Users.Referee;
 
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.Observable;
-import java.util.Observer;
+import java.util.*;
 
 public class Game extends Observable implements IGameSubjective{
     private Team away;
@@ -63,6 +60,8 @@ public class Game extends Observable implements IGameSubjective{
         seconderyReferee.addToGameList(this);
         referees.add(mainReferee);
         referees.add(seconderyReferee);
+        mainReferee.addToGameList(this);
+        seconderyReferee.addToGameList(this);
     }
 
     @Override
@@ -132,7 +131,7 @@ public class Game extends Observable implements IGameSubjective{
     }
 
     public void setDateGame(Date dateGame) {
-        this.dateGame = dateGame;
+        changeDate(dateGame);
     }
 
     public void setMainReferee(Referee mainReferee) {

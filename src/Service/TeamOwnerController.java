@@ -70,6 +70,10 @@ public class TeamOwnerController extends MemberController {
             System.out.println(e.getMessage());
         } catch (UserInformationException e) {
             e.printStackTrace();
+        } catch (MemberIsAlreadyTeamOwnerException e) {
+            System.out.println(e.getMessage());
+        } catch (MemberIsAlreadyTeamManagerException e) {
+            System.out.println(e.getMessage());
         }
         return false;
     }
@@ -99,6 +103,10 @@ public class TeamOwnerController extends MemberController {
         } catch (UserInformationException e) {
             e.printStackTrace();
         } catch (InactiveTeamException e) {
+            System.out.println(e.getMessage());
+        } catch (MemberIsAlreadyTeamOwnerException e) {
+            System.out.println(e.getMessage());
+        } catch (MemberIsAlreadyTeamManagerException e) {
             System.out.println(e.getMessage());
         }
         return false;
