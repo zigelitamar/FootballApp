@@ -5,6 +5,9 @@ import Domain.Events.Event_Logger;
 import Domain.Events.Foul;
 import Domain.Events.IEvent;
 import Domain.SeasonManagment.Game;
+import FootballExceptions.EventNotMatchedException;
+import FootballExceptions.NoPermissionException;
+import FootballExceptions.UserInformationException;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,8 +30,8 @@ public class RefereeTest {
     public void setUp() throws Exception {
         refereeType = RefereeType.Main;
         refereeType2 = RefereeType.Secondary;
-        refereeTest = new Referee("Yossi",1234,"0101",refereeType);
-        refereeTest2 = new Referee("Paul",1235,"0102",refereeType2);
+        refereeTest = new Referee("Yossi43","Yossi",1234,"0101",refereeType);
+        refereeTest2 = new Referee("Paul33","Paul",1235,"0102",refereeType2);
         game = new Game(null,null,null,refereeTest,refereeTest2,null);
     }
 
@@ -37,10 +40,8 @@ public class RefereeTest {
     }
 
     @Test
-    //// FIXME: 17/04/2020 - doesnt work like the fan,need fileOutputStream
-    public void changeName() {
+    public void changeName() throws UserInformationException {
         refereeTest.changeName("Odelia");
-        String a = refereeTest.getName();
         assertEquals("Odelia",refereeTest.getName());
     }
 
@@ -65,7 +66,7 @@ public class RefereeTest {
     //fixme - dont have getter for the eventType
     //fixme - dont have a connection to myGames!
     //fixme - no initialization in event logger!
-    public void addEventToGame() {
+    public void addEventToGame() throws EventNotMatchedException {
         refereeTest.addEventToGame("foul",90.0,game,null);
         Foul foul = new Foul(90,null);
         IEvent a = game.getEvent_logger().getEvents().get(0);
@@ -73,7 +74,7 @@ public class RefereeTest {
     }
 
     @Test
-    public void stringToEvent() {
+    public void stringToEvent() throws EventNotMatchedException {
         IEvent a= refereeTest.stringToEvent("foul",90,null);
         Foul foul = new Foul(90,null);
         assertEquals((int)foul.getGameMinute(),(int)a.getGameMinute());
@@ -83,7 +84,7 @@ public class RefereeTest {
     @Test
 
     //fixme - not working!
-    public void editEventsAfterGame() {
+    public void editEventsAfterGame() throws NoPermissionException {
         Foul foul = new Foul(90,null);
         Foul foul2 = new Foul(86,null);
         refereeTest2.editEventsAfterGame(game,foul,foul2);

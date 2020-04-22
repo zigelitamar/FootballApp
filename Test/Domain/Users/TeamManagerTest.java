@@ -3,6 +3,7 @@ package Domain.Users;
 import Domain.PersonalPages.ProfileContent;
 import Domain.PersonalPages.ProfileContentTest;
 import Domain.SeasonManagment.Team;
+import FootballExceptions.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,12 +22,11 @@ public class TeamManagerTest {
     @Before
     //// FIXME: 18/04/2020 To initialize a team you need a teamowner and vice versa
     public void setUp() throws Exception {
-        team = new Team("Gadi", null, null, 0, 0011, null);
-        teamManagerTest = new TeamManager("Adam", 1111, "5555", 3, team);
-    //    coach = new Coach("Lior", 1313, "%420", 4, null, null, null, null);
-        profileCon = new HashMap<>();
-        content = new ProfileContent(profileCon);
-        owner = new TeamOwner("Kfir",2222,"0909",null);
+        team = new Team("Gadi", null);
+        teamManagerTest = new TeamManager("adam22","Adam", 1111, "5555", 3, team,null);
+        coach = new Coach("lior22","Lior", 1313, "%420",4,team,"personal",null);
+        content = new ProfileContent();
+        owner = new TeamOwner("kfir78","Kfir",2222,"0909",team.getId());
     }
 
     @Test
@@ -36,7 +36,7 @@ public class TeamManagerTest {
 
     @Test
     //// FIXME: 18/04/2020  - only after change editPermissions
-    public void hireCoach() {
+    public void hireCoach() throws UserInformationException, InactiveTeamException, UnauthorizedTeamManagerException {
         boolean ans = teamManagerTest.hireCoach(coach);
         assertTrue(ans);
 
@@ -44,26 +44,26 @@ public class TeamManagerTest {
 
     @Test
     //// FIXME: 18/04/2020  - only after change editPermissions
-    public void createPersonalPageForTeam() {
+    public void createPersonalPageForTeam() throws UnauthorizedPageOwnerException, InactiveTeamException, UnauthorizedTeamManagerException {
         boolean ans = teamManagerTest.createPersonalPageForTeam();
         assertTrue(ans);
     }
 
     @Test
-    public void addContentToTeamsPersonalPage() {
+    public void addContentToTeamsPersonalPage() throws UnauthorizedPageOwnerException, InactiveTeamException, UnauthorizedTeamManagerException {
         boolean ans = teamManagerTest.addContentToTeamsPersonalPage(content);
         assertFalse(ans);
 
     }
 
     @Test
-    public void editProfileOnPersonalPage() {
+    public void editProfileOnPersonalPage() throws UnauthorizedTeamManagerException, InactiveTeamException, UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException {
         boolean ans = teamManagerTest.editProfileOnPersonalPage("height", "1.80");
         assertTrue(ans);
     }
 
     @Test
-    public void isAutorizedTeamOwner() {
+    public void isAutorizedTeamOwner() throws UnauthorizedTeamOwnerException {
         teamManagerTest.setTeamOwnerAssignedThis(owner);
         boolean ans = teamManagerTest.isAutorizedTeamOwner(owner);
         assertTrue(ans);

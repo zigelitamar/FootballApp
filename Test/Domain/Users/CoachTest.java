@@ -3,6 +3,8 @@ package Domain.Users;
 import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.ProfileContent;
 import Domain.SeasonManagment.Team;
+import FootballExceptions.PersonalPageYetToBeCreatedException;
+import FootballExceptions.UnauthorizedPageOwnerException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,66 +19,77 @@ public class CoachTest {
     private Coach coach2;;
     private PersonalInfo info;
     private ProfileContent profileContent;
-    HashMap<String,String> content;
     @Before
     public void init(){
-        coach = new Coach("noa","noa noa",312427404,"noanoa123",1,null,"personalCoach",CoachRole.HeadCoach);
+        coach = new Coach("noa12","noa",312427404,"noanoa123",1,null,"personalCoach",CoachRole.HeadCoach);
         info = new PersonalInfo(coach);
         coach.setInfo(info);
-        coach2 = new Coach("shira","shira shira",313546448,"noanoa123",2,null,"personalCoach",CoachRole.FirstAssistantCoach);
-        content = new HashMap<>();
+        coach2 = new Coach("shira33","shira",313546448,"noanoa123",2,null,"personalCoach",CoachRole.FirstAssistantCoach);
         profileContent = new ProfileContent();
     }
     @Test
     public void createPersonalPage() {
-        int id= info.getPageID();
-        coach.createPersonalPage();
-        int id2= info.getPageID();
-        assertNotEquals(id2,id);
+            int id= coach.getInfo().getPageID();
+            coach.createPersonalPage();
+            int id2= coach.getInfo().getPageID();
+            assertNotEquals(id2,id);
 
     }
-    /*
     @Test
     public void addContentToPersonalPage() {
-        boolean ans=coach.addContentToPersonalPage(profileContent);
+        boolean ans= false;
+        try {
+            ans = coach.addContentToPersonalPage(profileContent);
+        } catch (UnauthorizedPageOwnerException e) {
+            e.printStackTrace();
+        } catch (PersonalPageYetToBeCreatedException e) {
+            e.printStackTrace();
+        }
         assertTrue(ans);
 
     }
 
     @Test
-    public void addContentToPersonalPage2() {
-        boolean ans=coach2.addContentToPersonalPage(profileContent);
-        assertFalse(ans);
+    public void addContentToPersonalPage2(){
+        try {
+            coach2.addContentToPersonalPage(profileContent);
+        } catch (UnauthorizedPageOwnerException e) {
+            e.printStackTrace();
+        } catch (PersonalPageYetToBeCreatedException e) {
+            System.out.println("Personal Page is not created");
+        }
     }
 
+
     @Test
-    public void editProfile() {
+    public void editProfile() throws UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException {
         coach.addContentToPersonalPage(profileContent);
         boolean ans = coach.editProfile("height","1.80");
         assertTrue(ans);
     }
 
     @Test
-    public void editProfile2() {
-        boolean ans = coach2.editProfile("height","1.80");
+    public void editProfile2(){
+        boolean ans = false;
+        try {
+            ans = coach2.editProfile("height","1.80");
+        } catch (UnauthorizedPageOwnerException e) {
+            e.printStackTrace();
+        } catch (PersonalPageYetToBeCreatedException e) {
+            System.out.println("Personal Page is not created");
+        }
         assertFalse(ans);
     }
 
+
     @Test
-    public void getMyTeam() {
+    //+getTeam
+    public void setMyTeam() {
         Team t = coach.getMyTeam();
         coach.setMyTeam(t);
         Team realTeam = coach.getMyTeam();
         assertEquals(t,realTeam);
-    }
 
-    @Test
-    public void setMyTeam() {
-
-    }
-
-    @Test
-    public void getTraining() {
     }
 
     @Test
@@ -84,10 +97,6 @@ public class CoachTest {
     public void setTraining() {
         coach.setTraining("diploma");
         assertEquals("diploma",coach.getTraining());
-    }
-
-    @Test
-    public void getRole() {
     }
 
     @Test
@@ -111,5 +120,4 @@ public class CoachTest {
         coach.edit(5);
         assertEquals(5, coach.getValue());
     }
-    */
 }
