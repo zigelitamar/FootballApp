@@ -7,7 +7,6 @@ import Domain.Users.Player;
 import Domain.Users.TeamManager;
 import Domain.Users.TeamOwner;
 
-import javax.management.relation.Role;
 import java.util.HashSet;
 
 public abstract class Searcher {

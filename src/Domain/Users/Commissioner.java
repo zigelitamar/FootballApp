@@ -5,9 +5,8 @@ import Domain.SeasonManagment.*;
 import FootballExceptions.*;
 import javafx.util.Pair;
 
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.net.UnknownHostException;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,10 +15,6 @@ public class Commissioner extends Member {
 
     LinkedList<Pair<String,Integer>> financeAssociationActivity;     /** UC 9.9
 
-
-
-
-
     /**
      * constructor
      * @param name
@@ -27,8 +22,8 @@ public class Commissioner extends Member {
      * @param password
      */
 
-    public Commissioner(String name,String realname, int id, String password) {
-        super(name, id, password,realname);
+    public Commissioner(String name, int id, String password,String realName) {
+        super(name, id, password,realName);
         financeAssociationActivity = new LinkedList<>();
     }
 
@@ -59,9 +54,8 @@ public class Commissioner extends Member {
         system.sendInvitationByMail(ref.getEmail(),"Invitation For FootballApp","Hello " + ref.getName() + "\nWe're excited to invite you to use our FootballApp.\nCome and join us :)");
         system.addReferee(ref);
     }
-/*
-    /**UC 9.3 - Del Referee from system by name*/
 
+    /**UC 9.3 - Del Referee from system by name*/
     public void defineReferee(String ref){
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
         try{
@@ -87,6 +81,8 @@ public class Commissioner extends Member {
         if(found){
             Season season = leaugue.getSeasonByYear(year);
             season.addRefereeToSeason(ref);
+        }else {
+            throw new LeagueNotFoundException("there is not league with this id "+ idLeg);
         }
     }
 
@@ -155,12 +151,11 @@ public class Commissioner extends Member {
     public void defineBudgetControl(ICommissionerRule newRule){
 
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
-        List<Team> teams = new LinkedList<Team>();
-
-        teams.addAll(system.getAllTeams().values());
-        for (int i = 0; i < teams.size(); i++) {
+        HashMap<Integer,Team> teams = system.getAllTeams();
+        for (int i : teams.keySet()) {
             teams.get(i).getControlBudget().setCommissionerRule(newRule);
         }
+
     }
 
 
@@ -178,6 +173,9 @@ public class Commissioner extends Member {
         }
 
     }
+
+
+
 
 
 }

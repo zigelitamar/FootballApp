@@ -1,8 +1,7 @@
 import Domain.FootballManagmentSystem;
-import Domain.SeasonManagment.ControlBudget;
-import Domain.SeasonManagment.Team;
-import Domain.SeasonManagment.TeamStatus;
+import Domain.Users.SystemManager;
 
+import java.io.*;
 import java.net.UnknownHostException;
 import java.text.ParseException;
 import java.util.Date;
@@ -16,10 +15,42 @@ public class Main {
     public static void main(String[] args) throws ParseException, UnknownHostException {
 
 
+        File file = new File(Main.class.getClassLoader().getResource("init.txt").getFile());
+        if (file == null) return;
+        String userName;
+        String realName;
+        int id;
+        String password;
+
+        try (FileReader reader = new FileReader(file);
+             BufferedReader br = new BufferedReader(reader)) {
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] details = line.split(" ");
+                userName = details[1];
+                realName = details[2];
+                realName += " " + details[3];
+                id = Integer.parseInt(details[4]);
+                password = details[5];
+                SystemManager currentSysManager = new SystemManager(userName,realName,id,password);
+                //allInCharge.add(currentSysManager);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //firstSystemManager = allInCharge.get(0);
+
+
+
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
-        ControlBudget controlBudget = new ControlBudget(23);
-        Team team = new Team("a",null, TeamStatus.Active,0,23,controlBudget);
-        system.addTeam(team);
+//        ControlBudget controlBudget = new ControlBudget(23);
+//        Team team = new Team("a",null, TeamStatus.Active,0,23,controlBudget);
+//        system.addTeam(team);
+
 
 
         system.sendInvitationByMail("kaprizahi@gmail.com","Hi","hiiiii");

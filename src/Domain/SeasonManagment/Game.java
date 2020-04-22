@@ -6,8 +6,6 @@ import Domain.Alerts.IAlert;
 import Domain.Alerts.IGameSubjective;
 import Domain.Events.AGameEvent;
 import Domain.Events.Event_Logger;
-import Domain.Events.IEvent;
-import Domain.Users.Fan;
 import Domain.Users.Referee;
 
 import java.util.*;
@@ -23,6 +21,7 @@ public class Game extends Observable implements IGameSubjective{
     private Season season;
     public Event_Logger event_logger;
     private LinkedList <Observer> referees;
+    private IAlert alert;
 
 
 
@@ -42,7 +41,12 @@ public class Game extends Observable implements IGameSubjective{
     public void changeDate(Date newDate) {
         this.dateGame = newDate;
         IAlert newAlart = new ChangedGameAlert(dateGame,this);
-        notifyReferees(newAlart);
+        alert = newAlart;
+    }
+
+
+    public void run(){
+        notifyReferees(alert);
     }
 
     @Override
@@ -52,6 +56,8 @@ public class Game extends Observable implements IGameSubjective{
 
     @Override
     public void addReferees() {
+        mainReferee.addToGameList(this);
+        seconderyReferee.addToGameList(this);
         referees.add(mainReferee);
         referees.add(seconderyReferee);
         mainReferee.addToGameList(this);
