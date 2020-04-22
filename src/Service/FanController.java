@@ -3,10 +3,7 @@ package Service;
 import Domain.Alerts.IAlert;
 import Domain.FootballManagmentSystem;
 import Domain.Searcher.Searcher;
-import Domain.SeasonManagment.ComplaintForm;
-import Domain.SeasonManagment.Game;
-import Domain.SeasonManagment.Leaugue;
-import Domain.SeasonManagment.Season;
+import Domain.SeasonManagment.*;
 import Domain.Users.Fan;
 import Domain.Users.PersonalInfo;
 import FootballExceptions.UserInformationException;
@@ -65,6 +62,10 @@ public class FanController {
             return false;
         }
 
+    }
+
+    public double useReccommandationSystem(Game game, Team team){
+        return useReccommandationSystem(game,team);
     }
 
 

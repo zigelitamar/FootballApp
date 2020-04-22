@@ -149,6 +149,9 @@ public class Referee extends Member implements Observer {
     }
 
 
+    public void addToGameList(Game game){
+        games.add(game);
+    }
     public String getEmail(){
         return email;
     }

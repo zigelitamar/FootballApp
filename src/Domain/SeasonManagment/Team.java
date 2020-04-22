@@ -95,13 +95,16 @@ public class Team {
             if (asset instanceof Player) {
                 teamPlayers.put(asset.getAssetID(), asset);
                 calculatePlayerFootballRate();
+                ((Player) asset).setMyTeam(this);
                 SystemLog.getInstance().UpdateLog("New Player: " + asset.getClass().toString().toLowerCase() + " has been added to team: " + asset.getMyTeam() + "by" + member.getName());
             }
             if (asset instanceof Coach) {
                 teamCoaches.put(((Coach) asset).getRole(), asset);
+                ((Coach) asset).setMyTeam(this);
                 SystemLog.getInstance().UpdateLog("New " + ((Coach) asset).getRole() + " " + asset.getClass().toString().toLowerCase() + " has been added to team: " + asset.getMyTeam() + "by" + member.getName());
             }
             if (asset instanceof Field) {
+                ((Field)asset).setMyTeam(this);
                 teamfields.put(asset.getAssetID(), asset);
                 SystemLog.getInstance().UpdateLog("New Field: " + asset.getClass().toString().toLowerCase() + " has been added to team: " + asset.getMyTeam() + "by" + member.getName());
             }
@@ -199,13 +202,22 @@ public class Team {
      * @param newOwner - the assigned new owner
      * @return true if succeeded
      */
-    public boolean addNewTeamOwner(Member ownerAssigning,Member newOwner) throws InactiveTeamException, UnauthorizedTeamOwnerException, UserInformationException{
+    public boolean addNewTeamOwner(Member ownerAssigning,Member newOwner) throws MemberIsAlreadyTeamManagerException,MemberIsAlreadyTeamOwnerException,InactiveTeamException, UnauthorizedTeamOwnerException, UserInformationException{
         if(!isActive()){
             throw new InactiveTeamException();
         }
-//        if(isTeamOwner(newOwner)){
-//            return false;
-//        }
+        List <Member> memberAccountsCheck = system.getMemberByUserName(newOwner.getName());
+        for (Member memberAccount : memberAccountsCheck) {
+            if (owner.equals(memberAccount) || secondaryOwners.contains(memberAccount)) {
+                throw new MemberIsAlreadyTeamOwnerException();
+            }
+            if(memberAccount instanceof TeamManager) {
+                 if(teamMangers.containsKey(((TeamManager) memberAccount).getAssetID())){
+                     throw new MemberIsAlreadyTeamManagerException();
+                 }
+            }
+        }
+
         if(isTeamOwner(ownerAssigning)){
             LinkedList<Member>  memberAccounts = system.makeMemberTeamOwner(newOwner,this);
             if(memberAccounts!=null) {
@@ -252,14 +264,22 @@ public class Team {
      * @param value - his asset value
      * @return - true if succeeded
      */
-    public boolean addNewTeamManger(TeamOwner teamOwner, Member newTeamManager,int value) throws UnauthorizedTeamOwnerException,InactiveTeamException,UserInformationException{
+    public boolean addNewTeamManger(TeamOwner teamOwner, Member newTeamManager,int value) throws MemberIsAlreadyTeamManagerException,MemberIsAlreadyTeamOwnerException,UnauthorizedTeamOwnerException,InactiveTeamException,UserInformationException{
         if(!isActive()){
             throw new InactiveTeamException();
         }
-        if(isTeamOwner(teamOwner)){
-            if(isTeamManager(newTeamManager)){
-                return false;
+        List <Member> memberAccountsCheck = system.getMemberByUserName(newTeamManager.getName());
+        for (Member memberAccount : memberAccountsCheck) {
+            if (owner.equals(memberAccount) || secondaryOwners.contains(memberAccount)) {
+                throw new MemberIsAlreadyTeamOwnerException();
             }
+            if(memberAccount instanceof TeamManager) {
+                if(teamMangers.containsKey(((TeamManager) memberAccount).getAssetID())){
+                    throw new MemberIsAlreadyTeamManagerException();
+                }
+            }
+        }
+        if(isTeamOwner(teamOwner)){
             LinkedList<Member>  memberAccounts = system.makeMemberTeamManger(newTeamManager,this,value,teamOwner);
             if(memberAccounts!=null) {
                 for (Member member : memberAccounts) {
@@ -329,13 +349,13 @@ public class Team {
      * @return
      */
     private boolean isTeamOwner(Member member) throws UnauthorizedTeamOwnerException{
-        if (owner.equals(member)||secondaryOwners.contains(member)){
-            return true;
+        List <Member> memberAccounts = system.getMemberByUserName(member.getName());
+        for (Member memberAccount : memberAccounts) {
+            if (owner.equals(memberAccount) || secondaryOwners.contains(memberAccount)) {
+                return true;
+            }
         }
-        if(!secondaryOwners.contains(member)){
-            throw new UnauthorizedTeamOwnerException();
-        }
-        return true;
+        throw new UnauthorizedTeamOwnerException();
     }
 
     /**
@@ -344,8 +364,11 @@ public class Team {
      * @return
      */
     private boolean isTeamManager(Member member){
-        if(member instanceof TeamManager) {
-            return teamMangers.containsKey(((TeamManager) member).getAssetID());
+        List <Member> memberAccounts = system.getMemberByUserName(member.getName());
+        for (Member memberAccount : memberAccounts) {
+            if(memberAccount instanceof TeamManager) {
+                return teamMangers.containsKey(((TeamManager) memberAccount).getAssetID());
+            }
         }
         return false;
     }

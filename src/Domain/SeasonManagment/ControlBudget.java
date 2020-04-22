@@ -1,5 +1,8 @@
 package Domain.SeasonManagment;
 
+import Domain.Alerts.FinancialAlert;
+import Domain.Alerts.IAlert;
+
 import java.util.Date;
 import java.util.List;
 

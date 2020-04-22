@@ -74,7 +74,7 @@ public class TeamOwner extends Member {
      * @param newOwner - member (!!) that will become team owner
      * @return true if succeeded
      */
-    public boolean assignNewTeamOwner(Member newOwner) throws TeamOwnerWithNoTeamException,InactiveTeamException,UnauthorizedTeamOwnerException, UserInformationException {
+    public boolean assignNewTeamOwner(Member newOwner) throws MemberIsAlreadyTeamOwnerException, MemberIsAlreadyTeamManagerException,TeamOwnerWithNoTeamException,InactiveTeamException,UnauthorizedTeamOwnerException, UserInformationException {
         if(team==null){
             throw new TeamOwnerWithNoTeamException();
         }
@@ -100,7 +100,7 @@ public class TeamOwner extends Member {
      * @param value - his asset value
      * @return - true if succeeded
      */
-    public boolean assignNewTeamManager(Member newTeamManager,int value) throws TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException,UserInformationException,InactiveTeamException{
+    public boolean assignNewTeamManager(Member newTeamManager,int value) throws MemberIsAlreadyTeamOwnerException, MemberIsAlreadyTeamManagerException,TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException,UserInformationException,InactiveTeamException{
         if(team==null){
             throw new TeamOwnerWithNoTeamException();
         }
@@ -158,9 +158,9 @@ public class TeamOwner extends Member {
             throw new TeamOwnerWithNoTeamException();
         }
         if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries){
-            return team.addBudgetActivity(this,date,description.toString(),(amount*(-1)));
+            return team.addBudgetActivity(this,date,description,(amount*(-1)));
         }else{
-            return team.addBudgetActivity(this,date,description.toString(),(amount));
+            return team.addBudgetActivity(this,date,description,(amount));
         }
     }
     public Team getTeam() {

@@ -3,10 +3,7 @@ package Domain.Users;
 import Domain.Alerts.IAlert;
 import Domain.FootballManagmentSystem;
 import Domain.Searcher.Searcher;
-import Domain.SeasonManagment.ComplaintForm;
-import Domain.SeasonManagment.Game;
-import Domain.SeasonManagment.Leaugue;
-import Domain.SeasonManagment.Season;
+import Domain.SeasonManagment.*;
 import FootballExceptions.UserInformationException;
 import javafx.util.Pair;
 
@@ -16,9 +13,11 @@ public class Fan extends Member implements Observer {
     private HashMap<PersonalInfo,Boolean> personalPagesFollowed; //Tracking personal pages, boolean represent alerts on/off
     private LinkedList <String> searchHistory;
     private FootballManagmentSystem system;
+    private RecommendationSystem recommendationSystem;
     public Fan(String name,String realname, int id, String password) {
         super(name, id, password,realname);
         system = FootballManagmentSystem.getInstance();
+        recommendationSystem = new RecommendationSystem();
        personalPagesFollowed=new HashMap<>();
     }
 
@@ -162,6 +161,16 @@ public class Fan extends Member implements Observer {
         return searcher.getAnswer();
     }
 
+
+    /**
+     * UC 11
+     * @param game
+     * @param team
+     * @return
+     */
+    public double useRecommandationSystem(Game game, Team team){
+        return recommendationSystem.recommendTeamOddsOfWinning(game,team);
+    }
     /*getSet*/
 
     public HashMap<PersonalInfo, Boolean> getPersonalPagesFollowed() {

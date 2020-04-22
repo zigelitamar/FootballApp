@@ -24,6 +24,10 @@ public class Field implements IAsset {
 
     }
 
+    public void setMyTeam(Team myTeam) {
+        this.myTeam = myTeam;
+    }
+
     @Override
     public Team getMyTeam() {
         return  myTeam;
