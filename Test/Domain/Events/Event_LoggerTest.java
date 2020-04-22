@@ -14,6 +14,7 @@ public class Event_LoggerTest {
         goal=new Goal(30);
         eventLog = new Event_Logger();
 
+
     }
 
     @Test

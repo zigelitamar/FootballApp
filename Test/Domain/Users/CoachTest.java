@@ -1,16 +1,11 @@
 package Domain.Users;
 
-import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.ProfileContent;
 import Domain.SeasonManagment.Team;
 import FootballExceptions.PersonalPageYetToBeCreatedException;
 import FootballExceptions.UnauthorizedPageOwnerException;
 import org.junit.Before;
 import org.junit.Test;
-
-import javax.naming.ldap.ManageReferralControl;
-
-import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
@@ -21,10 +16,10 @@ public class CoachTest {
     private ProfileContent profileContent;
     @Before
     public void init(){
-        coach = new Coach("noa12","noa",312427404,"noanoa123",1,null,"personalCoach",CoachRole.HeadCoach);
+        coach = new Coach("noa12","noa",312427404,"noanoa123",1,null,CoachRole.HeadCoach);
         info = new PersonalInfo(coach);
         coach.setInfo(info);
-        coach2 = new Coach("shira33","shira",313546448,"noanoa123",2,null,"personalCoach",CoachRole.FirstAssistantCoach);
+        coach2 = new Coach("shira33","shira",313546448,"noanoa123",2,null,CoachRole.FirstAssistantCoach);
         profileContent = new ProfileContent();
     }
     @Test

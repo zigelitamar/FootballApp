@@ -14,7 +14,7 @@ public class LeaugueTest {
     Leaugue leaugue = new Leaugue();
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
-    Commissioner commissioner = new Commissioner("Alon", 123, "YO");
+    Commissioner commissioner = new Commissioner("Alon", 123, "YO","avi nusbaum");
    // FootballManagmentSystem footballManagmentSystem = new FootballManagmentSystem();
     Season season = new Season(1995);
 

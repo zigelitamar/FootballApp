@@ -2,18 +2,17 @@ package Domain.Users;
 
 import Domain.Alerts.IAlert;
 import Domain.Alerts.PersonalPageAlert;
-import Domain.Events.Goal;
-import Domain.Events.IEvent;
 import Domain.PersonalPages.ProfileContent;
 import Domain.SeasonManagment.Game;
-import Domain.SeasonManagment.GameTest;
 import Domain.SeasonManagment.Team;
 import FootballExceptions.UserInformationException;
 import javafx.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -33,8 +32,8 @@ public class FanTest {
     @Before
     public void init(){
         fanTest = new Fan("great","Noa",4325,"1234");
-        p = new Player("adam11","Adam",4321,"0000",3,null,null,null);
-        p2 = new Player("lior4","Lior",4322,"0101",4,null,null,null);
+        p = new Player("adam11","Adam",4321,"0000",3,null,null);
+        p2 = new Player("lior4","Lior",4322,"0101",4,null,null);
         owner = new TeamOwner("asif","Asif",333,"234");
         team = new Team("null",owner);
         infos = new ArrayList<>();

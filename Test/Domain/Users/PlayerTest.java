@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
-import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
@@ -27,8 +26,8 @@ public class PlayerTest {
     public void init() {
         owner = new TeamOwner("Tal23","Tal",35,"@3534");
         team = new Team("Haifa",owner);
-        playerTest = new Player("Eyal2","Eyal", 1234, "0000", 4, team, null, null);
-        playerTest2 = new Player("guy55","Guy", 1233, "0011", 3, team, null, null);
+        playerTest = new Player("Eyal2","Eyal", 1234, "0000", 4, null, null);
+        playerTest2 = new Player("guy55","Guy", 1233, "0011", 3, null, null);
         info = new PersonalInfo(playerTest);
         profileContent = new ProfileContent();
 
