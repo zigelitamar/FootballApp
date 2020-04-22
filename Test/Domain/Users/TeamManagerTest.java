@@ -1,7 +1,6 @@
 package Domain.Users;
 
 import Domain.PersonalPages.ProfileContent;
-import Domain.PersonalPages.ProfileContentTest;
 import Domain.SeasonManagment.Team;
 import FootballExceptions.*;
 import org.junit.Before;
@@ -24,7 +23,7 @@ public class TeamManagerTest {
     public void setUp() throws Exception {
         team = new Team("Gadi", null);
         teamManagerTest = new TeamManager("adam22","Adam", 1111, "5555", 3, team,null);
-        coach = new Coach("lior22","Lior", 1313, "%420",4,team,"personal",null);
+        coach = new Coach("lior22","Lior", 1313, "%420",4,"personal",null);
         content = new ProfileContent();
         owner = new TeamOwner("kfir78","Kfir",2222,"0909",team.getId());
     }

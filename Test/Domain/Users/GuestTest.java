@@ -13,7 +13,7 @@ public class GuestTest {
     @Before
     public void init(){
         guestTest = new Guest();
-        p = new Player("Gadi33","Gadi",344,"234",3,null,null,null);
+        p = new Player("Gadi33","Gadi",344,"234",3,null,null);
         p.createPersonalPage();
     }
 

@@ -16,7 +16,7 @@ public abstract class Member extends GeneralUser {
     private boolean isActive;
     private boolean alertViaMail;
     private String mailAddress;
-    FootballManagmentSystem system = FootballManagmentSystem.getInstance();
+
 
     public Member(String name, int id, String password, String real_name) {
         this.name = name;
@@ -53,6 +53,7 @@ public abstract class Member extends GeneralUser {
      * @param newAlert
      */
     public void handleAlert(IAlert newAlert){
+        FootballManagmentSystem system = FootballManagmentSystem.getInstance();
         if(alertViaMail){
             try {
                 system.sendInvitationByMail(this.mailAddress,"You have A new Alert in Football App",newAlert.toString());

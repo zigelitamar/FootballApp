@@ -19,7 +19,7 @@ public class TeamOwnerTest {
     public void init(){
         ownerTest = new TeamOwner("Avi","Avi",2424,"234");
         team = new Team("Maccabi",ownerTest);
-        iAsset = new Player("Dani","Dani",24,"3434",4,null,null,null);
+        iAsset = new Player("Dani","Dani",24,"3434",4,null,null);
 
     }
 

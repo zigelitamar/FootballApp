@@ -39,14 +39,15 @@ public class FootballManagmentSystem extends TimerTask {
     private FootballManagmentSystem() {
         /**maybe read some text file from pc to see who are the systemManager that registered ?? */
 
-        File file = new File(getClass().getClassLoader().getResource("init.txt").getFile());
-        if (file == null) return;
+        File fileNew = new File("log/init.txt");
+//        File file = new File(getClass().getClassLoader().getResource("log/init.txt").getFile());
+        if (fileNew == null) return;
         String userName;
         String realName;
         int id;
         String password;
 
-        try (FileReader reader = new FileReader(file);
+        try (FileReader reader = new FileReader(fileNew);
              BufferedReader br = new BufferedReader(reader)) {
 
             String line;
@@ -66,6 +67,9 @@ public class FootballManagmentSystem extends TimerTask {
             e.printStackTrace();
         }
 
+        LinkedList<Member> list = new LinkedList<>();
+        list.add(allInCharge.get(0));
+        members.put(allInCharge.get(0).getName(),list);
         firstSystemManager = allInCharge.get(0);
         /** initialize connection with servers */
 

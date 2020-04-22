@@ -2,6 +2,7 @@ package Domain.Events;
 
 import Domain.SeasonManagment.Game;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Event_Logger {
@@ -11,6 +12,7 @@ public class Event_Logger {
 
 
     public Event_Logger() {
+        events = new LinkedList<>();
 
     }
     public void addEvent(IEvent event){
