@@ -1,7 +1,9 @@
 package Domain.Users;
 
 import Domain.Alerts.IAlert;
+import Domain.FootballManagmentSystem;
 
+import java.net.UnknownHostException;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -13,6 +15,8 @@ public abstract class Member extends GeneralUser {
     private Queue<IAlert> alertsList;
     private boolean isActive;
     private boolean alertViaMail;
+    private String mailAddress;
+    FootballManagmentSystem system = FootballManagmentSystem.getInstance();
 
     public Member(String name, int id, String password, String real_name) {
         this.name = name;
@@ -22,6 +26,7 @@ public abstract class Member extends GeneralUser {
         isActive = false;
         alertViaMail =false;
         alertsList = new LinkedList<>();
+        mailAddress="";
     }
     public Member(){
         alertsList = new LinkedList<>();
@@ -49,14 +54,22 @@ public abstract class Member extends GeneralUser {
      */
     public void handleAlert(IAlert newAlert){
         if(alertViaMail){
-            //send via mail
+            try {
+                system.sendInvitationByMail(this.mailAddress,"You have A new Alert in Football App",newAlert.toString());
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            }
             return;
         }
         if(isActive){
-            //showAlert
+            System.out.println(newAlert);
         }else{
             alertsList.add(newAlert);
         }
+    }
+
+    public void setMailAddress(String mailAddress){
+        this.mailAddress = mailAddress;
     }
     /*getSet*/
 
