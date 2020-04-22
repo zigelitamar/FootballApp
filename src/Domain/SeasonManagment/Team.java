@@ -80,6 +80,13 @@ public class Team {
         }
     }
 
+    public HashMap<Integer, IAsset> getTeamPlayers() {
+        return teamPlayers;
+    }
+
+    public void setTeamPlayers(HashMap<Integer, IAsset> teamPlayers) {
+        this.teamPlayers = teamPlayers;
+    }
 
     /**
      * adding asset added by team owner, checking if he is really team owner
