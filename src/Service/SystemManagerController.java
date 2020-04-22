@@ -12,7 +12,7 @@ import FootballExceptions.UnableToRemoveException;
 import java.io.IOException;
 import java.util.List;
 
-public class SystemManagerController {
+public class SystemManagerController extends MemberController {
 
     public void deleteMember(SystemManager systemManager, Member member){
         try {
