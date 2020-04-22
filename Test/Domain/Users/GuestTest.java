@@ -7,30 +7,34 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class GuestTest {
-    private Guest guest;
+    private Guest guestTest;
+    private Player p;
 
     @Before
     public void init(){
-        guest = new Guest();
-
+        guestTest = new Guest();
+        p = new Player("Gadi33","Gadi",344,"234",3,null,null,null);
+        p.createPersonalPage();
     }
 
     @Test
     public void register() throws UserInformationException {
-        boolean ans= guest.register("noa","1234",1234,null);
+        boolean ans= guestTest.register("noale","Noa","1234",1234,null);
         assertTrue(ans);
     }
 
     @Test
     public void login() throws UserInformationException {
         Member m;
-     //   m=guest.login("noa","1234");
-     //   assertNotNull(m);
+        m = guestTest.login("noa","1234").get(0);
+        assertNotNull(m);
 
     }
 
     @Test
+    //// FIXME: 19/04/2020  - what to check ?
     public void view() {
+        guestTest.view(p);
     }
 
     @Test
