@@ -64,8 +64,8 @@ public class FanController {
 
     }
 
-    public double useReccommandationSystem(Game game, Team team){
-        return useReccommandationSystem(game,team);
+    public double useReccommandationSystem(Fan fan, Game game, Team team){
+        return fan.useRecommandationSystem(game,team);
     }
 
 
