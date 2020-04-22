@@ -9,6 +9,14 @@ import Domain.Users.*;
 import FootballExceptions.LeagueIDAlreadyExist;
 import FootballExceptions.UserInformationException;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.io.*;
+import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.*;
 
@@ -30,10 +38,36 @@ public class FootballManagmentSystem extends TimerTask {
 
     private FootballManagmentSystem() {
         /**maybe read some text file from pc to see who are the systemManager that registered ?? */
-        firstSystemManager = new SystemManager("aviluzon","Avi Luzon", 1, "12345678");
-        /*uc 1/
 
-         */
+        File file = new File(getClass().getClassLoader().getResource("init.txt").getFile());
+        if (file == null) return;
+        String userName;
+        String realName;
+        int id;
+        String password;
+
+        try (FileReader reader = new FileReader(file);
+             BufferedReader br = new BufferedReader(reader)) {
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] details = line.split(" ");
+                userName = details[1];
+                realName = details[2];
+                realName += " " + details[3];
+                id = Integer.parseInt(details[4]);
+                password = details[5];
+                SystemManager currentSysManager = new SystemManager(userName,realName,id,password);
+                allInCharge.add(currentSysManager);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        firstSystemManager = allInCharge.get(0);
+        /** initialize connection with servers */
 
     }
 
@@ -170,13 +204,18 @@ public class FootballManagmentSystem extends TimerTask {
      * Association responsibillty UC 9.3
      * @param ref
      */
-    public void delReferee(String ref){
+    public void delReferee(String ref) throws UserInformationException {
         Iterator it = allRefs.iterator();
+        boolean found = false;
         while (it.hasNext()){
             if(((Referee)it).getName().equals(ref)){
                 allRefs.remove(((Referee)it));
+                found = true;
             }
             it.next();
+        }
+        if (!found){
+            throw new UserInformationException("there is not exist referee with the name "+ ref);
         }
     }
 
@@ -464,29 +503,29 @@ public class FootballManagmentSystem extends TimerTask {
 
 
     public void sendInvitationByMail(String emailRecipient,String subject, String content) throws UnknownHostException, UnknownHostException {
-//        InetAddress ip = InetAddress.getLocalHost();
-//        System.out.println(ip);
-//        String recipient = emailRecipient;
-//        String sender = "FootballApp@gmail.com";
-//        String host = "127.0.0.1";
-//        Properties properties = System.getProperties();
-//        properties.setProperty("mail.smtp.host", host);
-//        Session session = Session.getDefaultInstance(properties);
-//
-//        try
-//        {
-//            MimeMessage message = new MimeMessage(session);
-//            message.setFrom(new InternetAddress(sender));
-//            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-//            message.setSubject(subject);
-//            message.setText(content);
-//            Transport.send(message);
-//            System.out.println("Mail successfully sent");
-//        }
-//        catch (MessagingException mex)
-//        {
-//            mex.printStackTrace();
-//        }
+        InetAddress ip = InetAddress.getLocalHost();
+        System.out.println(ip);
+        String recipient = emailRecipient;
+        String sender = "FootballApp@gmail.com";
+        String host = "127.0.0.1";
+        Properties properties = System.getProperties();
+        properties.setProperty("mail.smtp.host", host);
+        Session session = Session.getDefaultInstance(properties);
+
+        try
+        {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(sender));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+            message.setSubject(subject);
+            message.setText(content);
+            Transport.send(message);
+            System.out.println("Mail successfully sent");
+        }
+        catch (MessagingException mex)
+        {
+            mex.printStackTrace();
+        }
     }
 
 
