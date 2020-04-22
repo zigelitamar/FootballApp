@@ -73,6 +73,8 @@ public class FanController {
        return fan.search(str,searcher);
 
     }
+
+
     
 
 

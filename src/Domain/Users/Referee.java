@@ -26,8 +26,8 @@ public class Referee extends Member implements Observer {
         handleAlert((IAlert)arg);
     }
 
-    public Referee(String name,String realName, int id, String password, RefereeType type) {
-        super(name, id, password,realName);
+    public Referee(String name,String realname, int id, String password, RefereeType type) {
+        super(name, id, password,realname);
         this.type = type;
         games=new ArrayList<>();
         system = FootballManagmentSystem.getInstance();
