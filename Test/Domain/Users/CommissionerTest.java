@@ -2,8 +2,6 @@ package Domain.Users;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class CommissionerTest {
 
 
@@ -12,7 +10,7 @@ public class CommissionerTest {
 
     @Test
     public void defineReferee() {
-        commissioner.defineReferee(referee);
+        //commissioner.defineReferee(referee);
 
     }
 

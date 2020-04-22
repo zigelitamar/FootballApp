@@ -49,5 +49,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="smtp-1.6.2" level="project" />
   </component>
 </module>

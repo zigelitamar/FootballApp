@@ -23,7 +23,7 @@ public class PersonalInfoTest {
         teamManager2 = new TeamManager("Gadi",1224,"1234",5,null);
         personalInfoTest = new PersonalInfo(teamManager);
         content = new HashMap<>();
-        profileContent = new ProfileContent(content);
+        profileContent = new ProfileContent();
         fan = new Fan("Yarden",1234,"0000");
 
     }

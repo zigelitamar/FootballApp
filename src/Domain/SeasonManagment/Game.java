@@ -75,6 +75,7 @@ public class Game extends Observable implements IGameSubjective{
 
     //part of UC - 10.3 + alerting to followers
     public void addEventToEventLog(AGameEvent event){
+        event.getPlayerWhocommit().changePlayerRate(event);
         event_logger.addEvent(event);
         IAlert alert = new GameEventAlert(event.getGameMinute(),event);
         notifyTeamfans(alert);

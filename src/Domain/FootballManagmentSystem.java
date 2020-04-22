@@ -1,10 +1,15 @@
 package Domain;
 
 import Domain.Alerts.IAlert;
-import Domain.SeasonManagment.*;
+import Domain.SeasonManagment.ComplaintForm;
+import Domain.SeasonManagment.IAsset;
+import Domain.SeasonManagment.Leaugue;
+import Domain.SeasonManagment.Team;
 import Domain.Users.*;
+import FootballExceptions.LeagueIDAlreadyExist;
 import FootballExceptions.UserInformationException;
 
+import java.net.UnknownHostException;
 import java.util.*;
 
 
@@ -33,12 +38,13 @@ public class FootballManagmentSystem extends TimerTask {
     }
 
 
+
     public LinkedList<Member> login(String username, String password) throws UserInformationException {
         LinkedList<Member> logging = members.get(username);
         if (logging == null) {
             throw new UserInformationException();
         }
-        boolean correctPW = false;
+            boolean correctPW=false;
         for (Member member : logging) {
             if (member.getPassword().equals(password)) {
                 correctPW = true;
@@ -77,7 +83,6 @@ public class FootballManagmentSystem extends TimerTask {
 
     /**
      * register for simpale members , fan like.
-     *
      * @param userName
      * @param pass
      * @param id
@@ -95,7 +100,6 @@ public class FootballManagmentSystem extends TimerTask {
             return true; // added succesfully
         }
     }
-
     /**
      * teamOwner responsebillity
      */
@@ -108,7 +112,6 @@ public class FootballManagmentSystem extends TimerTask {
 
     /**
      * teamOwner responsebillity
-     *
      * @param asset
      */
     public void addTeamAssets(IAsset asset) {
@@ -124,9 +127,8 @@ public class FootballManagmentSystem extends TimerTask {
         }
     }
 
-    /**
+        /**
      * Association responsibillty UC 9.3
-     *
      * @param ref
      */
     public void addReferee(Referee ref) {
@@ -146,9 +148,7 @@ public class FootballManagmentSystem extends TimerTask {
     }
 
 
-    /**
-     * constraint 7
-     */
+    /** constraint 7 */
     //TODO write in the main for every quarter :
     //                                  Date date = new Date("02/29/2020");
     //                                  Timer timer = new Timer();
@@ -164,16 +164,17 @@ public class FootballManagmentSystem extends TimerTask {
     }
 
 
+
+
     /**
      * Association responsibillty UC 9.3
-     *
      * @param ref
      */
-    public void delReferee(String ref) {
+    public void delReferee(String ref){
         Iterator it = allRefs.iterator();
-        while (it.hasNext()) {
-            if (((Referee) it).getName().equals(ref)) {
-                allRefs.remove(((Referee) it));
+        while (it.hasNext()){
+            if(((Referee)it).getName().equals(ref)){
+                allRefs.remove(((Referee)it));
             }
             it.next();
         }
@@ -211,7 +212,6 @@ public class FootballManagmentSystem extends TimerTask {
 
     /**
      * adding personal page to hash map
-     *
      * @param personalInfo -
      * @return -
      */
@@ -223,7 +223,6 @@ public class FootballManagmentSystem extends TimerTask {
 
     /**
      * removing personal page from hashmap
-     *
      * @param personalInfo-
      * @return - true id succeeded
      */
@@ -233,29 +232,25 @@ public class FootballManagmentSystem extends TimerTask {
             return true;
         }
         return false;
-    }
-
-    /**
-     * this func is a generator for unique PersonalInfo pages IDs
-     *
-     * @return page ID
-     */
-    public int generatePageID() {
-        int pageID = tryToGeneratePageID();
-        while (personalPages.containsKey(pageID)) {
-            pageID = tryToGeneratePageID();
         }
-        return pageID;
-    }
-
+        /**
+         * this func is a generator for unique PersonalInfo pages IDs
+         * @return page ID
+         */
+        public int generatePageID(){
+            int pageID = tryToGeneratePageID();
+            while (personalPages.containsKey(pageID)){
+                pageID = tryToGeneratePageID();
+            }
+            return pageID;
+        }
     /**
      * this func is a generator for unique team IDs
-     *
      * @return page ID
      */
-    public int generateTeamID() {
+    public int generateTeamID(){
         int teamID = tryToGeneratePageID();
-        while (allTeams.containsKey(teamID)) {
+        while (allTeams.containsKey(teamID)){
             teamID = tryToGeneratePageID();
         }
         return teamID;
@@ -264,44 +259,40 @@ public class FootballManagmentSystem extends TimerTask {
 
     /**
      * this func is a generator for unique Asset IDs
-     *
      * @return page ID
      */
-    public int generateAssetID() {
-        int assetID = tryToGeneratePageID();
-        while (allAssests.containsKey(assetID)) {
-            assetID = tryToGeneratePageID();
-        }
-        return assetID;
-    }
-
-    /**
-     * ID generator
-     *
-     * @return
-     */
-    public int tryToGeneratePageID() {
-        Random rand = new Random();
-        int pageID = 0;
-        for (int i = 0; i < 8; i++) {
-            int digit = rand.nextInt(10);
-            if (digit == 0) {
-                pageID = pageID + ((int) (Math.pow(10, i)));
-            } else {
-                pageID = pageID + (digit) * ((int) (Math.pow(10, i)));
+    public int generateAssetID(){
+            int assetID = tryToGeneratePageID();
+            while (allAssests.containsKey(assetID)){
+                assetID = tryToGeneratePageID();
             }
+            return assetID;
         }
-        return pageID;
-    }
 
-    public List<Member> getMemberByUserName(String name) {
-        return members.get(name);
-    }
+        /**
+        * ID generator
+        * @return
+        */
+        public int tryToGeneratePageID(){
+            Random rand = new Random();
+            int pageID=0;
+            for (int i = 0; i <8 ; i++) {
+                int digit = rand.nextInt(10);
+                if(digit==0){
+                    pageID = pageID + ((int) (Math.pow(10, i)));
+                }else {
+                    pageID = pageID + (digit) * ((int) (Math.pow(10, i)));
+                }
+            }
+            return pageID;
+        }
 
+        public List<Member> getMemberByUserName(String name){
+            return members.get(name);
+        }
     /**
      * Assosiation - UC 3.6. the system needs to approve the new name of the member
-     *
-     * @param mem  - member wishes to change usser name
+     * @param mem - member wishes to change usser name
      * @param name - new name
      * @return - true if new name is available and change succeeded
      */
@@ -336,14 +327,13 @@ public class FootballManagmentSystem extends TimerTask {
 
     /**
      * getting existing member and replacing his member with team owner member giving him the func
-     *
      * @param newOwner - new owner
-     * @param team     - the team he will own
+     * @param team - the team he will own
      * @return true if succeeded
      */
     public LinkedList<Member> makeMemberTeamOwner(Member newOwner, Team team) {
         if (members.containsKey(newOwner.getName())) {
-            TeamOwner newOwnerAccount = new TeamOwner(newOwner.getName(),newOwner.getReal_Name(), newOwner.getId(), newOwner.getPassword(), team);
+            TeamOwner newOwnerAccount = new TeamOwner(newOwner.getName(),newOwner.getReal_Name(), newOwner.getId(), newOwner.getPassword(), team.getId());
             LinkedList<Member> memberAccounts = members.get(newOwner.getName());
             if (memberAccounts != null && (!memberAccounts.contains(newOwnerAccount))) {
                 memberAccounts.add(newOwnerAccount);
@@ -360,16 +350,15 @@ public class FootballManagmentSystem extends TimerTask {
      * now the member will have two users
      * one with his original user name - for the member he was before
      * the second for his new team manager profile with his original user name + "ManagerUser"
-     *
      * @param newManager - member profile
-     * @param team       - the team he will manage
-     * @param value      - his asset value
+     * @param team - the team he will manage
+     * @param value - his asset value
      * @return - the new team manager object
      */
-    public LinkedList<Member> makeMemberTeamManger(Member newManager, Team team, int value) {
+    public LinkedList<Member> makeMemberTeamManger(Member newManager, Team team, int value, TeamOwner teamOwnerAssigned) {
         if (members.containsKey(newManager.getName())) {
             LinkedList<Member> memberAccounts = members.get(newManager.getName());
-            TeamManager newManagerAccount = new TeamManager(newManager.getName(),newManager.getReal_Name(), newManager.getId(), newManager.getPassword(), value, team);
+            TeamManager newManagerAccount = new TeamManager(newManager.getName(),newManager.getReal_Name(), newManager.getId(), newManager.getPassword(), value, team,teamOwnerAssigned);
             if (memberAccounts != null && (!memberAccounts.contains(newManagerAccount))) {
                 memberAccounts.add(newManagerAccount);
                 members.replace(newManager.getName(), memberAccounts);
@@ -451,9 +440,15 @@ public class FootballManagmentSystem extends TimerTask {
     }
 
 
-    public void addLeague(Leaugue leaugue) {
-        allLeagus.add(leaugue);
-    }
+        public void addLeague(Leaugue leaugue) throws LeagueIDAlreadyExist {
+            for (Leaugue leag : allLeagus) {
+                if (leag.getID() == leaugue.getID()){
+                    throw new LeagueIDAlreadyExist("There is already league with the same ID !");
+
+                }
+            }
+            allLeagus.add(leaugue);
+        }
 
     public void addTeam(Team team) {
         allTeams.put(team.getId(), team);
@@ -462,8 +457,41 @@ public class FootballManagmentSystem extends TimerTask {
     public void addComplaint(ComplaintForm complaintForm) {
         allcomplaints.add(complaintForm);
     }
+
     public void removeComplaint(ComplaintForm complaintForm) {
         allcomplaints.remove(complaintForm);
     }
+
+
+    public void sendInvitationByMail(String emailRecipient,String subject, String content) throws UnknownHostException, UnknownHostException {
+//        InetAddress ip = InetAddress.getLocalHost();
+//        System.out.println(ip);
+//        String recipient = emailRecipient;
+//        String sender = "FootballApp@gmail.com";
+//        String host = "127.0.0.1";
+//        Properties properties = System.getProperties();
+//        properties.setProperty("mail.smtp.host", host);
+//        Session session = Session.getDefaultInstance(properties);
+//
+//        try
+//        {
+//            MimeMessage message = new MimeMessage(session);
+//            message.setFrom(new InternetAddress(sender));
+//            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+//            message.setSubject(subject);
+//            message.setText(content);
+//            Transport.send(message);
+//            System.out.println("Mail successfully sent");
+//        }
+//        catch (MessagingException mex)
+//        {
+//            mex.printStackTrace();
+//        }
+    }
+
+
+
+
+
 
 }

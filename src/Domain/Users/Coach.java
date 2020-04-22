@@ -4,7 +4,8 @@ import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.APersonalPageContent;
 import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
-import Domain.SystemLog;
+import FootballExceptions.PersonalPageYetToBeCreatedException;
+import FootballExceptions.UnauthorizedPageOwnerException;
 
 public class Coach extends Member implements IAsset {
     private int valAsset;
@@ -44,17 +45,17 @@ public class Coach extends Member implements IAsset {
      * @param content - content of some kind to be added to personal page
      * @return - true if succeeded
      */
-    public boolean addContentToPersonalPage(APersonalPageContent content){
+    public boolean addContentToPersonalPage(APersonalPageContent content) throws UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException{
         if(info==null){
-            return false;
+            throw new PersonalPageYetToBeCreatedException();
         }
         return info.addContentToPage(this,content);
     }
 
     // UC - 5.1 (including getters and setters
-    public boolean editProfile(String title, String val){
+    public boolean editProfile(String title, String val) throws UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException{
         if(info==null){
-            return false;
+            throw new PersonalPageYetToBeCreatedException();
         }
         return info.editProfile(this,title,val);
     }
