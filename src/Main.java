@@ -1,4 +1,6 @@
 import Domain.FootballManagmentSystem;
+import FootballExceptions.NotEnoughTeamsInLeague;
+import FootballExceptions.UserInformationException;
 
 import java.net.UnknownHostException;
 import java.text.ParseException;
@@ -10,11 +12,30 @@ public class Main {
 
 
 
-    public static void main(String[] args) throws ParseException, UnknownHostException {
+    public static void main(String[] args) throws ParseException, UnknownHostException, UserInformationException, NotEnoughTeamsInLeague {
+
 
 
 
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
+//        Referee referee = new Referee("zaza","zaza", 123,"12345678", RefereeType.Main);
+//        Referee referee1 = new Referee("zaza","zaza", 123,"12345678", RefereeType.Main);
+//        Season season = new Season(null,null,1900);
+//        season.addRefereeToSeason(referee);
+//        season.deleteRefereeFromSeasonByName("zaza");
+//        TeamOwner owner = new TeamOwner("zazaza","zazaza",1231,"12345676");
+//        Team team1 = new Team("haifa",owner);
+//        Team team2 = new Team("haifa",owner);
+//        season.addTeamToSeason(team1);
+//        season.addTeamToSeason(team2);
+//        season.addRefereeToSeason(referee);
+//        season.addRefereeToSeason(referee1);
+//        season.runPlacingTeamsAlgorithm();
+//        Game game = new Game(team1,team2,new Date(),referee,referee,season);
+//        referee.addReportForGame(game);
+//        system.addReferee(referee);
+//        system.delReferee("zaza");
+
 
 
 

@@ -128,7 +128,7 @@ public class Referee extends Member implements Observer {
         cal.add(Calendar.MINUTE, 30); // adds 30 min
         long time = new Date(System.currentTimeMillis()).getTime();
         String report = "";
-        if(time > cal.getTimeInMillis() && this.type == RefereeType.Main){
+        if(time < cal.getTimeInMillis() && this.type == RefereeType.Main){
             report += "Report of Game Dated : " + gameDate.toString()+ "\n";
             report += "Home Team: " + game.getHome().getId() +"\n";
             report += "Away Team: " + game.getAway().getId() +"\n";
@@ -140,6 +140,7 @@ public class Referee extends Member implements Observer {
             }
             report += "END OF REPORT";
             SystemLog log = SystemLog.getInstance();
+            log.UpdateLog(report);
             log.UpdateLog("report to a game was added by " +this.getName());
         }else{
             System.out.println("Can't write report ! ");

@@ -1,6 +1,7 @@
 package Domain.SeasonManagment;
 
 import Domain.FootballManagmentSystem;
+import FootballExceptions.IDWasNotEnterdException;
 import FootballExceptions.LeagueIDAlreadyExist;
 import FootballExceptions.SeasonYearAlreadyExist;
 
@@ -28,9 +29,9 @@ public class Leaugue {
 
 
     /** UC 9.1 (Only commisioner can)*/
-    public void setLeagueIntoSystem() throws LeagueIDAlreadyExist {
+    public void setLeagueIntoSystem() throws LeagueIDAlreadyExist, IDWasNotEnterdException {
         if(id == 0){
-            java.lang.System.out.println("There is no ID !");
+            throw new IDWasNotEnterdException("There is no ID !");
         }else{
             footballManagmentSystem.addLeague(this);
         }

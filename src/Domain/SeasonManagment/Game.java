@@ -34,7 +34,7 @@ public class Game extends Observable implements IGameSubjective{
         this.season = season;
         event_logger=new Event_Logger();
         referees = new LinkedList<>();
-        addReferees();
+
     }
 
     //todo - add option to  notify ref when upcoming match date

@@ -209,14 +209,12 @@ public class FootballManagmentSystem extends TimerTask {
      * @param ref
      */
     public void delReferee(String ref) throws UserInformationException {
-        Iterator it = allRefs.iterator();
         boolean found = false;
-        while (it.hasNext()){
-            if(((Referee)it).getName().equals(ref)){
-                allRefs.remove(((Referee)it));
+        for (int i = 0; i < allRefs.size(); i++) {
+            if(allRefs.get(i).getName().equals(ref)){
+                allRefs.remove(i);
                 found = true;
             }
-            it.next();
         }
         if (!found){
             throw new UserInformationException("there is not exist referee with the name "+ ref);
