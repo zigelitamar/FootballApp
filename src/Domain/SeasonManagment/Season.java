@@ -1,13 +1,12 @@
 package Domain.SeasonManagment;
 
-import Domain.FootballManagmentSystem;
 import Domain.Users.Referee;
 import FootballExceptions.NotEnoughTeamsInLeague;
 import javafx.util.Pair;
 
 import java.util.*;
 
-public class Season extends TimerTask{
+public class Season {
     private int year;
     private LinkedList<Pair<Integer,Team>> teams;          /**score_teams*/
     private HashSet<Referee> referees;
@@ -15,7 +14,6 @@ public class Season extends TimerTask{
     private IPlaceTeamsPolicy placeTeamsPolicy;
     private HashSet<Game> games;
     private boolean isItTheBeginningOfSeason;
-    private Game currentGame;
 
     public Season(int year) {
         this.year = year;
@@ -163,10 +161,6 @@ public class Season extends TimerTask{
 
     /**UC 9.7   (only comissioner can run)     */
     private void placingAlgorithm() throws NotEnoughTeamsInLeague {
-        Timer timer = new Timer();
-        TimerTask task = FootballManagmentSystem.getInstance();
-
-
         Calendar c = Calendar.getInstance();
 
         if(teams.size() > 1){
@@ -182,23 +176,14 @@ public class Season extends TimerTask{
                         Date d = calendarToDate(c);
                         Game gameOne = new Game(teams.get(i).getValue(), teams.get(j).getValue(), d, twoRef[0], twoRef[1], this);
                         gameOne.addReferees();
-                        c.add(Calendar.DAY_OF_MONTH, -1);
-                        Date dateToAlert1 = calendarToDate(c);
-                        System.out.println(dateToAlert1);
-                        timer.schedule(this, dateToAlert1);                  /** alerting referees */
-                        c.add(Calendar.DAY_OF_MONTH, 1);
+                        gameOne.notifyRefereesWithNewDate(new Date());                   /** alerting referees */
                         increasingDays = increasingDays + daysBetweenGames;
                         /**set Away Game*/
                         c.add(Calendar.DAY_OF_MONTH, increasingDays);
                         Date dd = calendarToDate(c);
                         Game gameTwo = new Game(teams.get(j).getValue(), teams.get(i).getValue(), dd, twoRef[1], twoRef[0], this);
                         gameTwo.addReferees();
-                        gameTwo.changeDate(dd);
-                        c.add(Calendar.DAY_OF_MONTH, -1);
-                        Date dateToAlert2 = calendarToDate(c);
-                        System.out.println(dateToAlert2);
-                        timer.schedule(this, dateToAlert2);                 /** alerting referees */
-                        c.add(Calendar.DAY_OF_MONTH, 1);
+                        gameTwo.notifyRefereesWithNewDate(new Date());
                         increasingDays = increasingDays + daysBetweenGames;
                         games.add(gameOne);
                         games.add(gameTwo);
@@ -213,10 +198,6 @@ public class Season extends TimerTask{
 
 
 
-    @Override
-    public void run() {
-        currentGame.run();
-    }
 
     public Referee[] getRefereesToGame(){               /** returns two referees for game*/
         if(referees.size()>1){

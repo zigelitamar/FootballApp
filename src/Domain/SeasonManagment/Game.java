@@ -40,13 +40,20 @@ public class Game extends Observable implements IGameSubjective{
     //todo - add option to  notify ref when upcoming match date
     public void changeDate(Date newDate) {
         this.dateGame = newDate;
-        IAlert newAlart = new ChangedGameAlert(dateGame,this);
+        IAlert newAlart = new ChangedGameAlert(new Date(),this);
         alert = newAlart;
+        notifyReferees(alert);
+    }
+
+    public void notifyRefereesWithNewDate(Date newDate) {
+        IAlert newAlart = new ChangedGameAlert(newDate,this);
+        alert = newAlart;
+        notifyReferees(alert);
     }
 
 
     public void run(){
-        notifyReferees(alert);
+
     }
 
     @Override
@@ -81,6 +88,14 @@ public class Game extends Observable implements IGameSubjective{
     //part of UC - 10.3 + alerting to followers
     public void addEventToEventLog(AGameEvent event){
         event.getPlayerWhocommit().changePlayerRate(event);
+        event_logger.addEvent(event);
+        IAlert alert = new GameEventAlert(event.getGameMinute(),event);
+        notifyTeamfans(alert);
+    }
+
+
+    //part of UC - 10.3 + alerting to followers
+    public void addSubtitutionEventToEventLog(AGameEvent event){
         event_logger.addEvent(event);
         IAlert alert = new GameEventAlert(event.getGameMinute(),event);
         notifyTeamfans(alert);

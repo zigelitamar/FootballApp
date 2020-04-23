@@ -65,7 +65,11 @@ public class Referee extends Member implements Observer {
     //UC - 10.3
     public void addEventToGame(String eventType ,double minute, Game game, Player playerWhoCommit) throws EventNotMatchedException {
         AGameEvent event = stringToEvent(eventType,minute, playerWhoCommit);
-        game.addEventToEventLog(event);
+        if (event instanceof Substitution){
+            game.addSubtitutionEventToEventLog(event);
+        }else {
+            game.addEventToEventLog(event);
+        }
         SystemLog.getInstance().UpdateLog("new event: "+ eventType +"was added by "+ this.getName() );
     }
 

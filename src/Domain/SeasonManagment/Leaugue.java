@@ -9,7 +9,6 @@ import java.util.HashMap;
 
 public class Leaugue {
     private FootballManagmentSystem system;
-    private FootballManagmentSystem footballManagmentSystem;
     private int id;
     private HashMap<Integer,Season> seasons;    /**year_season*/
     private int currentYear;
@@ -17,8 +16,6 @@ public class Leaugue {
     public Leaugue() {
         FootballManagmentSystem system1 = FootballManagmentSystem.getInstance();
         this.system = system1;
-        FootballManagmentSystem footballManagmentSystem1 = FootballManagmentSystem.getInstance();
-        this.footballManagmentSystem = footballManagmentSystem1;
         seasons = new HashMap<>();
     }
 
@@ -33,7 +30,7 @@ public class Leaugue {
         if(id == 0){
             throw new IDWasNotEnterdException("There is no ID !");
         }else{
-            footballManagmentSystem.addLeague(this);
+            system.addLeague(this);
         }
     }
 
@@ -59,4 +56,3 @@ public class Leaugue {
     }
 }
 
-//fixme change the class name to league

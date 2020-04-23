@@ -34,6 +34,13 @@ public class FootballManagmentSystem extends TimerTask {
     private HashMap<Integer, PersonalInfo> personalPages = new HashMap<>();
     private static FootballManagmentSystem single_instance = new FootballManagmentSystem();
     private List<ComplaintForm> allcomplaints = new ArrayList<>(); // username - complaints
+    private Date upComingDateToCheck ;    /**constraint 7*/
+    private int indexOfNextDateToCheck;
+    Date date1 = new Date("31/03/2020");
+    Date date2 = new Date("30/06/2020");
+    Date date3 = new Date("30/09/2020");
+    Date date4 = new Date("31/12/2020");
+    Timer timer = new Timer();
 
 
     private FootballManagmentSystem() {
@@ -72,6 +79,14 @@ public class FootballManagmentSystem extends TimerTask {
         members.put(allInCharge.get(0).getName(),list);
         firstSystemManager = allInCharge.get(0);
         /** initialize connection with servers */
+
+        /** constraint 7 - balanced budget  */
+
+
+
+        indexOfNextDateToCheck++;
+        upComingDateToCheck = date1;
+        timer.schedule(this, upComingDateToCheck);
 
     }
 
@@ -198,6 +213,17 @@ public class FootballManagmentSystem extends TimerTask {
         for (int i = 0; i < allTeams.size(); i++) {
             allTeams.get(i).getControlBudget().checkIncomeBiggerThanOutcome();
         }
+
+        indexOfNextDateToCheck++;
+        if (indexOfNextDateToCheck == 2) {
+            timer.schedule(this, date2);
+        }else if (indexOfNextDateToCheck == 3) {
+            timer.schedule(this, date3);
+        }else if (indexOfNextDateToCheck == 4) {
+            timer.schedule(this, date4);
+        }
+
+
 
     }
 
