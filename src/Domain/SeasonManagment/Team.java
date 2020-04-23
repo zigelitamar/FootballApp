@@ -612,10 +612,10 @@ public class Team {
      * @param newAlert
      * @param game
      */
-    public void notifyTeam(IAlert newAlert, Game game) {
+    public void notifyTeam(IAlert newAlert, Game game) throws PersonalPageYetToBeCreatedException {
 
         if(info==null){
-           // throw new PersonalPageYetToBeCreatedException();
+            throw new PersonalPageYetToBeCreatedException();
         }
         info.notifyInfo(newAlert, game);
     }

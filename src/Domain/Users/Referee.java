@@ -5,10 +5,7 @@ import Domain.Events.*;
 import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.Game;
 import Domain.SystemLog;
-import FootballExceptions.EventNotMatchedException;
-import FootballExceptions.NoPermissionException;
-import FootballExceptions.RefereeNotPlacedException;
-import FootballExceptions.UserInformationException;
+import FootballExceptions.*;
 
 import java.util.*;
 
@@ -63,7 +60,7 @@ public class Referee extends Member implements Observer {
 
 
     //UC - 10.3
-    public void addEventToGame(String eventType ,double minute, Game game, Player playerWhoCommit) throws EventNotMatchedException {
+    public void addEventToGame(String eventType ,double minute, Game game, Player playerWhoCommit) throws EventNotMatchedException, PersonalPageYetToBeCreatedException {
         AGameEvent event = stringToEvent(eventType,minute, playerWhoCommit);
         if (event instanceof Substitution){
             game.addSubtitutionEventToEventLog(event);

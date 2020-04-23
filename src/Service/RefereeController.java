@@ -5,10 +5,7 @@ import Domain.SeasonManagment.Game;
 import Domain.Users.Player;
 import Domain.Users.Referee;
 import Domain.Users.RefereeType;
-import FootballExceptions.EventNotMatchedException;
-import FootballExceptions.NoPermissionException;
-import FootballExceptions.RefereeNotPlacedException;
-import FootballExceptions.UserInformationException;
+import FootballExceptions.*;
 
 public class RefereeController extends MemberController{
 
@@ -47,7 +44,7 @@ public class RefereeController extends MemberController{
     }
 
     /**10.3*/
-    public void addEventToGame(Referee referee,String eventType , double minute, Game game, Player playerWhoCommit) {
+    public void addEventToGame(Referee referee,String eventType , double minute, Game game, Player playerWhoCommit) throws PersonalPageYetToBeCreatedException {
         try{
             referee.addEventToGame(eventType,minute,game,playerWhoCommit);
         }catch (EventNotMatchedException ee){

@@ -7,10 +7,11 @@ import Domain.Alerts.IGameSubjective;
 import Domain.Events.AGameEvent;
 import Domain.Events.Event_Logger;
 import Domain.Users.Referee;
+import FootballExceptions.PersonalPageYetToBeCreatedException;
 
 import java.util.*;
 
-public class Game extends Observable implements IGameSubjective{
+public class Game extends Observable {
     private Team away;
     private Team home;
     private Date dateGame;
@@ -60,32 +61,20 @@ public class Game extends Observable implements IGameSubjective{
 
     }
 
-    @Override
-    public void addTeamsFans() {
-
-    }
-
-    @Override
-    public void addReferees() {
-
-    }
-
-    @Override
     public void notifyReferees(IAlert newAlert) {
         for (Observer O: referees) {
             O.update(this,newAlert);
         }
     }
 
-    @Override
-    public void notifyTeamfans(IAlert newAlert) {
+    public void notifyTeamfans(IAlert newAlert) throws PersonalPageYetToBeCreatedException {
         home.notifyTeam(newAlert,this);
         away.notifyTeam(newAlert,this);
     }
 
 
     //part of UC - 10.3 + alerting to followers
-    public void addEventToEventLog(AGameEvent event){
+    public void addEventToEventLog(AGameEvent event) throws PersonalPageYetToBeCreatedException {
         event.getPlayerWhocommit().changePlayerRate(event);
         event_logger.addEvent(event);
         IAlert alert = new GameEventAlert(event.getGameMinute(),event);
@@ -94,7 +83,7 @@ public class Game extends Observable implements IGameSubjective{
 
 
     //part of UC - 10.3 + alerting to followers
-    public void addSubtitutionEventToEventLog(AGameEvent event){
+    public void addSubtitutionEventToEventLog(AGameEvent event) throws PersonalPageYetToBeCreatedException {
         event_logger.addEvent(event);
         IAlert alert = new GameEventAlert(event.getGameMinute(),event);
         notifyTeamfans(alert);

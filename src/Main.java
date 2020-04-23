@@ -10,6 +10,7 @@ import Domain.Users.RefereeType;
 import Domain.Users.TeamOwner;
 import FootballExceptions.EventNotMatchedException;
 import FootballExceptions.NotEnoughTeamsInLeague;
+import FootballExceptions.PersonalPageYetToBeCreatedException;
 import FootballExceptions.UserInformationException;
 
 import java.net.UnknownHostException;
@@ -22,7 +23,7 @@ public class Main {
 
 
 
-    public static void main(String[] args) throws ParseException, UnknownHostException, UserInformationException, NotEnoughTeamsInLeague, EventNotMatchedException {
+    public static void main(String[] args) throws ParseException, UnknownHostException, UserInformationException, NotEnoughTeamsInLeague, EventNotMatchedException, PersonalPageYetToBeCreatedException {
 
 
 

@@ -175,7 +175,6 @@ public class Season {
                         c.add(Calendar.DAY_OF_MONTH, increasingDays);
                         Date d = calendarToDate(c);
                         Game gameOne = new Game(teams.get(i).getValue(), teams.get(j).getValue(), d, twoRef[0], twoRef[1], this);
-                        gameOne.addReferees();
                         gameOne.notifyRefereesWithNewDate(new Date());                   /** alerting referees */
                         increasingDays = increasingDays + daysBetweenGames;
                         teams.get(i).getValue().addGameToUpcomingGames(gameOne);
@@ -184,7 +183,6 @@ public class Season {
                         c.add(Calendar.DAY_OF_MONTH, increasingDays);
                         Date dd = calendarToDate(c);
                         Game gameTwo = new Game(teams.get(j).getValue(), teams.get(i).getValue(), dd, twoRef[1], twoRef[0], this);
-                        gameTwo.addReferees();
                         gameTwo.notifyRefereesWithNewDate(new Date());
                         increasingDays = increasingDays + daysBetweenGames;
                         teams.get(i).getValue().addGameToUpcomingGames(gameTwo);
