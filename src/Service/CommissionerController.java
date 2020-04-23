@@ -18,7 +18,7 @@ public class CommissionerController extends MemberController {
     public void defineLeague(Commissioner commissioner, int id) {
         try{
             commissioner.defineLeague(id);
-        }catch (LeagueIDAlreadyExist le){
+        }catch (LeagueIDAlreadyExist | IDWasNotEnterdException le){
             System.out.println(le.getMessage());
         }
     }
