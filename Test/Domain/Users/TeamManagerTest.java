@@ -21,25 +21,38 @@ public class TeamManagerTest {
     @Before
     //// FIXME: 18/04/2020 To initialize a team you need a teamowner and vice versa
     public void setUp() throws Exception {
-        team = new Team("Gadi", null);
-        teamManagerTest = new TeamManager("adam22","Adam", 1111, "5555", 3, team,null);
+        owner = new TeamOwner("kfir78","Kfir",2222,"0909");
+        team = new Team("Gadi", owner);
+        teamManagerTest = new TeamManager("adam22","Adam", 1111, "5555", 3, team,owner);
         coach = new Coach("lior22","Lior", 1313, "%420",4,"personal",null);
         content = new ProfileContent();
-        owner = new TeamOwner("kfir78","Kfir",2222,"0909",team.getId());
+
+    }
+
+    @Test(expected = PersonalPageYetToBeCreatedException.class)
+    public void editPermissions() throws InactiveTeamException, UnauthorizedPageOwnerException, UnauthorizedTeamOwnerException, PersonalPageYetToBeCreatedException {
+        teamManagerTest.editPermissions(owner,"Add Content To Personal Page",true);
     }
 
     @Test
-
-    public void editPermissions() {
+    public void editPermissions2() throws InactiveTeamException, UnauthorizedPageOwnerException, UnauthorizedTeamOwnerException, PersonalPageYetToBeCreatedException, UnauthorizedTeamManagerException, MemberIsAlreadyTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException {
+        team.addNewTeamManger(owner,teamManagerTest,3);
+        team.createPersonalPage(teamManagerTest);
+        teamManagerTest.editPermissions(owner,"Hire Coach",true);
+        //testFor- hirecoach()
+        boolean ans = teamManagerTest.hireCoach(coach);
+        assertTrue(ans);
     }
 
+    /*
     @Test
-    //// FIXME: 18/04/2020  - only after change editPermissions
-    public void hireCoach() throws UserInformationException, InactiveTeamException, UnauthorizedTeamManagerException {
+    public void hireCoach() throws UserInformationException, InactiveTeamException, UnauthorizedTeamManagerException, UnauthorizedPageOwnerException, UnauthorizedTeamOwnerException, PersonalPageYetToBeCreatedException, MemberIsAlreadyTeamOwnerException, MemberIsAlreadyTeamManagerException {
+        //editPermissions2();
         boolean ans = teamManagerTest.hireCoach(coach);
         assertTrue(ans);
 
     }
+    */
 
     @Test
     //// FIXME: 18/04/2020  - only after change editPermissions

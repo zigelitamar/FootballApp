@@ -6,6 +6,7 @@ import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
 import FootballExceptions.PersonalPageYetToBeCreatedException;
 import FootballExceptions.UnauthorizedPageOwnerException;
+import FootballExceptions.UserInformationException;
 
 public class Coach extends Member implements IAsset {
     private int valAsset;
@@ -23,6 +24,13 @@ public class Coach extends Member implements IAsset {
         this.role=role;
         this.assetID=system.generateAssetID();
         system.addTeamAssets(this);
+        if(!(system.getMembers().containsKey(this.name))) {
+            try {
+                system.addMember(this);
+            } catch (UserInformationException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**

@@ -34,6 +34,10 @@ public class Game extends Observable implements IGameSubjective{
         this.season = season;
         event_logger=new Event_Logger();
         referees = new LinkedList<>();
+        mainReferee.addToGameList(this);
+        seconderyReferee.addToGameList(this);
+        referees.add(mainReferee);
+        referees.add(seconderyReferee);
 
     }
 
@@ -63,12 +67,7 @@ public class Game extends Observable implements IGameSubjective{
 
     @Override
     public void addReferees() {
-        mainReferee.addToGameList(this);
-        seconderyReferee.addToGameList(this);
-        referees.add(mainReferee);
-        referees.add(seconderyReferee);
-        mainReferee.addToGameList(this);
-        seconderyReferee.addToGameList(this);
+
     }
 
     @Override

@@ -178,6 +178,8 @@ public class Season {
                         gameOne.addReferees();
                         gameOne.notifyRefereesWithNewDate(new Date());                   /** alerting referees */
                         increasingDays = increasingDays + daysBetweenGames;
+                        teams.get(i).getValue().addGameToUpcomingGames(gameOne);
+                        teams.get(j).getValue().addGameToUpcomingGames(gameOne);
                         /**set Away Game*/
                         c.add(Calendar.DAY_OF_MONTH, increasingDays);
                         Date dd = calendarToDate(c);
@@ -185,6 +187,8 @@ public class Season {
                         gameTwo.addReferees();
                         gameTwo.notifyRefereesWithNewDate(new Date());
                         increasingDays = increasingDays + daysBetweenGames;
+                        teams.get(i).getValue().addGameToUpcomingGames(gameTwo);
+                        teams.get(j).getValue().addGameToUpcomingGames(gameTwo);
                         games.add(gameOne);
                         games.add(gameTwo);
                     }

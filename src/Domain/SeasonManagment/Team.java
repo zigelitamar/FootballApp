@@ -30,6 +30,7 @@ public class Team {
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
     private double playersFootballRate;
     private HashMap<Team,LinkedList<Game>> gamesHistory;
+    private LinkedList<Game> upcomingGames;
 
     /**
      * constructor
@@ -38,6 +39,7 @@ public class Team {
      */
     public Team(String Name, TeamOwner owner) {
         secondaryOwners = new LinkedList<>();
+        upcomingGames= new LinkedList<>();
         teamCoaches = new HashMap<>();
         teamPlayers = new HashMap<>();
         teamMangers = new HashMap<>();
@@ -48,7 +50,8 @@ public class Team {
         this.owner = owner;
         this.status = TeamStatus.Active; /**by default team status is active*/
         this.id = system.generateTeamID();
-        owner.setTeam(system.getTeamByID(id));
+        this.owner.setTeam(this);
+        system.addTeam(this);
         this.controlBudget = new ControlBudget(this.id);
     }
 
@@ -311,17 +314,29 @@ public class Team {
      * @param permissionBol
      * @return
      */
-    public boolean editManagerPermissions(TeamOwner teamOwner, TeamManager teamManager, String permissionsType, boolean permissionBol) throws UnauthorizedPageOwnerException, InactiveTeamException,UserInformationException,PersonalPageYetToBeCreatedException, UnauthorizedTeamOwnerException{
+    public boolean editManagerPermissions(TeamOwner teamOwner, Member teamManager, String permissionsType, boolean permissionBol) throws UnauthorizedPageOwnerException, InactiveTeamException,UserInformationException,PersonalPageYetToBeCreatedException, UnauthorizedTeamOwnerException{
         if(!isActive()){
             throw new InactiveTeamException();
         }
-        if(teamMangers.containsKey(teamManager.getAssetID())){
-            TeamManager editedTeamManger = teamMangers.get(teamManager.getAssetID());
+        List <Member> memberAccount = system.getMemberByUserName(teamManager.getName());
+        if(memberAccount==null){
+            throw new UserInformationException();
+        }
+        for (Member member : memberAccount) {
+            if(member instanceof TeamManager){
+                teamManager = member;
+            }
+        }
+        if(!(teamManager instanceof TeamManager)){
+            throw new UserInformationException();
+        }
+        if(teamMangers.containsKey(((TeamManager)teamManager).getAssetID())){
+            TeamManager editedTeamManger = teamMangers.get(((TeamManager)teamManager).getAssetID());
             if(editedTeamManger==null){
                 throw new UserInformationException();
             }
             if(editedTeamManger.editPermissions(teamOwner,permissionsType,permissionBol)){
-                teamMangers.replace(teamManager.getAssetID(),editedTeamManger);
+                teamMangers.replace(((TeamManager)teamManager).getAssetID(),editedTeamManger);
             }
         }
         return false;
@@ -331,18 +346,17 @@ public class Team {
      * remove team manager if the right team owner asked to do so
      * removes his team manager user from system
      * @param teamOwner - team owner wants to remove the team manager
-     * @param teamManager - team manager to be removed
+     * @param member - team manager to be removed
      * @return - true if succeeded
      */
-    public boolean removeTeamManager(TeamOwner teamOwner, TeamManager teamManager) throws UnauthorizedTeamOwnerException, InactiveTeamException {
+    public boolean removeTeamManager(TeamOwner teamOwner, Member member) throws UnauthorizedTeamOwnerException, InactiveTeamException, UserIsNotThisKindOfMemberException {
         if(!isActive()){
             throw new InactiveTeamException();
         }
+        TeamManager teamManager =((TeamManager) system.getMemberInstanceByKind(member.getName(),"Team Manager"));
         if(isTeamOwner(teamOwner)){
             if(teamManager.isAutorizedTeamOwner(teamOwner)){
-                LinkedList<Member> list = new LinkedList<>();
-                list.add(teamManager);
-                system.RemoveMember(list);
+                system.removeMemberSpecificAccount(member,"Team Manager");
                 teamMangers.remove(teamManager.getAssetID());
                 return true;
             }
@@ -355,8 +369,11 @@ public class Team {
      * @param member
      * @return
      */
-    private boolean isTeamOwner(Member member) throws UnauthorizedTeamOwnerException{
+    public boolean isTeamOwner(Member member) throws UnauthorizedTeamOwnerException{
         List <Member> memberAccounts = system.getMemberByUserName(member.getName());
+        if(memberAccounts==null){
+            return false;
+        }
         for (Member memberAccount : memberAccounts) {
             if (owner.equals(memberAccount) || secondaryOwners.contains(memberAccount)) {
                 return true;
@@ -370,8 +387,11 @@ public class Team {
      * @param member
      * @return
      */
-    private boolean isTeamManager(Member member){
+    public boolean isTeamManager(Member member){
         List <Member> memberAccounts = system.getMemberByUserName(member.getName());
+        if(memberAccounts==null){
+            return false;
+        }
         for (Member memberAccount : memberAccounts) {
             if(memberAccount instanceof TeamManager) {
                 return teamMangers.containsKey(((TeamManager) memberAccount).getAssetID());
@@ -593,6 +613,10 @@ public class Team {
      * @param game
      */
     public void notifyTeam(IAlert newAlert, Game game) {
+
+        if(info==null){
+           // throw new PersonalPageYetToBeCreatedException();
+        }
         info.notifyInfo(newAlert, game);
     }
 
@@ -623,6 +647,11 @@ public class Team {
             history= gamesHistory.get(otherTeam);
         }
         return history;
+    }
+
+    public void addGameToUpcomingGames(Game game){
+        //todo- add them in seasepn class!!!
+        upcomingGames.add(game);
     }
     @Override
     public int hashCode() {
@@ -667,6 +696,9 @@ public class Team {
         this.info = info;
     }
 
+    public LinkedList<Game> getUpcomingGames() {
+        return upcomingGames;
+    }
 
     public TeamOwner getOwner() {
         return owner;

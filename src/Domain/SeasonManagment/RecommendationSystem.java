@@ -43,6 +43,9 @@ public class RecommendationSystem {
         int numOfLosesForHomeTeam=gamesHistory.size()-(numOfWinsForHomeTeam+numOfDraws);
         int numOfDrawsForAwayTeam=numOfDraws;
         int numOfWinsForAwayTeam= numOfLosesForHomeTeam;
+        if(maxBudget==0||maxRate==0||gamesHistory.size()==0){
+            return 100/3;
+        }
         if(game.getHome().equals(team)){
             odds = (homeTeamBudget/maxBudget)*2 + (homeTeamPlayersRate/maxRate)*4 + ((numOfWinsForHomeTeam+numOfDraws/2)/gamesHistory.size())*4;
             odds = odds +1; /**home advantage*/
