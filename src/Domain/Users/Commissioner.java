@@ -30,7 +30,7 @@ public class Commissioner extends Member {
 
 
     /**UC 9.1 - Define league*/
-    public void defineLeague(int id) throws LeagueIDAlreadyExist {
+    public void defineLeague(int id) throws LeagueIDAlreadyExist, IDWasNotEnterdException {
         Leaugue leaugue = new Leaugue();
         leaugue.setId(id);
         leaugue.setLeagueIntoSystem();
