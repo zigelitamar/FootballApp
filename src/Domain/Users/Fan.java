@@ -19,7 +19,13 @@ public class Fan extends Member implements Observer {
         system = FootballManagmentSystem.getInstance();
         recommendationSystem = new RecommendationSystem();
        personalPagesFollowed=new HashMap<>();
-    }
+        if(!(system.getMembers().containsKey(this.name))) {
+            try {
+                system.addMember(this);
+            } catch (UserInformationException e) {
+                e.printStackTrace();
+            }
+        }}
 
     /**
      * update function when fan gets alerts from game for game event or from page for page changed alert

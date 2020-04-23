@@ -34,7 +34,10 @@ public class Game extends Observable implements IGameSubjective{
         this.season = season;
         event_logger=new Event_Logger();
         referees = new LinkedList<>();
-        addReferees();
+        mainReferee.addToGameList(this);
+        seconderyReferee.addToGameList(this);
+        referees.add(mainReferee);
+        referees.add(seconderyReferee);
     }
 
     //todo - add option to  notify ref when upcoming match date
@@ -56,12 +59,7 @@ public class Game extends Observable implements IGameSubjective{
 
     @Override
     public void addReferees() {
-        mainReferee.addToGameList(this);
-        seconderyReferee.addToGameList(this);
-        referees.add(mainReferee);
-        referees.add(seconderyReferee);
-        mainReferee.addToGameList(this);
-        seconderyReferee.addToGameList(this);
+
     }
 
     @Override

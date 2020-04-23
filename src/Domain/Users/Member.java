@@ -79,6 +79,21 @@ public abstract class Member extends GeneralUser {
         return alertsList;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Member member = (Member) o;
+
+        return name.equals(member.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -101,5 +116,5 @@ public abstract class Member extends GeneralUser {
 
     public String getName(){
         return name;
-    };
+    }
 }
