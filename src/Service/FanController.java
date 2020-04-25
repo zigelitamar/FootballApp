@@ -17,12 +17,13 @@ import java.util.List;
 
 public class FanController {
 
-    public void addPersonalPagesToFollow(Fan fan, List<PersonalInfo> pagesToFollow){
+    public boolean addPersonalPagesToFollow(Fan fan, List<PersonalInfo> pagesToFollow){
         try {
             fan.addPersonalPagesToFollow(pagesToFollow);
         } catch (AlreadyFollowThisPageException e) {
-            e.printStackTrace();
+            return false;
         }
+        return true;
     }
     public void unFollowPage(Fan fan,PersonalInfo page){
        fan.unFollowPage(page);

@@ -116,6 +116,9 @@ public class Player extends Member implements IAsset {
             myTeam.calculatePlayerFootballRate();
         }
     }
+    public boolean changeUserName(String newUserName) throws UserInformationException {
+        return system.changeUserName(this, newUserName);
+    }
     /*getSet*/
 
     public Team getMyTeam() {

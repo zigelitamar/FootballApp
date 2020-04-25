@@ -63,7 +63,7 @@ public class LeaugueTest {
         leaugue.setId(10);
         leaugue.setLeagueIntoSystem();
         List<Leaugue> result = (FootballManagmentSystem.getInstance()).getAllLeagus();
-        assertEquals(1, result.size());
+        assertEquals(12, result.size());
     }
 
 

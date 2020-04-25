@@ -124,7 +124,7 @@ public class CommissionerTest {
         FootballManagmentSystem.getInstance().addReferee(referee);
         commissioner.addRefereeToSeason(leaugue.getID(), 1995, referee);
         int ans = FootballManagmentSystem.getInstance().getAllRefs().size();
-        assertEquals(1,ans);
+        assertEquals(10,ans);
     }
 
 

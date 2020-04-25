@@ -54,6 +54,13 @@ public class FanTest {
         byName = new SearchByName();
     }
 
+
+    @Test
+    public void logOut(){
+        Member logoutFan = new Fan( "Mourinho", "zoze mourinho", 45564, "GDS3543");
+        logoutFan.logOut();
+        assertFalse(logoutFan.isActive());
+    }
     @Test
     public void update() throws InactiveTeamException, UnauthorizedTeamManagerException, MemberIsAlreadyTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, UnauthorizedTeamOwnerException, AlreadyFollowThisPageException {
         addPersonalPagesToFollow();
@@ -194,11 +201,6 @@ public class FanTest {
 
     }
 
-    @Test
-    public void logOut(){
-        fanTest.logOut();
-        assertFalse(fanTest.isActive());
-    }
     @Test
     public void notifyFan() {
     }
