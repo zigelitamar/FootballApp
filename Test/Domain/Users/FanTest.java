@@ -4,7 +4,10 @@ import Domain.Alerts.IAlert;
 import Domain.Alerts.PersonalPageAlert;
 import Domain.FootballManagmentSystem;
 import Domain.PersonalPages.ProfileContent;
+import Domain.Searcher.SearchByCategory;
+import Domain.Searcher.SearchByKeyword;
 import Domain.Searcher.SearchByName;
+import Domain.Searcher.Searcher;
 import Domain.SeasonManagment.ComplaintForm;
 import Domain.SeasonManagment.Game;
 import Domain.SeasonManagment.Team;
@@ -189,7 +192,16 @@ public class FanTest {
         HashSet<Object> result = new HashSet<>();
         result = fanTest.search("Adam",byName);
         assertEquals(1,result.size());
+    }
 
+    @Test
+    public void search2() {
+        HashSet<Object> result2 = new HashSet<>();
+        Fan fanSearch = new Fan("REWDSA","dasdAS",213213,"e12e12e");
+        Searcher search2key = new SearchByKeyword();
+        Searcher searchCata = new SearchByCategory();
+        result2 = fanTest.search("Adam",search2key);
+        assertEquals(1,result2.size());
     }
 
     @Test
