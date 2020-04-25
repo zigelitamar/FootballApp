@@ -8,8 +8,7 @@ public class Field implements IAsset {
     private Team myTeam;
     private int assetID;
 
-    public Field(Team myTeam, int assetID) {
-        this.myTeam = myTeam;
+    public Field() {
         this.assetID = system.generateAssetID();
         system.addTeamAssets(this);
     }

@@ -7,6 +7,7 @@ import Domain.Events.IEvent;
 import Domain.SeasonManagment.Game;
 import FootballExceptions.EventNotMatchedException;
 import FootballExceptions.NoPermissionException;
+import FootballExceptions.PersonalPageYetToBeCreatedException;
 import FootballExceptions.UserInformationException;
 import org.junit.Before;
 import org.junit.Rule;
@@ -66,7 +67,7 @@ public class RefereeTest {
     //fixme - dont have getter for the eventType
     //fixme - dont have a connection to myGames!
     //fixme - no initialization in event logger!
-    public void addEventToGame() throws EventNotMatchedException {
+    public void addEventToGame() throws EventNotMatchedException, PersonalPageYetToBeCreatedException {
         refereeTest.addEventToGame("foul",90.0,game,null);
         Foul foul = new Foul(90,null);
         IEvent a = game.getEvent_logger().getEvents().get(0);

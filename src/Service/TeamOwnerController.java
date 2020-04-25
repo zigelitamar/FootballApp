@@ -113,7 +113,7 @@ public class TeamOwnerController extends MemberController {
     }
 
     /**UC 6.5 - remove team manager*/
-    public boolean removeTeamManager(TeamOwner teamOwner,TeamManager teamManager){
+    public boolean removeTeamManager(TeamOwner teamOwner,TeamManager teamManager) throws UserIsNotThisKindOfMemberException {
         try {
             return teamOwner.removeTeamManager(teamManager);
         } catch (TeamOwnerWithNoTeamException e) {

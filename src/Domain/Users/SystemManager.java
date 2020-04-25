@@ -14,9 +14,7 @@ import FootballExceptions.UnableToRemoveException;
 
 import java.io.IOException;
 import java.security.NoSuchProviderException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import static Domain.SeasonManagment.TeamStatus.Close;
 
@@ -31,7 +29,7 @@ public class SystemManager extends Member {
      * @param team          to delete
      * @param causeOfCloser why did the team got closed?
      */
-    public void closeTeam(Team team, String causeOfCloser) throws InactiveTeamException {
+    public void closeTeam(Team team, String causeOfCloser) throws InactiveTeamException, UnableToRemoveException {
         HashMap<Integer, Team> map = FootballManagmentSystem.getInstance().getAllTeams();
         List<Team> teams = new LinkedList<>();
         for (Integer id : map.keySet()) {
@@ -40,7 +38,18 @@ public class SystemManager extends Member {
         for (Team t :
                 teams) {
             if (t.getId() == team.getId()) {
+                long time = new Date(System.currentTimeMillis()).getTime();
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(t.getUpcomingGames().get(0).getDateGame());
+                cal.add(Calendar.HOUR_OF_DAY, -2); // remove 2 hours
+                time = cal.getTimeInMillis() - time;
+                if (time < 0) {
+                    SystemLog.getInstance().UpdateLog("Deletion of " + t.getName() + " was Unsuccessful.");
+                    throw new UnableToRemoveException("The team has a game in the next 2 hours");
+
+                }
                 if (t.getStatus() == Close) {
+                    SystemLog.getInstance().UpdateLog("Deletion of " + t.getName() + " was Unsuccessful. it's closed already.");
                     throw new InactiveTeamException();//team allready closed
                 }
                 for (TeamOwner to : t.getAllTeamOwners()
@@ -56,6 +65,9 @@ public class SystemManager extends Member {
 
                 }
                 t.setStatus(Close);
+                t.setClosed(true);
+                SystemLog.getInstance().UpdateLog("Deletion of " + team.getName() + " was successful.");
+
 
             }
         }
@@ -92,7 +104,7 @@ public class SystemManager extends Member {
 
     public void CommentOnComplaint(ComplaintForm comp, String response) throws ShortCommentException {
 
-        if(response.length()<2){
+        if (response.length() < 2) {
             throw new ShortCommentException("messege must consist at least 2 characters");
         }
         comp.setResponse(response);

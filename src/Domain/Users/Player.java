@@ -7,6 +7,7 @@ import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
 import FootballExceptions.PersonalPageYetToBeCreatedException;
 import FootballExceptions.UnauthorizedPageOwnerException;
+import FootballExceptions.UserInformationException;
 
 import java.util.Date;
 
@@ -28,6 +29,13 @@ public class Player extends Member implements IAsset {
         system.addTeamAssets(this);
         DateOfBirth = dateOfBirth;
         FootballRate = 5;
+        if(!(system.getMembers().containsKey(this.name))) {
+            try {
+                system.addMember(this);
+            } catch (UserInformationException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
@@ -104,7 +112,9 @@ public class Player extends Member implements IAsset {
                 FootballRate =0;
             }
         }
-        myTeam.calculatePlayerFootballRate();
+        if(myTeam!=null) {
+            myTeam.calculatePlayerFootballRate();
+        }
     }
     /*getSet*/
 

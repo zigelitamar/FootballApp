@@ -45,6 +45,7 @@ public class PersonalInfo extends Observable{
         footballManagmentSystem.addPersonalPage(this);
         SystemLog.getInstance().UpdateLog(this.pageMemberOwner.getName() + " created his personal page");
         this.followers = new LinkedList<>();
+        pageContent = new LinkedList<>();
     }
 
 

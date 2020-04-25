@@ -27,8 +27,8 @@ public class SystemLog {
         BufferedWriter bW = null;
         try {
             Date xdate = new Date();
-            bW = new BufferedWriter(new FileWriter(logfile));
-            bW.write(xdate.toString()+ " " + note);
+            bW = new BufferedWriter(new FileWriter(logfile,true));
+            bW.append(xdate.toString()+ " " + note);
             bW.newLine();
             bW.flush();
         } catch (IOException e1) {
@@ -38,14 +38,15 @@ public class SystemLog {
     }
     public String showLog() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(logfile));
-        String st="";
-        while((st += br.readLine()) !=null){
-
-
+        String st = "";
+        String fullLog = "";
+        //if((st = br.readLine())!=null){
+        while ((st = br.readLine()) != null) {
+            fullLog += st + "/n";
         }
-        return st;
-    }
 
+        return fullLog;
+    }
 }
 
 

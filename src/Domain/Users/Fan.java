@@ -11,7 +11,7 @@ import java.util.*;
 
 public class Fan extends Member implements Observer {
     private HashMap<PersonalInfo,Boolean> personalPagesFollowed; //Tracking personal pages, boolean represent alerts on/off
-    private LinkedList <String> searchHistory;
+    private LinkedList <String> searchHistory = new LinkedList<>();
     private FootballManagmentSystem system;
     private RecommendationSystem recommendationSystem;
     public Fan(String name,String realname, int id, String password) {
@@ -19,7 +19,13 @@ public class Fan extends Member implements Observer {
         system = FootballManagmentSystem.getInstance();
         recommendationSystem = new RecommendationSystem();
        personalPagesFollowed=new HashMap<>();
-    }
+        if(!(system.getMembers().containsKey(this.name))) {
+            try {
+                system.addMember(this);
+            } catch (UserInformationException e) {
+                e.printStackTrace();
+            }
+        }}
 
     /**
      * update function when fan gets alerts from game for game event or from page for page changed alert
@@ -156,8 +162,9 @@ public class Fan extends Member implements Observer {
      * @return - Hashset returned by searcher
      */
     public HashSet<Object> search(String str, Searcher searcher){
-        searchHistory.add(str);
+
         searcher.search(str);
+        searchHistory.add(str);
         return searcher.getAnswer();
     }
 

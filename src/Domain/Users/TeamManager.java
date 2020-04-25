@@ -30,6 +30,13 @@ public class TeamManager extends Member implements IAsset {
         permissions.put("Edit Personal Page Profile",false);
         system.addTeamAssets(this);
         this.teamOwnerAssignedThis=teamOwnerAssignedThis;
+        if(!(system.getMembers().containsKey(this.name))) {
+            try {
+                system.addMember(this);
+            } catch (UserInformationException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
@@ -154,5 +161,7 @@ public class TeamManager extends Member implements IAsset {
         return valAsset;
     }
 
-
+    public HashMap<String, Boolean> getPermissions() {
+        return permissions;
+    }
 }

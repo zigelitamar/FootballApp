@@ -49,4 +49,10 @@ public class SystemAcceptanceTest {
         assertFalse(fms.getMemberByUserName("itamar12").get(0).isActive());
 
     }
+    @Test
+    public void Positiveintialization(){
+        assertEquals(1,fms.getAllInCharge().size());
+        assertEquals("aviluzon",fms.getAllInCharge().get(0).getName());
+
+    }
 }

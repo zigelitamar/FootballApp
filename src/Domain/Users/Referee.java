@@ -5,10 +5,7 @@ import Domain.Events.*;
 import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.Game;
 import Domain.SystemLog;
-import FootballExceptions.EventNotMatchedException;
-import FootballExceptions.NoPermissionException;
-import FootballExceptions.RefereeNotPlacedException;
-import FootballExceptions.UserInformationException;
+import FootballExceptions.*;
 
 import java.util.*;
 
@@ -63,9 +60,13 @@ public class Referee extends Member implements Observer {
 
 
     //UC - 10.3
-    public void addEventToGame(String eventType ,double minute, Game game, Player playerWhoCommit) throws EventNotMatchedException {
+    public void addEventToGame(String eventType ,double minute, Game game, Player playerWhoCommit) throws EventNotMatchedException, PersonalPageYetToBeCreatedException {
         AGameEvent event = stringToEvent(eventType,minute, playerWhoCommit);
-        game.addEventToEventLog(event);
+        if (event instanceof Substitution){
+            game.addSubtitutionEventToEventLog(event);
+        }else {
+            game.addEventToEventLog(event);
+        }
         SystemLog.getInstance().UpdateLog("new event: "+ eventType +"was added by "+ this.getName() );
     }
 
@@ -128,7 +129,7 @@ public class Referee extends Member implements Observer {
         cal.add(Calendar.MINUTE, 30); // adds 30 min
         long time = new Date(System.currentTimeMillis()).getTime();
         String report = "";
-        if(time > cal.getTimeInMillis() && this.type == RefereeType.Main){
+        if(time < cal.getTimeInMillis() && this.type == RefereeType.Main){
             report += "Report of Game Dated : " + gameDate.toString()+ "\n";
             report += "Home Team: " + game.getHome().getId() +"\n";
             report += "Away Team: " + game.getAway().getId() +"\n";
@@ -140,6 +141,7 @@ public class Referee extends Member implements Observer {
             }
             report += "END OF REPORT";
             SystemLog log = SystemLog.getInstance();
+            log.UpdateLog(report);
             log.UpdateLog("report to a game was added by " +this.getName());
         }else{
             System.out.println("Can't write report ! ");

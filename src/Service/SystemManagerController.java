@@ -31,6 +31,8 @@ public class SystemManagerController extends MemberController {
             systemManager.closeTeam(team,reason);
         } catch (InactiveTeamException e) {
             System.out.println("Team is allready closed");// maybeString
+        } catch (UnableToRemoveException e) {
+            System.out.println(e.getMessage());
         }
 
     }

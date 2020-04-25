@@ -8,6 +8,7 @@ import Domain.SeasonManagment.Team;
 import Domain.Users.*;
 import FootballExceptions.LeagueIDAlreadyExist;
 import FootballExceptions.UserInformationException;
+import FootballExceptions.UserIsNotThisKindOfMemberException;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -34,6 +35,13 @@ public class FootballManagmentSystem extends TimerTask {
     private HashMap<Integer, PersonalInfo> personalPages = new HashMap<>();
     private static FootballManagmentSystem single_instance = new FootballManagmentSystem();
     private List<ComplaintForm> allcomplaints = new ArrayList<>(); // username - complaints
+    private Date upComingDateToCheck ;    /**constraint 7*/
+    private int indexOfNextDateToCheck;
+    Date date1 = new Date("31/03/2020");
+    Date date2 = new Date("30/06/2020");
+    Date date3 = new Date("30/09/2020");
+    Date date4 = new Date("31/12/2020");
+    Timer timer = new Timer();
 
 
     private FootballManagmentSystem() {
@@ -72,6 +80,14 @@ public class FootballManagmentSystem extends TimerTask {
         members.put(allInCharge.get(0).getName(),list);
         firstSystemManager = allInCharge.get(0);
         /** initialize connection with servers */
+
+        /** constraint 7 - balanced budget  */
+
+
+
+        indexOfNextDateToCheck++;
+        upComingDateToCheck = date1;
+        timer.schedule(this, upComingDateToCheck);
 
     }
 
@@ -199,6 +215,17 @@ public class FootballManagmentSystem extends TimerTask {
             allTeams.get(i).getControlBudget().checkIncomeBiggerThanOutcome();
         }
 
+        indexOfNextDateToCheck++;
+        if (indexOfNextDateToCheck == 2) {
+            timer.schedule(this, date2);
+        }else if (indexOfNextDateToCheck == 3) {
+            timer.schedule(this, date3);
+        }else if (indexOfNextDateToCheck == 4) {
+            timer.schedule(this, date4);
+        }
+
+
+
     }
 
 
@@ -209,14 +236,12 @@ public class FootballManagmentSystem extends TimerTask {
      * @param ref
      */
     public void delReferee(String ref) throws UserInformationException {
-        Iterator it = allRefs.iterator();
         boolean found = false;
-        while (it.hasNext()){
-            if(((Referee)it).getName().equals(ref)){
-                allRefs.remove(((Referee)it));
+        for (int i = 0; i < allRefs.size(); i++) {
+            if(allRefs.get(i).getName().equals(ref)){
+                allRefs.remove(i);
                 found = true;
             }
-            it.next();
         }
         if (!found){
             throw new UserInformationException("there is not exist referee with the name "+ ref);
@@ -482,7 +507,125 @@ public class FootballManagmentSystem extends TimerTask {
         return true;
     }
 
+    public void addMember(Member m) throws UserInformationException {
+        if (members.get(m.getName()) != null) {
+            throw new UserInformationException(); //username is taken;
+        }
+        LinkedList<Member> memberAccounts = new LinkedList<>();
+        memberAccounts.add(m);
+        members.put(m.getName(),memberAccounts);
+    }
 
+    public Member getMemberInstanceByKind(String userName,String instance) throws UserIsNotThisKindOfMemberException{
+        List <Member> memberAccounts = getMemberByUserName(userName);
+        if(memberAccounts==null){
+            throw new UserIsNotThisKindOfMemberException();
+        }
+        for (Member member: memberAccounts) {
+            switch (instance){
+                case("Coach"):
+                    if(member instanceof Coach){
+                        return member;
+                    }
+                    break;
+                case ("Commissioner"):
+                    if(member instanceof Commissioner){
+                        return member;
+                    }
+                    break;
+                case ("Fan"):
+                    if(member instanceof Fan){
+                        return member;
+                    }
+                    break;
+                case ("Player"):
+                    if(member instanceof Player){
+                        return member;
+                    }
+                    break;
+                case ("Referee"):
+                    if(member instanceof Referee){
+                        return member;
+                    }
+                    break;
+                case ("System Manager"):
+                    if(member instanceof SystemManager){
+                        return member;
+                    }
+                    break;
+                case ("Team Manager"):
+                    if(member instanceof TeamManager){
+                        return member;
+                    }
+                    break;
+                case ("Team Owner"):
+                    if(member instanceof TeamOwner){
+                        return member;
+                    }
+                    break;
+            }
+        }
+        throw new UserIsNotThisKindOfMemberException();
+    }
+
+    public void removeMemberSpecificAccount(Member member1,String instance) throws UserIsNotThisKindOfMemberException {
+        if (members.containsKey(member1.getName())) {
+            List<Member> memberAccounts = getMemberByUserName(member1.getName());
+            for (Member member : memberAccounts) {
+                switch (instance) {
+                    case ("Coach"):
+                        if (member instanceof Coach) {
+                            memberAccounts.remove(member);
+                            return;
+                        }
+                        break;
+                    case ("Commissioner"):
+                        if (member instanceof Commissioner) {
+                            memberAccounts.remove(member);
+                            return;
+                        }
+                        break;
+                    case ("Fan"):
+                        if (member instanceof Fan) {
+                            memberAccounts.remove(member);
+                            return;
+                        }
+                        break;
+                    case ("Player"):
+                        if (member instanceof Player) {
+                            memberAccounts.remove(member);
+                            return;
+                        }
+                        break;
+                    case ("Referee"):
+                        if (member instanceof Referee) {
+                            memberAccounts.remove(member);
+                            return;
+                        }
+                        break;
+                    case ("System Manager"):
+                        if (member instanceof SystemManager) {
+                            memberAccounts.remove(member);
+                            return;
+                        }
+                        break;
+                    case ("Team Manager"):
+                        if (member instanceof TeamManager) {
+                            memberAccounts.remove(member);
+                            return;
+                        }
+                        break;
+                    case ("Team Owner"):
+                        if (member instanceof TeamOwner) {
+                            memberAccounts.remove(member);
+                            return;
+                        }
+                        break;
+                }
+            }
+            throw new UserIsNotThisKindOfMemberException();
+        }
+    }
         public void addLeague(Leaugue leaugue) throws LeagueIDAlreadyExist {
             for (Leaugue leag : allLeagus) {
                 if (leag.getID() == leaugue.getID()){
@@ -532,9 +675,9 @@ public class FootballManagmentSystem extends TimerTask {
         }
     }
 
-
-
-
-
-
+    public LinkedList<PersonalInfo> getPersonalPages() {
+         LinkedList<PersonalInfo> pi = new LinkedList<PersonalInfo>();
+         pi.addAll(personalPages.values());
+        return (pi);
+    }
 }
