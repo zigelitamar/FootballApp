@@ -93,24 +93,9 @@ public class TeamTest {
     }
 
 
-    @Test
-    public void removeTeamOwner() throws InactiveTeamException, UnauthorizedTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, MemberIsAlreadyTeamOwnerException, TeamOwnerWithNoTeamException, UserIsNotThisKindOfMemberException {
-//        system = FootballManagmentSystem.getInstance();
-//        member = new Player("Halisi","Drakaries",313546,"HIHI",assetID+3,"BlaBla", new Date(1995,03,02));
-        teamOwner1.assignNewTeamOwner(member);
-        member = system.getMemberInstanceByKind(member.getName(), "Team Owner");
-        int size = teamAway.getAllTeamOwners().size();
-        teamAway.removeTeamOwner((TeamOwner)member,teamOwner1);
-        int size1 = teamAway.getAllTeamOwners().size();
-        boolean flag = false;
-        if (size != (size1)){
-            flag=true;
-        }
-        assertTrue(flag);
-    }
+
 
     @Test
-    // FIXME: 2020-04-23  
     public void getId() {
         assertEquals(teamAway.getId(), teamAway.getId());
 
@@ -136,65 +121,6 @@ public class TeamTest {
         teamAway.calculatePlayerFootballRate();
     }
 
-
-    /**
-    public void temp() {
-        try {
-            FootballManagmentSystem system = new FootballManagmentSystem();
-            TeamOwner teamOwner = new TeamOwner("Moshe", "Moshe Hogeg", 203, "#123");
-            Team beitar = new Team("Beiter", teamOwner);
-            System.out.println("FSDFSD");
-            IAsset coach = new Coach("Roni", "roni levy", 266, "dsds", 5000, "fsdf", CoachRole.HeadCoach);
-            teamOwner.addAssetToTeam(coach);
-            IAsset player = new Player("CR7", "Ronaldo", 0, "sdasd", 1000, "Striker", null);
-            teamOwner.addAssetToTeam(player);
-            teamOwner.editAsset(player, 165165);
-            if (coach instanceof Coach) {
-                teamOwner.assignNewTeamOwner(system.getMemberInstanceByKind(((Coach) coach).getName(), "Coach"));
-            }
-            Member playerAsTeamManager = null;
-            if (player instanceof Player) {
-                playerAsTeamManager = system.getMemberInstanceByKind(((Player) player).getName(), "Player");
-            }
-            teamOwner.assignNewTeamManager(playerAsTeamManager, 45645);
-            playerAsTeamManager = system.getMemberInstanceByKind(playerAsTeamManager.getName(), "Team Manager");
-            teamOwner.editManagerPermissions(playerAsTeamManager, "Create Personal Page", true);
-            ((TeamManager) playerAsTeamManager).createPersonalPageForTeam();
-            teamOwner.editManagerPermissions(playerAsTeamManager, "Add Content To Personal Page", true);
-            ((TeamManager) playerAsTeamManager).addContentToTeamsPersonalPage(new ProfileContent());
-            ((TeamManager) playerAsTeamManager).addContentToTeamsPersonalPage(new NewsContent());
-            teamOwner.removeTeamManager(system.getMemberInstanceByKind(playerAsTeamManager.getName(), "Team Manager"));
-            teamOwner.changeTeamStatus(TeamStatus.Close);
-            teamOwner.changeTeamStatus(TeamStatus.Active);
-
-            teamOwner.addAssetToTeam(new Field());
-        } catch (UserInformationException e) {
-            e.printStackTrace();
-        } catch (UserIsNotThisKindOfMemberException e) {
-            e.printStackTrace();
-        } catch (InactiveTeamException e) {
-
-        } catch (MemberIsAlreadyTeamManagerException e) {
-            e.printStackTrace();
-        } catch (TeamOwnerWithNoTeamException e) {
-            e.printStackTrace();
-        } catch (UnauthorizedTeamOwnerException e) {
-            e.printStackTrace();
-        } catch (InvalidTeamAssetException e) {
-            e.printStackTrace();
-        } catch (MemberIsAlreadyTeamOwnerException e) {
-            e.printStackTrace();
-        } catch (UnauthorizedPageOwnerException e) {
-            e.printStackTrace();
-        } catch (PersonalPageYetToBeCreatedException e) {
-            e.printStackTrace();
-        } catch (UnauthorizedTeamManagerException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-*/
 
 
     @Test
@@ -282,8 +208,7 @@ public class TeamTest {
 
     @Test
     public void addNewTeamOwner() throws InactiveTeamException, UnauthorizedTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, MemberIsAlreadyTeamOwnerException, UserIsNotThisKindOfMemberException, TeamOwnerWithNoTeamException {
-//        system = FootballManagmentSystem.getInstance();
-//        member = new Player("Halisi","Drakaries",313546,"HIHI",assetID+3,"BlaBla", new Date(1995,03,02));
+
         teamOwner1.assignNewTeamOwner(member);
         member = system.getMemberInstanceByKind(member.getName(), "Team Owner");
         boolean flag = false;
@@ -296,21 +221,6 @@ public class TeamTest {
     public void addNewTeamOwner1() throws InactiveTeamException, UnauthorizedTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, MemberIsAlreadyTeamOwnerException {
         assertTrue(teamAway.addNewTeamOwner(teamOwner1, teamOwner2));
     }
-
-//    @Test
-//    public void removeTeamOwner() throws InactiveTeamException, UnauthorizedTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, MemberIsAlreadyTeamOwnerException, TeamOwnerWithNoTeamException, UserIsNotThisKindOfMemberException {
-////        system = FootballManagmentSystem.getInstance();
-////        member = new Player("Halisi","Drakaries",313546,"HIHI",assetID+3,"BlaBla", new Date(1995,03,02));
-//        teamOwner1.assignNewTeamOwner(member);
-//        member = system.getMemberInstanceByKind(member.getName(), "Team Owner");
-//        int size = teamAway.getAllTeamOwners().size();
-//        teamAway.removeTeamOwner((TeamOwner)member,teamOwner1);
-//        boolean flag = false;
-//        if (size != (teamAway.getAllTeamOwners().size())){
-//            flag=true;
-//        }
-//        assertTrue(flag);
-//    }
 
 
     @Test
@@ -331,20 +241,7 @@ public class TeamTest {
         teamAway.editManagerPermissions(teamOwner1, teamManager, "READ", true);
     }
 
-    @Test
-    public void removeTeamManager() throws UserInformationException, UnauthorizedTeamOwnerException, MemberIsAlreadyTeamManagerException, TeamOwnerWithNoTeamException, MemberIsAlreadyTeamOwnerException, InactiveTeamException, UserIsNotThisKindOfMemberException {
-//        FootballManagmentSystem system = FootballManagmentSystem.getInstance();
-//        Member member = new Player("Halisi","Drakaries",313546,"HIHI",assetID+3,"BlaBla", new Date(1995,03,02));
-        teamOwner2.assignNewTeamManager(member,20);
-        member = system.getMemberInstanceByKind(member.getName(), "Team Manager");
-        int size = teamHome.getAllTeamManaers().size();
-        teamHome.removeTeamManager(teamOwner2,member);
-        boolean flag = false;
-        if (size != (teamHome.getAllTeamManaers().size())){
-            flag=true;
-        }
-        assertTrue(flag);
-    }
+
 
     @Test
     public void getAllTeamOwners() {
@@ -387,7 +284,7 @@ public class TeamTest {
     }
 
     @Test
-    public void changeTeamStatus() throws UnauthorizedTeamOwnerException {
+    public void changeTeamStatus() throws UnauthorizedTeamOwnerException, TeamCannotBeReopenException {
         teamAway.changeTeamStatus(teamOwner1, TeamStatus.Close);
         boolean flag = false;
         if (TeamStatus.Close.equals(teamAway.getStatus())){
@@ -463,18 +360,6 @@ public class TeamTest {
     public void setCurrentSeason() {
     }
 
-    /*
-    @Test
-    public void getInfo() {
-        PersonalInfo personalInfo;
-        teamAway.setInfo();
-        boolean flag = false;
-        if (season1.equals(teamAway.getCurrentSeason())){
-            flag=true;
-        }
-        assertTrue(flag);
-    }
-    */
 
     @Test
     public void setInfo() {
@@ -513,6 +398,64 @@ public class TeamTest {
     }
 
 
+    /*
+    @Test
+    public void removeTeamOwner() throws InactiveTeamException, UnauthorizedTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, MemberIsAlreadyTeamOwnerException, TeamOwnerWithNoTeamException, UserIsNotThisKindOfMemberException {
+        teamOwner1.assignNewTeamOwner(member);
+        member = system.getMemberInstanceByKind(member.getName(), "Team Owner");
+        int size = teamAway.getAllTeamOwners().size();
+        teamAway.removeTeamOwner((TeamOwner)member,teamOwner1);
+        int size1 = teamAway.getAllTeamOwners().size();
+        boolean flag = false;
+        if (size != (size1)){
+            flag=true;
+        }
+        assertTrue(flag);
+    }
+
+    @Test
+    public void removeTeamManager() throws UserInformationException, UnauthorizedTeamOwnerException, MemberIsAlreadyTeamManagerException, TeamOwnerWithNoTeamException, MemberIsAlreadyTeamOwnerException, InactiveTeamException, UserIsNotThisKindOfMemberException {
+        teamOwner2.assignNewTeamManager(member,20);
+        member = system.getMemberInstanceByKind(member.getName(), "Team Manager");
+        int size = teamHome.getAllTeamManaers().size();
+        teamHome.removeTeamManager(teamOwner2,member);
+        boolean flag = false;
+        if (size != (teamHome.getAllTeamManaers().size())){
+            flag=true;
+        }
+        assertTrue(flag);
+    }
+
+      @Test
+    public void getInfo() {
+        PersonalInfo personalInfo;
+        teamAway.setInfo();
+        boolean flag = false;
+        if (season1.equals(teamAway.getCurrentSeason())){
+            flag=true;
+        }
+        assertTrue(flag);
+    }
+
+
+
+//    @Test
+//    public void removeTeamOwner() throws InactiveTeamException, UnauthorizedTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, MemberIsAlreadyTeamOwnerException, TeamOwnerWithNoTeamException, UserIsNotThisKindOfMemberException {
+////        system = FootballManagmentSystem.getInstance();
+////        member = new Player("Halisi","Drakaries",313546,"HIHI",assetID+3,"BlaBla", new Date(1995,03,02));
+//        teamOwner1.assignNewTeamOwner(member);
+//        member = system.getMemberInstanceByKind(member.getName(), "Team Owner");
+//        int size = teamAway.getAllTeamOwners().size();
+//        teamAway.removeTeamOwner((TeamOwner)member,teamOwner1);
+//        boolean flag = false;
+//        if (size != (teamAway.getAllTeamOwners().size())){
+//            flag=true;
+//        }
+//        assertTrue(flag);
+//    }
+
+
+    */
 
 
 }

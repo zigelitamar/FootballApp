@@ -55,10 +55,8 @@ public class GameTest {
     }
 
 
-    // todo check the problem, now returns 4
     @Test
     public void addReferees() {
-        //game.addReferees();
         List<Game> result = refereeMain.getGames();
         assertEquals(1, result.size());
     }
@@ -73,15 +71,9 @@ public class GameTest {
     public void notifyTeamfans() {
     }
 
-/*
-    //todo
-    @Test
-    public void addEventToEventLog() {
-        game.addEventToEventLog(foul);
-        assertTrue(game.getEvent_logger().getEvents().contains(foul));
 
-    }
-*/
+
+
 
 
     @Test
@@ -252,6 +244,17 @@ public class GameTest {
     @Test
     public void setEvent_logger() {
     }
+
+
+    /*
+    @Test
+    public void addEventToEventLog() {
+        game.addEventToEventLog(foul);
+        assertTrue(game.getEvent_logger().getEvents().contains(foul));
+
+    }
+    */
+
 
 
 }

@@ -99,7 +99,7 @@ public class TeamOwner extends Member {
      * @param teamOwnerToRemove - team owner to be removed
      * @return - true if succeeded
      */
-    public boolean removeTeamOwner(TeamOwner teamOwnerToRemove)throws TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException, InactiveTeamException{
+    public boolean removeTeamOwner(TeamOwner teamOwnerToRemove) throws TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException, InactiveTeamException, CantRemoveMainOwnerException {
 
         if(team==null){
             throw new TeamOwnerWithNoTeamException();
@@ -150,7 +150,7 @@ public class TeamOwner extends Member {
      * @param newStatus - new status
      * @return - true if succeeded
      */
-    public boolean changeTeamStatus(TeamStatus newStatus) throws TeamOwnerWithNoTeamException,UnauthorizedTeamOwnerException{
+    public boolean changeTeamStatus(TeamStatus newStatus) throws TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException, TeamCannotBeReopenException {
         if(team==null){
             throw new TeamOwnerWithNoTeamException();
         }

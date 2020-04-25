@@ -1,52 +1,69 @@
 package Domain.SeasonManagment;
 
+import javafx.util.Pair;
+import org.junit.Before;
 import org.junit.Test;
+import java.util.HashMap;
 
 import java.util.Date;
+import java.util.LinkedList;
 
 import static org.junit.Assert.*;
 
 public class BudgetTest {
 
-    private Budget budget = new Budget(123);
+    private Budget budget;
+
+    @Before
+    public void init(){
+        budget = new Budget(123);
+    }
 
 
     @Test
     public void addFinanceActivity() {
-    //    budget.addFinanceActivity("food",100);
-        //todo add getter
+        budget.addFinanceActivity(BudgetActivity.BuyPlayer,100);
+        budget.addFinanceActivity(BudgetActivity.Tax,200);
+        budget.addFinanceActivity(BudgetActivity.BuyPlayer,300);
+        LinkedList<Pair<BudgetActivity,Integer>> ans2 = budget.getFinanceActivity();
+        assertEquals(3, ans2.size());
     }
+
 
     @Test
     public void calculateFinalBudget() {
         int a=100;
         int b=-200;
         int c=300;
-//        budget.addFinanceActivity("food", a);
-//        budget.addFinanceActivity("player", b);
-//        budget.addFinanceActivity("referee", c);
+        budget.addFinanceActivity(BudgetActivity.BuyPlayer,a);
+        budget.addFinanceActivity(BudgetActivity.Tax,b);
+        budget.addFinanceActivity(BudgetActivity.BuyPlayer,c);
         int sum = a+b+c;
         int result = budget.calculateFinalBudget();
         assertEquals(sum,result);
 
     }
 
+
     @Test
     public void calculateFinalBudget1() {
         int a=20;
         int b=200;
         int c=30;
-//        budget.addFinanceActivity("food", a);
-//        budget.addFinanceActivity("player", b);
-//        budget.addFinanceActivity("referee", c);
+        budget.addFinanceActivity(BudgetActivity.BuyPlayer,a);
+        budget.addFinanceActivity(BudgetActivity.Tax,b);
+        budget.addFinanceActivity(BudgetActivity.BuyPlayer,c);
         int sum = a+b+c-1;
         int result = budget.calculateFinalBudget();
         assertNotEquals(sum,result);
-
     }
+
+
 
     @Test
     public void setId() {
+        budget.setId(333);
+        assertEquals(333,budget.getId());
     }
 
     @Test
@@ -64,4 +81,7 @@ public class BudgetTest {
         }
         assertTrue(flag);
     }
+
+
+
 }

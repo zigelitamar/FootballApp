@@ -19,40 +19,30 @@ import static org.junit.Assert.*;
 
 public class FanTest {
     private Fan fanTest;
-    private Player p;
-    private Player p2;
+    private Player p,p2;
     private List<PersonalInfo> infos;
     private HashMap<PersonalInfo,Boolean> pageToFollowTest;
-    private Game game;
-    private Game game2;
+    private Game game,game2;
     private IAlert alert;
-    private Team team;
-    private Team team2;
+    private Team team,team2;
     private ProfileContent profileContent;
-    private TeamOwner owner;
-    private TeamOwner owner2;
-    private Referee refereeMain;
-    private Referee refereeSec;
+    private TeamOwner owner,owner2;
+    private Referee refereeMain,refereeSec;
     private ComplaintForm form;
-    private TeamManager teamManager;
-    private TeamManager teamManager2;
-    private Member futureManager;
-    private Member futureManager2;
     private SearchByName byName;
-    private FootballManagmentSystem system=FootballManagmentSystem.getInstance();
+    private Member futureManager,futureManager2;
 
     @Before
     public void init(){
         fanTest = new Fan("great","Noa",4325,"1234");
+        futureManager = new Fan("manager","mani",4325,"1234");
+        futureManager2 = new Fan("manager2","mani2",43252,"12342");
         p = new Player("adam11","Adam",4321,"0000",3,null,null);
         p2 = new Player("lior4","Lior",4322,"0101",4,null,null);
         owner = new TeamOwner("asif","Asif",333,"234");
         owner2 = new TeamOwner("zach","zach",333,"234");
         team = new Team("null",owner);
         team2 = new Team("zachTeam",owner2);
-//        teamManager = new TeamManager("adam22","Adamm", 1111, "5555", 3, team,owner);
-//        teamManager2 = new TeamManager("adam20","Adamon", 1111, "5555", 3, team2,owner2);
-        futureManager = new Fan("adam22","Adamm", 1111, "5555");
         infos = new ArrayList<>();
         pageToFollowTest = new HashMap<>();
         refereeMain = new Referee("Rafi","rafi",2424,"354",RefereeType.Main);
@@ -65,7 +55,7 @@ public class FanTest {
     }
 
     @Test
-    public void update() throws InactiveTeamException, UnauthorizedTeamManagerException, MemberIsAlreadyTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, UnauthorizedTeamOwnerException {
+    public void update() throws InactiveTeamException, UnauthorizedTeamManagerException, MemberIsAlreadyTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, UnauthorizedTeamOwnerException, AlreadyFollowThisPageException {
         addPersonalPagesToFollow();
         alert = new PersonalPageAlert(p.getInfo(),profileContent);
         fanTest.update(p.getInfo(),alert);
@@ -73,16 +63,19 @@ public class FanTest {
     }
 
     @Test
-    public void update2() throws InactiveTeamException, UnauthorizedTeamManagerException, MemberIsAlreadyTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, UnauthorizedTeamOwnerException, TeamOwnerWithNoTeamException, UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException, UserIsNotThisKindOfMemberException {
-
-        owner2.assignNewTeamManager(futureManager,5);
-        futureManager = system.getMemberInstanceByKind(futureManager.getName(),"Team Manager");
-        owner2.editManagerPermissions(futureManager,"Create Personal Page",true);
-        ((TeamManager)futureManager).createPersonalPageForTeam();
-
+    public void update2() throws InactiveTeamException, UnauthorizedTeamManagerException, MemberIsAlreadyTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, UnauthorizedTeamOwnerException, TeamOwnerWithNoTeamException, UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException, UserIsNotThisKindOfMemberException, AlreadyFollowThisPageException {
+        FootballManagmentSystem system = FootballManagmentSystem.getInstance();
+        owner2.assignNewTeamManager(futureManager2,5);
+        futureManager2 = system.getMemberInstanceByKind(futureManager2.getName(),"Team Manager");
+        owner2.editManagerPermissions(futureManager2,"Create Personal Page",true);
+        ((TeamManager)futureManager2).createPersonalPageForTeam();
         infos.add(team2.getInfo());
         fanTest.addPersonalPagesToFollow(infos);
         pageToFollowTest = fanTest.getPersonalPagesFollowed();
+        fanTest.turnAlertForPersonalPageOn(team2.getInfo());
+        alert = new PersonalPageAlert(team2.getInfo(),profileContent);
+        fanTest.update(game2,alert);
+        assertTrue(fanTest.getAlertsList().contains(alert));
         fanTest.turnAlertForPersonalPageOn(team2.getInfo());
         alert = new PersonalPageAlert(team2.getInfo(),profileContent);
         fanTest.update(game2,alert);
@@ -93,7 +86,7 @@ public class FanTest {
     }
 
     @Test
-    public void addPersonalPagesToFollow() throws InactiveTeamException, UnauthorizedTeamManagerException, UnauthorizedTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, MemberIsAlreadyTeamOwnerException {
+    public void addPersonalPagesToFollow() throws InactiveTeamException, UnauthorizedTeamManagerException, UnauthorizedTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, MemberIsAlreadyTeamOwnerException, AlreadyFollowThisPageException {
         p.createPersonalPage();
         infos.add(p.getInfo());
         fanTest.addPersonalPagesToFollow(infos);
@@ -103,14 +96,12 @@ public class FanTest {
         }
     }
     @Test
-    public void addPersonalPagesToFollow2() throws InactiveTeamException, UnauthorizedTeamManagerException, UnauthorizedTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, MemberIsAlreadyTeamOwnerException {
-        if(team.getAllTeamOwners().contains(owner)){
-            owner.setTeam(team);
-        }
-        if(!(team.getAllTeamManaers().contains(teamManager))) {
-            team.addNewTeamManger(owner, teamManager, 5);
-        }
-        team.createPersonalPage(teamManager);
+    public void addPersonalPagesToFollow2() throws InactiveTeamException, UnauthorizedTeamManagerException, UnauthorizedTeamOwnerException, UserInformationException, MemberIsAlreadyTeamManagerException, MemberIsAlreadyTeamOwnerException, UnauthorizedPageOwnerException, TeamOwnerWithNoTeamException, PersonalPageYetToBeCreatedException, UserIsNotThisKindOfMemberException, AlreadyFollowThisPageException {
+        FootballManagmentSystem system = FootballManagmentSystem.getInstance();
+        owner.assignNewTeamManager(futureManager,5);
+        futureManager = system.getMemberInstanceByKind(futureManager.getName(),"Team Manager");
+        owner.editManagerPermissions(futureManager,"Create Personal Page",true);
+        ((TeamManager)futureManager).createPersonalPageForTeam();
         infos.add(team.getInfo());
         fanTest.addPersonalPagesToFollow(infos);
         pageToFollowTest = fanTest.getPersonalPagesFollowed();
@@ -120,7 +111,7 @@ public class FanTest {
     }
 
     @Test
-    public void unFollowPage() {
+    public void unFollowPage() throws AlreadyFollowThisPageException {
         p2.createPersonalPage();
         infos.add(p2.getInfo());
         fanTest.addPersonalPagesToFollow(infos);
@@ -136,7 +127,7 @@ public class FanTest {
     }
 
     @Test
-    public void turnAlertForPersonalPageOn2() {
+    public void turnAlertForPersonalPageOn2() throws AlreadyFollowThisPageException {
         infos.clear();
         p2.createPersonalPage();
         infos.add(p2.getInfo());
@@ -166,18 +157,20 @@ public class FanTest {
         assertEquals(fanTest.getName(),details.get(0).getValue());
         assertEquals(fanTest.getPassword(),details.get(1).getValue());
     }
-//
-//    @Test
-//    public void changePassword() throws UserInformationException {
-//        fanTest.changePassword("1111");
-//        assertEquals("1111",fanTest.getPassword());
-//    }
-//
-//    @Test
-//    public void changeUserName() throws UserInformationException {
-//        fanTest.changeUserName("Tikva");
-//        assertEquals("Tikva",fanTest.getName());
-//    }
+
+    @Test
+    public void changePassword() throws UserInformationException {
+        Fan fanTest3 = new Fan("noala","Noa",4325,"1234");
+        fanTest3.changePassword("1111");
+        assertEquals("1111",fanTest3.getPassword());
+    }
+
+    @Test
+    public void changeUserName() throws UserInformationException {
+        Fan fanTest2 = new Fan("noala","Noa",4325,"1234");
+        fanTest2.changeUserName("Tikva");
+        assertEquals("Tikva",fanTest2.getName());
+    }
 
     @Test
     public void view() {
@@ -201,6 +194,11 @@ public class FanTest {
 
     }
 
+    @Test
+    public void logOut(){
+        fanTest.logOut();
+        assertFalse(fanTest.isActive());
+    }
     @Test
     public void notifyFan() {
     }

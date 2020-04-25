@@ -88,6 +88,8 @@ public class TeamOwnerController extends MemberController {
             System.out.println(e.getMessage());
         } catch (InactiveTeamException e) {
             System.out.println(e.getMessage());
+        } catch (CantRemoveMainOwnerException e) {
+            e.printStackTrace();
         }
         return false;
     }
@@ -134,6 +136,8 @@ public class TeamOwnerController extends MemberController {
             System.out.println(e.getMessage());
         } catch (UnauthorizedTeamOwnerException e) {
             System.out.println(e.getMessage());
+        } catch (TeamCannotBeReopenException e) {
+            e.printStackTrace();
         }
         return false;
     }

@@ -26,6 +26,14 @@ public class Referee extends Member implements Observer {
         this.type = type;
         games=new ArrayList<>();
         system = FootballManagmentSystem.getInstance();
+        if(!(system.getMembers().containsKey(this.name))) {
+            try {
+                system.addMember(this);
+                system.addReferee(this);
+            } catch (UserInformationException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /** edit details UC 10.1 */
@@ -119,7 +127,7 @@ public class Referee extends Member implements Observer {
 
 
     /** 10.4 add report for game*/
-    public void addReportForGame(Game game){
+    public void addReportForGame(Game game) throws NoPermissionException {
         game.getHome().addToGamesHistory(game.getAway(),game);
         game.getAway().addToGamesHistory(game.getHome(),game);
         Date gameDate = game.getDateGame();
@@ -144,7 +152,7 @@ public class Referee extends Member implements Observer {
             log.UpdateLog(report);
             log.UpdateLog("report to a game was added by " +this.getName());
         }else{
-            System.out.println("Can't write report ! ");
+            throw new NoPermissionException("Can't write report ! because the time has passed or referee is not MAIN one.");
         }
     }
 

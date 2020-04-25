@@ -1,4 +1,4 @@
 package FootballExceptions;
 
-public class CantRemoveMainOwnerException {
+public class CantRemoveMainOwnerException extends Exception {
 }

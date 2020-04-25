@@ -31,6 +31,7 @@ public class Team {
     private double playersFootballRate;
     private HashMap<Team,LinkedList<Game>> gamesHistory;
     private LinkedList<Game> upcomingGames;
+    private boolean systemMangerClosed;
 
     /**
      * constructor
@@ -51,8 +52,9 @@ public class Team {
         this.status = TeamStatus.Active; /**by default team status is active*/
         this.id = system.generateTeamID();
         this.owner.setTeam(this);
-        system.addTeam(this);
+        system.registerTeam(this);
         this.controlBudget = new ControlBudget(this.id);
+        this.systemMangerClosed=false;
     }
 
     public int getId() {
@@ -85,6 +87,10 @@ public class Team {
 
     public HashMap<Integer, IAsset> getTeamPlayers() {
         return teamPlayers;
+    }
+
+    public HashMap<CoachRole, IAsset> getTeamCoaches() {
+        return teamCoaches;
     }
 
     public void setTeamPlayers(HashMap<Integer, IAsset> teamPlayers) {
@@ -138,6 +144,7 @@ public class Team {
                     throw new InvalidTeamAssetException();
                 }
                 teamPlayers.remove(asset.getAssetID());
+                system.removeAsset(asset);
                 calculatePlayerFootballRate();
                 SystemLog.getInstance().UpdateLog("Player: "+asset.getClass().toString().toLowerCase()+" was removed from team: " +asset.getMyTeam() + "by" + member.getName());
             }
@@ -146,6 +153,7 @@ public class Team {
                     throw new InvalidTeamAssetException();
                 }
                 teamCoaches.remove(((Coach) asset).getRole());
+                system.removeAsset(asset);
                 SystemLog.getInstance().UpdateLog(((Coach) asset).getRole()+ " "+asset.getClass().toString().toLowerCase()+" has been added to team: " +asset.getMyTeam() + "by" + member.getName());
             }
             if(asset instanceof Field){
@@ -153,6 +161,7 @@ public class Team {
                     throw new InvalidTeamAssetException();
                 }
                 teamfields.remove(asset.getAssetID());
+                system.removeAsset(asset);
                 SystemLog.getInstance().UpdateLog("Field: "+asset.getClass().toString().toLowerCase()+" was removed from team: " +asset.getMyTeam() + "by" + member.getName());
             }
         }
@@ -234,6 +243,8 @@ public class Team {
                 for (Member member : memberAccounts) {
                     if (member instanceof TeamOwner) {
                         secondaryOwners.add((TeamOwner) member);
+                        IAlert alert = new TeamManagmentAlert("Your are now Team owner of " + this.Name);
+                        member.handleAlert(alert);
                         return true;
                     }
                 }
@@ -251,9 +262,12 @@ public class Team {
      * @param teamOwner
      * @return true if succeeded
      */
-    public boolean removeTeamOwner(TeamOwner teamOwnerToRemove, TeamOwner teamOwner) throws UnauthorizedTeamOwnerException,InactiveTeamException{
+    public boolean removeTeamOwner(TeamOwner teamOwnerToRemove, TeamOwner teamOwner) throws UnauthorizedTeamOwnerException, InactiveTeamException, CantRemoveMainOwnerException {
         if(!isActive()){
             throw new InactiveTeamException();
+        }
+        if(teamOwnerToRemove.equals(owner)){
+            throw new CantRemoveMainOwnerException();
         }
         if(isTeamOwner(teamOwner)){
             LinkedList<Member> list = new LinkedList<>();
@@ -264,7 +278,7 @@ public class Team {
             secondaryOwners.remove(teamOwnerToRemove);
             return true;
         }
-        return false;
+        throw new UnauthorizedTeamOwnerException();
     }
 
     /**
@@ -295,6 +309,8 @@ public class Team {
                 for (Member member : memberAccounts) {
                     if (member instanceof TeamManager) {
                         teamMangers.put(((TeamManager) member).getAssetID(),(TeamManager)member);
+                        IAlert alert = new TeamManagmentAlert("Your are now Team manager of " + this.Name);
+                        member.handleAlert(alert);
                         return true;
                     }
                 }
@@ -566,7 +582,10 @@ public class Team {
      * @param newStatus - Active/Closed
      * @return - true if succeeded
      */
-    public boolean changeTeamStatus(TeamOwner teamOwner,TeamStatus newStatus) throws UnauthorizedTeamOwnerException{
+    public boolean changeTeamStatus(TeamOwner teamOwner,TeamStatus newStatus) throws UnauthorizedTeamOwnerException, TeamCannotBeReopenException {
+        if(systemMangerClosed){
+            throw new TeamCannotBeReopenException();
+        }
         if(isTeamOwner(teamOwner)){
             if(status==newStatus){
                 return false;
@@ -704,15 +723,16 @@ public class Team {
         return owner;
     }
 
-    public void setOwner(TeamOwner owner) {
-        this.owner = owner;
-    }
+   // public void setOwner(TeamOwner owner) {
+       // this.owner = owner;
+    //}
 
     public TeamStatus getStatus() {
         return status;
     }
 
     public void setStatus(TeamStatus status) {
+        this.systemMangerClosed=true;
         this.status = status;
     }
 

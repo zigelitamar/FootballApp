@@ -1,4 +1,4 @@
 package FootballExceptions;
 
-public class AlreadyFollowThisPageException {
+public class AlreadyFollowThisPageException extends Exception {
 }

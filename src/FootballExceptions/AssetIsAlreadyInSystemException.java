@@ -1,4 +1,4 @@
 package FootballExceptions;
 
-public class AssetIsAlreadyInSystemException {
+public class AssetIsAlreadyInSystemException extends Exception {
 }

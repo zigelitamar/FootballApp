@@ -1,4 +1,4 @@
 package FootballExceptions;
 
-public class EmptyPersonalPage {
+public class EmptyPersonalPageException extends Exception {
 }

@@ -160,7 +160,7 @@ public class FootballManagmentSystem extends TimerTask {
     public boolean registerTeam(Team team) {
         //////need confirmation from Comissioner
         allTeams.put(team.getId(), team);
-        SystemLog.getInstance().UpdateLog("New team has been added to system by owner: " + team.getOwner().getName());/////add TEam name to team and to log!
+        SystemLog.getInstance().UpdateLog("New team"+team.getName()+" has been added to system by owner: " + team.getOwner().getName());/////add TEam name to team and to log!
         return true;
     }
 
@@ -263,11 +263,11 @@ public class FootballManagmentSystem extends TimerTask {
         }
     }
 
-    public void removeTeam(Team t) {
-        t.setClosed(true);
-        SystemLog.getInstance().UpdateLog("has been deleted from the system"); // again team name????
-        allTeams.remove(t);
-    }
+//    public void removeTeam(Team t) {
+//        t.setClosed(true);
+//        SystemLog.getInstance().UpdateLog("has been deleted from the system"); // again team name????
+//        allTeams.remove(t);
+//    }
 
     public void removeAsset(IAsset asset) {
         if (asset instanceof Player || asset instanceof Coach || asset instanceof TeamManager) {
@@ -674,9 +674,6 @@ public class FootballManagmentSystem extends TimerTask {
             mex.printStackTrace();
         }
     }
-
-
-
 
 
 

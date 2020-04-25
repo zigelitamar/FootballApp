@@ -1,4 +1,4 @@
 package FootballExceptions;
 
-public class TeamCannotBeReopenException {
+public class TeamCannotBeReopenException extends Exception {
 }

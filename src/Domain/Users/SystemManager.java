@@ -83,7 +83,7 @@ public class SystemManager extends Member {
     }
     public void CommentOnComplaint(ComplaintForm comp,String response){
 
-            comp.setComplaint(response);
+            comp.setResponse(response);
             comp.getFanSubmitingForm().handleAlert((IAlert) new ComplaintAlert(comp));
             SystemLog.getInstance().UpdateLog("complaint by " +comp.getFanSubmitingForm().getName()+
                     "was implied");

@@ -53,9 +53,10 @@ public class SystemManagerTest {
 
     @Test
     public void commentOnComplaint() {
-        fan= new Fan("Itamar","itamar",32432,"235");
+
+        Fan fanPolani= new Fan("Itamar","itamar",32432,"235");
         ComplaintForm tempComplain = new ComplaintForm("how is it possible for a player to be a teamOwner?");
-        fan.submitComplaintForm(tempComplain);
+        fanPolani.submitComplaintForm(tempComplain);
         List<ComplaintForm> complaintFormList = new LinkedList<>();
         complaintFormList = managerTest.checkComplaints();
         for (int i = 0; i < complaintFormList.size(); i++){
@@ -63,10 +64,19 @@ public class SystemManagerTest {
                 managerTest.CommentOnComplaint(complaintFormList.get(i),"I have no idea");
             }
         }
-        ComplaintAlert ca = (ComplaintAlert) fan.getAlertsList().peek();
+        ComplaintAlert ca = (ComplaintAlert) fanPolani.getAlertsList().peek();
         assertEquals("I have no idea",ca.getResponse().getResponse());
     }
 
+    @Test
+    public void closeTeamAlert() throws InactiveTeamException {
+        TeamOwner teamOwnerToAlert = new TeamOwner("Shlomo32523","Shlo sadmo",5235,"$124");
+        Team teamToClose = new Team("ninja turtle",teamOwnerToAlert);
+        SystemManager sysMan = new SystemManager("Eyal2","Eyal", 1234, "0000");
+        teamOwnerToAlert.logOut();
+        sysMan.closeTeam(teamToClose,"kaha");
+        assertEquals(1,teamOwnerToAlert.getAlertsList().size());
+    }
     @Test
     public void getLog() {
     }

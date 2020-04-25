@@ -2,7 +2,7 @@ package Domain.Alerts;
 
 import Domain.SeasonManagment.ComplaintForm;
 
-public class ComplaintAlert {
+public class ComplaintAlert implements IAlert{
 
     ComplaintForm response;
 

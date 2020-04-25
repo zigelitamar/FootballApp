@@ -52,16 +52,12 @@ public class Guest extends GeneralUser {
             return true;
         }else if(object instanceof Season){
             //todo - add view func for season
-            return true;
         }else if(object instanceof Leaugue){
             //todo - add view func for league
-            return true;
         }else if(object instanceof Game){
             //todo - MAYBE add view func for game
-            return true;
-        }else{
-            return false;
         }
+        return true;
     }
     /**
      * search - UC - 2.5

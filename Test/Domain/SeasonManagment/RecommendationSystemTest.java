@@ -47,11 +47,6 @@ public class RecommendationSystemTest {
         recommendationSystem = new RecommendationSystem();
     }
 
-    @Test
-    public void recommendTeamOddsOfWinning() {
-        recommendationSystem.recommendTeamOddsOfWinning(null, null);
-
-    }
 
     @Test
     public void recommendTeamOddsOfWinning1() throws InactiveTeamException, UnauthorizedTeamOwnerException {

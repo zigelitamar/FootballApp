@@ -37,7 +37,7 @@ public class PersonalInfo extends Observable{
             teamPageMembersOwners.add(pageMemberOwner);
             this.pageTitle = ((TeamManager) pageMemberOwner).getMyTeam().getName();
         }else{
-            this.pageTitle = pageMemberOwner.getName(); //todo - change for his real name
+            this.pageTitle = pageMemberOwner.getReal_Name();
         }
         this.pageMemberOwner = pageMemberOwner;
         FootballManagmentSystem footballManagmentSystem = FootballManagmentSystem.getInstance();
