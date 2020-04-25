@@ -13,4 +13,18 @@ public class ComplaintAlert implements IAlert   {
     public ComplaintForm getComplaintResponse() {
         return response;
     }
+
+
+
+    @Override
+    public String view() {
+        return this.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "ComplaintAlert{" +
+                "response = " + response +
+                " }";
+    }
 }
