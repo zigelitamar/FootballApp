@@ -63,4 +63,15 @@ public class RefereeController extends MemberController{
         }
 
     }
+
+
+    /**10.4*/
+    public void addReportForGame(Referee referee,Game game) {
+        try {
+            referee.addReportForGame(game);
+        }catch (NoPermissionException ne){
+            System.out.println(ne.getMessage());
+        }
+    }
+
 }

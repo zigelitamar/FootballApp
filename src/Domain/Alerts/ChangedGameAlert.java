@@ -26,4 +26,9 @@ public class ChangedGameAlert implements IAlert {
                 ", game=" + game +
                 '}';
     }
+
+    @Override
+    public String view() {
+        return this.toString();
+    }
 }

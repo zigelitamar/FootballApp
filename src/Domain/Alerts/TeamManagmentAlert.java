@@ -21,4 +21,15 @@ public class TeamManagmentAlert implements IAlert {
     public TeamManagmentAlert() {
     }
 
+    @Override
+    public String toString() {
+        return "TeamManagmentAlert{" +
+                "team status = " + teamStatus + " , message = " + message +
+                " }";
+    }
+
+    @Override
+    public String view() {
+        return this.toString();
+    }
 }

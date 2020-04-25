@@ -15,4 +15,9 @@ public class FinancialAlert implements IAlert {
                 "minus=" + minus +
                 '}';
     }
+
+    @Override
+    public String view() {
+        return this.toString();
+    }
 }
