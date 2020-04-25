@@ -101,7 +101,8 @@ public class ControlBudget {
     }
 
 
-    public ICommissionerRule getICommissionerRule() {
+    public ICommissionerRule getICommissionerRule(){
         return commissionerRule;
     }
+
 }

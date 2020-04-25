@@ -6,33 +6,29 @@ import FootballExceptions.*;
 import javafx.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runners.Parameterized;
 
-import java.net.UnknownHostException;
-import java.util.Collection;
-import java.util.Date;
 import java.util.LinkedList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-    public class CommissionerTest {
+public class CommissionerTest {
 
 
-        private static Object LinkedList;
-        String name;
-        int id;
-        Commissioner commissioner;
-        Leaugue leaugue;
-        Leaugue leaugue1;
-        Leaugue leaugue2;
-        Leaugue leaugue3;
-        Leaugue leaugue4;
-        Season season;
-        Referee referee;
-        TeamOwner teamOwner1;
-        TeamOwner teamOwner2;
-        Team teamAway;
+    private static Object LinkedList;
+    String name;
+    int id;
+    Commissioner commissioner;
+    Leaugue leaugue;
+    Leaugue leaugue1;
+    Leaugue leaugue2;
+    Leaugue leaugue3;
+    Leaugue leaugue4;
+    Season season;
+    Referee referee;
+    TeamOwner teamOwner1;
+    TeamOwner teamOwner2;
+    Team teamAway;
     int id1;
     int id2;
     String name1;
@@ -122,19 +118,18 @@ import static org.junit.Assert.assertTrue;
 
     @Test
     public void addRefereeToSeason1() throws LeagueNotFoundException, LeagueIDAlreadyExist, IDWasNotEnterdException, SeasonYearAlreadyExist {
-        Leaugue leaugue = new Leaugue();
         leaugue.setId(5);
         leaugue.setLeagueIntoSystem();
         commissioner.addSeasonToLeague(1995,leaugue);
         FootballManagmentSystem.getInstance().addReferee(referee);
         commissioner.addRefereeToSeason(leaugue.getID(), 1995, referee);
-        int ans = leaugue.getSeasonByYear(1995).getReferees().size();
+        int ans = FootballManagmentSystem.getInstance().getAllRefs().size();
         assertEquals(1,ans);
     }
 
 
     @Test
-    public void setNewScorePolicy() throws LeagueIDAlreadyExist, IDWasNotEnterdException, SeasonYearAlreadyExist {
+    public void setNewScorePolicy() throws LeagueIDAlreadyExist, IDWasNotEnterdException, SeasonYearAlreadyExist, LeagueNotFoundException {
         IScorePolicy scorePolicy = new DefaultIScorePolicy();
         leaugue1.setId(6);
         leaugue1.setLeagueIntoSystem();
@@ -152,7 +147,7 @@ import static org.junit.Assert.assertTrue;
 
 
     @Test
-    public void setNewPlaceTeamsPolicy() throws LeagueIDAlreadyExist, IDWasNotEnterdException, SeasonYearAlreadyExist {
+    public void setNewPlaceTeamsPolicy() throws LeagueIDAlreadyExist, IDWasNotEnterdException, SeasonYearAlreadyExist, LeagueNotFoundException {
         IPlaceTeamsPolicy placeTeamsPolicy = new DefaultTeamsPolicy();
         leaugue4.setId(444);
         leaugue4.setLeagueIntoSystem();

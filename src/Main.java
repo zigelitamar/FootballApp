@@ -29,6 +29,8 @@ public class Main {
 
 
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
+        FootballManagmentSystem system1 = FootballManagmentSystem.getInstance();
+        System.out.println(system.getClass());
         Referee referee = new Referee("zaza","zaza", 123,"12345678", RefereeType.Main);
         Referee referee1 = new Referee("zaza","zaza", 123,"12345678", RefereeType.Main);
         Season season = new Season(null,null,1900);

@@ -2,7 +2,7 @@ package Domain.Alerts;
 
 import Domain.SeasonManagment.ComplaintForm;
 
-public class ComplaintAlert implements IAlert{
+public class ComplaintAlert implements IAlert   {
 
     ComplaintForm response;
 
@@ -10,7 +10,21 @@ public class ComplaintAlert implements IAlert{
         this.response = response;
     }
 
-    public ComplaintForm getResponse() {
+    public ComplaintForm getComplaintResponse() {
         return response;
+    }
+
+
+
+    @Override
+    public String view() {
+        return this.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "ComplaintAlert{" +
+                "response = " + response +
+                " }";
     }
 }

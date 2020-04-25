@@ -1,4 +1,4 @@
-package Service;
+package AcceptanceTests;
 
 import Domain.Events.AGameEvent;
 import Domain.Events.Foul;
@@ -12,6 +12,7 @@ import Domain.Users.Referee;
 import Domain.Users.RefereeType;
 import Domain.Users.TeamOwner;
 import FootballExceptions.NoPermissionException;
+import Service.RefereeController;
 import org.junit.Before;
 import org.junit.Test;
 import sun.security.acl.AclImpl;
@@ -71,8 +72,9 @@ public class RefereeControllerTest {
         assertTrue(game.getHome().getGameHistoryWithOtherTeam(team).contains(game));
     }
 
-    @Test(expected = NoPermissionException.class)
-    public void addReportForGameNegative() throws NoPermissionException {
+    @Test
+    public void addReportForGameNegative() {
+
         refereeControllerTest.addReportForGame(refereeSec,game);
 
     }

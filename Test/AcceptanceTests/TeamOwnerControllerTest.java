@@ -1,4 +1,4 @@
-package Service;
+package AcceptanceTests;
 
 import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.BudgetActivity;
@@ -11,6 +11,7 @@ import Domain.Users.TeamManager;
 import Domain.Users.TeamOwner;
 import FootballExceptions.TeamOwnerWithNoTeamException;
 import FootballExceptions.UserIsNotThisKindOfMemberException;
+import Service.TeamOwnerController;
 import org.junit.Before;
 import org.junit.Test;
 

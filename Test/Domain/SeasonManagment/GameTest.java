@@ -1,21 +1,19 @@
 package Domain.SeasonManagment;
 
 import Domain.Events.AGameEvent;
-import Domain.Events.Event_Logger;
 import Domain.Events.Foul;
 import Domain.Users.Player;
 import Domain.Users.Referee;
 import Domain.Users.RefereeType;
 import Domain.Users.TeamOwner;
-import com.sun.xml.internal.bind.v2.TODO;
-import javafx.print.PageLayout;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class GameTest {
 

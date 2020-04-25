@@ -1,16 +1,19 @@
 package Service;
 
-import Domain.Alerts.IAlert;
-import Domain.FootballManagmentSystem;
 import Domain.Searcher.Searcher;
-import Domain.SeasonManagment.*;
+import Domain.SeasonManagment.ComplaintForm;
+import Domain.SeasonManagment.Game;
+import Domain.SeasonManagment.Team;
 import Domain.Users.Fan;
 import Domain.Users.PersonalInfo;
 import FootballExceptions.AlreadyFollowThisPageException;
 import FootballExceptions.UserInformationException;
 import javafx.util.Pair;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 
 public class FanController {
 
@@ -38,8 +41,13 @@ public class FanController {
 
 
     public LinkedList<String> viewSearchHistory(Fan fan){
+        if(fan.viewSearchHistory().size()==0){
+            System.out.println("no search history yet");
+            return  null;
+        }
 
-       return  fan.viewSearchHistory();
+       else
+           return  fan.viewSearchHistory();
     }
 
 

@@ -752,4 +752,7 @@ public class Team {
     public ControlBudget getControlBudget() {
         return controlBudget;
     }
+    public String toString(){
+        return this.getName();
+    }
 }

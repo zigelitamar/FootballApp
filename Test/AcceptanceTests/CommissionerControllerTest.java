@@ -1,16 +1,16 @@
-package Service;
+package AcceptanceTests;
 
-import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.*;
 import Domain.Users.Commissioner;
 import Domain.Users.Referee;
 import Domain.Users.RefereeType;
 import Domain.Users.TeamOwner;
+import FootballExceptions.IDWasNotEnterdException;
 import FootballExceptions.LeagueIDAlreadyExist;
+import FootballExceptions.SeasonYearAlreadyExist;
+import Service.CommissionerController;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CommissionerControllerTest {
 
@@ -19,6 +19,7 @@ public class CommissionerControllerTest {
     Commissioner commissioner;
     Leaugue leaugue;
     Leaugue leaugue2;
+    Leaugue leaugue3;
     Season season;
     Referee referee;
     TeamOwner teamOwner1;
@@ -32,7 +33,7 @@ public class CommissionerControllerTest {
 
 
     @Before
-    public void init(){
+    public void init() throws LeagueIDAlreadyExist, IDWasNotEnterdException {
         name = "Tzah";
         id = 333;
         commissioner = new Commissioner(name, id, "222", "Tzahi");
@@ -40,6 +41,10 @@ public class CommissionerControllerTest {
         leaugue.setId(111);
         leaugue2 = new Leaugue();
         leaugue2.setId(222);
+        leaugue2.setLeagueIntoSystem();
+        leaugue3 = new Leaugue();
+        leaugue3.setId(333);
+        // leaugue3.setLeagueIntoSystem();
         season = new Season(2020);
         referee = new Referee("Jhon", "Snow", 111, "Stark", RefereeType.Secondary);
         id1 = 444;
@@ -55,7 +60,7 @@ public class CommissionerControllerTest {
 
     @Test
     public void defineLeaguePositive() {
-        assertTrue(commissionerController.defineLeague(commissioner,111));
+        commissionerController.defineLeague(commissioner,111);
     }
 
     @Test
@@ -85,8 +90,9 @@ public class CommissionerControllerTest {
 
 
     @Test
-    public void addRefereeToSeasonPositive() throws LeagueIDAlreadyExist {
-        commissionerController.addRefereeToSeason(commissioner,222,2007,referee);
+    public void addRefereeToSeasonPositive() throws LeagueIDAlreadyExist, SeasonYearAlreadyExist {
+        leaugue3.addSeasonToLeagueByYear(2007);
+        commissionerController.addRefereeToSeason(commissioner,333,2007,referee);
     }
 
     @Test

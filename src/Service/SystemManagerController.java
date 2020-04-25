@@ -7,9 +7,12 @@ import Domain.SystemLog;
 import Domain.Users.Member;
 import Domain.Users.SystemManager;
 import FootballExceptions.InactiveTeamException;
+import FootballExceptions.NoPermissionException;
+import FootballExceptions.ShortCommentException;
 import FootballExceptions.UnableToRemoveException;
 
 import java.io.IOException;
+import java.security.NoSuchProviderException;
 import java.util.List;
 
 public class SystemManagerController extends MemberController {
@@ -18,7 +21,9 @@ public class SystemManagerController extends MemberController {
         try {
             systemManager.deleteMember(member);
         } catch (UnableToRemoveException e) {
-            System.out.println("Wrong username or password");///retrun string value maybe?!
+            System.out.println("Member is the Only team Owner");///retrun string value maybe?!
+        } catch (NoPermissionException e) {
+            System.out.println( e.getMessage());
         }
     }
     public  void closeTeam(SystemManager systemManager, Team team,String reason){
@@ -26,6 +31,8 @@ public class SystemManagerController extends MemberController {
             systemManager.closeTeam(team,reason);
         } catch (InactiveTeamException e) {
             System.out.println("Team is allready closed");// maybeString
+        } catch (UnableToRemoveException e) {
+            System.out.println(e.getMessage());
         }
 
     }
@@ -37,7 +44,11 @@ public class SystemManagerController extends MemberController {
 
     }
     public void CommentOnComplaint(SystemManager sm ,ComplaintForm comp,String response){
-        sm.CommentOnComplaint(comp,response);
+        try {
+            sm.CommentOnComplaint(comp,response);
+        } catch (ShortCommentException e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 }

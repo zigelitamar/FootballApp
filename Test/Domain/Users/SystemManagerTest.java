@@ -6,6 +6,8 @@ import Domain.SeasonManagment.ComplaintForm;
 import Domain.SeasonManagment.Team;
 import Domain.SeasonManagment.TeamStatus;
 import FootballExceptions.InactiveTeamException;
+import FootballExceptions.NoPermissionException;
+import FootballExceptions.ShortCommentException;
 import FootballExceptions.UnableToRemoveException;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,13 +35,13 @@ public class SystemManagerTest {
     }
 
     @Test
-    public void closeTeam() throws InactiveTeamException {
+    public void closeTeam() throws InactiveTeamException, UnableToRemoveException {
         managerTest.closeTeam(team,"not a good team");
         assertEquals(TeamStatus.Close,team.getStatus());
     }
 
     @Test
-    public void deleteMember() throws UnableToRemoveException {
+    public void deleteMember() throws UnableToRemoveException, NoPermissionException {
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
         int beforeDelete=system.getMembers().size();
         managerTest.deleteMember(player);
@@ -52,7 +54,7 @@ public class SystemManagerTest {
     }
 
     @Test
-    public void commentOnComplaint() {
+    public void commentOnComplaint() throws ShortCommentException {
 
         Fan fanPolani= new Fan("Itamar","itamar",32432,"235");
         ComplaintForm tempComplain = new ComplaintForm("how is it possible for a player to be a teamOwner?");
@@ -65,11 +67,11 @@ public class SystemManagerTest {
             }
         }
         ComplaintAlert ca = (ComplaintAlert) fanPolani.getAlertsList().peek();
-        assertEquals("I have no idea",ca.getResponse().getResponse());
+        assertEquals("I have no idea",ca.getComplaintResponse().getResponse());
     }
 
     @Test
-    public void closeTeamAlert() throws InactiveTeamException {
+    public void closeTeamAlert() throws InactiveTeamException, UnableToRemoveException {
         TeamOwner teamOwnerToAlert = new TeamOwner("Shlomo32523","Shlo sadmo",5235,"$124");
         Team teamToClose = new Team("ninja turtle",teamOwnerToAlert);
         SystemManager sysMan = new SystemManager("Eyal2","Eyal", 1234, "0000");
