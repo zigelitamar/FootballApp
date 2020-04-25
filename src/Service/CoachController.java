@@ -4,17 +4,19 @@ import Domain.PersonalPages.APersonalPageContent;
 import Domain.Users.Coach;
 import FootballExceptions.PersonalPageYetToBeCreatedException;
 import FootballExceptions.UnauthorizedPageOwnerException;
+import FootballExceptions.UserInformationException;
 
 public class CoachController extends MemberController {
 
-    public void addContentToPage(Coach coach, APersonalPageContent cont){
+    public boolean addContentToPage(Coach coach, APersonalPageContent cont){
         try {
             coach.addContentToPersonalPage(cont);
         } catch (UnauthorizedPageOwnerException e) {
             System.out.println(e.getMessage());
         } catch (PersonalPageYetToBeCreatedException e) {
-            System.out.println(e.getMessage());
+            return false;
         }
+        return true;
     }
     public void EditPage(Coach coach,String title, String val){
         try {
@@ -25,7 +27,13 @@ public class CoachController extends MemberController {
             System.out.println(e.getMessage());
         }
     }
-
+    public boolean changeUserName(Coach coach,String newUserName) {
+        try {
+            return coach.changeUserName(newUserName);
+        } catch (UserInformationException e) {
+            return false;
+        }
+    }
     public boolean createPersonalPage(Coach coach ){
         return coach.createPersonalPage();
     }

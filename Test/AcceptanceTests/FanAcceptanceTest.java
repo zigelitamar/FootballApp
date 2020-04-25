@@ -13,6 +13,8 @@ import Service.GuestController;
 import org.junit.Test;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -69,27 +71,34 @@ public class FanAcceptanceTest {
         PersonalInfo pi = fan.getPersonalPagesFollowed().keySet().iterator().next();
 
         System.out.println(fan.getPersonalPagesFollowed().size());
-        assertTrue(pi.isPageOwner(pla));
-        assertTrue(fan.getPersonalPagesFollowed().size()==1);
+//        assertTrue(pi.isPageOwner(pla));
+        assertTrue(fan.getPersonalPagesFollowed().size()==3);
 
     }
     @Test
     public void negativeFollowPage() throws UserInformationException {
-        /*
-        FootballManagmentSystem fms = FootballManagmentSystem.getInstance();
-        guest = new Guest();
 
-        Player pla = new Player("Beckham20","David Beckham",4,"dff33",670,"attack",null);
-        Player pla2 = new Player("Beckham40","Asi Beckham",7,"dff33",670,"attack",null);
-        guestController = new GuestController();
-        guestController.register(guest ,"itamar1201","itamar","1234",1,null);
-        Searcher searcher = new SearchByName();
-        Fan fan =(Fan)guest.login("itamar1201","1234").get(0);
+        Player pla = new Player("Beckham2213","David Beckham",4,"dff33",670,"attack",null);
         pla.createPersonalPage();
-        fansC.addPersonalPagesToFollow(fan, fms.getPersonalPages());
-        fansC.addPersonalPagesToFollow(fan, fms.getPersonalPages());
-*/
+        FanController fanController = new FanController();
+        Fan fan412 = new Fan ("Wenger", "arsne wneger", 2314, "#!@$124");
+        List<PersonalInfo> pagesToFooolw = new LinkedList<>();
+        pagesToFooolw.add(pla.getInfo());
 
+        fanController.addPersonalPagesToFollow(fan412,pagesToFooolw);
+        assertFalse(fanController.addPersonalPagesToFollow(fan412,pagesToFooolw));
+//        FootballManagmentSystem fms = FootballManagmentSystem.getInstance();
+//        guest = new Guest();
+//
+//        Player pla = new Player("Beckham20","David Beckham",4,"dff33",670,"attack",null);
+//        Player pla2 = new Player("Beckham40","Asi Beckham",7,"dff33",670,"attack",null);
+//        guestController = new GuestController();
+//        guestController.register(guest ,"itamar1201","itamar","1234",1,null);
+//        Searcher searcher = new SearchByName();
+//        Fan fan =(Fan)guest.login("itamar1201","1234").get(0);
+//        pla.createPersonalPage();
+//        fansC.addPersonalPagesToFollow(fan, fms.getPersonalPages());
+//        fansC.addPersonalPagesToFollow(fan, fms.getPersonalPages());
 
     }
 }

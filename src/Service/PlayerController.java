@@ -6,20 +6,22 @@ import Domain.Users.Member;
 import Domain.Users.Player;
 import FootballExceptions.PersonalPageYetToBeCreatedException;
 import FootballExceptions.UnauthorizedPageOwnerException;
+import FootballExceptions.UserInformationException;
 
 public class PlayerController extends Member {
-    public void addContentToPage(Player coach, APersonalPageContent cont){
+    public boolean addContentToPage(Player player, APersonalPageContent cont){
         try {
-            coach.addContentToPersonalPage(cont);
+            player.addContentToPersonalPage(cont);
         } catch (UnauthorizedPageOwnerException e) {
             System.out.println(e.getMessage());
         } catch (PersonalPageYetToBeCreatedException e) {
-            System.out.println(e.getMessage());
+           return false;
         }
+        return true;
     }
-    public void EditPage(Player coach,String title, String val){
+    public void EditPage(Player player,String title, String val){
         try {
-            coach.editProfile(title,val);
+            player.editProfile(title,val);
         } catch (UnauthorizedPageOwnerException e) {
             System.out.println(e.getMessage());
         } catch (PersonalPageYetToBeCreatedException e) {
@@ -27,7 +29,16 @@ public class PlayerController extends Member {
         }
     }
 
-    public boolean createPersonalPage(Player coach ){
-        return coach.createPersonalPage();
+    public boolean changeUserName(Player player, String newUserName)  {
+        try {
+            return player.changeUserName( newUserName);
+        } catch (UserInformationException e) {
+            return false;
+        }
+
+    }
+
+    public boolean createPersonalPage(Player player){
+        return player.createPersonalPage();
     }
 }

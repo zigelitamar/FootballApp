@@ -66,6 +66,9 @@ public class Coach extends Member implements IAsset {
         }
         return info.editProfile(this,title,val);
     }
+    public boolean changeUserName(String newUserName) throws UserInformationException {
+        return system.changeUserName(this, newUserName);
+    }
     /*getSet*/
 
     public Team getMyTeam() {
