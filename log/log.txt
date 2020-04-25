@@ -1,1 +1,332 @@
-Thu Apr 23 20:10:44 IDT 2020 tzachhas become team owner of : Maccabi
+Fri Apr 24 16:13:41 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 16:49:31 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 16:51:54 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 16:52:04 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:14:49 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:15:52 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:17:29 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:19:07 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:19:47 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:20:17 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:23:32 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:23:48 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:33:40 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:36:25 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:37:00 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:37:46 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:40:00 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:43:04 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:45:17 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:47:54 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:48:24 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:49:21 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:49:42 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 17:50:42 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 18:07:29 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 18:07:29 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Fri Apr 24 18:07:29 IDT 2020 Deletion of Hapoel Haifa was successful.
+Fri Apr 24 18:07:29 IDT 2020 complaint by itamar12was implied
+Fri Apr 24 18:07:29 IDT 2020 itamar12has been deleted from the system
+Fri Apr 24 18:13:09 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 18:13:22 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 18:21:35 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Fri Apr 24 18:21:35 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Fri Apr 24 18:21:35 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Fri Apr 24 18:21:35 IDT 2020 Ronihas become team owner of : Beiter
+Fri Apr 24 18:21:35 IDT 2020 CR7has become team manager of : Beiter
+Fri Apr 24 18:21:35 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Fri Apr 24 18:21:35 IDT 2020 CR7 created his personal page
+Fri Apr 24 18:21:35 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Fri Apr 24 18:21:35 IDT 2020 CR7 added content to personal page
+Fri Apr 24 18:21:35 IDT 2020 CR7 added content to personal page
+Fri Apr 24 18:21:35 IDT 2020 Moshe has changer team Beiter status to Close
+Fri Apr 24 18:21:35 IDT 2020 Moshe has changer team Beiter status to Active
+Fri Apr 24 18:21:35 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Fri Apr 24 18:23:45 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Fri Apr 24 18:23:45 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Fri Apr 24 18:23:45 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Fri Apr 24 18:23:45 IDT 2020 Ronihas become team owner of : Beiter
+Fri Apr 24 18:23:45 IDT 2020 CR7has become team manager of : Beiter
+Fri Apr 24 18:23:45 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Fri Apr 24 18:23:45 IDT 2020 CR7 created his personal page
+Fri Apr 24 18:23:45 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Fri Apr 24 18:23:45 IDT 2020 CR7 added content to personal page
+Fri Apr 24 18:23:45 IDT 2020 CR7 added content to personal page
+Fri Apr 24 18:23:45 IDT 2020 Moshe has changer team Beiter status to Close
+Fri Apr 24 18:23:45 IDT 2020 Moshe has changer team Beiter status to Active
+Fri Apr 24 18:23:45 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Fri Apr 24 18:27:29 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Fri Apr 24 18:27:29 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Fri Apr 24 18:27:29 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Fri Apr 24 18:27:29 IDT 2020 Ronihas become team owner of : Beiter
+Fri Apr 24 18:27:29 IDT 2020 CR7has become team manager of : Beiter
+Fri Apr 24 18:27:29 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Fri Apr 24 18:27:29 IDT 2020 CR7 created his personal page
+Fri Apr 24 18:27:29 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Fri Apr 24 18:27:29 IDT 2020 CR7 added content to personal page
+Fri Apr 24 18:27:29 IDT 2020 CR7 added content to personal page
+Fri Apr 24 18:27:29 IDT 2020 Moshe has changer team Beiter status to Close
+Fri Apr 24 18:27:29 IDT 2020 Moshe has changer team Beiter status to Active
+Fri Apr 24 18:27:29 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Fri Apr 24 18:28:32 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Fri Apr 24 18:28:33 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Fri Apr 24 18:28:33 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Fri Apr 24 18:28:33 IDT 2020 Ronihas become team owner of : Beiter
+Fri Apr 24 18:28:33 IDT 2020 CR7has become team manager of : Beiter
+Fri Apr 24 18:28:33 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Fri Apr 24 18:28:33 IDT 2020 CR7 created his personal page
+Fri Apr 24 18:28:33 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Fri Apr 24 18:28:33 IDT 2020 CR7 added content to personal page
+Fri Apr 24 18:28:33 IDT 2020 CR7 added content to personal page
+Fri Apr 24 18:28:33 IDT 2020 Moshe has changer team Beiter status to Close
+Fri Apr 24 18:28:33 IDT 2020 Moshe has changer team Beiter status to Active
+Fri Apr 24 18:28:33 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Fri Apr 24 18:39:52 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Fri Apr 24 18:39:52 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Fri Apr 24 18:39:52 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Fri Apr 24 18:39:52 IDT 2020 Ronihas become team owner of : Beiter
+Fri Apr 24 18:39:52 IDT 2020 CR7has become team manager of : Beiter
+Fri Apr 24 18:39:52 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Fri Apr 24 18:39:52 IDT 2020 CR7 created his personal page
+Fri Apr 24 18:39:52 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Fri Apr 24 18:39:52 IDT 2020 CR7 added content to personal page
+Fri Apr 24 18:39:52 IDT 2020 CR7 added content to personal page
+Fri Apr 24 18:39:52 IDT 2020 Moshe has changer team Beiter status to Close
+Fri Apr 24 18:39:52 IDT 2020 Moshe has changer team Beiter status to Active
+Fri Apr 24 18:39:52 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Fri Apr 24 20:01:57 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 20:02:57 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 20:03:40 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 20:06:28 IDT 2020 New fan member has been added to system - username is: itamar12
+Fri Apr 24 20:07:35 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:45:38 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:45:38 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 12:45:38 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 12:45:38 IDT 2020 complaint by itamar12was implied
+Sat Apr 25 12:45:38 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 12:45:38 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:46:08 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:47:10 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:47:10 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 12:47:10 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 12:47:10 IDT 2020 complaint by itamar12was implied
+Sat Apr 25 12:47:10 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 12:47:10 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:47:41 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:47:41 IDT 2020 complaint by itamar12was implied
+Sat Apr 25 12:47:58 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:47:58 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 12:47:58 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 12:47:58 IDT 2020 complaint by itamar12was implied
+Sat Apr 25 12:47:58 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 12:47:58 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:49:44 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:49:44 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 12:49:44 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 12:50:43 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:50:43 IDT 2020 New fan member has been added to system - username is: itamar11
+Sat Apr 25 12:50:43 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 12:50:43 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 12:51:13 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:51:13 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 12:52:14 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:55:02 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 12:56:35 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 13:28:26 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:28:26 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:31:12 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:31:12 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:38:39 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:38:39 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:38:39 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:38:39 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 13:38:39 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 13:38:39 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 13:38:39 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 13:38:39 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 13:38:39 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 13:38:39 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 13:40:07 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:40:07 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:40:07 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:40:07 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 13:40:07 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 13:40:07 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 13:40:07 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 13:40:07 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 13:40:07 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 13:40:07 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 13:41:35 IDT 2020 New fan member has been added to system - username is: itamar1201
+Sat Apr 25 13:41:35 IDT 2020 Beckham20 created his personal page
+Sat Apr 25 13:41:35 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:41:35 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:41:35 IDT 2020 New fan member has been added to system - username is: itamar1
+Sat Apr 25 13:41:35 IDT 2020 New fan member has been added to system - username is: itamar15
+Sat Apr 25 13:41:35 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 13:41:35 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 13:41:35 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 13:41:35 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 13:41:35 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 13:41:35 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 13:41:35 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 13:42:42 IDT 2020 New fan member has been added to system - username is: itamar1201
+Sat Apr 25 13:42:42 IDT 2020 Beckham20 created his personal page
+Sat Apr 25 13:42:42 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:42:42 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:42:42 IDT 2020 New fan member has been added to system - username is: itamar1
+Sat Apr 25 13:42:43 IDT 2020 New fan member has been added to system - username is: itamar15
+Sat Apr 25 13:42:43 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 13:42:43 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 13:42:43 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 13:42:43 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 13:42:43 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 13:42:43 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 13:42:43 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 13:43:12 IDT 2020 New fan member has been added to system - username is: itamar1201
+Sat Apr 25 13:43:12 IDT 2020 Beckham20 created his personal page
+Sat Apr 25 13:43:12 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:43:12 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:43:12 IDT 2020 New fan member has been added to system - username is: itamar1
+Sat Apr 25 13:43:12 IDT 2020 New fan member has been added to system - username is: itamar15
+Sat Apr 25 13:43:12 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 13:43:12 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 13:43:12 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 13:43:12 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 13:43:12 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 13:43:12 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 13:43:12 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 13:43:59 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:43:59 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:43:59 IDT 2020 New fan member has been added to system - username is: itamar1
+Sat Apr 25 13:43:59 IDT 2020 New fan member has been added to system - username is: itamar15
+Sat Apr 25 13:44:10 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:44:10 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:44:10 IDT 2020 New fan member has been added to system - username is: itamar1
+Sat Apr 25 13:44:10 IDT 2020 New fan member has been added to system - username is: itamar15
+Sat Apr 25 13:44:10 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 13:44:10 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 13:44:10 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 13:44:10 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 13:44:10 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 13:44:10 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 13:44:10 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 13:45:15 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:45:15 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:45:15 IDT 2020 New fan member has been added to system - username is: itamar1
+Sat Apr 25 13:45:15 IDT 2020 New fan member has been added to system - username is: itamar15
+Sat Apr 25 13:45:15 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 13:45:15 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 13:45:16 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 13:45:16 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 13:45:16 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 13:45:16 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 13:45:16 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 13:45:47 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:45:47 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:45:47 IDT 2020 New fan member has been added to system - username is: itamar1
+Sat Apr 25 13:45:47 IDT 2020 New fan member has been added to system - username is: itamar15
+Sat Apr 25 13:45:47 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 13:45:47 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 13:45:47 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 13:45:47 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 13:45:47 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 13:45:47 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 13:45:47 IDT 2020 itamar12has been deleted from the system
+Sat Apr 25 13:46:42 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 13:46:42 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 13:46:42 IDT 2020 New fan member has been added to system - username is: itamar1
+Sat Apr 25 13:46:42 IDT 2020 New fan member has been added to system - username is: itamar15
+Sat Apr 25 13:46:42 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 13:46:42 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 13:46:42 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 13:46:42 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 13:46:42 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 13:46:42 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 13:46:42 IDT 2020 itamar1200has been deleted from the system
+Sat Apr 25 13:46:42 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 13:50:59 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Sat Apr 25 13:50:59 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Sat Apr 25 13:50:59 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Sat Apr 25 13:50:59 IDT 2020 Ronihas become team owner of : Beiter
+Sat Apr 25 13:50:59 IDT 2020 CR7has become team manager of : Beiter
+Sat Apr 25 13:50:59 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Sat Apr 25 13:50:59 IDT 2020 CR7 created his personal page
+Sat Apr 25 13:50:59 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Sat Apr 25 13:50:59 IDT 2020 CR7 added content to personal page
+Sat Apr 25 13:50:59 IDT 2020 CR7 added content to personal page
+Sat Apr 25 13:50:59 IDT 2020 Moshe has changer team Beiter status to Close
+Sat Apr 25 13:50:59 IDT 2020 Moshe has changer team Beiter status to Active
+Sat Apr 25 13:50:59 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Sat Apr 25 13:50:59 IDT 2020 New Player: class domain.users.player has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 13:51:26 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Sat Apr 25 13:51:26 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Sat Apr 25 13:51:26 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Sat Apr 25 13:51:26 IDT 2020 Ronihas become team owner of : Beiter
+Sat Apr 25 13:51:26 IDT 2020 CR7has become team manager of : Beiter
+Sat Apr 25 13:51:26 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Sat Apr 25 13:51:26 IDT 2020 CR7 created his personal page
+Sat Apr 25 13:51:26 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Sat Apr 25 13:51:26 IDT 2020 CR7 added content to personal page
+Sat Apr 25 13:51:26 IDT 2020 CR7 added content to personal page
+Sat Apr 25 13:51:26 IDT 2020 Moshe has changer team Beiter status to Close
+Sat Apr 25 13:51:26 IDT 2020 Moshe has changer team Beiter status to Active
+Sat Apr 25 13:51:26 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Sat Apr 25 13:51:26 IDT 2020 New Player: class domain.users.player has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 13:51:48 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Sat Apr 25 13:51:48 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Sat Apr 25 13:51:48 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Sat Apr 25 13:51:48 IDT 2020 Ronihas become team owner of : Beiter
+Sat Apr 25 13:51:48 IDT 2020 CR7has become team manager of : Beiter
+Sat Apr 25 13:51:48 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Sat Apr 25 13:51:48 IDT 2020 CR7 created his personal page
+Sat Apr 25 13:51:48 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Sat Apr 25 13:51:48 IDT 2020 CR7 added content to personal page
+Sat Apr 25 13:51:48 IDT 2020 CR7 added content to personal page
+Sat Apr 25 13:51:48 IDT 2020 Moshe has changer team Beiter status to Close
+Sat Apr 25 13:51:48 IDT 2020 Moshe has changer team Beiter status to Active
+Sat Apr 25 13:51:48 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Sat Apr 25 13:51:48 IDT 2020 New Player: class domain.users.player has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 13:59:56 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Sat Apr 25 13:59:56 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Sat Apr 25 13:59:56 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Sat Apr 25 13:59:56 IDT 2020 Ronihas become team owner of : Beiter
+Sat Apr 25 13:59:56 IDT 2020 CR7has become team manager of : Beiter
+Sat Apr 25 13:59:56 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Sat Apr 25 13:59:56 IDT 2020 CR7 created his personal page
+Sat Apr 25 13:59:56 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Sat Apr 25 13:59:56 IDT 2020 CR7 added content to personal page
+Sat Apr 25 13:59:56 IDT 2020 CR7 added content to personal page
+Sat Apr 25 13:59:56 IDT 2020 Moshe has changer team Beiter status to Close
+Sat Apr 25 13:59:56 IDT 2020 Moshe has changer team Beiter status to Active
+Sat Apr 25 13:59:56 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Sat Apr 25 13:59:56 IDT 2020 New Player: class domain.users.player has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 14:00:41 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Sat Apr 25 14:00:41 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Sat Apr 25 14:00:41 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Sat Apr 25 14:00:41 IDT 2020 Ronihas become team owner of : Beiter
+Sat Apr 25 14:00:41 IDT 2020 CR7has become team manager of : Beiter
+Sat Apr 25 14:00:41 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Sat Apr 25 14:00:41 IDT 2020 CR7 created his personal page
+Sat Apr 25 14:00:41 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Sat Apr 25 14:00:41 IDT 2020 CR7 added content to personal page
+Sat Apr 25 14:00:41 IDT 2020 CR7 added content to personal page
+Sat Apr 25 14:00:41 IDT 2020 Moshe has changer team Beiter status to Close
+Sat Apr 25 14:00:41 IDT 2020 Moshe has changer team Beiter status to Active
+Sat Apr 25 14:00:41 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Sat Apr 25 14:00:41 IDT 2020 New Player: class domain.users.player has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 14:00:41 IDT 2020 New HeadCoach class domain.users.coach has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 16:28:53 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Sat Apr 25 16:28:53 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Sat Apr 25 16:28:53 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Sat Apr 25 16:28:53 IDT 2020 Ronihas become team owner of : Beiter
+Sat Apr 25 16:28:53 IDT 2020 CR7has become team manager of : Beiter
+Sat Apr 25 16:28:53 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Sat Apr 25 16:28:53 IDT 2020 CR7 created his personal page
+Sat Apr 25 16:28:53 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Sat Apr 25 16:28:53 IDT 2020 CR7 added content to personal page
+Sat Apr 25 16:28:53 IDT 2020 CR7 added content to personal page
+Sat Apr 25 16:28:53 IDT 2020 Moshe has changer team Beiter status to Close
+Sat Apr 25 16:28:53 IDT 2020 Moshe has changer team Beiter status to Active
+Sat Apr 25 16:28:53 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Sat Apr 25 16:28:53 IDT 2020 New Player: class domain.users.player has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 16:28:53 IDT 2020 New HeadCoach class domain.users.coach has been added to team: Ironi Nir Ramat-Hasharonbyprosper
