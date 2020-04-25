@@ -42,7 +42,7 @@ public class SeasonflowTests {
     @Before
     public void init() throws UserInformationException {
        // season = new Season(2020);
-        commissioner =  new Commissioner("Alon", 123, "YO","avi nusbaum");
+        commissioner =  new Commissioner("AlonGeva", 123, "YO","avi nusbaum");
         leaugue = new Leaugue();
         fms = FootballManagmentSystem.getInstance();
         teamOwner = new TeamOwner("gabi1Queen20","avishai",2,"12345");

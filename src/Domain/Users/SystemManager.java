@@ -40,13 +40,16 @@ public class SystemManager extends Member {
             if (t.getId() == team.getId()) {
                 long time = new Date(System.currentTimeMillis()).getTime();
                 Calendar cal = Calendar.getInstance();
-                cal.setTime(t.getUpcomingGames().get(0).getDateGame());
-                cal.add(Calendar.HOUR_OF_DAY, -2); // remove 2 hours
-                time = cal.getTimeInMillis() - time;
-                if (time < 0) {
-                    SystemLog.getInstance().UpdateLog("Deletion of " + t.getName() + " was Unsuccessful.");
-                    throw new UnableToRemoveException("The team has a game in the next 2 hours");
+                if (t.getUpcomingGames().size() != 0) {
+                    cal.setTime(t.getUpcomingGames().get(0).getDateGame());
 
+                    cal.add(Calendar.HOUR_OF_DAY, -2); // remove 2 hours
+                    time = cal.getTimeInMillis() - time;
+                    if (time < 0) {
+                        SystemLog.getInstance().UpdateLog("Deletion of " + t.getName() + " was Unsuccessful.");
+                        throw new UnableToRemoveException("The team has a game in the next 2 hours");
+
+                    }
                 }
                 if (t.getStatus() == Close) {
                     SystemLog.getInstance().UpdateLog("Deletion of " + t.getName() + " was Unsuccessful. it's closed already.");
