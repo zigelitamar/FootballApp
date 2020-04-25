@@ -3,6 +3,7 @@ package Domain.Users;
 import Domain.Alerts.ComplaintAlert;
 import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.ComplaintForm;
+import Domain.SeasonManagment.Game;
 import Domain.SeasonManagment.Team;
 import Domain.SeasonManagment.TeamStatus;
 import FootballExceptions.InactiveTeamException;
@@ -12,6 +13,8 @@ import FootballExceptions.UnableToRemoveException;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -36,6 +39,7 @@ public class SystemManagerTest {
 
     @Test
     public void closeTeam() throws InactiveTeamException, UnableToRemoveException {
+   
         managerTest.closeTeam(team,"not a good team");
         assertEquals(TeamStatus.Close,team.getStatus());
     }
@@ -75,6 +79,14 @@ public class SystemManagerTest {
         TeamOwner teamOwnerToAlert = new TeamOwner("Shlomo32523","Shlo sadmo",5235,"$124");
         Team teamToClose = new Team("ninja turtle",teamOwnerToAlert);
         SystemManager sysMan = new SystemManager("Eyal2","Eyal", 1234, "0000");
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date(System.currentTimeMillis()));
+        cal.add(Calendar.HOUR_OF_DAY, 6); // adds 6 hours
+        long time = ((new Date(System.currentTimeMillis()))).getTime();
+        Referee ref = new Referee("ref500","theref",4,"3232",RefereeType.Main);
+        Referee ref2 = new Referee("ref5600","theref",4,"3232",RefereeType.Main);
+        Game game = new Game(null,team,cal.getTime(),ref,ref2,null);
+        teamToClose.addGameToUpcomingGames(game);
         teamOwnerToAlert.logOut();
         sysMan.closeTeam(teamToClose,"kaha");
         assertEquals(1,teamOwnerToAlert.getAlertsList().size());
