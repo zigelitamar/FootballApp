@@ -59,32 +59,36 @@ public class FootballManagmentSystem extends TimerTask {
              BufferedReader br = new BufferedReader(reader)) {
 
             String line;
+            int i = 0;
             while ((line = br.readLine()) != null) {
                 String[] details = line.split(" ");
                 userName = details[1];
                 realName = details[2];
                 realName += " " + details[3];
                 id = Integer.parseInt(details[4]);
+                if ( id == 0 ){
+                    throw new UserInformationException();
+                }
                 password = details[5];
-                SystemManager currentSysManager = new SystemManager(userName,realName,id,password);
+                SystemManager currentSysManager = new SystemManager(userName, realName, id, password);
                 allInCharge.add(currentSysManager);
+                LinkedList<Member> list = new LinkedList<>();
+                list.add(allInCharge.get(i));
+                members.put(allInCharge.get(i).getName(),list);
+                i++;
             }
+        } catch (UserInformationException ue){
+            ue.printStackTrace();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        LinkedList<Member> list = new LinkedList<>();
-        list.add(allInCharge.get(0));
-        members.put(allInCharge.get(0).getName(),list);
         firstSystemManager = allInCharge.get(0);
         /** initialize connection with servers */
 
         /** constraint 7 - balanced budget  */
-
-
-
         indexOfNextDateToCheck++;
         upComingDateToCheck = date1;
         timer.schedule(this, upComingDateToCheck);

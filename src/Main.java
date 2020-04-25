@@ -29,6 +29,8 @@ public class Main {
 
 
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
+        FootballManagmentSystem system1 = FootballManagmentSystem.getInstance();
+        System.out.println(system.getClass());
         Referee referee = new Referee("zaza","zaza", 123,"12345678", RefereeType.Main);
         Referee referee1 = new Referee("zaza","zaza", 123,"12345678", RefereeType.Main);
         Season season = new Season(null,null,1900);
@@ -43,7 +45,7 @@ public class Main {
         season.addRefereeToSeason(referee1);
         season.runPlacingTeamsAlgorithm();
         Game game = new Game(team1,team2,new Date(),referee,referee,season);
-        referee.addReportForGame(game);
+        //referee.addReportForGame(game);
         system.addReferee(referee);
         system.delReferee("zaza");
         Player player1 = new Player("sasa","sasa",231,"1243432",432,"ss",new Date());

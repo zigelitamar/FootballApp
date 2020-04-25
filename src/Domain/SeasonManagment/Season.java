@@ -3,7 +3,7 @@ package Domain.SeasonManagment;
 import Domain.Users.Referee;
 import FootballExceptions.NotEnoughTeamsInLeague;
 import javafx.util.Pair;
-import sun.awt.image.ImageWatched;
+
 
 import java.util.*;
 
@@ -17,15 +17,20 @@ public class Season {
     private boolean isItTheBeginningOfSeason;
 
     public Season(int year) {
-        this.year = year;
-        DefaultIScorePolicy defaultIScorePolicy = new DefaultIScorePolicy();
-        this.scorePolicy = defaultIScorePolicy;
-        DefaultTeamsPolicy defaultTeamsPolicy = new DefaultTeamsPolicy();
-        this.placeTeamsPolicy = defaultTeamsPolicy;
-        teams = new LinkedList<>();
-        referees = new HashSet<>();
-        games = new HashSet<>();
-        isItTheBeginningOfSeason = true;         /** Change after a while?? */
+        if (year > 0) {
+            this.year = year;
+            DefaultIScorePolicy defaultIScorePolicy = new DefaultIScorePolicy();
+            this.scorePolicy = defaultIScorePolicy;
+            DefaultTeamsPolicy defaultTeamsPolicy = new DefaultTeamsPolicy();
+            this.placeTeamsPolicy = defaultTeamsPolicy;
+            teams = new LinkedList<>();
+            referees = new HashSet<>();
+            games = new HashSet<>();
+            isItTheBeginningOfSeason = true;         /** Change after a while?? */
+        } else {
+            System.out.println("Illegal year was entered, please try again");
+            this.year= Integer.parseInt(null);
+        }
     }
 
 
@@ -108,10 +113,23 @@ public class Season {
     }
 
 
+    public LinkedList<Pair<Integer, Team>> calculateTheNFirstPlaces(int n) {
+        LinkedList<Pair<Integer, Team>> firstPlaces = new LinkedList<>();
+        LinkedList<Pair<Integer, Team>> teamsCopy = new LinkedList<>();
+        teamsCopy = (LinkedList<Pair<Integer, Team>>) teams.clone();
+        Pair<Integer,Team> max = new Pair<Integer, Team>(teams.getFirst().getKey(),teams.getFirst().getValue());
 
-
-
-
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < teamsCopy.size(); j++) {
+                if (max.getKey() < teamsCopy.get(j).getKey()) {
+                    max = teamsCopy.get(j);
+                    teamsCopy.remove(max);
+                }
+            }
+            firstPlaces.add(max);
+        }
+        return firstPlaces;
+    }
 
     /**UC 9.3   (only comissioner can add)     */
     public void deleteRefereeFromSeasonByName(String ref){

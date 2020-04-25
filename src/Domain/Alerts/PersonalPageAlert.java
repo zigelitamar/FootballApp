@@ -20,4 +20,16 @@ public class PersonalPageAlert implements IAlert {
     public APersonalPageContent getNewContent() {
         return newContent;
     }
+
+    @Override
+    public String view() {
+        return this.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "PersonalPageAlert{" +
+                "new content = " + newContent + " , personal page = " + personalPage.getPageContent() +
+                " }";
+    }
 }
