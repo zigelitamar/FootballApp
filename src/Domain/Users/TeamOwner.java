@@ -169,7 +169,7 @@ public class TeamOwner extends Member {
         if(team==null){
             throw new TeamOwnerWithNoTeamException();
         }
-        if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries){
+        if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries||description==BudgetActivity.Tax){
             return team.addBudgetActivity(this,date,description,(amount*(-1)));
         }else{
             return team.addBudgetActivity(this,date,description,(amount));

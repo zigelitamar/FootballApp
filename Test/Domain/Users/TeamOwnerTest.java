@@ -243,7 +243,24 @@ public class TeamOwnerTest {
 
     @Test
     public void addBudgetActivity() throws TeamOwnerWithNoTeamException, InactiveTeamException, UnauthorizedTeamOwnerException {
-        ownerTest.addBudgetActivity(new Date(2020,02,03), BudgetActivity.BuyPlayer,400);
-        assertTrue(ownerTest.getTeam().getControlBudget().findQuarter(new Date(2020,02,03)).getFinanceActivity().contains(new Pair<>(BudgetActivity.BuyPlayer,-400)));
-}
+        ownerTest.addBudgetActivity(new Date(2020,02,03), BudgetActivity.SellPlayer,400);
+        assertTrue(ownerTest.getTeam().getControlBudget().findQuarter(new Date(2020,02,03)).getFinanceActivity().contains(new Pair<>(BudgetActivity.SellPlayer,400)));
+    }
+
+    @Test
+    public void addBugetActivityOver() throws TeamOwnerWithNoTeamException, InactiveTeamException, UnauthorizedTeamOwnerException, UserInformationException {
+        TeamOwner teamOwnerwithMoreIncome = new TeamOwner("Yossi23653457","Yossi Benayoun", 248765,"fs@!#'",24214);
+        Team teamB = new Team("Shoko",teamOwnerwithMoreIncome);
+        teamOwnerwithMoreIncome.addBudgetActivity(new Date(2020,04,03), BudgetActivity.BuyPlayer,400);
+        teamOwnerwithMoreIncome.addBudgetActivity(new Date(2020,04,03), BudgetActivity.Salaries,400);
+        teamOwnerwithMoreIncome.addBudgetActivity(new Date(2020,04,03), BudgetActivity.MaintenanceField,400);
+        teamOwnerwithMoreIncome.addBudgetActivity(new Date(2020,04,03), BudgetActivity.Tax,400);
+        teamOwnerwithMoreIncome.addBudgetActivity(new Date(2020,04,03), BudgetActivity.GameIncome,1500);
+        Member comi = new Commissioner("Revivowqeqw",3424234,"Haim Revivo", "sda@!#");
+        FootballManagmentSystem.getInstance().addMember(comi);
+        comi.logOut();
+        teamB.getControlBudget().checkIncomeBiggerThanOutcome();
+        assertEquals(1,comi.getAlertsList().size());
+
+    }
 }
