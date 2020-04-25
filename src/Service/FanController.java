@@ -33,8 +33,13 @@ public class FanController {
 
 
     public LinkedList<String> viewSearchHistory(Fan fan){
+        if(fan.viewSearchHistory().size()==0){
+            System.out.println("no search history yet");
+            return  null;
+        }
 
-       return  fan.viewSearchHistory();
+       else
+           return  fan.viewSearchHistory();
     }
 
 

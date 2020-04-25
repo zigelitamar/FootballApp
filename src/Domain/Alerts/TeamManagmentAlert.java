@@ -21,4 +21,11 @@ public class TeamManagmentAlert implements IAlert {
     public TeamManagmentAlert() {
     }
 
+    public TeamStatus getTeamStatus() {
+        return teamStatus;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }

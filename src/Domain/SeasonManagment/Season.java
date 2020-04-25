@@ -3,6 +3,7 @@ package Domain.SeasonManagment;
 import Domain.Users.Referee;
 import FootballExceptions.NotEnoughTeamsInLeague;
 import javafx.util.Pair;
+import sun.awt.image.ImageWatched;
 
 import java.util.*;
 
@@ -78,6 +79,10 @@ public class Season {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public HashSet<Game> getGames() {
+        return games;
     }
 
     public LinkedList<Pair<Integer,Team>> getScore_teams() {
@@ -167,35 +172,43 @@ public class Season {
             final int daysBetweenGames = 7;
             int increasingDays = 7;
             int i = 0;
-            while(i<teams.size()){
-                Referee[] twoRef = getRefereesToGame();
-                for (int j = 0; j < placeTeamsPolicy.numOfGamesWithEachTeam()/2; j++) {
-                    if (i != j) {
-                        /**set Home Game*/
-                        c.add(Calendar.DAY_OF_MONTH, increasingDays);
-                        Date d = calendarToDate(c);
-                        Game gameOne = new Game(teams.get(i).getValue(), teams.get(j).getValue(), d, twoRef[0], twoRef[1], this);
-                        gameOne.notifyRefereesWithNewDate(new Date());                   /** alerting referees */
-                        increasingDays = increasingDays + daysBetweenGames;
-                        teams.get(i).getValue().addGameToUpcomingGames(gameOne);
-                        teams.get(j).getValue().addGameToUpcomingGames(gameOne);
-                        /**set Away Game*/
-                        c.add(Calendar.DAY_OF_MONTH, increasingDays);
-                        Date dd = calendarToDate(c);
-                        Game gameTwo = new Game(teams.get(j).getValue(), teams.get(i).getValue(), dd, twoRef[1], twoRef[0], this);
-                        gameTwo.notifyRefereesWithNewDate(new Date());
-                        increasingDays = increasingDays + daysBetweenGames;
-                        teams.get(i).getValue().addGameToUpcomingGames(gameTwo);
-                        teams.get(j).getValue().addGameToUpcomingGames(gameTwo);
-                        games.add(gameOne);
-                        games.add(gameTwo);
+            while(i<(teams.size()-1)*2){ // number of periods
+                List<Integer> playing = new LinkedList<>();
+                for (int j = 0; j < teams.size(); j++) {
+                    for (int k = 0; k < teams.size() ; k++) {
+                        if (j != k && (!playing.contains(j) && !playing.contains(k)) && !(checkifGameScheduld(teams.get(j).getValue(),teams.get(k).getValue())) ) {
+                            /**set  Game*/
+                            Referee[] twoRef = getRefereesToGame();
+                            Date d = calendarToDate(c);
+                            Game gameOne = new Game(teams.get(k).getValue(), teams.get(j).getValue(), d, twoRef[0], twoRef[1], this);
+                            gameOne.notifyRefereesWithNewDate(new Date());                   /** alerting referees */
+
+                            teams.get(j).getValue().addGameToUpcomingGames(gameOne);
+                            teams.get(k).getValue().addGameToUpcomingGames(gameOne);
+                            games.add(gameOne);
+                            playing.add(j);
+                            playing.add(k);
+                            increasingDays = increasingDays + daysBetweenGames;
+                            c.add(Calendar.DAY_OF_MONTH, increasingDays);
+                            break;
+                        }
+
+
                     }
                 }
+
                 i++;
             }
         }else{
             throw new NotEnoughTeamsInLeague("there is not enough teams in the season!");
         }
+    }
+    private boolean checkifGameScheduld(Team home ,Team away){
+        for (Game game:games) {
+            if (game.getHome().getName().equals(home.getName()) && game.getAway().getName().equals(away.getName()) )
+                return true;
+        }
+        return false;
     }
 
 
@@ -203,17 +216,18 @@ public class Season {
 
     public Referee[] getRefereesToGame(){               /** returns two referees for game*/
         if(referees.size()>1){
-            Referee[] twoRefToJudgeGame = new Referee[2];
-            int random = new Random().nextInt(referees.size());
-            for(Referee ref : referees) {
-                if (random-- == 0) {
-                    twoRefToJudgeGame[0]= ref;
-                    break;
-                }
+            List<Referee> refs = new LinkedList<>();
+            for (Referee ref:referees
+                 ) {
+                refs.add(ref);
+
             }
-            for(Referee ref : referees) {
-                random = new Random().nextInt(referees.size());
-                if (random-- == 0 && ref != twoRefToJudgeGame[0]) {         /**check if the two are not the same person*/
+            Referee[] twoRefToJudgeGame = new Referee[2];
+            int random = (int)(Math.random()%referees.size());
+            twoRefToJudgeGame[0] = refs.get(random);
+            for(Referee ref : refs) {
+                random = (int)(Math.random()%referees.size());
+                if (!ref.getName().equals(twoRefToJudgeGame[0].getName())) {         /**check if the two are not the same person*/
                     twoRefToJudgeGame[1]= ref;
                     break;
                 }

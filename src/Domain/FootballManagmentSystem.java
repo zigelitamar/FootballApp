@@ -675,9 +675,9 @@ public class FootballManagmentSystem extends TimerTask {
         }
     }
 
-
-
-
-
-
+    public LinkedList<PersonalInfo> getPersonalPages() {
+         LinkedList<PersonalInfo> pi = new LinkedList<PersonalInfo>();
+         pi.addAll(personalPages.values());
+        return (pi);
+    }
 }
