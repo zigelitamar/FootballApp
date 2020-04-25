@@ -4,6 +4,7 @@ import Domain.Alerts.IAlert;
 import Domain.FootballManagmentSystem;
 import Domain.Searcher.Searcher;
 import Domain.SeasonManagment.*;
+import FootballExceptions.AlreadyFollowThisPageException;
 import FootballExceptions.UserInformationException;
 import javafx.util.Pair;
 
@@ -16,6 +17,7 @@ public class Fan extends Member implements Observer {
     private RecommendationSystem recommendationSystem;
     public Fan(String name,String realname, int id, String password) {
         super(name, id, password,realname);
+        searchHistory = new LinkedList<>();
         system = FootballManagmentSystem.getInstance();
         recommendationSystem = new RecommendationSystem();
        personalPagesFollowed=new HashMap<>();
@@ -63,8 +65,11 @@ public class Fan extends Member implements Observer {
      */
 
     /** 2 fucns for UC - 3.2: one to follow and the other to unfollow*/
-    public void addPersonalPagesToFollow(List <PersonalInfo> pagesToFollow){
+    public void addPersonalPagesToFollow(List <PersonalInfo> pagesToFollow) throws AlreadyFollowThisPageException {
         for (PersonalInfo page: pagesToFollow) {
+            if(personalPagesFollowed.containsKey(page)){
+                throw new AlreadyFollowThisPageException();
+            }
             page.addFollower(this);
             personalPagesFollowed.put(page,false); //By default alerts are of
         }
@@ -186,10 +191,6 @@ public class Fan extends Member implements Observer {
 
     public void setPersonalPagesFollowed(HashMap<PersonalInfo, Boolean> personalPagesFollowed) {
         this.personalPagesFollowed = personalPagesFollowed;
-    }
-
-    public void notifyFan(IAlert newAlert) {
-
     }
 
 

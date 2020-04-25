@@ -6,6 +6,7 @@ import Domain.SeasonManagment.Game;
 import Domain.SeasonManagment.Team;
 import Domain.Users.Fan;
 import Domain.Users.PersonalInfo;
+import FootballExceptions.AlreadyFollowThisPageException;
 import FootballExceptions.UserInformationException;
 import javafx.util.Pair;
 
@@ -17,7 +18,11 @@ import java.util.List;
 public class FanController {
 
     public void addPersonalPagesToFollow(Fan fan, List<PersonalInfo> pagesToFollow){
-        fan.addPersonalPagesToFollow(pagesToFollow);
+        try {
+            fan.addPersonalPagesToFollow(pagesToFollow);
+        } catch (AlreadyFollowThisPageException e) {
+            e.printStackTrace();
+        }
     }
     public void unFollowPage(Fan fan,PersonalInfo page){
        fan.unFollowPage(page);

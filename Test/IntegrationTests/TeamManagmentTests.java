@@ -87,6 +87,8 @@ public class TeamManagmentTests {
         } catch (
                 UnauthorizedTeamManagerException e) {
             e.printStackTrace();
+        } catch (TeamCannotBeReopenException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -1,5 +1,6 @@
 package Domain.SeasonManagment;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
@@ -8,12 +9,24 @@ import static org.junit.Assert.*;
 
 public class ControlBudgetTest {
 
-    ControlBudget controlBudget = new ControlBudget(1234);
-    Budget budget = new Budget(1234);
-    Date date = new Date(1995, 01, 01);
-    Date date1 = new Date(1995, 01, 01);
-    Date date2 = new Date(1995, 04, 01);
-    Date date3 = new Date(1995, 02, 0);
+    ControlBudget controlBudget;
+    Budget budget;
+    Date date;
+    Date date1;
+    Date date2;
+    Date date3;
+
+
+    @Before
+    public void init(){
+        controlBudget = new ControlBudget(1234);
+        budget = new Budget(1234);
+        date = new Date(1995, 01, 01);
+        date1 = new Date(1995, 01, 01);
+        date2 = new Date(1995, 04, 01);
+        date3 = new Date(1995, 02, 0);
+
+    }
 
 
     @Test
@@ -22,14 +35,15 @@ public class ControlBudgetTest {
         int a=100;
         int b=100;
         int c=100;
-//        controlBudget.addFinanceActivity(date, "add 2 players", a);
-//        controlBudget.addFinanceActivity(date1, "add 23 players", b);
-//        controlBudget.addFinanceActivity(date2, "add 1 player", c);
+        controlBudget.addFinanceActivity(date, BudgetActivity.GameIncome, a);
+        controlBudget.addFinanceActivity(date1, BudgetActivity.GameIncome, b);
+        controlBudget.addFinanceActivity(date2, BudgetActivity.GameIncome, c);
         int quarter1 = controlBudget.budget_quarter_1.calculateFinalBudget();
-        int quarter2 = controlBudget.budget_quarter_2.calculateFinalBudget();
         amount = a+b;
         assertEquals(amount,quarter1);
     }
+
+
 
     @Test
     public void addFinanceActivity2() {
@@ -37,10 +51,9 @@ public class ControlBudgetTest {
         int a=100;
         int b=100;
         int c=100;
-//        controlBudget.addFinanceActivity(date, "add 2 players", a);
-//        controlBudget.addFinanceActivity(date1, "add 23 players", b);
-//        controlBudget.addFinanceActivity(date2, "add 1 player", c);
-        int quarter1 = controlBudget.budget_quarter_1.calculateFinalBudget();
+        controlBudget.addFinanceActivity(date, BudgetActivity.GameIncome, a);
+        controlBudget.addFinanceActivity(date1, BudgetActivity.GameIncome, b);
+        controlBudget.addFinanceActivity(date2, BudgetActivity.GameIncome, c);
         int quarter2 = controlBudget.budget_quarter_2.calculateFinalBudget();
         amount = c;
         assertEquals(amount,quarter2);
@@ -51,17 +64,30 @@ public class ControlBudgetTest {
     //todo add assert
     @Test
     public void checkIncomeBiggerThanOutcome() {
-        int amount;
         int a=100;
         int b=200;
         int c=-400;
-//        controlBudget.addFinanceActivity(date, "add 2 players", a);
-//        controlBudget.addFinanceActivity(date1, "add 23 players", b);
-//        controlBudget.addFinanceActivity(date3, "add 1 player", c);
-        int quarter1 = controlBudget.budget_quarter_1.calculateFinalBudget();
+        Date curr_date = new Date();
+        controlBudget.addFinanceActivity(curr_date, BudgetActivity.GameIncome, a);
+        controlBudget.addFinanceActivity(curr_date, BudgetActivity.GameIncome, b);
+        controlBudget.addFinanceActivity(curr_date, BudgetActivity.GameIncome, c);
+        boolean result = controlBudget.checkIncomeBiggerThanOutcome();
+        assertFalse(result);
+    }
 
 
-
+    //todo add assert
+    @Test
+    public void checkIncomeBiggerThanOutcome1() {
+        int a=-100;
+        int b=200;
+        int c=400;
+        Date curr_date = new Date();
+        controlBudget.addFinanceActivity(curr_date, BudgetActivity.GameIncome, a);
+        controlBudget.addFinanceActivity(curr_date, BudgetActivity.GameIncome, b);
+        controlBudget.addFinanceActivity(curr_date, BudgetActivity.GameIncome, c);
+        boolean result = controlBudget.checkIncomeBiggerThanOutcome();
+        assertTrue(result);
     }
 
 
@@ -75,7 +101,7 @@ public class ControlBudgetTest {
 
 
 
-/*
+
     @Test
     public void findQuarter() {
         boolean flag=true;
@@ -83,13 +109,15 @@ public class ControlBudgetTest {
         for (int i = 1; i <12 ; i++) {
             counter = ((i-1) / 3) + 1;
             Date date = new Date(1995, i, 01);
-            Budget month = controlBudget.f
-            if (month != counter){
+            Budget month = controlBudget.findQuarter(date);
+            if (month.findQuarter(date) != counter){
                 flag= false;
                 break;
             }
         }
         assertTrue(flag);
     }
-    */
+
+
+
 }

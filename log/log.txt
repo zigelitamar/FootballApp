@@ -330,3 +330,1441 @@ Sat Apr 25 16:28:53 IDT 2020 Moshe has changer team Beiter status to Active
 Sat Apr 25 16:28:53 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
 Sat Apr 25 16:28:53 IDT 2020 New Player: class domain.users.player has been added to team: Ironi Nir Ramat-Hasharonbyprosper
 Sat Apr 25 16:28:53 IDT 2020 New HeadCoach class domain.users.coach has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 17:37:07 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:07 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:07 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:07 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:07 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:07 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:07 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:07 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:07 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:07 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:07 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 17:37:07 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 17:37:07 IDT 2020 New fan member has been added to system - username is: itamar1
+Sat Apr 25 17:37:07 IDT 2020 New fan member has been added to system - username is: itamar15
+Sat Apr 25 17:37:07 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 17:37:07 IDT 2020 New teamEngineer has been added to system by owner: Ohad
+Sat Apr 25 17:37:07 IDT 2020 Report of Game Dated : Mon Jun 06 00:00:00 IDT 2022
+Home Team: 84285951
+Away Team: 84285951
+Main Referee: Shahar
+Secondary Referee: rami
+Events: 
+END OF REPORT
+Sat Apr 25 17:37:07 IDT 2020 report to a game was added by Shahar
+Sat Apr 25 17:37:07 IDT 2020 New teamEngineer has been added to system by owner: Ohad
+Sat Apr 25 17:37:07 IDT 2020 New teamEngineer has been added to system by owner: Ohad
+Sat Apr 25 17:37:07 IDT 2020 event edited: class Domain.Events.Foulwas edited by Shahar
+Sat Apr 25 17:37:07 IDT 2020 New teamEngineer has been added to system by owner: Ohad
+Sat Apr 25 17:37:07 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 17:37:07 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:37:07 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 17:37:07 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 17:37:07 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:37:07 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 17:37:07 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:37:07 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 17:37:07 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:37:07 IDT 2020 itamar1200has been deleted from the system
+Sat Apr 25 17:37:07 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:37:07 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 17:37:07 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 Ben1 has changer team bestTeamEver3 status to Close
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New Player: class domain.users.player has been added to team: bestTeamEverbyAli
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 Zachhas become team manager of : bestTeamEver2
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New Player: class domain.users.player has been added to team: bestTeamEver2byYoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 Shirahas become team owner of : bestTeamEver2
+Sat Apr 25 17:37:07 IDT 2020 Shirahas been deleted from the system
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 Shirhas become team owner of : bestTeamEver
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:37:07 IDT 2020 New Player: class domain.users.player has been added to team: noaWeissbyBen3
+Sat Apr 25 17:37:07 IDT 2020 Player: class domain.users.player asset was edited from team: noaWeissbyBen3
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 Itamarhas become team manager of : bestTeamEver
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:37:07 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:37:07 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 Halisihas become team owner of : Backstreet Boys
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:07 IDT 2020 Player: class domain.users.player asset was edited from team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:07 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 Guy has changer team Backstreet Boys status to Close
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 Halisihas become team manager of : Backstreet Boys
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:07 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:07 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:08 IDT 2020 Guy has been deleted from the system
+Sat Apr 25 17:37:08 IDT 2020 Player: class domain.users.player was removed from team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New FirstAssistantCoach class domain.users.coach has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:08 IDT 2020 Coach: class domain.users.coach asset was edited from team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:08 IDT 2020 Field: class domain.seasonmanagment.field asset was edited from team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:37:08 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 added content to personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 added content to personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 edited content on personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 lior4 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 managerhas become team manager of : null
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: manager Permissions to Create Personal Pageare now off
+Sat Apr 25 17:37:08 IDT 2020 manager created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 adam11 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 manager2has become team manager of : zachTeam
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: manager2 Permissions to Create Personal Pageare now off
+Sat Apr 25 17:37:08 IDT 2020 manager2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 adam11 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:37:08 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:37:08 IDT 2020 lior4 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New fan member has been added to system - username is: noale
+Sat Apr 25 17:37:08 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Adam12 added content to personal page
+Sat Apr 25 17:37:08 IDT 2020 Adam12 added content to personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Adam12 added content to personal page
+Sat Apr 25 17:37:08 IDT 2020 Adam12 edited content on personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 added content to personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 guy55 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 added content to personal page
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 edited content on personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:37:08 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 Report of Game Dated : Sun Jul 03 00:00:00 IDT 2022
+Home Team: 85913532
+Away Team: 51144122
+Main Referee: Yossi43
+Secondary Referee: Paul33
+Events: 
+END OF REPORT
+Sat Apr 25 17:37:08 IDT 2020 report to a game was added by Yossi43
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 event edited: class Domain.Events.Foulwas edited by Yossi43
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:37:08 IDT 2020 Davidhas been deleted from the system
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:37:08 IDT 2020 New teamninja turtle has been added to system by owner: Shlomo32523
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:37:08 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:37:08 IDT 2020 complaint by Itamarwas implied
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 manager20has become team manager of : Gadi
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: manager20 Permissions to Create Personal Pageare now off
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 manager21has become team manager of : Gad
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: manager21 Permissions to Hire Coachare now off
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 manager22has become team manager of : Ga
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: manager22 Permissions to Create Personal Pageare now off
+Sat Apr 25 17:37:08 IDT 2020 manager22 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:37:08 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:37:08 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:37:08 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:37:08 IDT 2020 manager23has become team manager of : Gana
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: manager23 Permissions to Create Personal Pageare now off
+Sat Apr 25 17:37:08 IDT 2020 manager23 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: manager23 Permissions to Edit Personal Page Profileare now off
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: manager23 Permissions to Add Content To Personal Pageare now off
+Sat Apr 25 17:37:08 IDT 2020 manager23 added content to personal page
+Sat Apr 25 17:37:08 IDT 2020 manager23 edited content on personal page
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New Player: class domain.users.player has been added to team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 Player: class domain.users.player asset was edited from team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 moshehas become team manager of : Maccabi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New Player: class domain.users.player has been added to team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 Field: class domain.seasonmanagment.field was removed from team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 tzachhas become team owner of : Maccabi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 Eduhas become team manager of : Maccabi
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: Edu Permissions to Hire Coachare now off
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 Avi has changer team Maccabi status to Close
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New Player: class domain.users.player has been added to team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New HeadCoach class domain.users.coach has been added to team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 jesus has been deleted from the system
+Sat Apr 25 17:37:08 IDT 2020 HeadCoach class domain.users.coach has been added to team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 moshehas become team manager of : Maccabi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New HeadCoach class domain.users.coach has been added to team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New Player: class domain.users.player has been added to team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 Dani has been deleted from the system
+Sat Apr 25 17:37:08 IDT 2020 Player: class domain.users.player was removed from team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teamL$@# has been added to system by owner: Shlomo32523
+Sat Apr 25 17:37:08 IDT 2020 Trexhas become team owner of : L$@#
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 Avi has changer team Maccabi status to Close
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teaminvincibles has been added to system by owner: Main
+Sat Apr 25 17:37:08 IDT 2020 Henryhas become team owner of : invincibles
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New Player: class domain.users.player has been added to team: MaccabibyAvi
+Sat Apr 25 17:37:08 IDT 2020 Avi has changer team Maccabi status to Close
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 tzachhas been deleted from the system
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:37:08 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi1Queen20
+Sat Apr 25 17:37:08 IDT 2020 New teamMaccabi Haifa has been added to system by owner: gabiPrince120
+Sat Apr 25 17:37:08 IDT 2020 New teamHapoel Kosi-lam-lam has been added to system by owner: gabiKing120
+Sat Apr 25 17:37:08 IDT 2020 New teamEfrohei Tapash has been added to system by owner: gabiKing0
+Sat Apr 25 17:37:08 IDT 2020 New teamBeiter has been added to system by owner: Moshe
+Sat Apr 25 17:37:08 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Sat Apr 25 17:37:08 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Sat Apr 25 17:37:08 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Sat Apr 25 17:37:08 IDT 2020 Ronihas become team owner of : Beiter
+Sat Apr 25 17:37:08 IDT 2020 CR7has become team manager of : Beiter
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Sat Apr 25 17:37:08 IDT 2020 CR7 created his personal page
+Sat Apr 25 17:37:08 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Sat Apr 25 17:37:08 IDT 2020 CR7 added content to personal page
+Sat Apr 25 17:37:08 IDT 2020 CR7 added content to personal page
+Sat Apr 25 17:37:08 IDT 2020 Moshe has changer team Beiter status to Close
+Sat Apr 25 17:37:08 IDT 2020 Moshe has changer team Beiter status to Active
+Sat Apr 25 17:37:08 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Sat Apr 25 17:37:08 IDT 2020 New teamIroni Nir Ramat-Hasharon has been added to system by owner: prosper
+Sat Apr 25 17:37:08 IDT 2020 New Player: class domain.users.player has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 17:37:08 IDT 2020 New HeadCoach class domain.users.coach has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:37:08 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:37 IDT 2020 New fan member has been added to system - username is: itamar120
+Sat Apr 25 17:39:37 IDT 2020 Beckham2 created his personal page
+Sat Apr 25 17:39:37 IDT 2020 New fan member has been added to system - username is: itamar1
+Sat Apr 25 17:39:37 IDT 2020 New fan member has been added to system - username is: itamar15
+Sat Apr 25 17:39:37 IDT 2020 New fan member has been added to system - username is: itamar123
+Sat Apr 25 17:39:37 IDT 2020 New teamEngineer has been added to system by owner: Ohad
+Sat Apr 25 17:39:37 IDT 2020 Report of Game Dated : Mon Jun 06 00:00:00 IDT 2022
+Home Team: 65249389
+Away Team: 65249389
+Main Referee: Shahar
+Secondary Referee: rami
+Events: 
+END OF REPORT
+Sat Apr 25 17:39:37 IDT 2020 report to a game was added by Shahar
+Sat Apr 25 17:39:37 IDT 2020 New teamEngineer has been added to system by owner: Ohad
+Sat Apr 25 17:39:38 IDT 2020 New teamEngineer has been added to system by owner: Ohad
+Sat Apr 25 17:39:38 IDT 2020 event edited: class Domain.Events.Foulwas edited by Shahar
+Sat Apr 25 17:39:38 IDT 2020 New teamEngineer has been added to system by owner: Ohad
+Sat Apr 25 17:39:38 IDT 2020 New fan member has been added to system - username is: itamar12
+Sat Apr 25 17:39:38 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:39:38 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 17:39:38 IDT 2020 Deletion of Hapoel Haifa was successful.
+Sat Apr 25 17:39:38 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:39:38 IDT 2020 Deletion of Hapoel Haifa was Unsuccessful.
+Sat Apr 25 17:39:38 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:39:38 IDT 2020 complaint by itamar1200was implied
+Sat Apr 25 17:39:38 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:39:38 IDT 2020 itamar1200has been deleted from the system
+Sat Apr 25 17:39:38 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:39:38 IDT 2020 New fan member has been added to system - username is: itamar1200
+Sat Apr 25 17:39:38 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi120
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 Ben1 has changer team bestTeamEver3 status to Close
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New Player: class domain.users.player has been added to team: bestTeamEverbyAli
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 Zachhas become team manager of : bestTeamEver2
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New Player: class domain.users.player has been added to team: bestTeamEver2byYoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 Shirahas become team owner of : bestTeamEver2
+Sat Apr 25 17:39:38 IDT 2020 Shirahas been deleted from the system
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 Shirhas become team owner of : bestTeamEver
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:39:38 IDT 2020 New Player: class domain.users.player has been added to team: noaWeissbyBen3
+Sat Apr 25 17:39:38 IDT 2020 Player: class domain.users.player asset was edited from team: noaWeissbyBen3
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 Itamarhas become team manager of : bestTeamEver
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver has been added to system by owner: Ali
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver2 has been added to system by owner: Yoav
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver3 has been added to system by owner: Ben1
+Sat Apr 25 17:39:38 IDT 2020 New teambestTeamEver5 has been added to system by owner: Ben2
+Sat Apr 25 17:39:38 IDT 2020 New teamnoaWeiss has been added to system by owner: Ben3
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Yoyo
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 Halisihas become team owner of : Backstreet Boys
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 Player: class domain.users.player asset was edited from team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 Guy has changer team Backstreet Boys status to Close
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 Halisihas become team manager of : Backstreet Boys
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 Guy has been deleted from the system
+Sat Apr 25 17:39:38 IDT 2020 Player: class domain.users.player was removed from team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New FirstAssistantCoach class domain.users.coach has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 Coach: class domain.users.coach asset was edited from team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 Field: class domain.seasonmanagment.field asset was edited from team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:38 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:38 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:39 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:39 IDT 2020 New Player: class domain.users.player has been added to team: Backstreet BoysbyGuy
+Sat Apr 25 17:39:39 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:39 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:39 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:39 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:39 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:39 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:39 IDT 2020 New teamBackstreet Boys has been added to system by owner: Guy
+Sat Apr 25 17:39:39 IDT 2020 New teamGolden Boys has been added to system by owner: Amit
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 added content to personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 added content to personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 edited content on personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 noa12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 lior4 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 managerhas become team manager of : null
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: manager Permissions to Create Personal Pageare now off
+Sat Apr 25 17:39:39 IDT 2020 manager created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 adam11 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 manager2has become team manager of : zachTeam
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: manager2 Permissions to Create Personal Pageare now off
+Sat Apr 25 17:39:39 IDT 2020 manager2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 adam11 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 New teamnull has been added to system by owner: asif
+Sat Apr 25 17:39:39 IDT 2020 New teamzachTeam has been added to system by owner: zach
+Sat Apr 25 17:39:39 IDT 2020 lior4 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New fan member has been added to system - username is: noale
+Sat Apr 25 17:39:39 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Gadi33 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Adam12 added content to personal page
+Sat Apr 25 17:39:39 IDT 2020 Adam12 added content to personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Adam12 added content to personal page
+Sat Apr 25 17:39:39 IDT 2020 Adam12 edited content on personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Adam12 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 added content to personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 guy55 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 added content to personal page
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 edited content on personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Tal23
+Sat Apr 25 17:39:39 IDT 2020 Eyal2 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 Report of Game Dated : Sun Jul 03 00:00:00 IDT 2022
+Home Team: 78713271
+Away Team: 42182613
+Main Referee: Yossi43
+Secondary Referee: Paul33
+Events: 
+END OF REPORT
+Sat Apr 25 17:39:39 IDT 2020 report to a game was added by Yossi43
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 event edited: class Domain.Events.Foulwas edited by Yossi43
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamTel Aviv has been added to system by owner: yakir
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: yam
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:39:39 IDT 2020 Davidhas been deleted from the system
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:39:39 IDT 2020 New teamninja turtle has been added to system by owner: Shlomo32523
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:39:39 IDT 2020 New teamHaifa has been added to system by owner: Adi
+Sat Apr 25 17:39:39 IDT 2020 complaint by Itamarwas implied
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 manager20has become team manager of : Gadi
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: manager20 Permissions to Create Personal Pageare now off
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 manager21has become team manager of : Gad
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: manager21 Permissions to Hire Coachare now off
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 manager22has become team manager of : Ga
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: manager22 Permissions to Create Personal Pageare now off
+Sat Apr 25 17:39:39 IDT 2020 manager22 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamGadi has been added to system by owner: kfir78
+Sat Apr 25 17:39:39 IDT 2020 New teamGad has been added to system by owner: kfir7
+Sat Apr 25 17:39:39 IDT 2020 New teamGa has been added to system by owner: kfir
+Sat Apr 25 17:39:39 IDT 2020 New teamGana has been added to system by owner: kfi
+Sat Apr 25 17:39:39 IDT 2020 manager23has become team manager of : Gana
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: manager23 Permissions to Create Personal Pageare now off
+Sat Apr 25 17:39:39 IDT 2020 manager23 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: manager23 Permissions to Edit Personal Page Profileare now off
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: manager23 Permissions to Add Content To Personal Pageare now off
+Sat Apr 25 17:39:39 IDT 2020 manager23 added content to personal page
+Sat Apr 25 17:39:39 IDT 2020 manager23 edited content on personal page
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New Player: class domain.users.player has been added to team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 Player: class domain.users.player asset was edited from team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 moshehas become team manager of : Maccabi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New Player: class domain.users.player has been added to team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 Field: class domain.seasonmanagment.field was removed from team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 tzachhas become team owner of : Maccabi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 Eduhas become team manager of : Maccabi
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: Edu Permissions to Hire Coachare now off
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 Avi has changer team Maccabi status to Close
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New Player: class domain.users.player has been added to team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New HeadCoach class domain.users.coach has been added to team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 jesus has been deleted from the system
+Sat Apr 25 17:39:39 IDT 2020 HeadCoach class domain.users.coach has been added to team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 moshehas become team manager of : Maccabi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New HeadCoach class domain.users.coach has been added to team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New Player: class domain.users.player has been added to team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 Dani has been deleted from the system
+Sat Apr 25 17:39:39 IDT 2020 Player: class domain.users.player was removed from team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teamL$@# has been added to system by owner: Shlomo32523
+Sat Apr 25 17:39:39 IDT 2020 Trexhas become team owner of : L$@#
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 Avi has changer team Maccabi status to Close
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teaminvincibles has been added to system by owner: Main
+Sat Apr 25 17:39:39 IDT 2020 Henryhas become team owner of : invincibles
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New Player: class domain.users.player has been added to team: MaccabibyAvi
+Sat Apr 25 17:39:39 IDT 2020 Avi has changer team Maccabi status to Close
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 tzachhas been deleted from the system
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi has been added to system by owner: Avi
+Sat Apr 25 17:39:39 IDT 2020 New teamHapoel Haifa has been added to system by owner: gabi1Queen20
+Sat Apr 25 17:39:39 IDT 2020 New teamMaccabi Haifa has been added to system by owner: gabiPrince120
+Sat Apr 25 17:39:39 IDT 2020 New teamHapoel Kosi-lam-lam has been added to system by owner: gabiKing120
+Sat Apr 25 17:39:39 IDT 2020 New teamEfrohei Tapash has been added to system by owner: gabiKing0
+Sat Apr 25 17:39:39 IDT 2020 New teamBeiter has been added to system by owner: Moshe
+Sat Apr 25 17:39:39 IDT 2020 New HeadCoach class domain.users.coach has been added to team: BeiterbyMoshe
+Sat Apr 25 17:39:39 IDT 2020 New Player: class domain.users.player has been added to team: BeiterbyMoshe
+Sat Apr 25 17:39:39 IDT 2020 Player: class domain.users.player asset was edited from team: BeiterbyMoshe
+Sat Apr 25 17:39:39 IDT 2020 Ronihas become team owner of : Beiter
+Sat Apr 25 17:39:39 IDT 2020 CR7has become team manager of : Beiter
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: CR7 Permissions to Create Personal Pageare now off
+Sat Apr 25 17:39:39 IDT 2020 CR7 created his personal page
+Sat Apr 25 17:39:39 IDT 2020 Team Manager: CR7 Permissions to Add Content To Personal Pageare now off
+Sat Apr 25 17:39:39 IDT 2020 CR7 added content to personal page
+Sat Apr 25 17:39:39 IDT 2020 CR7 added content to personal page
+Sat Apr 25 17:39:39 IDT 2020 Moshe has changer team Beiter status to Close
+Sat Apr 25 17:39:39 IDT 2020 Moshe has changer team Beiter status to Active
+Sat Apr 25 17:39:39 IDT 2020 New Field: class domain.seasonmanagment.field has been added to team: BeiterbyMoshe
+Sat Apr 25 17:39:39 IDT 2020 New teamIroni Nir Ramat-Hasharon has been added to system by owner: prosper
+Sat Apr 25 17:39:39 IDT 2020 New Player: class domain.users.player has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 17:39:39 IDT 2020 New HeadCoach class domain.users.coach has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie
+Sat Apr 25 17:39:39 IDT 2020 New teamThe Lanisters has been added to system by owner: Jamie

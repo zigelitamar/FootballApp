@@ -26,6 +26,14 @@ public class Referee extends Member implements Observer {
         this.type = type;
         games=new ArrayList<>();
         system = FootballManagmentSystem.getInstance();
+        if(!(system.getMembers().containsKey(this.name))) {
+            try {
+                system.addMember(this);
+                system.addReferee(this);
+            } catch (UserInformationException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /** edit details UC 10.1 */

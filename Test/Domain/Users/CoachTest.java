@@ -44,15 +44,10 @@ public class CoachTest {
 
     }
 
-    @Test
-    public void addContentToPersonalPage2(){
-        try {
-            coach2.addContentToPersonalPage(profileContent);
-        } catch (UnauthorizedPageOwnerException e) {
-            e.printStackTrace();
-        } catch (PersonalPageYetToBeCreatedException e) {
-            System.out.println("Personal Page is not created");
-        }
+    @Test(expected = PersonalPageYetToBeCreatedException.class)
+    public void addContentToPersonalPage2() throws UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException {
+        coach2.addContentToPersonalPage(profileContent);
+
     }
 
 
@@ -63,16 +58,10 @@ public class CoachTest {
         assertTrue(ans);
     }
 
-    @Test
-    public void editProfile2(){
+    @Test(expected =PersonalPageYetToBeCreatedException.class )
+    public void editProfile2() throws UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException {
         boolean ans = false;
-        try {
-            ans = coach2.editProfile("height","1.80");
-        } catch (UnauthorizedPageOwnerException e) {
-            e.printStackTrace();
-        } catch (PersonalPageYetToBeCreatedException e) {
-            System.out.println("Personal Page is not created");
-        }
+        ans = coach2.editProfile("height","1.80");
         assertFalse(ans);
     }
 

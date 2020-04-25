@@ -8,7 +8,7 @@ public abstract class MemberController {
 
     public void logOut(Member member){
         FootballManagmentSystem system = FootballManagmentSystem.getInstance();
-        system.logOut(member);
+        member.logOut();
     }
 
 

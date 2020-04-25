@@ -69,6 +69,10 @@ public abstract class Member extends GeneralUser {
         }
     }
 
+    public void logOut(){
+        FootballManagmentSystem.getInstance().logOut(this);
+    }
+
     public void setMailAddress(String mailAddress){
         this.mailAddress = mailAddress;
     }
