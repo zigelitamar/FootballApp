@@ -1,23 +1,33 @@
 package Domain.SeasonManagment;
 
+import Domain.FootballManagmentSystem;
 import Domain.Users.Commissioner;
+import FootballExceptions.IDWasNotEnterdException;
+import FootballExceptions.LeagueIDAlreadyExist;
 import FootballExceptions.SeasonYearAlreadyExist;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
 public class LeaugueTest {
 
-    Leaugue leaugue = new Leaugue();
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
-    Commissioner commissioner = new Commissioner("Alon", 123, "YO");
-   // FootballManagmentSystem footballManagmentSystem = new FootballManagmentSystem();
-    Season season = new Season(1995);
 
+    Leaugue leaugue;
+    Commissioner commissioner;
+    Season season;
+
+    @Before
+    public void init(){
+        leaugue = new Leaugue();
+        commissioner = new Commissioner("ItamarGo",555, "I5T5","Itamar");
+        season = new Season(1995);
+
+    }
 
 
 
@@ -30,6 +40,7 @@ public class LeaugueTest {
         assertEquals(result, ans);
     }
 
+
     @Test
     public void setId2() {
         leaugue.setId(2);
@@ -39,71 +50,37 @@ public class LeaugueTest {
     }
 
 
-    //todo make sure only commissioner sends this
-    //todo add getter to footballManagmentSystem
-    @Test
-    public void setLeagueIntoSystem(){
+
+    @Test (expected = IDWasNotEnterdException.class)
+    public void setLeagueIntoSystem() throws LeagueIDAlreadyExist, IDWasNotEnterdException {
         leaugue.setId(0);
+        leaugue.setLeagueIntoSystem();
+    }
 
 
-
+    @Test
+    public void setLeagueIntoSystem2() throws LeagueIDAlreadyExist, IDWasNotEnterdException {
+        leaugue.setId(10);
+        leaugue.setLeagueIntoSystem();
+        List<Leaugue> result = (FootballManagmentSystem.getInstance()).getAllLeagus();
+        assertEquals(12, result.size());
     }
 
 
 
-    @Test
+
+        @Test(expected = SeasonYearAlreadyExist.class)
     public void addSeasonToLeagueByYear() throws SeasonYearAlreadyExist {
         leaugue.addSeasonToLeagueByYear(1995);
-        Season before = leaugue.getSeasonByYear(1995);
-        assertNotNull(before);
+        leaugue.addSeasonToLeagueByYear(1995);
     }
 
 
-
-
-
-/*
-    @Before
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-    }
-
+    /*
     @Test
     public void setLeagueIntoSystem1() {
         leaugue.setId(1);
-        System.out.print("There is no ID");
-        assertEquals("There is no ID", outContent.toString());
-        asse
     }
-
-    @After
-    public void restoreStreams() {
-        System.setOut(originalOut);
-    }
-
-
-    @Rule
-    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
-
-    @Test
-    public void overrideProperty() {
-        System.out.print("hello world");
-        assertEquals("hello world", systemOutRule.getLog());
-    }
-
-
-
-    @Test
-    public void setLeagueIntoSystem2() {
-        leaugue.setId(1);
-        System.out.print("There is no ID !");
-        assertEquals("There is no ID !", outContent.toString());
-    }
-
 */
-
-
-
-
 
 }

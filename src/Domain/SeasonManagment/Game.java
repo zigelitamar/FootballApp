@@ -7,10 +7,11 @@ import Domain.Alerts.IGameSubjective;
 import Domain.Events.AGameEvent;
 import Domain.Events.Event_Logger;
 import Domain.Users.Referee;
+import FootballExceptions.PersonalPageYetToBeCreatedException;
 
 import java.util.*;
 
-public class Game extends Observable implements IGameSubjective{
+public class Game extends Observable {
     private Team away;
     private Team home;
     private Date dateGame;
@@ -34,53 +35,55 @@ public class Game extends Observable implements IGameSubjective{
         this.season = season;
         event_logger=new Event_Logger();
         referees = new LinkedList<>();
-        addReferees();
+        mainReferee.addToGameList(this);
+        seconderyReferee.addToGameList(this);
+        referees.add(mainReferee);
+        referees.add(seconderyReferee);
+
     }
 
     //todo - add option to  notify ref when upcoming match date
     public void changeDate(Date newDate) {
         this.dateGame = newDate;
-        IAlert newAlart = new ChangedGameAlert(dateGame,this);
+        IAlert newAlart = new ChangedGameAlert(new Date(),this);
         alert = newAlart;
+        notifyReferees(alert);
+    }
+
+    public void notifyRefereesWithNewDate(Date newDate) {
+        IAlert newAlart = new ChangedGameAlert(newDate,this);
+        alert = newAlart;
+        notifyReferees(alert);
     }
 
 
     public void run(){
-        notifyReferees(alert);
-    }
-
-    @Override
-    public void addTeamsFans() {
 
     }
 
-    @Override
-    public void addReferees() {
-        mainReferee.addToGameList(this);
-        seconderyReferee.addToGameList(this);
-        referees.add(mainReferee);
-        referees.add(seconderyReferee);
-        mainReferee.addToGameList(this);
-        seconderyReferee.addToGameList(this);
-    }
-
-    @Override
     public void notifyReferees(IAlert newAlert) {
         for (Observer O: referees) {
             O.update(this,newAlert);
         }
     }
 
-    @Override
-    public void notifyTeamfans(IAlert newAlert) {
+    public void notifyTeamfans(IAlert newAlert) throws PersonalPageYetToBeCreatedException {
         home.notifyTeam(newAlert,this);
         away.notifyTeam(newAlert,this);
     }
 
 
     //part of UC - 10.3 + alerting to followers
-    public void addEventToEventLog(AGameEvent event){
+    public void addEventToEventLog(AGameEvent event) throws PersonalPageYetToBeCreatedException {
         event.getPlayerWhocommit().changePlayerRate(event);
+        event_logger.addEvent(event);
+        IAlert alert = new GameEventAlert(event.getGameMinute(),event);
+        notifyTeamfans(alert);
+    }
+
+
+    //part of UC - 10.3 + alerting to followers
+    public void addSubtitutionEventToEventLog(AGameEvent event) throws PersonalPageYetToBeCreatedException {
         event_logger.addEvent(event);
         IAlert alert = new GameEventAlert(event.getGameMinute(),event);
         notifyTeamfans(alert);

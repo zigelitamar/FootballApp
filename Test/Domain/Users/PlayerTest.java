@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
-import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
@@ -27,8 +26,8 @@ public class PlayerTest {
     public void init() {
         owner = new TeamOwner("Tal23","Tal",35,"@3534");
         team = new Team("Haifa",owner);
-        playerTest = new Player("Eyal2","Eyal", 1234, "0000", 4, team, null, null);
-        playerTest2 = new Player("guy55","Guy", 1233, "0011", 3, team, null, null);
+        playerTest = new Player("Eyal2","Eyal", 1234, "0000", 4, null, null);
+        playerTest2 = new Player("guy55","Guy", 1233, "0011", 3, null, null);
         info = new PersonalInfo(playerTest);
         profileContent = new ProfileContent();
 
@@ -39,7 +38,6 @@ public class PlayerTest {
     public void createPersonalPage() {
         playerTest.createPersonalPage();
         assertNotEquals(info.getPageID(), playerTest.getInfo().getPageID());
-
     }
 
     @Test
@@ -57,15 +55,9 @@ public class PlayerTest {
         assertTrue(ans);
     }
 
-    @Test
-    public void addContentToPersonalPage2() {
-        try {
-            playerTest2.addContentToPersonalPage(profileContent);
-        } catch (UnauthorizedPageOwnerException e) {
-            e.printStackTrace();
-        } catch (PersonalPageYetToBeCreatedException e) {
-            System.out.println("Personal Page is not created");
-        }
+    @Test(expected = PersonalPageYetToBeCreatedException.class)
+    public void addContentToPersonalPage2() throws UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException {
+        playerTest2.addContentToPersonalPage(profileContent);
     }
 
     @Test
@@ -76,17 +68,11 @@ public class PlayerTest {
         assertTrue(ans);
     }
 
-    @Test
-    public void editProfile2() {
-        boolean ans = false;
-        try {
-            ans = playerTest2.editProfile("height","1.80");
-        } catch (UnauthorizedPageOwnerException e) {
-            e.printStackTrace();
-        } catch (PersonalPageYetToBeCreatedException e) {
-            System.out.println("Personal Page is not created");
-        }
-        assertFalse(ans);
+    @Test(expected = PersonalPageYetToBeCreatedException.class)
+    public void editProfile2() throws UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException {
+        playerTest2.createPersonalPage();
+        playerTest2.editProfile("height","1.80");
+
     }
 
     @Test
@@ -124,6 +110,7 @@ public class PlayerTest {
     }
     @Test
     public void changePlayerRate5() {
+        playerTest.setMyTeam(team);
         event = new YellowCard(40,playerTest);
         double beforeChange = playerTest.getFootballRate();
         playerTest.changePlayerRate(event);
@@ -163,6 +150,10 @@ public class PlayerTest {
     public void edit() {
         playerTest.edit(5);
         assertEquals(5, playerTest.getValue());
+    }
+    @Test
+    public void getFootballRate(){
+        playerTest.getFootballRate();
     }
 
 }

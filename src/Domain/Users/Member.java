@@ -16,7 +16,7 @@ public abstract class Member extends GeneralUser {
     private boolean isActive;
     private boolean alertViaMail;
     private String mailAddress;
-    FootballManagmentSystem system = FootballManagmentSystem.getInstance();
+
 
     public Member(String name, int id, String password, String real_name) {
         this.name = name;
@@ -53,6 +53,7 @@ public abstract class Member extends GeneralUser {
      * @param newAlert
      */
     public void handleAlert(IAlert newAlert){
+        FootballManagmentSystem system = FootballManagmentSystem.getInstance();
         if(alertViaMail){
             try {
                 system.sendInvitationByMail(this.mailAddress,"You have A new Alert in Football App",newAlert.toString());
@@ -68,6 +69,10 @@ public abstract class Member extends GeneralUser {
         }
     }
 
+    public void logOut(){
+        FootballManagmentSystem.getInstance().logOut(this);
+    }
+
     public void setMailAddress(String mailAddress){
         this.mailAddress = mailAddress;
     }
@@ -76,6 +81,21 @@ public abstract class Member extends GeneralUser {
     public Queue<IAlert> getAlertsList() {
         //alertsList.clear(); maybe
         return alertsList;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Member member = (Member) o;
+
+        return name.equals(member.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
     }
 
     public void setName(String name) {
@@ -100,5 +120,5 @@ public abstract class Member extends GeneralUser {
 
     public String getName(){
         return name;
-    };
+    }
 }

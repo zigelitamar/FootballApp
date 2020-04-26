@@ -6,6 +6,7 @@ import Domain.SeasonManagment.Game;
 import Domain.SeasonManagment.Team;
 import Domain.Users.Fan;
 import Domain.Users.PersonalInfo;
+import FootballExceptions.AlreadyFollowThisPageException;
 import FootballExceptions.UserInformationException;
 import javafx.util.Pair;
 
@@ -16,8 +17,13 @@ import java.util.List;
 
 public class FanController {
 
-    public void addPersonalPagesToFollow(Fan fan, List<PersonalInfo> pagesToFollow){
-        fan.addPersonalPagesToFollow(pagesToFollow);
+    public boolean addPersonalPagesToFollow(Fan fan, List<PersonalInfo> pagesToFollow){
+        try {
+            fan.addPersonalPagesToFollow(pagesToFollow);
+        } catch (AlreadyFollowThisPageException e) {
+            return false;
+        }
+        return true;
     }
     public void unFollowPage(Fan fan,PersonalInfo page){
        fan.unFollowPage(page);
@@ -36,8 +42,13 @@ public class FanController {
 
 
     public LinkedList<String> viewSearchHistory(Fan fan){
+        if(fan.viewSearchHistory().size()==0){
+            System.out.println("no search history yet");
+            return  null;
+        }
 
-       return  fan.viewSearchHistory();
+       else
+           return  fan.viewSearchHistory();
     }
 
 
@@ -67,7 +78,7 @@ public class FanController {
 
     }
 
-    public double useReccommandationSystem(Fan fan,Game game, Team team){
+    public double useReccommandationSystem(Fan fan, Game game, Team team){
         return fan.useRecommandationSystem(game,team);
     }
 

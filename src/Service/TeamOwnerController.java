@@ -88,6 +88,8 @@ public class TeamOwnerController extends MemberController {
             System.out.println(e.getMessage());
         } catch (InactiveTeamException e) {
             System.out.println(e.getMessage());
+        } catch (CantRemoveMainOwnerException e) {
+            e.printStackTrace();
         }
         return false;
     }
@@ -113,7 +115,7 @@ public class TeamOwnerController extends MemberController {
     }
 
     /**UC 6.5 - remove team manager*/
-    public boolean removeTeamManager(TeamOwner teamOwner,TeamManager teamManager){
+    public boolean removeTeamManager(TeamOwner teamOwner,TeamManager teamManager) throws UserIsNotThisKindOfMemberException {
         try {
             return teamOwner.removeTeamManager(teamManager);
         } catch (TeamOwnerWithNoTeamException e) {
@@ -134,6 +136,8 @@ public class TeamOwnerController extends MemberController {
             System.out.println(e.getMessage());
         } catch (UnauthorizedTeamOwnerException e) {
             System.out.println(e.getMessage());
+        } catch (TeamCannotBeReopenException e) {
+            e.printStackTrace();
         }
         return false;
     }

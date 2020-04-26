@@ -1,31 +1,36 @@
 package Domain.SeasonManagment;
 
-import Domain.FootballManagmentSystem;
 import Domain.Users.Referee;
 import FootballExceptions.NotEnoughTeamsInLeague;
+import javafx.util.Pair;
+
 
 import java.util.*;
 
-public class Season extends TimerTask{
+public class Season {
     private int year;
-    private TreeMap<Integer,Team> teams;          /**score_teams*/
+    private LinkedList<Pair<Integer,Team>> teams;          /**score_teams*/
     private HashSet<Referee> referees;
     private IScorePolicy scorePolicy;
     private IPlaceTeamsPolicy placeTeamsPolicy;
     private HashSet<Game> games;
     private boolean isItTheBeginningOfSeason;
-    private Game currentGame;
 
     public Season(int year) {
-        this.year = year;
-        DefaultIScorePolicy defaultIScorePolicy = new DefaultIScorePolicy();
-        this.scorePolicy = defaultIScorePolicy;
-        DefaultTeamsPolicy defaultTeamsPolicy = new DefaultTeamsPolicy();
-        this.placeTeamsPolicy = defaultTeamsPolicy;
-        teams = new TreeMap<>();
-        referees = new HashSet<>();
-        games = new HashSet<>();
-        isItTheBeginningOfSeason = true;         /** Change after a while?? */
+        if (year > 0) {
+            this.year = year;
+            DefaultIScorePolicy defaultIScorePolicy = new DefaultIScorePolicy();
+            this.scorePolicy = defaultIScorePolicy;
+            DefaultTeamsPolicy defaultTeamsPolicy = new DefaultTeamsPolicy();
+            this.placeTeamsPolicy = defaultTeamsPolicy;
+            teams = new LinkedList<>();
+            referees = new HashSet<>();
+            games = new HashSet<>();
+            isItTheBeginningOfSeason = true;         /** Change after a while?? */
+        } else {
+            System.out.println("Illegal year was entered, please try again");
+            this.year= Integer.parseInt(null);
+        }
     }
 
 
@@ -43,7 +48,7 @@ public class Season extends TimerTask{
             this.placeTeamsPolicy = pp;
         }
         this.year = year;
-        teams = new TreeMap<>();
+        teams = new LinkedList<>();
         referees = new HashSet<>();
         games = new HashSet<>();
         isItTheBeginningOfSeason = true;
@@ -81,12 +86,22 @@ public class Season extends TimerTask{
         this.year = year;
     }
 
-    public TreeMap<Integer, Team> getScore_teams() {
+    public HashSet<Game> getGames() {
+        return games;
+    }
+
+    public LinkedList<Pair<Integer,Team>> getScore_teams() {
         return teams;
     }
 
-    public void setScore_teams(TreeMap<Integer, Team> score_teams) {
-        this.teams = score_teams;
+    public void setScore_teams(int score, Team team) {
+        for (Pair pair: teams) {
+            if (((Team)pair.getValue()).getId() == team.getId()){
+                teams.remove(pair);
+                Pair<Integer,Team> pair1 = new Pair<>(score,team);
+                teams.add(pair1);
+            }
+        }
     }
 
     public HashSet<Referee> getReferees() {
@@ -98,19 +113,30 @@ public class Season extends TimerTask{
     }
 
 
+    public LinkedList<Pair<Integer, Team>> calculateTheNFirstPlaces(int n) {
+        LinkedList<Pair<Integer, Team>> firstPlaces = new LinkedList<>();
+        LinkedList<Pair<Integer, Team>> teamsCopy = new LinkedList<>();
+        teamsCopy = (LinkedList<Pair<Integer, Team>>) teams.clone();
+        Pair<Integer,Team> max = new Pair<Integer, Team>(teams.getFirst().getKey(),teams.getFirst().getValue());
 
-
-
-
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < teamsCopy.size(); j++) {
+                if (max.getKey() < teamsCopy.get(j).getKey()) {
+                    max = teamsCopy.get(j);
+                    teamsCopy.remove(max);
+                }
+            }
+            firstPlaces.add(max);
+        }
+        return firstPlaces;
+    }
 
     /**UC 9.3   (only comissioner can add)     */
     public void deleteRefereeFromSeasonByName(String ref){
         if(ref != null){
-
-            Iterator<Referee> it = referees.iterator();
-            while(it.hasNext()){
-                if(((Referee)it).getName().equals(ref)){
-                    referees.remove(it);
+            for (Referee referee:referees) {
+                if (ref.equals(referee.getName())){
+                    referees.remove(referee);
                     break;
                 }
             }
@@ -150,78 +176,76 @@ public class Season extends TimerTask{
 
     public void addTeamToSeason(Team t){
         if(t != null){
-            teams.put(t.getScore() ,t);
+            Pair<Integer,Team> pair = new Pair<>(t.getScore() ,t);
+            teams.add(pair);
         }
     }
 
 
     /**UC 9.7   (only comissioner can run)     */
     private void placingAlgorithm() throws NotEnoughTeamsInLeague {
-        Timer timer = new Timer();
-        TimerTask task = FootballManagmentSystem.getInstance();
-
-        Set set = teams.entrySet();
-        Iterator it = set.iterator();
-        Iterator itSecond = set.iterator();
-        Map.Entry away;
-        away = (Map.Entry)itSecond.next();
         Calendar c = Calendar.getInstance();
 
         if(teams.size() > 1){
             final int daysBetweenGames = 7;
             int increasingDays = 7;
-            while(it.hasNext()){
-                Referee[] twoRef = getRefereesToGame();
-                away = (Map.Entry)itSecond.next();
-                Map.Entry home = (Map.Entry)it.next();
-                for (int j = 0; j < placeTeamsPolicy.numOfGamesWithEachTeam()/2; j++) {
-                    /**set Home Game*/
-                    c.add(Calendar.DAY_OF_MONTH, increasingDays);
-                    Date d = calendarToDate(c);
-                    Game gameOne = new Game((Team)away.getValue(),(Team)home.getValue(),d,twoRef[0],twoRef[1],this);
-                    c.add(Calendar.DAY_OF_MONTH, -1);
-                    Date dateToAlert1 = calendarToDate(c);
-                    timer.schedule(task, dateToAlert1);                  /** alerting referees */
-                    c.add(Calendar.DAY_OF_MONTH, 1);
-                    increasingDays = increasingDays + daysBetweenGames ;
-                    /**set Away Game*/
-                    c.add(Calendar.DAY_OF_MONTH, increasingDays);
-                    Date dd = calendarToDate(c);
-                    Game gameTwo = new Game((Team)home.getValue(),(Team)away.getValue(),dd,twoRef[1],twoRef[0],this);
-                    gameTwo.changeDate(dd);
-                    c.add(Calendar.DAY_OF_MONTH, -1);
-                    Date dateToAlert2 = calendarToDate(c);
-                    timer.schedule(task, dateToAlert2);                 /** alerting referees */
-                    c.add(Calendar.DAY_OF_MONTH, 1);
-                    increasingDays = increasingDays + daysBetweenGames ;
-                    games.add(gameOne);
-                    games.add(gameTwo);
+            int i = 0;
+            while(i<(teams.size()-1)*2){ // number of periods
+                List<Integer> playing = new LinkedList<>();
+                for (int j = 0; j < teams.size(); j++) {
+                    for (int k = 0; k < teams.size() ; k++) {
+                        if (j != k && (!playing.contains(j) && !playing.contains(k)) && !(checkifGameScheduld(teams.get(j).getValue(),teams.get(k).getValue())) ) {
+                            /**set  Game*/
+                            Referee[] twoRef = getRefereesToGame();
+                            Date d = calendarToDate(c);
+                            Game gameOne = new Game(teams.get(k).getValue(), teams.get(j).getValue(), d, twoRef[0], twoRef[1], this);
+                            gameOne.notifyRefereesWithNewDate(new Date());                   /** alerting referees */
+
+                            teams.get(j).getValue().addGameToUpcomingGames(gameOne);
+                            teams.get(k).getValue().addGameToUpcomingGames(gameOne);
+                            games.add(gameOne);
+                            playing.add(j);
+                            playing.add(k);
+                            increasingDays = increasingDays + daysBetweenGames;
+                            c.add(Calendar.DAY_OF_MONTH, increasingDays);
+                            break;
+                        }
+
+
+                    }
                 }
+
+                i++;
             }
         }else{
             throw new NotEnoughTeamsInLeague("there is not enough teams in the season!");
         }
     }
-
-
-
-    @Override
-    public void run() {
-        currentGame.run();
+    private boolean checkifGameScheduld(Team home ,Team away){
+        for (Game game:games) {
+            if (game.getHome().getName().equals(home.getName()) && game.getAway().getName().equals(away.getName()) )
+                return true;
+        }
+        return false;
     }
+
+
+
 
     public Referee[] getRefereesToGame(){               /** returns two referees for game*/
         if(referees.size()>1){
-            Referee[] twoRefToJudgeGame = new Referee[2];
-            int random = new Random().nextInt(referees.size());
-            for(Referee ref : referees) {
-                if (random-- == 0) {
-                    twoRefToJudgeGame[0]= ref;
-                    break;
-                }
+            List<Referee> refs = new LinkedList<>();
+            for (Referee ref:referees
+                 ) {
+                refs.add(ref);
+
             }
-            for(Referee ref : referees) {
-                if (random-- == 0 && ref != twoRefToJudgeGame[0]) {         /**check if the two are not the same person*/
+            Referee[] twoRefToJudgeGame = new Referee[2];
+            int random = (int)(Math.random()%referees.size());
+            twoRefToJudgeGame[0] = refs.get(random);
+            for(Referee ref : refs) {
+                random = (int)(Math.random()%referees.size());
+                if (!ref.getName().equals(twoRefToJudgeGame[0].getName())) {         /**check if the two are not the same person*/
                     twoRefToJudgeGame[1]= ref;
                     break;
                 }

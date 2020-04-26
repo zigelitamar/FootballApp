@@ -1,9 +1,6 @@
 package Domain.Alerts;
 
 import Domain.Events.IEvent;
-import Domain.Users.PersonalInfo;
-
-import java.util.Date;
 
 public class GameEventAlert implements IAlert{
 
@@ -15,4 +12,15 @@ public class GameEventAlert implements IAlert{
         this.event = event;
     }
 
+    @Override
+    public String view() {
+        return this.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "GameEventAlert{" +
+                "event minute = " + eventMin + ", event Type = "+ event.getClass().getSimpleName() +
+                " }";
+    }
 }

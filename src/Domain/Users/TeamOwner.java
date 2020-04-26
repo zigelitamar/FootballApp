@@ -22,9 +22,16 @@ public class TeamOwner extends Member {
      */
     public TeamOwner(String name,String realname, int id, String password) {
         super(name, id, password,realname );
+        if(!(system.getMembers().containsKey(this.name))) {
+            try {
+                system.addMember(this);
+            } catch (UserInformationException e) {
+                e.printStackTrace();
+            }
+        }
     }
     /**
-     * constructor for team owner when teram is already open
+     * constructor for team owner when team is already open
      * @param name
      * @param id
      * @param password
@@ -33,6 +40,13 @@ public class TeamOwner extends Member {
     public TeamOwner(String name,String realname, int id, String password,int teamID) {
         super(name, id, password, realname);
         this.team = system.getTeamByID(teamID);
+        if(!(system.getMembers().containsKey(this.name))) {
+            try {
+                system.addMember(this);
+            } catch (UserInformationException e) {
+                e.printStackTrace();
+            }
+        }
     }
     /**
      * UC 6.1 - adding asset to team (this team owner must be an owner at the team)
@@ -45,7 +59,6 @@ public class TeamOwner extends Member {
         }
         return team.addAsset(this,asset);
     }
-
     /**
      * UC 6.1 - removing asset from team (this team owner must be an owner at the team)
      * @param asset - asset to be removed
@@ -86,7 +99,7 @@ public class TeamOwner extends Member {
      * @param teamOwnerToRemove - team owner to be removed
      * @return - true if succeeded
      */
-    public boolean removeTeamOwner(TeamOwner teamOwnerToRemove)throws TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException, InactiveTeamException{
+    public boolean removeTeamOwner(TeamOwner teamOwnerToRemove) throws TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException, InactiveTeamException, CantRemoveMainOwnerException {
 
         if(team==null){
             throw new TeamOwnerWithNoTeamException();
@@ -109,16 +122,15 @@ public class TeamOwner extends Member {
 
     /**
      * UC 6.4 - edit permissions for team manager
-     * @param teamManager - team manager
      * @param permissionsType - the permission this team owner wants to edit
      * @param permissionBol - the value
      * @return - true if succeeded
      */
-    public boolean editManagerPermissions(TeamManager teamManager,String permissionsType,boolean permissionBol) throws PersonalPageYetToBeCreatedException, UnauthorizedPageOwnerException,UnauthorizedTeamOwnerException,InactiveTeamException,UserInformationException,TeamOwnerWithNoTeamException{
+    public boolean editManagerPermissions(Member member,String permissionsType,boolean permissionBol) throws PersonalPageYetToBeCreatedException, UnauthorizedPageOwnerException,UnauthorizedTeamOwnerException,InactiveTeamException,UserInformationException,TeamOwnerWithNoTeamException{
         if(team==null){
             throw new TeamOwnerWithNoTeamException();
         }
-        return team.editManagerPermissions(this,teamManager,permissionsType,permissionBol);
+        return team.editManagerPermissions(this,member,permissionsType,permissionBol);
     }
 
     /**
@@ -126,7 +138,7 @@ public class TeamOwner extends Member {
      * @param teamManager - team manager to be removed
      * @return - true if succeeded
      */
-    public boolean removeTeamManager(TeamManager teamManager) throws TeamOwnerWithNoTeamException,UnauthorizedTeamOwnerException,InactiveTeamException{
+    public boolean removeTeamManager(Member teamManager) throws TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException, InactiveTeamException, UserIsNotThisKindOfMemberException {
         if(team==null){
             throw new TeamOwnerWithNoTeamException();
         }
@@ -138,7 +150,7 @@ public class TeamOwner extends Member {
      * @param newStatus - new status
      * @return - true if succeeded
      */
-    public boolean changeTeamStatus(TeamStatus newStatus) throws TeamOwnerWithNoTeamException,UnauthorizedTeamOwnerException{
+    public boolean changeTeamStatus(TeamStatus newStatus) throws TeamOwnerWithNoTeamException, UnauthorizedTeamOwnerException, TeamCannotBeReopenException {
         if(team==null){
             throw new TeamOwnerWithNoTeamException();
         }
@@ -157,7 +169,7 @@ public class TeamOwner extends Member {
         if(team==null){
             throw new TeamOwnerWithNoTeamException();
         }
-        if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries){
+        if(description==BudgetActivity.BuyPlayer||description==BudgetActivity.MaintenanceField||description==BudgetActivity.Salaries||description==BudgetActivity.Tax){
             return team.addBudgetActivity(this,date,description,(amount*(-1)));
         }else{
             return team.addBudgetActivity(this,date,description,(amount));

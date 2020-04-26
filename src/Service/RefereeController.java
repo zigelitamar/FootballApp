@@ -5,10 +5,7 @@ import Domain.SeasonManagment.Game;
 import Domain.Users.Player;
 import Domain.Users.Referee;
 import Domain.Users.RefereeType;
-import FootballExceptions.EventNotMatchedException;
-import FootballExceptions.NoPermissionException;
-import FootballExceptions.RefereeNotPlacedException;
-import FootballExceptions.UserInformationException;
+import FootballExceptions.*;
 
 public class RefereeController extends MemberController{
 
@@ -47,7 +44,7 @@ public class RefereeController extends MemberController{
     }
 
     /**10.3*/
-    public void addEventToGame(Referee referee,String eventType , double minute, Game game, Player playerWhoCommit) {
+    public void addEventToGame(Referee referee,String eventType , double minute, Game game, Player playerWhoCommit) throws PersonalPageYetToBeCreatedException {
         try{
             referee.addEventToGame(eventType,minute,game,playerWhoCommit);
         }catch (EventNotMatchedException ee){
@@ -66,4 +63,15 @@ public class RefereeController extends MemberController{
         }
 
     }
+
+
+    /**10.4*/
+    public void addReportForGame(Referee referee,Game game) {
+        try {
+            referee.addReportForGame(game);
+        }catch (NoPermissionException ne){
+            System.out.println(ne.getMessage());
+        }
+    }
+
 }
