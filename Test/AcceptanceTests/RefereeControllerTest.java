@@ -3,10 +3,8 @@ package AcceptanceTests;
 import Domain.Events.AGameEvent;
 import Domain.Events.Foul;
 import Domain.Events.Goal;
-import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.Game;
 import Domain.SeasonManagment.Team;
-import Domain.SystemLog;
 import Domain.Users.Player;
 import Domain.Users.Referee;
 import Domain.Users.RefereeType;
@@ -15,13 +13,11 @@ import FootballExceptions.NoPermissionException;
 import Service.RefereeController;
 import org.junit.Before;
 import org.junit.Test;
-import sun.security.acl.AclImpl;
 
 import java.io.IOException;
-import java.security.acl.Owner;
 import java.util.Date;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class RefereeControllerTest {
     private RefereeController refereeControllerTest;
