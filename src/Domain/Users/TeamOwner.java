@@ -14,6 +14,12 @@ public class TeamOwner extends Member {
     Team team;
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
 
+    /**CONSTRUCTOR FOR restoration object from DB**/
+    public TeamOwner(String name, String password, String real_name, Team team) {
+        super(name, 0, password, real_name);
+        this.team = team;
+    }
+
     /**
      * Constructor for first team owner when team is not yet open
      * @param name

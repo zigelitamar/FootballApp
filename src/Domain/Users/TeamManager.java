@@ -13,10 +13,24 @@ public class TeamManager extends Member implements IAsset {
 
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
     private int valAsset;
-    private Team myTeam;
     private int assetID;
+    private Team myTeam;
     private TeamOwner teamOwnerAssignedThis; /** according to UC 7.1 the team owner assigned the team manager is the only one that can change permissions*/
-    private HashMap <String,Boolean> permissions;  /** The hashmap in the value represent the specific team manager permission type (key for permission and val for T/F  */
+    private HashMap <String,Boolean> permissions;
+
+    /**CONSTRUCTOR FOR restoration object from DB**/
+    public TeamManager(String name, String password, String real_name, int valAsset, int assetID, Team myTeam, TeamOwner teamOwnerAssignedThis, HashMap<String, Boolean> permissions) {
+        super(name, 0, password, real_name);
+        this.valAsset = valAsset;
+        this.assetID = assetID;
+        this.myTeam = myTeam;
+        this.teamOwnerAssignedThis = teamOwnerAssignedThis;
+        this.permissions = permissions;
+    }
+
+    /** The hashmap in the value represent the specific team manager permission type (key for permission and val for T/F  */
+
+
 
     public TeamManager(String name,String realname, int id, String password, int valAsset, Team myTeam,TeamOwner teamOwnerAssignedThis) {
         super(name, id, password,realname );
@@ -144,6 +158,10 @@ public class TeamManager extends Member implements IAsset {
 
     public void setTeamOwnerAssignedThis(TeamOwner teamOwnerAssignedThis) {
         this.teamOwnerAssignedThis = teamOwnerAssignedThis;
+    }
+
+    public TeamOwner getTeamOwnerAssignedThis() {
+        return teamOwnerAssignedThis;
     }
 
     @Override

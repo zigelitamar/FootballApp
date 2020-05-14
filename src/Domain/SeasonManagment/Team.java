@@ -748,6 +748,9 @@ public class Team {
         return Name;
     }
 
+    public boolean isSystemMangerClosed() {
+        return systemMangerClosed;
+    }
 
     public ControlBudget getControlBudget() {
         return controlBudget;

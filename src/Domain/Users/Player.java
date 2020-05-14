@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class Player extends Member implements IAsset {
     private int valAsset;
-    private int assetID;
+    private final int assetID;
     private Team myTeam;
     private String role;
     private PersonalInfo info;
@@ -21,7 +21,19 @@ public class Player extends Member implements IAsset {
     FootballManagmentSystem system = FootballManagmentSystem.getInstance();
     private double FootballRate;
 
-    public Player(String name,String realname ,int id, String password, int valAsset, String role, Date dateOfBirth) {
+    /**CONSTRUCTOR FOR restoration object from DB**/
+    public Player(String name, String password, String real_name, int valAsset, int assetID, Team myTeam, String role, PersonalInfo info, Date dateOfBirth, double footballRate) {
+        super(name, 0, password, real_name);
+        this.valAsset = valAsset;
+        this.assetID = assetID;
+        this.myTeam = myTeam;
+        this.role = role;
+        this.info = info;
+        DateOfBirth = dateOfBirth;
+        FootballRate = footballRate;
+    }
+
+    public Player(String name, String realname , int id, String password, int valAsset, String role, Date dateOfBirth) {
         super(name, id, password,realname );
         this.valAsset = valAsset;
         this.role = role;

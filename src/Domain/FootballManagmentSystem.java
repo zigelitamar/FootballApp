@@ -154,6 +154,7 @@ public class FootballManagmentSystem extends TimerTask {
             LinkedList<Member> memberAccounts = new LinkedList<>();
             memberAccounts.add(addTo);
             members.put(userName, memberAccounts);
+
             SystemLog.getInstance().UpdateLog("New fan member has been added to system - username is: " + userName);
             return true; // added succesfully
         }
