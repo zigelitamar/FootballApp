@@ -1,6 +1,5 @@
 package SpringControllers;
 
-import CustomDeserialize.TeamMangerDeserialize;
 import Domain.PersonalPages.APersonalPageContent;
 import Domain.SeasonManagment.IAsset;
 import Domain.Users.TeamManager;
@@ -9,7 +8,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 public class TeamManagerController extends MemberController {
 
-    
+
     private TeamManager teamManager;
 
     public TeamManagerController(TeamManager teamManager) {
