@@ -5,7 +5,7 @@ public class InactiveTeamException extends Exception {
     private String message;
 
     public InactiveTeamException() {
-        message="Cant Operate Inactive Team!";
+        message = "Cant Operate Inactive Team!";
     }
 
     @Override

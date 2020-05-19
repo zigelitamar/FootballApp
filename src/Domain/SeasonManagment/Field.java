@@ -29,7 +29,7 @@ public class Field implements IAsset {
 
     @Override
     public Team getMyTeam() {
-        return  myTeam;
+        return myTeam;
     }
 
     @Override

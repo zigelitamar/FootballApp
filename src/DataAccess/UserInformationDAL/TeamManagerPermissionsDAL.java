@@ -13,22 +13,22 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class TeamManagerPermissionsDAL implements DAL <Pair<Pair<String, Member>,Boolean>,Pair<String, Member>> {
+public class TeamManagerPermissionsDAL implements DAL<Pair<Pair<String, Member>, Boolean>, Pair<String, Member>> {
 
-    Connection connection=null;
+    Connection connection = null;
 
     @Override
     public boolean insert(Pair<Pair<String, Member>, Boolean> objectToInsert) throws SQLException, NoConnectionException, UserInformationException, UserIsNotThisKindOfMemberException, NoPermissionException {
-        this.find(objectToInsert.getKey());
-        connection=connect();
-        if(connection==null){
+        this.select(objectToInsert.getKey());
+        connection = connect();
+        if (connection == null) {
             throw new NoConnectionException();
         }
         String permissionStatement = "INSERT INTO permissions (PermissionDescription, TeamManager,isPermitted) VALUES (?,?,?);";
-        PreparedStatement preparedStatement= connection.prepareStatement(permissionStatement);
-        preparedStatement.setString(1,objectToInsert.getKey().getKey());
-        preparedStatement.setString(2,objectToInsert.getKey().getValue().getName());
-        preparedStatement.setBoolean(3,objectToInsert.getValue());
+        PreparedStatement preparedStatement = connection.prepareStatement(permissionStatement);
+        preparedStatement.setString(1, objectToInsert.getKey().getKey());
+        preparedStatement.setString(2, objectToInsert.getKey().getValue().getName());
+        preparedStatement.setBoolean(3, objectToInsert.getValue());
         preparedStatement.execute();
         connection.close();
         return true;
@@ -36,9 +36,9 @@ public class TeamManagerPermissionsDAL implements DAL <Pair<Pair<String, Member>
 
     @Override
     public boolean update(Pair<Pair<String, Member>, Boolean> objectToUpdate, Pair<String, Object> valToUpdate) throws SQLException, UserIsNotThisKindOfMemberException, UserInformationException, NoConnectionException, NoPermissionException {
-        find(objectToUpdate.getKey());
-        connection=connect();
-        if(connection==null){
+        select(objectToUpdate.getKey());
+        connection = connect();
+        if (connection == null) {
             throw new NoConnectionException();
         }
 
@@ -46,33 +46,33 @@ public class TeamManagerPermissionsDAL implements DAL <Pair<Pair<String, Member>
                 "WHERE PermissionDescription = ? AND TeamManager =?; ";
         PreparedStatement preparedStatement = connection.prepareStatement(statement);
 
-        preparedStatement.setBoolean(1, (((Boolean)((Pair)valToUpdate.getValue()).getValue())));
-        preparedStatement.setString(2,(((String)((Pair)valToUpdate.getValue()).getKey())));
-        preparedStatement.setString(3,objectToUpdate.getKey().getValue().getName());
+        preparedStatement.setBoolean(1, (((Boolean) ((Pair) valToUpdate.getValue()).getValue())));
+        preparedStatement.setString(2, (((String) ((Pair) valToUpdate.getValue()).getKey())));
+        preparedStatement.setString(3, objectToUpdate.getKey().getValue().getName());
         preparedStatement.executeUpdate();
         connection.close();
         return true;
     }
 
     @Override
-    public Pair<Pair<String, Member>, Boolean> find(Pair<String, Member> objectIdentifier) throws SQLException, UserInformationException, UserIsNotThisKindOfMemberException, NoConnectionException, NoPermissionException {
+    public Pair<Pair<String, Member>, Boolean> select(Pair<String, Member> objectIdentifier) throws SQLException, UserInformationException, UserIsNotThisKindOfMemberException, NoConnectionException, NoPermissionException {
         connection = connect();
-        if(connection==null){
+        if (connection == null) {
             throw new NoConnectionException();
         }
 
-        String statement ="SELECT isPermitted FROM permissions WHERE TeamManager = ? AND PermissionDescription =?";
+        String statement = "SELECT isPermitted FROM permissions WHERE TeamManager = ? AND PermissionDescription =?";
         PreparedStatement preparedStatement = connection.prepareStatement(statement);
-        preparedStatement.setString(1,objectIdentifier.getValue().getName());
-        preparedStatement.setString(2,objectIdentifier.getKey());
+        preparedStatement.setString(1, objectIdentifier.getValue().getName());
+        preparedStatement.setString(2, objectIdentifier.getKey());
         ResultSet rs = preparedStatement.executeQuery();
         connection.close();
-        if(!rs.next()){
+        if (!rs.next()) {
             throw new NoPermissionException("No such Permission for this Team Manager");
         }
 
         boolean bool = rs.getBoolean(1);
-        return new Pair<>(objectIdentifier,bool);
+        return new Pair<>(objectIdentifier, bool);
 
     }
 

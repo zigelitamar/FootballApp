@@ -12,7 +12,8 @@ import java.util.HashSet;
 public abstract class Searcher {
 
     private HashSet<Object> answer;
-    public abstract boolean  search(String str);
+
+    public abstract boolean search(String str);
 
     public void setAnswer(HashSet<Object> answer) {
         this.answer = answer;
@@ -22,60 +23,60 @@ public abstract class Searcher {
         return answer;
     }
 
-    public HashSet<Player> PlayerFilter(){
+    public HashSet<Player> PlayerFilter() {
         HashSet<Player> PlayerSearchResults = new HashSet<>();
-        for (Object o : answer){
-            if (o instanceof Player){
-                PlayerSearchResults.add((Player)o);
+        for (Object o : answer) {
+            if (o instanceof Player) {
+                PlayerSearchResults.add((Player) o);
             }
         }
         return PlayerSearchResults;
     }
 
-    public HashSet<TeamOwner> TeamOwnerFilter(){
+    public HashSet<TeamOwner> TeamOwnerFilter() {
         HashSet<TeamOwner> TeamOwnerSearchResults = new HashSet<>();
-        for (Object o : answer){
-            if (o instanceof TeamOwner){
-                TeamOwnerSearchResults.add((TeamOwner)o);
+        for (Object o : answer) {
+            if (o instanceof TeamOwner) {
+                TeamOwnerSearchResults.add((TeamOwner) o);
             }
         }
         return TeamOwnerSearchResults;
     }
 
-    public HashSet<TeamManager> TeamManagerFilter(){
+    public HashSet<TeamManager> TeamManagerFilter() {
         HashSet<TeamManager> TeamManagerSearchResults = new HashSet<>();
-        for (Object o : answer){
-            if (o instanceof TeamManager){
-                TeamManagerSearchResults.add((TeamManager)o);
+        for (Object o : answer) {
+            if (o instanceof TeamManager) {
+                TeamManagerSearchResults.add((TeamManager) o);
             }
         }
         return TeamManagerSearchResults;
     }
 
-    public HashSet<Leaugue> leaugueFilter(){
+    public HashSet<Leaugue> leaugueFilter() {
         HashSet<Leaugue> leauguesSearchResults = new HashSet<>();
-        for (Object o : answer){
-            if (o instanceof Leaugue){
-                leauguesSearchResults.add((Leaugue)o);
+        for (Object o : answer) {
+            if (o instanceof Leaugue) {
+                leauguesSearchResults.add((Leaugue) o);
             }
         }
         return leauguesSearchResults;
     }
 
-    public HashSet<Team> teamFilter(){
+    public HashSet<Team> teamFilter() {
         HashSet<Team> teamsSearchResults = new HashSet<>();
-        for (Object o : answer){
-            if (o instanceof Team){
-                teamsSearchResults.add((Team)o);
+        for (Object o : answer) {
+            if (o instanceof Team) {
+                teamsSearchResults.add((Team) o);
             }
         }
         return teamsSearchResults;
     }
 
-    public HashSet<Season> seasonFilter(){
+    public HashSet<Season> seasonFilter() {
         HashSet<Season> seasonsSearchResults = new HashSet<>();
-        for (Object o : answer){
-            if (o instanceof Season){
+        for (Object o : answer) {
+            if (o instanceof Season) {
                 seasonsSearchResults.add((Season) o);
             }
         }

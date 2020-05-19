@@ -2,11 +2,10 @@ package DataAccess.UsersDAL;
 
 import DataAccess.DAL;
 import DataAccess.Exceptions.NoConnectionException;
+import DataAccess.Exceptions.mightBeSQLInjectionException;
 import DataAccess.SeasonManagmentDAL.TeamsDAL;
 import Domain.SeasonManagment.Team;
 import Domain.Users.Member;
-import Domain.Users.PersonalInfo;
-import Domain.Users.Player;
 import Domain.Users.TeamOwner;
 import FootballExceptions.UserInformationException;
 import FootballExceptions.UserIsNotThisKindOfMemberException;
@@ -14,21 +13,16 @@ import javafx.util.Pair;
 
 import java.sql.*;
 
-public class TeamOwnersDAL implements DAL <Member,String> {
+public class TeamOwnersDAL implements DAL<Member, String> {
 
-    Connection connection=null;
+    Connection connection = null;
     MembersDAL membersDAL = new MembersDAL();
     TeamsDAL teamsDAL = new TeamsDAL();
 
     @Override
-    public boolean insert(Member member) throws SQLException, UserInformationException, NoConnectionException {
-        Member check=null;
-        try {
-            check=find(member.getName());
-        } catch (UserInformationException | UserIsNotThisKindOfMemberException e) {
+    public boolean insert(Member member) throws SQLException, UserInformationException, NoConnectionException, mightBeSQLInjectionException {
 
-        }
-        if(check==null) {
+        if (!checkExist(member.getName(), "teamowners", "UserName")) {
             membersDAL.insert(member);
             member = ((TeamOwner) member);
             connection = this.connect();
@@ -41,7 +35,7 @@ public class TeamOwnersDAL implements DAL <Member,String> {
             preparedStatement.execute();
             connection.close();
             return true;
-        }else{
+        } else {
             throw new UserInformationException();
         }
     }
@@ -49,20 +43,20 @@ public class TeamOwnersDAL implements DAL <Member,String> {
     @Override
     public boolean update(Member member, Pair<String, Object> valToUpdate) throws SQLException, UserIsNotThisKindOfMemberException, UserInformationException, NoConnectionException {
 
-        this.find(member.getName());
-        if(valToUpdate.getKey().equals("UserName")||valToUpdate.getKey().equals("RealName")||valToUpdate.getKey().equals("Password")||valToUpdate.getKey().equals("isActive")||valToUpdate.getKey().equals("AlertsViaMail")||valToUpdate.getKey().equals("MailAddress")){
-            return membersDAL.update(member,valToUpdate);
+        this.select(member.getName());
+        if (valToUpdate.getKey().equals("UserName") || valToUpdate.getKey().equals("RealName") || valToUpdate.getKey().equals("Password") || valToUpdate.getKey().equals("isActive") || valToUpdate.getKey().equals("AlertsViaMail") || valToUpdate.getKey().equals("MailAddress")) {
+            return membersDAL.update(member, valToUpdate);
         }
         connection = connect();
-        if(connection==null){
+        if (connection == null) {
             return false;
         }
-        String statement = "UPDATE teamowners SET "+ valToUpdate.getKey() + " =  ? " +
+        String statement = "UPDATE teamowners SET " + valToUpdate.getKey() + " =  ? " +
                 "WHERE UserName = ?; ";
         PreparedStatement preparedStatement = connection.prepareStatement(statement);
         //preparedStatement.setString(1,valToUpdate.getKey());
-        preparedStatement.setInt(1,((Integer)valToUpdate.getValue()));
-        preparedStatement.setString(2,member.getName());
+        preparedStatement.setInt(1, ((Integer) valToUpdate.getValue()));
+        preparedStatement.setString(2, member.getName());
 
         preparedStatement.executeUpdate();
         connection.close();
@@ -70,16 +64,16 @@ public class TeamOwnersDAL implements DAL <Member,String> {
     }
 
     @Override
-    public Member find(String userName) throws SQLException, UserInformationException, UserIsNotThisKindOfMemberException {
+    public Member select(String userName) throws SQLException, UserInformationException, UserIsNotThisKindOfMemberException {
 
         /**MEMBER DETAILS*/
         connection = connect();
-        String statement= "SELECT Password,RealName,MailAddress,isActive, AlertsViaMail FROM members WHERE UserName = ?;";
+        String statement = "SELECT Password,RealName,MailAddress,isActive, AlertsViaMail FROM members WHERE UserName = ?;";
         PreparedStatement preparedStatement = connection.prepareStatement(statement);
-        preparedStatement.setString(1,userName);
+        preparedStatement.setString(1, userName);
         ResultSet rs = preparedStatement.executeQuery();
 
-        if(!rs.next()){
+        if (!rs.next()) {
             throw new UserInformationException();
         }
         String password = rs.getString(1);
@@ -89,19 +83,19 @@ public class TeamOwnersDAL implements DAL <Member,String> {
         boolean AlertsViaMail = rs.getBoolean(5);
 
         /***TEAM OWNER DETAILS*/
-        statement= "SELECT Team FROM teamowners WHERE UserName = ?;";
+        statement = "SELECT Team FROM teamowners WHERE UserName = ?;";
         preparedStatement = connection.prepareStatement(statement);
-        preparedStatement.setString(1,userName);
+        preparedStatement.setString(1, userName);
         rs = preparedStatement.executeQuery();
 
-        if(!rs.next()){
+        if (!rs.next()) {
             throw new UserIsNotThisKindOfMemberException();
         }
 
         int teamID = rs.getInt(1);
-        Team team = teamsDAL.find(teamID);
+        Team team = teamsDAL.select(teamID);
 
-        Member member = new TeamOwner(userName,password,realName,team);
+        Member member = new TeamOwner(userName, password, realName, team);
         connection.close();
         return member;
     }

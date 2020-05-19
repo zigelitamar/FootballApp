@@ -11,19 +11,19 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AssetsDAL implements DAL<IAsset,Integer> {
-    Connection connection=null;
+public class AssetsDAL implements DAL<IAsset, Integer> {
+    Connection connection = null;
 
     @Override
     public boolean insert(IAsset objectToInsert) throws SQLException {
-        connection=connect();
-        if(connection==null){
+        connection = connect();
+        if (connection == null) {
             return false;
         }
         String statement = "INSERT INTO assets (AssetID, AssetVal) VALUES (?,?);";
         PreparedStatement preparedStatement = connection.prepareStatement(statement);
-        preparedStatement.setInt(1,objectToInsert.getAssetID());
-        preparedStatement.setInt(2,objectToInsert.getValue());
+        preparedStatement.setInt(1, objectToInsert.getAssetID());
+        preparedStatement.setInt(2, objectToInsert.getValue());
         preparedStatement.execute();
         connection.close();
         return true;
@@ -32,24 +32,25 @@ public class AssetsDAL implements DAL<IAsset,Integer> {
     @Override
     public boolean update(IAsset objectToUpdate, Pair<String, Object> valToUpdate) throws SQLException, NoConnectionException {
 
-        connection=connect();
-        if(connection==null){
-            throw  new NoConnectionException();
+        connection = connect();
+        if (connection == null) {
+            throw new NoConnectionException();
         }
-        String statement = "UPDATE assets SET "+ valToUpdate.getKey() + " =  ? " +
+        String statement = "UPDATE assets SET " + valToUpdate.getKey() + " =  ? " +
                 "WHERE AssetID = ?; ";
         PreparedStatement preparedStatement = connection.prepareStatement(statement);
         preparedStatement.setInt(1, (Integer) valToUpdate.getValue());
-        preparedStatement.setInt(2,objectToUpdate.getAssetID());
+        preparedStatement.setInt(2, objectToUpdate.getAssetID());
         preparedStatement.executeUpdate();
         connection.close();
         return true;
     }
 
     @Override
-    public IAsset find(Integer objectIdentifier) {
+    public IAsset select(Integer objectIdentifier) {
         return null;
     }
+
 
     @Override
     public boolean delete(Integer objectIdentifier) {

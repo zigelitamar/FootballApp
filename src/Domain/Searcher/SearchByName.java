@@ -12,18 +12,18 @@ public class SearchByName extends Searcher {
     public boolean search(String str) {
         HashSet<Object> anstoquerry = new HashSet<>();
         HashSet<Member> tmp = new HashSet<>();
-        for (LinkedList<Member> list: FootballManagmentSystem.getInstance().getMembers().values()) {
-            for (Member m:list) {
+        for (LinkedList<Member> list : FootballManagmentSystem.getInstance().getMembers().values()) {
+            for (Member m : list) {
                 tmp.add(m);
             }
 
         }
-        for (Member m:tmp) {
-            if(m.getReal_Name().equals(str)){
-                anstoquerry.add((Object)m);
+        for (Member m : tmp) {
+            if (m.getReal_Name().equals(str)) {
+                anstoquerry.add((Object) m);
             }
         }
-        if(anstoquerry.size()==0){
+        if (anstoquerry.size() == 0) {
             return false;
         }
 

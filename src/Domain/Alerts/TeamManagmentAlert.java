@@ -13,7 +13,7 @@ public class TeamManagmentAlert implements IAlert {
         this.message = message;
     }
 
-    public TeamManagmentAlert(TeamStatus teamStatus,Team team) {
+    public TeamManagmentAlert(TeamStatus teamStatus, Team team) {
         this.teamStatus = teamStatus;
         message = "Team: " + team.getName() + " status changed to:" + teamStatus.toString();
     }
@@ -32,7 +32,8 @@ public class TeamManagmentAlert implements IAlert {
     public String view() {
         return this.toString();
     }
-        public TeamStatus getTeamStatus() {
+
+    public TeamStatus getTeamStatus() {
         return teamStatus;
     }
 

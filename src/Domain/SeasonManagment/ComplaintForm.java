@@ -1,16 +1,20 @@
 package Domain.SeasonManagment;
 
+import DataAccess.SeasonManagmentDAL.ComplaintFormsDAL;
+import Domain.FootballManagmentSystem;
 import Domain.Users.Fan;
 
 public class ComplaintForm {
 
-    private Fan fanSubmitingForm;
+    private int objectID;
+    private Fan fanSubmittingForm;
     private String complaint;
     private String response;
 
     public ComplaintForm(String complaint) {
         this.complaint = complaint;
         this.response = null;
+        objectID = FootballManagmentSystem.getInstance().idGenerator(new ComplaintFormsDAL(), "complaintforms", "objectID");
     }
 
     public void setResponse(String response) {
@@ -18,7 +22,7 @@ public class ComplaintForm {
     }
 
     public Fan getFanSubmitingForm() {
-        return fanSubmitingForm;
+        return fanSubmittingForm;
     }
 
     public String getComplaint() {
@@ -30,10 +34,14 @@ public class ComplaintForm {
     }
 
     public void setFanSubmitingForm(Fan fanSubmitingForm) {
-        this.fanSubmitingForm = fanSubmitingForm;
+        this.fanSubmittingForm = fanSubmitingForm;
     }
 
     public void setComplaint(String complaint) {
         this.complaint = complaint;
+    }
+
+    public int getObjectID() {
+        return objectID;
     }
 }

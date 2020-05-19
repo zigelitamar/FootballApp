@@ -1,6 +1,6 @@
 package Domain.PersonalPages;
 
-public class NewsContent extends APersonalPageContent{
+public class NewsContent extends APersonalPageContent {
 
     private String title;
     private String content;

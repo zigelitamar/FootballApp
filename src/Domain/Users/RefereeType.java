@@ -2,5 +2,5 @@ package Domain.Users;
 
 public enum RefereeType {
 
-    Main , Secondary
+    Main, Secondary
 }

@@ -1,38 +1,34 @@
 import DataAccess.Exceptions.NoConnectionException;
+import DataAccess.Exceptions.mightBeSQLInjectionException;
 import DataAccess.SeasonManagmentDAL.AssetsDAL;
 import DataAccess.SeasonManagmentDAL.TeamsDAL;
 import DataAccess.UsersDAL.MembersDAL;
 import DataAccess.UsersDAL.PlayersDAL;
 import DataAccess.UsersDAL.TeamManagerDAL;
 import DataAccess.UsersDAL.TeamOwnersDAL;
-import Domain.FootballManagmentSystem;
-import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
 import Domain.Users.*;
 import FootballExceptions.*;
-import javafx.util.Pair;
 
 import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.Calendar;
 
 public class Main {
 
 
-
     public static void main(String[] args) throws ParseException, UnknownHostException, UserInformationException, NotEnoughTeamsInLeague, EventNotMatchedException, PersonalPageYetToBeCreatedException, TeamOwnerWithNoTeamException, InactiveTeamException, UnauthorizedTeamOwnerException, UserIsNotThisKindOfMemberException {
         MembersDAL membersDAL = new MembersDAL();
-        AssetsDAL assetsDAL = new AssetsDAL();
-        TeamOwnersDAL teamOwnersDAL= new TeamOwnersDAL();
-        TeamsDAL teamsDAL = new TeamsDAL();
-        PlayersDAL dal = new PlayersDAL();
+//        AssetsDAL assetsDAL = new AssetsDAL();
+//        TeamOwnersDAL teamOwnersDAL = new TeamOwnersDAL();
+//        TeamsDAL teamsDAL = new TeamsDAL();
+//        PlayersDAL dal = new PlayersDAL();
         TeamManagerDAL teamManagerDAL = new TeamManagerDAL();
 //
-        Member member1 = new TeamOwner("Moshe","Hogeg",213412,"123456");
-        Team team = new Team("Maccabi333",((TeamOwner)member1));
-        //boolean ans=((Player)member).createPersonalPage();
-        Member member = new TeamManager("Ohana","Eli",12341,"WQESD",3123,team,((TeamOwner)member1));
+//        Member member1 = new TeamOwner("Moshe", "Hogeg", 213412, "123456");
+//        Team team = new Team("Maccabi333", ((TeamOwner) member1));
+//        //boolean ans=((Player)member).createPersonalPage();
+//        Member member = new TeamManager("Ohana", "Eli", 12341, "WQESD", 3123, team, ((TeamOwner) member1));
 
 //        try {
 //            ((TeamOwner)member1).assignNewTeamManager(FootballManagmentSystem.getInstance().getMemberInstanceByKind(((Player) member).getName(),"Player"),989874);
@@ -51,19 +47,20 @@ public class Main {
             //teamManagerDAL.insert(FootballManagmentSystem.getInstance().getMemberInstanceByKind(member.getName(),"Team Manager"));
             //dal.update(member,new Pair<>("RealName","Shlomo Bar Tov"));
             //teamManagerDAL.update(member,new Pair<>("Permission",new Pair("Hire Coach",true)));
-            TeamManager teamManager = (TeamManager) teamManagerDAL.find("Ohana");
-           // Member player = dal.find("Rami22");
+            TeamManager teamManager = (TeamManager) teamManagerDAL.select("Ohana");
+            boolean ans = membersDAL.checkExist("Ohana", "members", "UserName");
+            System.out.println(teamManager.getPassword());
             //teamOwnersDAL.update(member1,new Pair<>("UserName","Tzach"));
             //membersDAL.update(member1,new Pair<>("RealName","Moshe Bar Simon Tov"));
             //membersDAL.update(member1,new Pair<>("UserName","Moshe"));
             // assetsDAL.update(member,new Pair<>("AssetVal",4654165));
-            System.out.println("SUCCESS");
+            System.out.println(ans);
         } catch (SQLException | NoConnectionException e) {
+            e.printStackTrace();
+        } catch (mightBeSQLInjectionException e) {
             e.printStackTrace();
         }
         //((TeamOwner) member1).addAssetToTeam(member);
-
-
 
 
 //        FootballManagmentSystem system = FootballManagmentSystem.getInstance();

@@ -10,7 +10,10 @@ import java.util.HashMap;
 public class Leaugue {
     private FootballManagmentSystem system;
     private int id;
-    private HashMap<Integer,Season> seasons;    /**year_season*/
+    private HashMap<Integer, Season> seasons;
+    /**
+     * year_season
+     */
     private int currentYear;
 
     public Leaugue() {
@@ -25,28 +28,32 @@ public class Leaugue {
     }
 
 
-    /** UC 9.1 (Only commisioner can)*/
+    /**
+     * UC 9.1 (Only commisioner can)
+     */
     public void setLeagueIntoSystem() throws LeagueIDAlreadyExist, IDWasNotEnterdException {
-        if(id == 0){
+        if (id == 0) {
             throw new IDWasNotEnterdException("There is no ID !");
-        }else{
+        } else {
             system.addLeague(this);
         }
     }
 
 
-    /** UC 9.2 (Only commisioner can)*/
+    /**
+     * UC 9.2 (Only commisioner can)
+     */
     public void addSeasonToLeagueByYear(int year) throws SeasonYearAlreadyExist {
         Season season = new Season(year);
-        if(seasons.get(year) != null){
+        if (seasons.get(year) != null) {
             throw new SeasonYearAlreadyExist("season with the given year is already exist in this league !");
-        }else{
-            seasons.put(year,season);
+        } else {
+            seasons.put(year, season);
         }
     }
 
 
-    public Season getSeasonByYear(int year){
+    public Season getSeasonByYear(int year) {
         return seasons.get(year);
     }
 

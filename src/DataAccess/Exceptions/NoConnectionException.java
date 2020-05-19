@@ -1,4 +1,4 @@
 package DataAccess.Exceptions;
 
-public class NoConnectionException extends Exception{
+public class NoConnectionException extends Exception {
 }

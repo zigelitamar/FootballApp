@@ -17,7 +17,7 @@ import java.util.List;
 
 public class FanController {
 
-    public boolean addPersonalPagesToFollow(Fan fan, List<PersonalInfo> pagesToFollow){
+    public boolean addPersonalPagesToFollow(Fan fan, List<PersonalInfo> pagesToFollow) {
         try {
             fan.addPersonalPagesToFollow(pagesToFollow);
         } catch (AlreadyFollowThisPageException e) {
@@ -25,40 +25,39 @@ public class FanController {
         }
         return true;
     }
-    public void unFollowPage(Fan fan,PersonalInfo page){
-       fan.unFollowPage(page);
+
+    public void unFollowPage(Fan fan, PersonalInfo page) {
+        fan.unFollowPage(page);
 
     }
 
 
-    public boolean turnAlertForPersonalPageOn(Fan fan,PersonalInfo page){
+    public boolean turnAlertForPersonalPageOn(Fan fan, PersonalInfo page) {
         return fan.turnAlertForPersonalPageOn(page);
     }
 
 
-    public void submitComplaintForm(Fan fan,ComplaintForm complaintForm){
+    public void submitComplaintForm(Fan fan, ComplaintForm complaintForm) {
         fan.submitComplaintForm(complaintForm);
     }
 
 
-    public LinkedList<String> viewSearchHistory(Fan fan){
-        if(fan.viewSearchHistory().size()==0){
+    public LinkedList<String> viewSearchHistory(Fan fan) {
+        if (fan.viewSearchHistory().size() == 0) {
             System.out.println("no search history yet");
-            return  null;
-        }
-
-       else
-           return  fan.viewSearchHistory();
+            return null;
+        } else
+            return fan.viewSearchHistory();
     }
 
 
-    public ArrayList<Pair<String,String>> viewPersonalDetails(Fan fan){
+    public ArrayList<Pair<String, String>> viewPersonalDetails(Fan fan) {
 
         return fan.viewPersonalDetails();
     }
 
 
-    public boolean changePassword(Fan fan,String newPassword){
+    public boolean changePassword(Fan fan, String newPassword) {
 
         try {
             return fan.changePassword(newPassword);
@@ -68,7 +67,7 @@ public class FanController {
         }
     }
 
-    public boolean changeUserName(Fan fan,String newUserName){
+    public boolean changeUserName(Fan fan, String newUserName) {
         try {
             return fan.changeUserName(newUserName);
         } catch (UserInformationException e) {
@@ -78,18 +77,15 @@ public class FanController {
 
     }
 
-    public double useReccommandationSystem(Fan fan, Game game, Team team){
-        return fan.useRecommandationSystem(game,team);
+    public double useReccommandationSystem(Fan fan, Game game, Team team) {
+        return fan.useRecommandationSystem(game, team);
     }
 
 
-    public HashSet<Object> search(Fan fan,String str, Searcher searcher){
-       return fan.search(str,searcher);
+    public HashSet<Object> search(Fan fan, String str, Searcher searcher) {
+        return fan.search(str, searcher);
 
     }
-
-
-    
 
 
 }

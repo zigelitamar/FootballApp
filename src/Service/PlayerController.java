@@ -9,19 +9,20 @@ import FootballExceptions.UnauthorizedPageOwnerException;
 import FootballExceptions.UserInformationException;
 
 public class PlayerController extends Member {
-    public boolean addContentToPage(Player player, APersonalPageContent cont){
+    public boolean addContentToPage(Player player, APersonalPageContent cont) {
         try {
             player.addContentToPersonalPage(cont);
         } catch (UnauthorizedPageOwnerException e) {
             System.out.println(e.getMessage());
         } catch (PersonalPageYetToBeCreatedException e) {
-           return false;
+            return false;
         }
         return true;
     }
-    public void EditPage(Player player,String title, String val){
+
+    public void EditPage(Player player, String title, String val) {
         try {
-            player.editProfile(title,val);
+            player.editProfile(title, val);
         } catch (UnauthorizedPageOwnerException e) {
             System.out.println(e.getMessage());
         } catch (PersonalPageYetToBeCreatedException e) {
@@ -29,16 +30,16 @@ public class PlayerController extends Member {
         }
     }
 
-    public boolean changeUserName(Player player, String newUserName)  {
+    public boolean changeUserName(Player player, String newUserName) {
         try {
-            return player.changeUserName( newUserName);
+            return player.changeUserName(newUserName);
         } catch (UserInformationException e) {
             return false;
         }
 
     }
 
-    public boolean createPersonalPage(Player player){
+    public boolean createPersonalPage(Player player) {
         return player.createPersonalPage();
     }
 }
