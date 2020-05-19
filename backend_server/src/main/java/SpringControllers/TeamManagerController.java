@@ -8,12 +8,13 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 public class TeamManagerController extends MemberController {
 
-
     private TeamManager teamManager;
 
     public TeamManagerController(TeamManager teamManager) {
         this.teamManager = teamManager;
     }
+
+    
 
     /**
      * all Func in this controller are all according to UC 7.1 - team manager can do what team owner let him
