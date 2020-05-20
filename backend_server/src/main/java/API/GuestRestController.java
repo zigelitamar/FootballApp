@@ -1,18 +1,20 @@
 package API;
 
-
-import ClientRequest.LoginDetails;
 import Domain.Users.Member;
+import Domain.Users.Player;
+import Domain.Users.TeamManager;
 import FootballExceptions.UserInformationException;
-
 import SpringControllers.GuestController;
+import SpringControllers.MemberController;
+import SpringControllers.PlayerController;
+import SpringControllers.TeamManagerController;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
@@ -34,11 +36,22 @@ public class GuestRestController {
 
     @PostMapping("/login")
     @JsonIgnore
-    public LinkedList<Member> login(@RequestBody Map <String,String> body, final HttpServletResponse response) throws IOException {
-        System.out.println("DASD");
+    public Map<String, String> login(@RequestBody Map <String,String> body, final HttpServletResponse response) throws IOException {
         try {
+            LinkedList <MemberController> memberControllers = new LinkedList<>();
+            LinkedList<Member> membersAccounts = guestController.login(body.get("username"),body.get("password"));
+            Map <String,String> returnVal = new HashMap<>();
 
-            return guestController.login(body.get("username"),body.get("password"));
+            for (Member member : membersAccounts) {
+                if(member instanceof Player){
+                    returnVal.put("Player","true");
+                }else if(member instanceof TeamManager){
+                    returnVal.put("TeamManager","true");
+                }
+            }
+
+
+            return returnVal;
         } catch (UserInformationException e) {
            response.sendError(HttpServletResponse.SC_CONFLICT,"Incorrect Login Details");
            return null;

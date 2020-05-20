@@ -3,7 +3,10 @@ package SpringControllers;
 import Domain.FootballManagmentSystem;
 import Domain.Users.Member;
 
-public abstract class MemberController {
+public class MemberController {
+
+
+    Member member;
 
 
     public void logOut(Member member) {

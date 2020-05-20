@@ -4,8 +4,10 @@ import Domain.PersonalPages.APersonalPageContent;
 import Domain.SeasonManagment.IAsset;
 import Domain.Users.TeamManager;
 import FootballExceptions.*;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class TeamManagerController extends MemberController {
 
     private TeamManager teamManager;
@@ -13,10 +15,6 @@ public class TeamManagerController extends MemberController {
     public TeamManagerController(TeamManager teamManager) {
         this.teamManager = teamManager;
     }
-
-
-
-    
 
 
     /**

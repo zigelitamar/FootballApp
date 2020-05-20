@@ -7,8 +7,20 @@ import Domain.Users.Player;
 import FootballExceptions.PersonalPageYetToBeCreatedException;
 import FootballExceptions.UnauthorizedPageOwnerException;
 import FootballExceptions.UserInformationException;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class PlayerController extends Member {
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+public class PlayerController extends MemberController {
+
+
+    private Player player;
+
+    public PlayerController(Player player) {
+        this.player = player;
+    }
+
+
     public boolean addContentToPage(Player player, APersonalPageContent cont) {
         try {
             player.addContentToPersonalPage(cont);
