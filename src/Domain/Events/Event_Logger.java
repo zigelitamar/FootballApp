@@ -15,7 +15,8 @@ public class Event_Logger {
         events = new LinkedList<>();
 
     }
-    public void addEvent(IEvent event){
+
+    public void addEvent(IEvent event) {
         events.add(event);
     }
 

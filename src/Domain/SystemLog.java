@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Date;
 
 public class SystemLog {
-    private static  SystemLog ourInstance = new SystemLog();
+    private static SystemLog ourInstance = new SystemLog();
     private File logfile;
 
     public static SystemLog getInstance() {
@@ -12,7 +12,7 @@ public class SystemLog {
     }
 
     private SystemLog() {
-        if (ourInstance != null){
+        if (ourInstance != null) {
             System.out.println("existing log");
         }
         this.makeFile();
@@ -23,12 +23,12 @@ public class SystemLog {
         logfile = new File("log/log.txt");
     }
 
-    public  void UpdateLog(String note) {
+    public void UpdateLog(String note) {
         BufferedWriter bW = null;
         try {
             Date xdate = new Date();
-            bW = new BufferedWriter(new FileWriter(logfile,true));
-            bW.append(xdate.toString()+ " " + note);
+            bW = new BufferedWriter(new FileWriter(logfile, true));
+            bW.append(xdate.toString() + " " + note);
             bW.newLine();
             bW.flush();
         } catch (IOException e1) {
@@ -36,6 +36,7 @@ public class SystemLog {
         }
 
     }
+
     public String showLog() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(logfile));
         String st = "";

@@ -13,18 +13,25 @@ import FootballExceptions.UnauthorizedPageOwnerException;
 import java.util.LinkedList;
 import java.util.Observable;
 
-public class PersonalInfo extends Observable{
+public class PersonalInfo extends Observable {
 
     private int pageID;
-    private Member pageMemberOwner; /**In case this is a coach/player personal page*/
-    private LinkedList<Member> teamPageMembersOwners; /**In case this is a team personal page*/
+    private Member pageMemberOwner;
+    /**
+     * In case this is a coach/player personal page
+     */
+    private LinkedList<Member> teamPageMembersOwners;
+    /**
+     * In case this is a team personal page
+     */
     private String pageTitle;
     private ProfileContent profile;
-    private LinkedList <APersonalPageContent> pageContent;
-    private LinkedList <Fan> followers;
+    private LinkedList<APersonalPageContent> pageContent;
+    private LinkedList<Fan> followers;
 
     /**
      * constructor for TESTING ONLY!!!
+     *
      * @param pageID
      */
     public PersonalInfo(int pageID) {
@@ -32,11 +39,11 @@ public class PersonalInfo extends Observable{
     }
 
     public PersonalInfo(Member pageMemberOwner) {
-        if(pageMemberOwner instanceof TeamManager){
+        if (pageMemberOwner instanceof TeamManager) {
             teamPageMembersOwners = new LinkedList<>();
             teamPageMembersOwners.add(pageMemberOwner);
             this.pageTitle = ((TeamManager) pageMemberOwner).getMyTeam().getName();
-        }else{
+        } else {
             this.pageTitle = pageMemberOwner.getReal_Name();
         }
         this.pageMemberOwner = pageMemberOwner;
@@ -51,65 +58,70 @@ public class PersonalInfo extends Observable{
 
     /**
      * editing profile section in personal page
+     *
      * @param memberEditing - must be owner member (constraint 4.a.
-     * @param title - info title
-     * @param val - value
+     * @param title         - info title
+     * @param val           - value
      * @return - true if succeeded
      */
-    public boolean editProfile(Member memberEditing, String title, String val) throws UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException{
-        if(!isPageOwner(memberEditing)){ //for constraint 4.a.
+    public boolean editProfile(Member memberEditing, String title, String val) throws UnauthorizedPageOwnerException, PersonalPageYetToBeCreatedException {
+        if (!isPageOwner(memberEditing)) { //for constraint 4.a.
             throw new UnauthorizedPageOwnerException();
         }
-        if(profile==null){
+        if (profile == null) {
             throw new PersonalPageYetToBeCreatedException();
-        }else{
-            profile.addFeatureToProfile(title,val);
+        } else {
+            profile.addFeatureToProfile(title, val);
             SystemLog.getInstance().UpdateLog(this.pageMemberOwner.getName() + " edited content on personal page");
             return true;
         }
     }
 
     /**
-     *  adding content to personal page
+     * adding content to personal page
+     *
      * @param memberContentMaker - must be owner member
-     * @param content - abstract - can be any type of content
+     * @param content            - abstract - can be any type of content
      * @return - true if succeeded
      */
     public boolean addContentToPage(Member memberContentMaker, APersonalPageContent content) throws UnauthorizedPageOwnerException {
-        if(!isPageOwner(memberContentMaker)){ //for constraint 4.a.
+        if (!isPageOwner(memberContentMaker)) { //for constraint 4.a.
             throw new UnauthorizedPageOwnerException();
         }
-        if(content instanceof ProfileContent){
-            this.profile = (ProfileContent)content;
-        }else {
+        if (content instanceof ProfileContent) {
+            this.profile = (ProfileContent) content;
+        } else {
             pageContent.add(content);
         }
         SystemLog.getInstance().UpdateLog(this.pageMemberOwner.getName() + " added content to personal page");
-        IAlert newContentAlert = new PersonalPageAlert(this,content);
+        IAlert newContentAlert = new PersonalPageAlert(this, content);
         notifyFansOnNewContent(newContentAlert);
         return true;
     }
 
     /**
      * part of UC 3.2 - adding the fan to the observers list
+     *
      * @param fan - fan
      */
-    public void addFollower(Fan fan){
+    public void addFollower(Fan fan) {
         followers.add(fan);
     }
 
     /**
      * part of UC 3.2 - removing the fan from the observers list
+     *
      * @param fan - fan
      */
-    public void removeFollower(Fan fan){
+    public void removeFollower(Fan fan) {
         followers.remove(fan);
     }
 
     /**
      * notifying anyone on the observers list about a game event related to the personal page
+     *
      * @param newAlert - game event alert
-     * @param game - the game where the event happened
+     * @param game     - the game where the event happened
      */
     public void notifyInfo(IAlert newAlert, Game game) { /// notify for game alert
         for (Fan f : followers) {
@@ -119,6 +131,7 @@ public class PersonalInfo extends Observable{
 
     /**
      * notifying anyone on the observers list about a change in the page
+     *
      * @param newContentAlert- new content on page alert
      */
     private void notifyFansOnNewContent(IAlert newContentAlert) { /// notify for new content on page
@@ -128,33 +141,39 @@ public class PersonalInfo extends Observable{
 
     }
 
-    public boolean isPageOwner(Member member){
-        if(pageMemberOwner!=null){
+    public boolean isPageOwner(Member member) {
+        if (pageMemberOwner != null) {
             return pageMemberOwner.equals(member);
         }
-        if(teamPageMembersOwners!=null){
+        if (teamPageMembersOwners != null) {
             return teamPageMembersOwners.contains(member);
         }
         return false;
     }
+
     /**
      * view the personal page
      */
-    public void viewPersonalPage(){
+    public void viewPersonalPage() {
         /// activate function from GUI
     }
 
-    /** TO BE USED ONLY BY TEAM*/
-    public void addTeamPageMemberOwner(Member pageMemberOwner){
-        if(teamPageMembersOwners!=null){
-            if(!teamPageMembersOwners.contains(pageMemberOwner)) {
+    /**
+     * TO BE USED ONLY BY TEAM
+     */
+    public void addTeamPageMemberOwner(Member pageMemberOwner) {
+        if (teamPageMembersOwners != null) {
+            if (!teamPageMembersOwners.contains(pageMemberOwner)) {
                 teamPageMembersOwners.add(pageMemberOwner);
             }
         }
     }
-    /** TO BE USED ONLY BY TEAM*/
-    public void removeOwnerFromPageMemberOwner(Member member){
-        if(teamPageMembersOwners!=null){
+
+    /**
+     * TO BE USED ONLY BY TEAM
+     */
+    public void removeOwnerFromPageMemberOwner(Member member) {
+        if (teamPageMembersOwners != null) {
             teamPageMembersOwners.remove(member);
         }
     }

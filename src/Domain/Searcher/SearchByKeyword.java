@@ -17,38 +17,38 @@ public class SearchByKeyword extends Searcher {
         HashSet<Member> tmpMemb = new HashSet<>();
         HashSet<Team> tmpteam = new HashSet<>();
         HashSet<IAsset> tmpasset = new HashSet<>(); // stadium field not for now?
-        for (LinkedList<Member> list: FootballManagmentSystem.getInstance().getMembers().values()) {
-            for (Member m:list) {
+        for (LinkedList<Member> list : FootballManagmentSystem.getInstance().getMembers().values()) {
+            for (Member m : list) {
                 tmpMemb.add(m);
             }
 
         }
-        for (Team team:FootballManagmentSystem.getInstance().getAllTeams().values()) {
+        for (Team team : FootballManagmentSystem.getInstance().getAllTeams().values()) {
             tmpteam.add(team);
 
         }
-        for (IAsset asset:FootballManagmentSystem.getInstance().getAllAssests().values() ) {
-            if(asset instanceof Field){
+        for (IAsset asset : FootballManagmentSystem.getInstance().getAllAssests().values()) {
+            if (asset instanceof Field) {
                 tmpasset.add(asset);
             }
         }
-        for (Member m:tmpMemb) {
-            String [] partofthetext = str.split(" ");
+        for (Member m : tmpMemb) {
+            String[] partofthetext = str.split(" ");
             for (int i = 0; i < partofthetext.length; i++) {
-                if(m.getReal_Name().equals(partofthetext[i])){
+                if (m.getReal_Name().equals(partofthetext[i])) {
                     anstoquerry.add(m);
                 }
             }
         }
-        for (Team team:tmpteam) {
-            String [] partofthetext = str.split(" ");
+        for (Team team : tmpteam) {
+            String[] partofthetext = str.split(" ");
             for (int i = 0; i < partofthetext.length; i++) {
-                if(team.getName().equals(partofthetext[i])){
+                if (team.getName().equals(partofthetext[i])) {
                     anstoquerry.add(team);
                 }
             }
         }
-        if(anstoquerry.size()==0){
+        if (anstoquerry.size() == 0) {
             return false;
         }
         setAnswer(anstoquerry);

@@ -1,17 +1,14 @@
 package Domain.SeasonManagment;
 
-import Domain.Alerts.PersonalPageAlert;
 import Domain.Events.AGameEvent;
 import Domain.Events.Foul;
 import Domain.FootballManagmentSystem;
-import Domain.PersonalPages.NewsContent;
 import Domain.Users.*;
 import FootballExceptions.*;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.*;
 
-import java.rmi.UnexpectedException;
 import java.util.Date;
 
 import static Domain.SeasonManagment.BudgetActivity.GameIncome;
@@ -36,7 +33,7 @@ public class TeamTest {
     int budget11;
     int budget12;
     int totalBudget1;
-    HashMap <Integer,IAsset> teamPlayers;
+    HashMap <Integer, IAsset> teamPlayers;
     Player player1;
     Player player2 ;
     Coach coach;

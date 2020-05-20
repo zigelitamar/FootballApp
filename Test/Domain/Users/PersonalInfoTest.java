@@ -4,7 +4,6 @@ import Domain.Alerts.GameEventAlert;
 import Domain.Alerts.IAlert;
 import Domain.Events.Goal;
 import Domain.Events.IEvent;
-import Domain.PersonalPages.APersonalPageContent;
 import Domain.PersonalPages.NewsContent;
 import Domain.PersonalPages.ProfileContent;
 import Domain.SeasonManagment.Game;
@@ -13,10 +12,6 @@ import FootballExceptions.PersonalPageYetToBeCreatedException;
 import FootballExceptions.UnauthorizedPageOwnerException;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Random;
 
 import static org.junit.Assert.*;
 

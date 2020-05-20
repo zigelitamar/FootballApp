@@ -1,21 +1,15 @@
 package Domain.Users;
 
 import Domain.Alerts.ChangedGameAlert;
-import Domain.Alerts.GameEventAlert;
 import Domain.Alerts.IAlert;
 import Domain.Events.*;
 import Domain.FootballManagmentSystem;
 import Domain.SeasonManagment.Game;
-import Domain.SeasonManagment.IAsset;
 import Domain.SeasonManagment.Team;
 import FootballExceptions.*;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.sql.Ref;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;

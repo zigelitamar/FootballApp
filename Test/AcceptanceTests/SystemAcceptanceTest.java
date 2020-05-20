@@ -36,14 +36,14 @@ public class SystemAcceptanceTest {
 
 
     @Test
-    public void PositiveChecklogin() {
+    public void PositiveChecklogin() throws UserInformationException {
 
         guestController.login(guest,"itamar12","1234");
         assertTrue(fms.getMemberByUserName("itamar12").get(0).isActive());
 
     }
     @Test
-    public void NegativeChecklogin() {
+    public void NegativeChecklogin() throws UserInformationException {
 
         guestController.login(guest,"itamar13","1234");
         assertFalse(fms.getMemberByUserName("itamar12").get(0).isActive());

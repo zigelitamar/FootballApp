@@ -1,7 +1,5 @@
 package Domain.SeasonManagment;
 
-import Domain.FootballManagmentSystem;
-import Domain.Users.Fan;
 import Domain.Users.TeamOwner;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e0385c18-9d62-48eb-b73a-4d9da296738c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/zahikapri.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/activation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_base.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mail.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/smtp_1_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FootballApp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/AcceptanceTests/CoachAcceptanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/AcceptanceTests/CommissionerControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/AcceptanceTests/FanAcceptanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/AcceptanceTests/GuestAcceptanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/AcceptanceTests/PlayerAcceptanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/AcceptanceTests/RefereeControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/AcceptanceTests/SystemAcceptanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/AcceptanceTests/SystemManagerAcceptanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/AcceptanceTests/TeamManagerAcceptanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/AcceptanceTests/TeamOwnerControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Alerts/ChangedGameAlertTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Events/Event_LoggerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/PersonalPages/ProfileContentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/BudgetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/ComplaintFormTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/ControlBudgetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/DefaultCommissionerRuleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/DefaultIScorePolicyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/DefaultTeamsPolicyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/FieldTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/GameTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/LeaugueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/RecommendationSystemTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/SeasonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/SeasonManagment/TeamTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Users/CoachTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Users/CommissionerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Users/FanTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Users/GuestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Users/PersonalInfoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Users/PlayerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Users/RefereeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Users/SystemManagerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Users/TeamManagerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Domain/Users/TeamOwnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/IntegrationTests/SeasonflowTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/IntegrationTests/TeamManagmentTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/activation.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/backend_server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/API/GuestRestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/API/MemberRestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/API/RefereeRestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/META-INF/backend_server.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/SpringControllers/CoachController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/SpringControllers/CommissionerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/SpringControllers/FanController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/SpringControllers/GuestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/SpringControllers/MemberController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/SpringControllers/PlayerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/SpringControllers/RefereeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/SpringControllers/SystemManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/SpringControllers/TeamManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/SpringControllers/TeamOwnerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/classes/ise24/backend_server/BackendServerApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_server/target/test-classes/ise24/backend_server/BackendServerApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javafx.base.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/fakeinit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/init.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mail.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Alerts/ChangedGameAlert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Alerts/ComplaintAlert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Alerts/FinancialAlert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Alerts/GameEventAlert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Alerts/IAlert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Alerts/IGameSubjective.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Alerts/PersonalPageAlert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Alerts/TeamManagmentAlert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Events/AGameEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Events/Event_Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Events/Foul.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Events/Goal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Events/IEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Events/Injury.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Events/OffSide.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Events/RedCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Events/Substitution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Events/YellowCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/FootballManagmentSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/PersonalPages/APersonalPageContent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/PersonalPages/CareerContent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/PersonalPages/NewsContent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/PersonalPages/ProfileContent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/PersonalPages/StatisticContent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Searcher/SearchByCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Searcher/SearchByKeyword.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Searcher/SearchByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Searcher/Searcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/Budget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/BudgetActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/ComplaintForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/ControlBudget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/DefaultCommissionerRule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/DefaultIScorePolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/DefaultTeamsPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/Field.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/IAsset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/ICommissionerRule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/IPlaceTeamsPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/IScorePolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/Leaugue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/RecommendationSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/Season.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/Team.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SeasonManagment/TeamStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/SystemLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/Coach.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/CoachRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/Commissioner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/Fan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/GeneralUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/Guest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/Member.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/PersonalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/Referee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/RefereeType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/SystemManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/TeamManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Domain/Users/TeamOwner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/AlreadyFollowThisPageException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/AssetIsAlreadyInSystemException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/CantRemoveMainOwnerException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/EmptyPersonalPageException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/EventNotMatchedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/FinanceAssActivityNotFound.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/IDWasNotEnterdException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/InactiveTeamException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/InvalidTeamAssetException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/LeagueIDAlreadyExist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/LeagueNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/MemberIsAlreadyTeamManagerException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/MemberIsAlreadyTeamOwnerException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/NoPermissionException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/NotEnoughTeamsInLeague.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/PersonalPageYetToBeCreatedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/RefereeEmailWasNotEntered.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/RefereeNotPlacedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/SeasonYearAlreadyExist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/ShortCommentException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/TeamCannotBeReopenException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/TeamOwnerWithNoTeamException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/UnableToRemoveException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/UnauthorizedPageOwnerException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/UnauthorizedTeamManagerException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/UnauthorizedTeamOwnerException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/UserInformationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/FootballExceptions/UserIsNotThisKindOfMemberException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/META-INF/FootballApp.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/PL/PL_Coach.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/PL/PL_Commisioner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/PL/PL_Fan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/PL/PL_Guest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/PL/PL_Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/PL/PL_Referee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/PL/PL_SystemManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/PL/PL_TeamM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/PL/PL_TeamOwner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Searcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Service/CoachController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Service/CommissionerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Service/FanController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Service/GuestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Service/MemberController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Service/PlayerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Service/RefereeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Service/SystemManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Service/TeamManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FootballApp/Service/TeamOwnerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/AcceptanceTests/CoachAcceptanceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/AcceptanceTests/CommissionerControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/AcceptanceTests/FanAcceptanceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/AcceptanceTests/GuestAcceptanceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/AcceptanceTests/PlayerAcceptanceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/AcceptanceTests/RefereeControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/AcceptanceTests/SystemAcceptanceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/AcceptanceTests/SystemManagerAcceptanceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/AcceptanceTests/TeamManagerAcceptanceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/AcceptanceTests/TeamOwnerControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Alerts/ChangedGameAlertTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Events/Event_LoggerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/PersonalPages/ProfileContentTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/BudgetTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/ComplaintFormTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/ControlBudgetTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/DefaultCommissionerRuleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/DefaultIScorePolicyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/DefaultTeamsPolicyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/FieldTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/GameTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/LeaugueTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/RecommendationSystemTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/SeasonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/SeasonManagment/TeamTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Users/CoachTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Users/CommissionerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Users/FanTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Users/GuestTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Users/PersonalInfoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Users/PlayerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Users/RefereeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Users/SystemManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Users/TeamManagerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Domain/Users/TeamOwnerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/IntegrationTests/SeasonflowTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/IntegrationTests/TeamManagmentTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/META-INF/FootballApp.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/FootballApp/Service/CommissionerControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/202004221507/mutations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/202004221508/mutations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/202004221928/mutations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/202004221929/mutations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/202004241807/mutations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smtp-1.6.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Alerts/ChangedGameAlert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Alerts/ComplaintAlert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Alerts/FinancialAlert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Alerts/GameEventAlert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Alerts/IAlert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Alerts/IGameSubjective.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Alerts/PersonalPageAlert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Alerts/TeamManagmentAlert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Events/AGameEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Events/Event_Logger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Events/Foul.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Events/Goal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Events/IEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Events/Injury.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Events/OffSide.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Events/RedCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Events/Substitution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Events/YellowCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/FootballManagmentSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/PersonalPages/APersonalPageContent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/PersonalPages/CareerContent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/PersonalPages/NewsContent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/PersonalPages/ProfileContent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/PersonalPages/StatisticContent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Searcher/SearchByCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Searcher/SearchByKeyword.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Searcher/SearchByName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Searcher/Searcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/Budget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/BudgetActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/ComplaintForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/ControlBudget.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/DefaultCommissionerRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/DefaultIScorePolicy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/DefaultTeamsPolicy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/Field.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/IAsset.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/ICommissionerRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/IPlaceTeamsPolicy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/IScorePolicy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/Leaugue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/RecommendationSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/Season.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/Team.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SeasonManagment/TeamStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/SystemLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/Coach.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/CoachRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/Commissioner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/Fan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/GeneralUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/Guest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/PersonalInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/Referee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/RefereeType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/SystemManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/TeamManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Users/TeamOwner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/AlreadyFollowThisPageException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/AssetIsAlreadyInSystemException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/CantRemoveMainOwnerException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/EmptyPersonalPageException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/EventNotMatchedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/FinanceAssActivityNotFound.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/IDWasNotEnterdException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/InactiveTeamException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/InvalidTeamAssetException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/LeagueIDAlreadyExist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/LeagueNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/MemberIsAlreadyTeamManagerException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/MemberIsAlreadyTeamOwnerException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/NoPermissionException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/NotEnoughTeamsInLeague.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/PersonalPageYetToBeCreatedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/RefereeEmailWasNotEntered.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/RefereeNotPlacedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/SeasonYearAlreadyExist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/ShortCommentException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/TeamCannotBeReopenException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/TeamOwnerWithNoTeamException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/UnableToRemoveException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/UnauthorizedPageOwnerException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/UnauthorizedTeamManagerException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/UnauthorizedTeamOwnerException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/UserInformationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FootballExceptions/UserIsNotThisKindOfMemberException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PL/PL_Coach.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PL/PL_Commisioner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PL/PL_Fan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PL/PL_Guest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PL/PL_Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PL/PL_Referee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PL/PL_SystemManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PL/PL_TeamM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PL/PL_TeamOwner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Searcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/CoachController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/CommissionerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/FanController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/GuestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/MemberController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/PlayerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/RefereeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/SystemManagerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/TeamManagerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/TeamOwnerController.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="203" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1aGF6p0w1XlqdKTa9meiEtnBmUA" />
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Service" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/log" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.All in FootballApp">
+    <configuration name="All in FootballApp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FootballApp" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommissionerControllerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FootballApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AcceptanceTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="AcceptanceTests" />
+      <option name="MAIN_CLASS_NAME" value="AcceptanceTests.CommissionerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommissionerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FootballApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Service" />
+      <option name="MAIN_CLASS_NAME" value="Service.CommissionerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommissionerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FootballApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Domain.Users.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Domain.Users" />
+      <option name="MAIN_CLASS_NAME" value="Domain.Users.CommissionerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name=".* and 12 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FootballApp" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass=".*" />
+        <pattern testClass="Domain.*" />
+        <pattern testClass="Domain.Alerts.*" />
+        <pattern testClass="Domain.Events.*" />
+        <pattern testClass="Domain.PersonalPages.*" />
+        <pattern testClass="Domain.Searcher.*" />
+        <pattern testClass="Domain.SeasonManagment.*" />
+        <pattern testClass="Domain.Users.*" />
+        <pattern testClass="FootballExceptions.*" />
+        <pattern testClass="PL.*" />
+        <pattern testClass="Service.*" />
+        <pattern testClass="Service.CommissionerControllerTest" />
+        <pattern testClass="Service.RefereeControllerTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="backend_server" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="backend_server" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in FootballApp" />
+        <item itemvalue="JUnit.CommissionerControllerTest (1)" />
+        <item itemvalue="JUnit.CommissionerTest" />
+        <item itemvalue="JUnit.CommissionerControllerTest" />
+        <item itemvalue="JUnit..* and 12 more" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e0385c18-9d62-48eb-b73a-4d9da296738c" name="Default Changelist" comment="" />
+      <created>1586353851157</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586353851157</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Test/Domain/Users/RefereeTest.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FootballApp$CommissionerControllerTest__1_.ic" NAME="CommissionerControllerTest (1) Coverage Results" MODIFIED="1587827651425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>AcceptanceTests.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/FootballApp$All_in_FootballApp.ic" NAME="All in FootballApp Coverage Results" MODIFIED="1588242437082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

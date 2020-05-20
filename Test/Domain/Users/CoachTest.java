@@ -16,7 +16,7 @@ public class CoachTest {
     private ProfileContent profileContent;
     @Before
     public void init(){
-        coach = new Coach("noa12","noa",312427404,"noanoa123",1,null,CoachRole.HeadCoach);
+        coach = new Coach("noa12","noa",312427404,"noanoa123",1,null, CoachRole.HeadCoach);
         info = new PersonalInfo(coach);
         coach.setInfo(info);
         coach2 = new Coach("shira33","shira",313546448,"noanoa123",2,null,CoachRole.FirstAssistantCoach);

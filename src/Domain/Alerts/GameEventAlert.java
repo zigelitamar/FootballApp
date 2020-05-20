@@ -2,7 +2,7 @@ package Domain.Alerts;
 
 import Domain.Events.IEvent;
 
-public class GameEventAlert implements IAlert{
+public class GameEventAlert implements IAlert {
 
     double eventMin;
     IEvent event;
@@ -20,7 +20,7 @@ public class GameEventAlert implements IAlert{
     @Override
     public String toString() {
         return "GameEventAlert{" +
-                "event minute = " + eventMin + ", event Type = "+ event.getClass().getSimpleName() +
+                "event minute = " + eventMin + ", event Type = " + event.getClass().getSimpleName() +
                 " }";
     }
 }

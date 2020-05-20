@@ -5,7 +5,7 @@ public class InvalidTeamAssetException extends Exception {
     private String message;
 
     public InvalidTeamAssetException() {
-        message="Invalid Team Asset";
+        message = "Invalid Team Asset";
     }
 
     @Override

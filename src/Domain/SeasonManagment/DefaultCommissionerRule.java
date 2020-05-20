@@ -1,8 +1,10 @@
 package Domain.SeasonManagment;
 
-public class DefaultCommissionerRule implements ICommissionerRule{
+public class DefaultCommissionerRule implements ICommissionerRule {
 
-    /** when team is open there is a tax of 100$  */
+    /**
+     * when team is open there is a tax of 100$
+     */
 
 
     @Override
