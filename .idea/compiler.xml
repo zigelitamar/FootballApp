@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="backend_server" />
+        <module name="app" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="app" target="1.8" />
       <module name="application" target="1.8" />
       <module name="backend_server" target="1.8" />
       <module name="FootballApp" target="8" />
@@ -17,6 +19,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="app" options="-parameters" />
       <module name="application" options="-parameters" />
       <module name="backend_server" options="-parameters" />
     </option>

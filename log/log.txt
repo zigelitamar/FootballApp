@@ -7526,3 +7526,7 @@ Sun Apr 26 12:55:07 IDT 2020 New Field: class domain.seasonmanagment.field has b
 Sun Apr 26 12:55:07 IDT 2020 New teamIroni Nir Ramat-Hasharon has been added to system by owner: prosper
 Sun Apr 26 12:55:07 IDT 2020 New Player: class domain.users.player has been added to team: Ironi Nir Ramat-Hasharonbyprosper
 Sun Apr 26 12:55:07 IDT 2020 New HeadCoach class domain.users.coach has been added to team: Ironi Nir Ramat-Hasharonbyprosper
+Wed May 20 17:58:05 IDT 2020 New teamBet has been added to system by owner: Moshe
+Wed May 20 17:58:05 IDT 2020 Ohanahas become team manager of : Bet
+Wed May 20 17:58:22 IDT 2020 New teamBet has been added to system by owner: Moshe
+Wed May 20 17:58:22 IDT 2020 Ohanahas become team manager of : Bet
